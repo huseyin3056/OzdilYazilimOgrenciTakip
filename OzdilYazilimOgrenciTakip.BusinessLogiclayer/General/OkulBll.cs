@@ -2,28 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors.Filtering.Templates;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base;
-using OzdilYazilimOgrenciTakip.Data.Contexts;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Interfaces;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
-using OzdilYazilimOgrenciTakip.Common;
-using OzdilYazilimOgrenciTakip.Common.Enums;
 
-
-namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions.General
+namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
 {
-    public class OkulBll : BaseBll<Okul, OgrenciTakipContext>
+    public class OkulBll : BaseGenelBll<Okul>, IBaseGenelBll, IBaseCommonBll
     {
-        public OkulBll() { }
+        public OkulBll() : base(Common.Enums.KartTuru.Okul) { }
 
-        public OkulBll(Control ctrl) : base(ctrl) { }
+        public OkulBll(Control ctrl) : base(ctrl, Common.Enums.KartTuru.Okul) { }
 
-        public BaseEntity Single(Expression<Func<Okul, bool>> filter)
+        public override BaseEntity Single(Expression<Func<Okul, bool>> filter)
         {
             return BaseSingle(filter, x => new OkulS
             {
@@ -37,13 +31,11 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions.General
                 Aciklama = x.Aciklama,
                 Durum = x.Durum
 
-
-
             });
+
         }
 
-
-        public IEnumerable<BaseEntity> List(Expression<Func<Okul, bool>> filter)
+        public override IEnumerable<BaseEntity> List(Expression<Func<Okul, bool>> filter)
         {
             return BaseList(filter, x => new OkulL
             {
@@ -54,21 +46,6 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions.General
                 IlceAdi = x.Ilce.IlceAdi,
                 Aciklama = x.Aciklama
             }).OrderBy(x => x.Kod).ToList();
-        }
-
-        public bool Insert(BaseEntity entity)
-        {
-            return BaseInsert(entity, x => x.Kod == entity.Kod);
-        }
-
-        public bool Update(BaseEntity oldEntity, BaseEntity currentEntity)
-        {
-            return BaseUpdate(oldEntity, currentEntity, x => x.Kod == currentEntity.Kod);
-        }
-
-        public bool Delete(BaseEntity entity)
-        {
-            return BaseDelete(entity, Common.Enums.KartTuru.Okul);
         }
 
     }

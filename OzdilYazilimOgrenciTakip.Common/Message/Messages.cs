@@ -29,9 +29,27 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
 
         }
 
+        public static DialogResult EvetSeciliEvetHayirIptal(string mesaj, string baslik)
+        {
+            return XtraMessageBox.Show(mesaj, baslik, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+        }
+
         public static DialogResult SilMesaj(string kartAdi)
         {
             return HayirSeciliEvetHayir($"Seçtiğiniz {kartAdi} Silinecektir. Onaylıyormusunuz?", "Silme Onayı");
+
+        }
+
+        public static DialogResult KapanisMesaj()
+        {
+            return EvetSeciliEvetHayirIptal("Yapılan Değişiklikler Kayıt Yapılsınmı?", "Çıkış Onay");
+
+        }
+
+        public static DialogResult KayitMesaj()
+        {
+            return EvetSeciliEvetHayir("Yapılan Değişiklikler Kayıt Yapılsınmı?", "Kayıt Onay");
 
         }
 
@@ -40,6 +58,27 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
             UyariMesaji("Lütfen bir kart seçiniz");
 
         }
+
+        public static void MukerrerKayitHataMesaji(string alanAdi)
+        {
+            UyariMesaji($"Kullanmış olduğunuz {alanAdi} daha önce kullanılmıştır");
+
+        }
+
+        public static void HataliVeriMesaji(string alanAdi)
+        {
+            UyariMesaji($"{alanAdi} alanına geçerli bir değer girmelisiniz");
+
+        }
+
+        public static DialogResult TabloExportMesaj(string dosyaFormati)
+        {
+         
+            return XtraMessageBox.Show($" İlgili Tablo  {dosyaFormati}  olarak dışarı aktarılacaktır. Onaylıyır musunuz?", "Aktarım Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+        }
+
+
 
 
 

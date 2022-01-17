@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions.General;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
@@ -28,7 +28,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
         protected override void DegiskenleriDoldur()
         {
             Tablo = tablo;
-            KartTuru = Common.Enums.KartTuru.Okul;
+            BaseKartTuru = Common.Enums.KartTuru.Okul;
             FormShow = new ShowEditForms<OkulEditForm>();
             Navigator = longNavigator.Navigator;
 

@@ -19,6 +19,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls
             Properties.AppearanceFocused.BackColor = Color.LightCyan;
             Properties.AllowNullInput = DefaultBoolean.False;
             Properties.EditMask = "n2";
+            Properties.DisplayFormat.FormatType = FormatType.Numeric;
+            Properties.DisplayFormat.FormatString = "n2";
 
 
         }

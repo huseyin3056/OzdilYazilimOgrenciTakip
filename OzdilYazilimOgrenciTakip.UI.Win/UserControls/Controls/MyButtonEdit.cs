@@ -37,9 +37,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls
                 if (newValue == oldValue) return;
                 _id = value;
                 IdChanged(this, new IdChangedEventArgs(oldValue, newValue));
+                EnabledChange(this, EventArgs.Empty);
             }
         }
         public event EventHandler<IdChangedEventArgs> IdChanged=delegate { };
+        public event EventHandler EnabledChange = delegate { };
+
     }
 
     public class IdChangedEventArgs : EventArgs

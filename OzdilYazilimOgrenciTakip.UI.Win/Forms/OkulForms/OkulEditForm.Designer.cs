@@ -97,7 +97,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
             this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl.Root = this.Root;
             this.myDataLayoutControl.Size = new System.Drawing.Size(398, 166);
-            this.myDataLayoutControl.TabIndex = 2;
+            this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
             // 
             // txtAciklama
@@ -112,7 +112,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
             this.txtAciklama.Size = new System.Drawing.Size(321, 46);
             this.txtAciklama.StatusBarAciklama = "Açıklama Giriniz";
             this.txtAciklama.StyleController = this.myDataLayoutControl;
-            this.txtAciklama.TabIndex = 9;
+            this.txtAciklama.TabIndex = 3;
             // 
             // tglDurum
             // 
@@ -129,7 +129,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
             this.tglDurum.Size = new System.Drawing.Size(95, 20);
             this.tglDurum.StatusBarAciklama = "Durumunu Seçiniz";
             this.tglDurum.StyleController = this.myDataLayoutControl;
-            this.tglDurum.TabIndex = 8;
+            this.tglDurum.TabIndex = 4;
             // 
             // txtIlce
             // 
@@ -144,11 +144,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtIlce.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtIlce.Size = new System.Drawing.Size(143, 20);
-            this.txtIlce.StatusBarAciklama = null;
+            this.txtIlce.StatusBarAciklama = "İlçe Giriniz";
             this.txtIlce.StatusBarKisaYol = "F4";
-            this.txtIlce.StatusBarKisaYolAciklama = null;
+            this.txtIlce.StatusBarKisaYolAciklama = "İlçe Seç";
             this.txtIlce.StyleController = this.myDataLayoutControl;
-            this.txtIlce.TabIndex = 7;
+            this.txtIlce.TabIndex = 2;
             // 
             // txtIl
             // 
@@ -163,11 +163,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtIl.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtIl.Size = new System.Drawing.Size(143, 20);
-            this.txtIl.StatusBarAciklama = null;
+            this.txtIl.StatusBarAciklama = "İl Seçiniz";
             this.txtIl.StatusBarKisaYol = "F4";
-            this.txtIl.StatusBarKisaYolAciklama = null;
+            this.txtIl.StatusBarKisaYolAciklama = "İl Seç";
             this.txtIl.StyleController = this.myDataLayoutControl;
-            this.txtIl.TabIndex = 6;
+            this.txtIl.TabIndex = 1;
             // 
             // txtOkulAdi
             // 
@@ -179,9 +179,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
             this.txtOkulAdi.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtOkulAdi.Properties.MaxLength = 50;
             this.txtOkulAdi.Size = new System.Drawing.Size(321, 20);
-            this.txtOkulAdi.StatusBarAciklama = null;
+            this.txtOkulAdi.StatusBarAciklama = "Okul Adı Giriniz";
             this.txtOkulAdi.StyleController = this.myDataLayoutControl;
-            this.txtOkulAdi.TabIndex = 5;
+            this.txtOkulAdi.TabIndex = 0;
             // 
             // txtKod
             // 
@@ -199,7 +199,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
             this.txtKod.Size = new System.Drawing.Size(143, 20);
             this.txtKod.StatusBarAciklama = "Kod Giriniz";
             this.txtKod.StyleController = this.myDataLayoutControl;
-            this.txtKod.TabIndex = 4;
+            this.txtKod.TabIndex = 5;
             // 
             // Root
             // 
@@ -316,7 +316,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
             this.layoutControlItem6.Text = "Açıklama";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(41, 13);
             // 
-            // OkulKarti
+            // OkulEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -324,7 +324,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
             this.Controls.Add(this.myDataLayoutControl);
             this.IconOptions.ShowIcon = false;
             this.MinimumSize = new System.Drawing.Size(400, 300);
-            this.Name = "OkulKarti";
+            this.Name = "OkulEditForm";
             this.Text = "Okul Kartı";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.myDataLayoutControl, 0);
