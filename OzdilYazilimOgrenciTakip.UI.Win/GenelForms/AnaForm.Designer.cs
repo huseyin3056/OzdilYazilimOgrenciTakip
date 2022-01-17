@@ -52,12 +52,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnHizmetTuruKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnHizmetKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnKasaKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBankaKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btnBankaKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAvukatKartlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -89,9 +90,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnHizmetTuruKartlari,
             this.btnHizmetKartlari,
             this.btnKasaKartlari,
-            this.btnBankaKartlari});
+            this.btnBankaKartlari,
+            this.btnAvukatKartlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 23;
+            this.ribbonControl1.MaxItemId = 24;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -224,6 +226,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnKasaKartlari.Id = 21;
             this.btnKasaKartlari.Name = "btnKasaKartlari";
             // 
+            // btnBankaKartlari
+            // 
+            this.btnBankaKartlari.Caption = "Banka Kartları";
+            this.btnBankaKartlari.Id = 22;
+            this.btnBankaKartlari.Name = "btnBankaKartlari";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -255,6 +263,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPageGroup1.ItemLinks.Add(this.btnHizmetKartlari);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnKasaKartlari);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnBankaKartlari);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnAvukatKartlari);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonStatusBar1
@@ -273,11 +282,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             this.xtraTabbedMdiManager.MdiParent = this;
             // 
-            // btnBankaKartlari
+            // btnAvukatKartlari
             // 
-            this.btnBankaKartlari.Caption = "Banka Kartları";
-            this.btnBankaKartlari.Id = 22;
-            this.btnBankaKartlari.Name = "btnBankaKartlari";
+            this.btnAvukatKartlari.Caption = "Avukat Kartları";
+            this.btnAvukatKartlari.Id = 23;
+            this.btnAvukatKartlari.Name = "btnAvukatKartlari";
             // 
             // AnaForm
             // 
@@ -329,5 +338,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private DevExpress.XtraBars.BarButtonItem btnHizmetKartlari;
         private DevExpress.XtraBars.BarButtonItem btnKasaKartlari;
         private DevExpress.XtraBars.BarButtonItem btnBankaKartlari;
+        private DevExpress.XtraBars.BarButtonItem btnAvukatKartlari;
     }
 }

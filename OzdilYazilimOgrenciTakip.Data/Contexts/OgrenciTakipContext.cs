@@ -54,6 +54,7 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<Kasa> Kasa { get; set; }
         public DbSet<Banka> Banka { get; set; }
         public DbSet<BankaSube> BankaSube { get; set; }
+        public DbSet<Avukat> Avukat { get; set; }
 
 
 
