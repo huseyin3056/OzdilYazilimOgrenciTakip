@@ -48,18 +48,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\Kod.cs" />
+    <Compile Include="Attributes\ZorunluAlan.cs" />
+    <Compile Include="Dto\HizmetDto.cs" />
+    <Compile Include="Dto\BankaDto.cs" />
     <Compile Include="Dto\OkulDto.cs" />
+    <Compile Include="Dto\SinifDto.cs" />
+    <Compile Include="Entities\AileBilgi.cs" />
+    <Compile Include="Entities\Banka.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
     <Compile Include="Entities\Base\BaseEntityDurum.cs" />
     <Compile Include="Entities\Base\BaseHareketEntity.cs" />
+    <Compile Include="Entities\Donem.cs" />
+    <Compile Include="Entities\Evrak.cs" />
+    <Compile Include="Entities\Filtre.cs" />
     <Compile Include="Entities\Base\Interfaces\IBaseEntity.cs" />
+    <Compile Include="Entities\DokumParametreleri.cs" />
+    <Compile Include="Entities\Gorev.cs" />
+    <Compile Include="Entities\Hizmet.cs" />
+    <Compile Include="Entities\HizmetTuru.cs" />
     <Compile Include="Entities\Il.cs" />
     <Compile Include="Entities\Ilce.cs" />
+    <Compile Include="Entities\IndirimTuru.cs" />
+    <Compile Include="Entities\IptalNedeni.cs" />
+    <Compile Include="Entities\Isyeri.cs" />
+    <Compile Include="Entities\Kontenjan.cs" />
+    <Compile Include="Entities\Meslek.cs" />
     <Compile Include="Entities\Okul.cs" />
+    <Compile Include="Entities\OzelKod.cs" />
+    <Compile Include="Entities\Promosyon.cs" />
+    <Compile Include="Entities\Rehber.cs" />
+    <Compile Include="Entities\Servis.cs" />
+    <Compile Include="Entities\Sinif.cs" />
+    <Compile Include="Entities\SinifGrup.cs" />
+    <Compile Include="Entities\Sube.cs" />
+    <Compile Include="Entities\Tesvik.cs" />
+    <Compile Include="Entities\YabanciDil.cs" />
+    <Compile Include="Entities\Yakinlik.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OzdilYazilimOgrenciTakip.Common\OzdilYazilimOgrenciTakip.Common.csproj">
+      <Project>{A5E0C329-389F-4BDA-B51F-B456AF48C0B3}</Project>
+      <Name>OzdilYazilimOgrenciTakip.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

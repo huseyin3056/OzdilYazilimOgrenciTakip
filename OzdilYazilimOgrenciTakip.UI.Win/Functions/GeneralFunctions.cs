@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraGrid.Views.Grid;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
+using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 {
@@ -22,7 +22,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
-        public static T GetRow<T>(this GridView tablo, bool mesajVer=true)
+        public static T GetRow<T>(this GridView tablo, bool mesajVer = true)
         {
             if (tablo.FocusedRowHandle > -1) return (T)tablo.GetRow(tablo.FocusedRowHandle);
             if (mesajVer)
@@ -60,7 +60,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
                 }
 
-                else if (currentValue.Equals(oldValue))
+                else if (!currentValue.Equals(oldValue))
                 {
                     return VeriDegisimYeri.Alan;
                 }
@@ -71,27 +71,36 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
-        public static void ButtonEnabledDurumu<T>(BarButtonItem btnYeni,BarButtonItem btnKaydet, BarButtonItem btnGeriAl, BarButtonItem btnSil, T oldEntity, T currentEntity)
+        public static void ButtonEnabledDurumu<T>(BarButtonItem btnYeni, BarButtonItem btnKaydet, BarButtonItem btnGeriAl, BarButtonItem btnSil, T oldEntity, T currentEntity)
         {
             var veriDegisimYeri = VeriDegisimYeriGetir(oldEntity, currentEntity);
             var buttonEnabledDurumu = veriDegisimYeri == VeriDegisimYeri.Alan;
 
             btnKaydet.Enabled = buttonEnabledDurumu;
-            btnGeriAl.Enabled= buttonEnabledDurumu;
+            btnGeriAl.Enabled = buttonEnabledDurumu;
             btnYeni.Enabled = !buttonEnabledDurumu;
             btnSil.Enabled = !buttonEnabledDurumu;
 
+        }
 
+        public static void ButtonEnabledDurumu<T>(BarButtonItem btnKaydet, BarButtonItem btnFarkliKaydet, BarButtonItem btnSil, IslemTuru islemTuru, T oldEntity, T currentEntity)
+        {
+            var veriDegisimYeri = VeriDegisimYeriGetir(oldEntity, currentEntity);
+            var buttonEnabledDurumu = veriDegisimYeri == VeriDegisimYeri.Alan;
+
+            btnKaydet.Enabled = buttonEnabledDurumu;
+            btnFarkliKaydet.Enabled = islemTuru != IslemTuru.EntityInsert;
+            btnSil.Enabled = !buttonEnabledDurumu;
 
         }
 
-        public static long IdOlustur(this IslemTuru islemTuru, BaseEntity selectedEntity  )
+        public static long IdOlustur(this IslemTuru islemTuru, BaseEntity selectedEntity)
         {
-          
+
 
             string sifirEkle(string deger)
             {
-                if(deger.Length==1)
+                if (deger.Length == 1)
                 {
                     return "0" + deger;
                 }
@@ -108,11 +117,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                 {
                     case 1:
                         return "00" + deger;
-                        break;
+
 
                     case 2:
                         return "0" + deger;
-                        break;
+
                 }
                 return deger;
             }
@@ -120,8 +129,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             string Id()
             {
                 var yil = sifirEkle(DateTime.Now.Date.Year.ToString());
-                var ay= sifirEkle(DateTime.Now.Date.Month.ToString());
-                var gun= sifirEkle(DateTime.Now.Date.Day.ToString());
+                var ay = sifirEkle(DateTime.Now.Date.Month.ToString());
+                var gun = sifirEkle(DateTime.Now.Date.Day.ToString());
                 var saat = sifirEkle(DateTime.Now.Hour.ToString());
                 var dakika = sifirEkle(DateTime.Now.Minute.ToString());
                 var saniye = sifirEkle(DateTime.Now.Second.ToString());
@@ -136,6 +145,66 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             return islemTuru == IslemTuru.EntityUpdate ? selectedEntity.Id : long.Parse(Id());
 
 
+        }
+
+        public static void ControlEnabledChange(this MyButtonEdit baseEdit, Control prmEdit)
+        {
+            switch (prmEdit)
+            {
+                case MyButtonEdit edt:
+                    edt.Enabled = baseEdit.Id.HasValue && baseEdit.Id > 0;
+                    edt.Id = null;
+                    edt.EditValue = null;
+                    break;
+            }
+        }
+
+        public static void RowFocus(this GridView tablo, string aranacakKolon, object aranacakDeger)
+        {
+            var rowHandle = 0;
+
+            for (int i = 0; i < tablo.RowCount; i++)
+            {
+                var bulunanDeger = tablo.GetRowCellValue(i, aranacakKolon);
+                if (aranacakDeger.Equals(bulunanDeger))
+                    rowHandle = i;
+
+
+            }
+
+            tablo.FocusedRowHandle = rowHandle;
+
+        }
+
+        public static void RowFocus(this GridView tablo, int rowhandle)
+        {
+            if (rowhandle <= 0) return;
+            if (rowhandle == tablo.RowCount - 1)
+                tablo.FocusedRowHandle = rowhandle;
+            else
+            {
+                tablo.FocusedRowHandle = rowhandle - 1;
+
+            }
+        }
+
+        public static void SagMenuGoster(this MouseEventArgs e, PopupMenu sagMenu)
+        {
+            if (e.Button != MouseButtons.Right) return;
+            sagMenu.ShowPopup(Control.MousePosition);
+
+        }
+
+        public static System.Collections.Generic.List<string> YazicilariListele()
+        {
+            return PrinterSettings.InstalledPrinters.Cast<string>().ToList();
+
+        }
+
+        public static string DefaultYazici()
+        {
+            var settings = new PrinterSettings();
+            return settings.PrinterName;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions.General;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
@@ -23,7 +23,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
 
             DataLayoutControl = myDataLayoutControl;
             Bll = new OkulBll(myDataLayoutControl);
-            KartTuru = Common.Enums.KartTuru.Okul;
+            BaseKartTuru = Common.Enums.KartTuru.Okul;
             EventsLoad();
 
 
@@ -31,7 +31,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
 
         protected internal override void Yukle()
         {
-            OldEntity = IslemTuru == Common.Enums.IslemTuru.EntityInsert ? new OkulS() : ((OkulBll)Bll).Single(FilterFunctions.Filter<Okul>(Id));
+            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new OkulS() : ((OkulBll)Bll).Single(FilterFunctions.Filter<Okul>(Id));
+            NesneyiKontrollereBagla();
+
+            if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
+            Id = BaseIslemTuru.IdOlustur(OldEntity);
+            txtKod.Text = ((OkulBll)Bll).YeniKodVer();
+            txtOkulAdi.Focus();
+
 
         }
 
@@ -68,5 +75,29 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
 
 
         }
+
+        protected override void SecimYap(object sender)
+        {
+            if (!(sender is ButtonEdit)) return;
+
+            using (var sec = new SelectFunctions())
+            {
+                if (sender == txtIl)
+                    sec.Sec(txtIl);
+
+                else if (sender == txtIlce)
+                    sec.Sec(txtIlce, txtIl);
+            }
+        }
+
+        protected override void Control_EnabledChange(object sender, EventArgs e)
+        {
+            if (sender != txtIl) return;
+            txtIl.ControlEnabledChange(txtIlce);
+
+
+        }
+
+
     }
 }

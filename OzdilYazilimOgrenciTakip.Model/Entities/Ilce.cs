@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OzdilYazilimOgrenciTakip.Model.Attributes;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 
 namespace OzdilYazilimOgrenciTakip.Model.Entities
@@ -14,7 +15,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [Index("IX_Kod", IsUnique = false)]
         public override string Kod { get; set; }
 
-        [Required, StringLength(50)]
+        [Required, StringLength(50), ZorunluAlan("İlçe Adı", "txtIlceAdi")]
         public string IlceAdi { get; set; }
 
         [StringLength(500)]

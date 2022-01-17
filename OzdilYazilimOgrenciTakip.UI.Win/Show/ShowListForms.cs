@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OzdilYazilimOgrenciTakip.Common.Enums;
+using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Show
@@ -23,5 +24,34 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
 
         }
+
+        public static void ShowListForm(KartTuru kartTuru,params object[] prm)
+        {
+            // Yetki Kontrolü Yapılacak
+
+            var frm = (TForm)Activator.CreateInstance(typeof(TForm),prm);
+            frm.MdiParent = Form.ActiveForm;
+
+            frm.Yukle();
+            frm.Show();
+
+
+        }
+
+        public static BaseEntity ShowDialogListForm(KartTuru kartTuru,long? seciliGelecekId, params object[] prm)
+        {
+            // Yetki Kontrolü
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm),prm))
+            {
+                frm.SeciliGelecekId = seciliGelecekId;
+                frm.Yukle();
+                frm.ShowDialog();
+
+                return frm.DialogResult == DialogResult.OK ? frm.SelectedEntity : null;
+
+            }
+
+        }
+
     }
 }

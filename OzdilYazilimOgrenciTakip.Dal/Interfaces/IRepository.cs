@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using OzdilYazilimOgrenciTakip.Common.Enums;
 
 namespace OzdilYazilimOgrenciTakip.Dal.Interfaces
 {
@@ -19,6 +20,9 @@ namespace OzdilYazilimOgrenciTakip.Dal.Interfaces
         TResult Find<TResult>(Expression<Func<T, bool>> filter, Expression<Func<T,TResult>> selector);
         IQueryable<TResult> Select<TResult>(Expression<Func<T, bool>> filter, Expression<Func<T, TResult>> selector);
 
+        int Count(Expression<Func<T, bool>> filter=null);
+
+        string YeniKodVer(KartTuru kartTuru, Expression<Func<T, string>> filter, Expression<Func<T, bool>> where = null);
 
 
 

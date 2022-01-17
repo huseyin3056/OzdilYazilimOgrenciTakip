@@ -15,7 +15,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions
     {
         public static IList<string> DegisenAlanlariGetir<T>(this T oldEntity, T currentEntity)
         {
-            IList<string> alanlar = new List<string>();
+            List<string> alanlar = new List<string>();
 
             foreach (var prop in currentEntity.GetType().GetProperties())
             {
@@ -43,7 +43,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions
 
                 }
 
-                else if (currentValue.Equals(oldValue))
+                else if (!currentValue.Equals(oldValue))
                 {
                     alanlar.Add(prop.Name);
                 }

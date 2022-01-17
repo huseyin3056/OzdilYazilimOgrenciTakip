@@ -34,6 +34,7 @@
     <Reference Include="DevExpress.Data.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -53,9 +54,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\DokumSekli.cs" />
+    <Compile Include="Enums\DosyaTuru.cs" />
+    <Compile Include="Enums\EvetHayir.cs" />
+    <Compile Include="Enums\HizmetTipi.cs" />
     <Compile Include="Enums\IslemTuru.cs" />
     <Compile Include="Enums\KartTuru.cs" />
+    <Compile Include="Enums\OzelKodTuru.cs" />
+    <Compile Include="Enums\RaporuKagidaSigdirmaTuru.cs" />
     <Compile Include="Enums\VeriDegisimYeri.cs" />
+    <Compile Include="Enums\YazdirmaYonu.cs" />
     <Compile Include="Functions\EnumFunctions.cs" />
     <Compile Include="Message\Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
