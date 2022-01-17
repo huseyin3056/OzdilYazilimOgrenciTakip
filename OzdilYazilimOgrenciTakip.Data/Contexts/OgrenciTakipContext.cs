@@ -52,6 +52,8 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<Hizmet> Hizmet { get; set; }
         public DbSet<OzelKod> OzelKod { get; set; }
         public DbSet<Kasa> Kasa { get; set; }
+        public DbSet<Banka> Banka { get; set; }
+        public DbSet<BankaSube> BankaSube { get; set; }
 
 
 

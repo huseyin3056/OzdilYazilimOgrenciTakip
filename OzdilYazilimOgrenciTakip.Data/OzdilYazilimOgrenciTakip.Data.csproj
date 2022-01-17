@@ -52,6 +52,10 @@
   <ItemGroup>
     <Compile Include="Contexts\BaseDbContext.cs" />
     <Compile Include="Contexts\OgrenciTakipContext.cs" />
+    <Compile Include="Migrations\202201171543033_InitialCreate4.cs" />
+    <Compile Include="Migrations\202201171543033_InitialCreate4.Designer.cs">
+      <DependentUpon>202201171543033_InitialCreate4.cs</DependentUpon>
+    </Compile>
     <Compile Include="OgrenciTakipMigration\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -63,6 +67,12 @@
       <Project>{830ED624-1D04-414C-AC5A-E10234953679}</Project>
       <Name>OzdilYazilimOgrenciTakip.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202201171543033_InitialCreate4.resx">
+      <DependentUpon>202201171543033_InitialCreate4.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

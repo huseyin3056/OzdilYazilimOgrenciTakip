@@ -1,4 +1,5 @@
 ﻿using System;
+using DevExpress.XtraDataLayout;
 using DevExpress.XtraEditors;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Model.Dto;
@@ -7,44 +8,47 @@ using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
 
-namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms
+namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms
 {
-    public partial class KasaEditForm :BaseEditForm
+    public partial class BankaEditForm : BaseEditForm
     {
-        public KasaEditForm()
+        public BankaEditForm()
         {
             InitializeComponent();
 
             DataLayoutControl = myDataLayoutControl;
-            Bll = new KasaBll(myDataLayoutControl);
-            BaseKartTuru = Common.Enums.KartTuru.Kasa;
+            Bll = new BankaBll(myDataLayoutControl);
+            BaseKartTuru = Common.Enums.KartTuru.Banka;
             EventsLoad();
+
+
         }
+
 
 
         protected internal override void Yukle()
         {
-            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new KasaS() : ((KasaBll)Bll).Single(FilterFunctions.Filter<Kasa>(Id));
+            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new BankaS() : ((BankaBll)Bll).Single(FilterFunctions.Filter<Banka>(Id));
             NesneyiKontrollereBagla();
 
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            txtKod.Text = ((KasaBll)Bll).YeniKodVer(x=>x.SubeId==AnaForm.SubeId&&x.DonemId==AnaForm.DonemId);
-            txtKasaAdi.Focus();
+            txtKod.Text = ((BankaBll)Bll).YeniKodVer();
+            txtBankaAdi.Focus();
 
 
         }
 
         protected override void NesneyiKontrollereBagla()
         {
-            var entity = (KasaS)OldEntity;
+            var entity = (BankaS)OldEntity;
 
             txtKod.Text = entity.Kod;
-            txtKasaAdi.Text = entity.KasaAdi;
+            txtBankaAdi.Text = entity.BankaAdi;
             txtOzelKod1.Id = entity.OzelKod1Id;
             txtOzelKod1.Text = entity.OzelKod1Adi;
             txtOzelKod2.Id = entity.OzelKod2Id;
-            txtOzelKod2.Text = entity.OzelKod2Adi;     
+            txtOzelKod2.Text = entity.OzelKod2Adi;
             txtAciklama.Text = entity.Aciklama;
             tglDurum.IsOn = entity.Durum;
 
@@ -52,15 +56,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms
 
         protected override void GuncelNesneOlustur()
         {
-            CurrentEntity = new Kasa
+            CurrentEntity = new Banka
             {
                 Id = Id,
                 Kod = txtKod.Text,
-                KasaAdi = txtKasaAdi.Text,
+                BankaAdi = txtBankaAdi.Text,
                 OzelKod1Id = txtOzelKod1.Id,
-                OzelKod2Id = txtOzelKod2.Id,
-                SubeId=AnaForm.SubeId,
-                DonemId=AnaForm.DonemId,
+                OzelKod2Id = txtOzelKod2.Id,             
                 Aciklama = txtAciklama.Text,
                 Durum = tglDurum.IsOn
 
@@ -71,16 +73,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms
 
         }
 
-        protected override bool EntityInsert()
-        {
-            return ((KasaBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId);
-
-        }
-        protected override bool EntityUpdate()
-        {
-            return ((KasaBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId);
-
-        }
 
 
         protected override void SecimYap(object sender)
@@ -90,16 +82,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms
             using (var sec = new SelectFunctions())
             {
                 if (sender == txtOzelKod1)
-                    sec.Sec(txtOzelKod1,Common.Enums.KartTuru.Kasa);
+                    sec.Sec(txtOzelKod1, Common.Enums.KartTuru.Banka);
 
-              else  if (sender == txtOzelKod2)
-                    sec.Sec(txtOzelKod2, Common.Enums.KartTuru.Kasa);
+                else if (sender == txtOzelKod2)
+                    sec.Sec(txtOzelKod2, Common.Enums.KartTuru.Banka);
 
 
             }
         }
 
-      
+
+
 
 
     }
