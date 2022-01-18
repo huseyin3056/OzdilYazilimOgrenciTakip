@@ -102,7 +102,7 @@ namespace OzdilYazilimOgrenciTakip.Dal.Base
                 {
                     kod += kodDizi[i];
                     if (i + 1 < kodDizi.Length - 1)
-                        kod += " ";
+                        kod += "";
 
                 }
                 return kod += "-0001";

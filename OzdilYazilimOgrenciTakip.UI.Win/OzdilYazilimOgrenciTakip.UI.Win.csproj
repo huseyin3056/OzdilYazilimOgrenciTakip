@@ -35,21 +35,27 @@
   <ItemGroup>
     <Reference Include="DevExpress.Charts.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.DataAccess.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v21.1.Drawing, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.PivotGrid.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.RichEdit.v21.1.Export, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Sparkline.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -118,6 +124,18 @@
     </Compile>
     <Compile Include="Forms\BankaForms\BankaListForm.Designer.cs">
       <DependentUpon>BankaListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BankaHesapForms\BankaHesapEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BankaHesapForms\BankaHesapEditForm.Designer.cs">
+      <DependentUpon>BankaHesapEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BankaHesapForms\BankaHesapListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BankaHesapForms\BankaHesapListForm.Designer.cs">
+      <DependentUpon>BankaHesapListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\BankaSubeForms\BankaSubeEditForm.cs">
       <SubType>Form</SubType>
@@ -310,6 +328,18 @@
     </Compile>
     <Compile Include="Forms\MeslekForms\MeslekListForm.Designer.cs">
       <DependentUpon>MeslekListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OdemeTuruForms\OdemeTuruEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OdemeTuruForms\OdemeTuruEditForm.Designer.cs">
+      <DependentUpon>OdemeTuruEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OdemeTuruForms\OdemeTuruListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OdemeTuruForms\OdemeTuruListForm.Designer.cs">
+      <DependentUpon>OdemeTuruListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OkulForms\OkulEditForm.cs">
       <SubType>Form</SubType>
@@ -564,6 +594,12 @@
     <EmbeddedResource Include="Forms\BankaForms\BankaListForm.resx">
       <DependentUpon>BankaListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BankaHesapForms\BankaHesapEditForm.resx">
+      <DependentUpon>BankaHesapEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BankaHesapForms\BankaHesapListForm.resx">
+      <DependentUpon>BankaHesapListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BankaSubeForms\BankaSubeEditForm.resx">
       <DependentUpon>BankaSubeEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -659,6 +695,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MeslekForms\MeslekListForm.resx">
       <DependentUpon>MeslekListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OdemeTuruForms\OdemeTuruEditForm.resx">
+      <DependentUpon>OdemeTuruEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OdemeTuruForms\OdemeTuruListForm.resx">
+      <DependentUpon>OdemeTuruListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OkulForms\OkulEditForm.resx">
       <DependentUpon>OkulEditForm.cs</DependentUpon>

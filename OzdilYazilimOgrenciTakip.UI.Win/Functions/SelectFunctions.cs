@@ -1,6 +1,9 @@
 ﻿using System;
 using OzdilYazilimOgrenciTakip.Common.Enums;
+using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaSubeForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetTuruForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IlceForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IlForms;
@@ -138,6 +141,28 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                         {
                             _btnEdit.Id = entity.Id;
                             _btnEdit.EditValue = entity.OzelKodAdi;
+                        }
+                    }
+                    break;
+
+                case "txtBanka":
+                    {
+                        var entity = (BankaL)ShowListForms<BankaListForm>.ShowDialogListForm(KartTuru.Banka, _btnEdit.Id);
+                        if (entity != null)
+                        {
+                            _btnEdit.Id = entity.Id;
+                            _btnEdit.EditValue = entity.BankaAdi;
+                        }
+                    }
+                    break;
+
+                case "txtBankaSube":
+                    {
+                        var entity = (BankaSube)ShowListForms<BankaSubeListForm>.ShowDialogListForm(KartTuru.BankaSube, _btnEdit.Id, _prmEdit.Id, _prmEdit.Text);
+                        if (entity != null)
+                        {
+                            _btnEdit.Id = entity.Id;
+                            _btnEdit.EditValue = entity.SubeAdi;
                         }
                     }
                     break;

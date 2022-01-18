@@ -95,7 +95,14 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         Avukat = 27,
 
         [Description("Cari   Kartı")]
-        Cari = 28
+        Cari = 28,
+
+        [Description("Ödeme Türü   Kartı")]
+        OdemeTuru = 29,
+
+
+        [Description("Banka Hesap   Kartı")]
+        BankaHesap = 30
 
 
 

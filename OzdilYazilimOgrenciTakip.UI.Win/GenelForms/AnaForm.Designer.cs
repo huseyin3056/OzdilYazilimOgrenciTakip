@@ -54,12 +54,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnKasaKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnBankaKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnAvukatKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCariKartlar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOdemeTuruKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.btnCariKartlar = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBankaHesapKartlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -93,9 +95,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnKasaKartlari,
             this.btnBankaKartlari,
             this.btnAvukatKartlari,
-            this.btnCariKartlar});
+            this.btnCariKartlar,
+            this.btnOdemeTuruKartlari,
+            this.btnBankaHesapKartlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 25;
+            this.ribbonControl1.MaxItemId = 27;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -240,6 +244,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnAvukatKartlari.Id = 23;
             this.btnAvukatKartlari.Name = "btnAvukatKartlari";
             // 
+            // btnCariKartlar
+            // 
+            this.btnCariKartlar.Caption = "Cari Kartlar";
+            this.btnCariKartlar.Id = 24;
+            this.btnCariKartlar.Name = "btnCariKartlar";
+            // 
+            // btnOdemeTuruKartlari
+            // 
+            this.btnOdemeTuruKartlari.Caption = "Ödeme Türü Kartları";
+            this.btnOdemeTuruKartlari.Id = 25;
+            this.btnOdemeTuruKartlari.Name = "btnOdemeTuruKartlari";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -273,6 +289,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPageGroup1.ItemLinks.Add(this.btnBankaKartlari);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnAvukatKartlari);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnCariKartlar);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnOdemeTuruKartlari);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnBankaHesapKartlari);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonStatusBar1
@@ -291,11 +309,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             this.xtraTabbedMdiManager.MdiParent = this;
             // 
-            // btnCariKartlar
+            // btnBankaHesapKartlari
             // 
-            this.btnCariKartlar.Caption = "Cari Kartlar";
-            this.btnCariKartlar.Id = 24;
-            this.btnCariKartlar.Name = "btnCariKartlar";
+            this.btnBankaHesapKartlari.Caption = "Banka Hesap Kartları";
+            this.btnBankaHesapKartlari.Id = 26;
+            this.btnBankaHesapKartlari.Name = "btnBankaHesapKartlari";
             // 
             // AnaForm
             // 
@@ -349,5 +367,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private DevExpress.XtraBars.BarButtonItem btnBankaKartlari;
         private DevExpress.XtraBars.BarButtonItem btnAvukatKartlari;
         private DevExpress.XtraBars.BarButtonItem btnCariKartlar;
+        private DevExpress.XtraBars.BarButtonItem btnOdemeTuruKartlari;
+        private DevExpress.XtraBars.BarButtonItem btnBankaHesapKartlari;
     }
 }

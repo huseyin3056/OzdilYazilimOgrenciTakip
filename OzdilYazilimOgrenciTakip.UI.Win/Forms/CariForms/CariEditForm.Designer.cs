@@ -47,6 +47,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             DevExpress.XtraLayout.RowDefinition rowDefinition13 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition14 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
+            this.txtEmail = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyEmailTextEdit();
+            this.txtTcKimlikNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyTcKimlikNoTextEdit();
             this.tglDurum = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyToggleSwitch();
             this.txtAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyMemoEdit();
             this.txtOzelKod2 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyButtonEdit();
@@ -78,13 +80,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtTcKimlikNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyTcKimlikNoTextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtEmail = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyEmailTextEdit();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTcKimlikNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tglDurum.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod2.Properties)).BeginInit();
@@ -116,9 +118,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTcKimlikNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,6 +163,53 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.myDataLayoutControl.Size = new System.Drawing.Size(494, 367);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.EnterMoveNextControl = true;
+            this.txtEmail.Location = new System.Drawing.Point(83, 180);
+            this.txtEmail.MenuManager = this.ribbonControl;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtEmail.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtEmail.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Strong;
+            this.txtEmail.Properties.Mask.EditMask = "((([0-9a-zA-Z_%-])+[.])+|([0-9a-zA-Z_%-])+)+@((([0-9a-zA-Z_-])+[.])+|([0-9a-zA-Z_" +
+    "-])+)+";
+            this.txtEmail.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txtEmail.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.txtEmail.Properties.MaskSettings.Set("allowBlankInput", true);
+            this.txtEmail.Properties.MaskSettings.Set("mask", "((([0-9a-zA-Z_%-])+[.])+|([0-9a-zA-Z_%-])+)+@((([0-9a-zA-Z_-])+[.])+|([0-9a-zA-Z_" +
+        "-])+)+");
+            this.txtEmail.Properties.MaskSettings.Set("isAutoComplete", true);
+            this.txtEmail.Properties.MaskSettings.Set("isOptimistic", false);
+            this.txtEmail.Properties.MaxLength = 50;
+            this.txtEmail.Size = new System.Drawing.Size(209, 20);
+            this.txtEmail.StatusBarAciklama = "Email  Giriniz";
+            this.txtEmail.StyleController = this.myDataLayoutControl;
+            this.txtEmail.TabIndex = 8;
+            // 
+            // txtTcKimlikNo
+            // 
+            this.txtTcKimlikNo.EnterMoveNextControl = true;
+            this.txtTcKimlikNo.Location = new System.Drawing.Point(83, 60);
+            this.txtTcKimlikNo.MenuManager = this.ribbonControl;
+            this.txtTcKimlikNo.Name = "txtTcKimlikNo";
+            this.txtTcKimlikNo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtTcKimlikNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtTcKimlikNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtTcKimlikNo.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtTcKimlikNo.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtTcKimlikNo.Properties.Mask.EditMask = "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d? ";
+            this.txtTcKimlikNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+            this.txtTcKimlikNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.txtTcKimlikNo.Properties.MaskSettings.Set("mask", "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d? ");
+            this.txtTcKimlikNo.Properties.MaskSettings.Set("isAutoComplete", false);
+            this.txtTcKimlikNo.Properties.MaskSettings.Set("isOptimistic", false);
+            this.txtTcKimlikNo.Properties.MaxLength = 50;
+            this.txtTcKimlikNo.Size = new System.Drawing.Size(125, 20);
+            this.txtTcKimlikNo.StatusBarAciklama = "TC No Giriniz";
+            this.txtTcKimlikNo.StyleController = this.myDataLayoutControl;
+            this.txtTcKimlikNo.TabIndex = 1;
             // 
             // tglDurum
             // 
@@ -299,6 +346,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.txtfaks.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtfaks.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtfaks.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtfaks.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtfaks.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtfaks.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtfaks.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtfaks.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtfaks.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -319,6 +369,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.txtTelefon4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtTelefon4.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtTelefon4.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtTelefon4.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtTelefon4.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtTelefon4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtTelefon4.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtTelefon4.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtTelefon4.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -339,6 +392,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.txtTelefon3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtTelefon3.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtTelefon3.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtTelefon3.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtTelefon3.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtTelefon3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtTelefon3.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtTelefon3.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtTelefon3.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -359,6 +415,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.txtTelefon2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtTelefon2.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtTelefon2.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtTelefon2.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtTelefon2.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtTelefon2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtTelefon2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtTelefon2.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtTelefon2.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -379,6 +438,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.txtTelefon1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtTelefon1.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtTelefon1.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtTelefon1.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtTelefon1.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtTelefon1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtTelefon1.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtTelefon1.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtTelefon1.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -690,26 +752,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.layoutControlItem14.Text = "Özel Kod-1";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(59, 13);
             // 
-            // txtTcKimlikNo
-            // 
-            this.txtTcKimlikNo.EnterMoveNextControl = true;
-            this.txtTcKimlikNo.Location = new System.Drawing.Point(83, 60);
-            this.txtTcKimlikNo.MenuManager = this.ribbonControl;
-            this.txtTcKimlikNo.Name = "txtTcKimlikNo";
-            this.txtTcKimlikNo.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtTcKimlikNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtTcKimlikNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtTcKimlikNo.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtTcKimlikNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
-            this.txtTcKimlikNo.Properties.MaskSettings.Set("mask", "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d? ");
-            this.txtTcKimlikNo.Properties.MaskSettings.Set("isAutoComplete", false);
-            this.txtTcKimlikNo.Properties.MaskSettings.Set("isOptimistic", false);
-            this.txtTcKimlikNo.Properties.MaxLength = 50;
-            this.txtTcKimlikNo.Size = new System.Drawing.Size(125, 20);
-            this.txtTcKimlikNo.StatusBarAciklama = "TC No Giriniz";
-            this.txtTcKimlikNo.StyleController = this.myDataLayoutControl;
-            this.txtTcKimlikNo.TabIndex = 17;
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -721,26 +763,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.layoutControlItem3.Size = new System.Drawing.Size(200, 24);
             this.layoutControlItem3.Text = "TC Kimlik No";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(59, 13);
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.EnterMoveNextControl = true;
-            this.txtEmail.Location = new System.Drawing.Point(83, 180);
-            this.txtEmail.MenuManager = this.ribbonControl;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtEmail.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtEmail.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
-            this.txtEmail.Properties.MaskSettings.Set("allowBlankInput", true);
-            this.txtEmail.Properties.MaskSettings.Set("mask", "((([0-9a-zA-Z_%-])+[.])+|([0-9a-zA-Z_%-])+)+@((([0-9a-zA-Z_-])+[.])+|([0-9a-zA-Z_" +
-        "-])+)+");
-            this.txtEmail.Properties.MaskSettings.Set("isAutoComplete", true);
-            this.txtEmail.Properties.MaskSettings.Set("isOptimistic", false);
-            this.txtEmail.Properties.MaxLength = 50;
-            this.txtEmail.Size = new System.Drawing.Size(209, 20);
-            this.txtEmail.StatusBarAciklama = "Email  Giriniz";
-            this.txtEmail.StyleController = this.myDataLayoutControl;
-            this.txtEmail.TabIndex = 18;
             // 
             // layoutControlItem10
             // 
@@ -769,6 +791,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTcKimlikNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tglDurum.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod2.Properties)).EndInit();
@@ -800,9 +824,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTcKimlikNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
