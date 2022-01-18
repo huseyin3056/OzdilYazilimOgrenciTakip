@@ -52,6 +52,7 @@
     <Compile Include="Attributes\ZorunluAlan.cs" />
     <Compile Include="Dto\AvukatDto.cs" />
     <Compile Include="Dto\BankaDto.cs" />
+    <Compile Include="Dto\CariDto.cs" />
     <Compile Include="Dto\HizmetDto.cs" />
     <Compile Include="Dto\KasaDto.cs" />
     <Compile Include="Dto\OkulDto.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="Entities\Base\BaseEntity.cs" />
     <Compile Include="Entities\Base\BaseEntityDurum.cs" />
     <Compile Include="Entities\Base\BaseHareketEntity.cs" />
+    <Compile Include="Entities\Cari.cs" />
     <Compile Include="Entities\Donem.cs" />
     <Compile Include="Entities\Evrak.cs" />
     <Compile Include="Entities\Filtre.cs" />

@@ -14,8 +14,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls
         public MyEmailTextEdit()
         {
             Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
-            Properties.Mask.EditMask = @"((([0-9a-zA-Z_%-])+[.])+|([0-9a-zA-Z_%-])+)+@((([0-9a-zA-Z_-]) +[.])+|([0-9a-zA-Z_-])+)+ ";
-
+          //  Properties.Mask.EditMask = @"((([0-9a-zA-Z_%-])+[.])+|([0-9a-zA-Z_%-])+)+@((([0-9a-zA-Z_-]) +[.])+|([0-9a-zA-Z_-])+)+ ";
+            Properties.Mask.EditMask = @"((([0-9a-zA-Z_%-])+[.])+|([0-9a-zA-Z_%-])+)+@((([0-9a-zA-Z_-])+[.])+|([0-9a-zA-Z_-])+)+";
+            //   ((([0-9a-zA-Z_%-])+[.])+|([0-9a-zA-Z_%-])+)+@((([0-9a-zA-Z_-])+[.])+|([0-9a-zA-Z_-])+)+
             Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Strong;
 
             StatusBarAciklama = "Email  Giriniz";
