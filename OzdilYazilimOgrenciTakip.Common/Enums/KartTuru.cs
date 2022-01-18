@@ -7,24 +7,24 @@ using System.ComponentModel;
 
 namespace OzdilYazilimOgrenciTakip.Common.Enums
 {
-   public enum KartTuru: byte
+    public enum KartTuru : byte
     {
         [Description("Okul Kartı")]
-        Okul=1,
+        Okul = 1,
         [Description("İl Kartı")]
-        Il =2,
+        Il = 2,
         [Description("İlçe Kartı")]
-        Ilce =3,
+        Ilce = 3,
 
         [Description("Filtre Kartı")]
-        Filtre=4,
+        Filtre = 4,
 
         [Description("Aile Bilgi Kartı")]
-        AileBilgi =5,
+        AileBilgi = 5,
 
 
         [Description("İptal Nedeni Kartı")]
-        IptalNedeni =6,
+        IptalNedeni = 6,
 
         [Description("Yabancı Dil Kartı")]
         YabanciDil = 7,
@@ -60,7 +60,7 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
 
 
         [Description("Evrak Kartı")]
-        Evrak= 17,
+        Evrak = 17,
 
         [Description("Promosyon Kartı")]
         Promosyon = 18,
@@ -82,7 +82,7 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         OzelKod = 23,
 
         [Description("Kasa  Kartı")]
-        Kasa= 24,
+        Kasa = 24,
 
         [Description("Banka  Kartı")]
         Banka = 25,
@@ -101,8 +101,12 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         OdemeTuru = 29,
 
 
-        [Description("Banka Hesap   Kartı")]
-        BankaHesap = 30
+        [Description("Banka Hesap  Kartı")]
+        BankaHesap = 30,
+
+
+        [Description("İletişim Kartı")]
+        Iletisim = 31
 
 
 
