@@ -109,7 +109,10 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         Iletisim = 31,
 
         [Description("Öğrenci Kartı")]
-        Ogrenci = 32
+        Ogrenci = 32,
+
+        [Description("İndirim Kartı")]
+        Indirim = 33
 
 
 
