@@ -13,6 +13,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         private static void RemoveEvents()
         {
+            if (_pictureEdit == null) return;
+
+            _pictureEdit.KeyDown -= PictureEdit_KeyDown;
+            _pictureEdit.DoubleClick -= PictureEdit_DoubleClick;
+            _pictureEdit.MouseUp -= PictureEdit_MouseUp;
+            _popupMenu.Popup -= PopupMenu_Popup;
+
+            foreach (BarItemLink link in _popupMenu.ItemLinks)
+                link.Item.ItemClick -= Buttons_ItemClick;
 
         }
 

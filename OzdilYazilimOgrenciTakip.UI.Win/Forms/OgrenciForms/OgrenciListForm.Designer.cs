@@ -65,7 +65,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(852, 109);
+            this.ribbonControl.Size = new System.Drawing.Size(998, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // btnGonder
@@ -76,9 +76,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // longNavigator
             // 
             this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.longNavigator.Location = new System.Drawing.Point(0, 390);
+            this.longNavigator.Location = new System.Drawing.Point(0, 471);
             this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(852, 24);
+            this.longNavigator.Size = new System.Drawing.Size(998, 24);
             this.longNavigator.TabIndex = 2;
             // 
             // grid
@@ -88,7 +88,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.grid.MainView = this.tablo;
             this.grid.MenuManager = this.ribbonControl;
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(852, 281);
+            this.grid.Size = new System.Drawing.Size(998, 362);
             this.grid.TabIndex = 3;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -344,10 +344,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 438);
+            this.ClientSize = new System.Drawing.Size(998, 519);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
+            this.MinimumSize = new System.Drawing.Size(1000, 520);
             this.Name = "OgrenciListForm";
             this.Text = "Öğrenci Kartları";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
