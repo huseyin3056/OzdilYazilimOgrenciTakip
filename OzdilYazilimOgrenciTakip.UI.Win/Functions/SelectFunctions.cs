@@ -4,9 +4,12 @@ using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaSubeForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.GorevForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetTuruForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IlceForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IlForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IsyeriForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.MeslekForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.OzelKodForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.SinifGrupForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
@@ -47,6 +50,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             switch (_btnEdit.Name)
             {
                 case "txtIl":
+                case "txtEvAdresIl":
+                case "txtIsAdresIl":
+                case "txtKimlikIl":
                     {
                         var entity =(Il)ShowListForms<IlListForm>.ShowDialogListForm(KartTuru.Il, _btnEdit.Id);
                         if(entity!=null)
@@ -58,6 +64,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                     break;
 
                 case "txtIlce":
+                case "txtEvAdresIlce":
+                case "txtIsAdresIlce":
+                case "txtKimlikIlce":
                     {
                         var entity = (Ilce)ShowListForms<IlceListForm>.ShowDialogListForm(KartTuru.Ilce, _btnEdit.Id, _prmEdit.Id,_prmEdit.Text);
                         if (entity != null)
@@ -163,6 +172,39 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                         {
                             _btnEdit.Id = entity.Id;
                             _btnEdit.EditValue = entity.SubeAdi;
+                        }
+                    }
+                    break;
+
+                case "txtMeslek":
+                    {
+                        var entity = (Meslek)ShowListForms<MeslekListForm>.ShowDialogListForm(KartTuru.Meslek, _btnEdit.Id);
+                        if (entity != null)
+                        {
+                            _btnEdit.Id = entity.Id;
+                            _btnEdit.EditValue = entity.MeslekAdi;
+                        }
+                    }
+                    break;
+
+                case "txtIsyeri":
+                    {
+                        var entity = (Isyeri)ShowListForms<IsyeriListForm>.ShowDialogListForm(KartTuru.Isyeri, _btnEdit.Id);
+                        if (entity != null)
+                        {
+                            _btnEdit.Id = entity.Id;
+                            _btnEdit.EditValue = entity.IsyeriAdi;
+                        }
+                    }
+                    break;
+
+                case "txtGorev":
+                    {
+                        var entity = (Gorev)ShowListForms<GorevListForm>.ShowDialogListForm(KartTuru.Gorev, _btnEdit.Id);
+                        if (entity != null)
+                        {
+                            _btnEdit.Id = entity.Id;
+                            _btnEdit.EditValue = entity.GorevAdi;
                         }
                     }
                     break;

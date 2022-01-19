@@ -79,6 +79,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imageList1616 = new System.Windows.Forms.ImageList(this.components);
+            this.btnIletisimKartlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -115,9 +116,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnAvukatKartlari,
             this.btnCariKartlar,
             this.btnOdemeTuruKartlari,
-            this.btnBankaHesapKartlari});
+            this.btnBankaHesapKartlari,
+            this.btnIletisimKartlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 27;
+            this.ribbonControl1.MaxItemId = 28;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -325,6 +327,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPageGroup1.ItemLinks.Add(this.btnAileBilgiKartlari);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnIptalNedeniKartlari);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnYabanciDilKartlari);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnIletisimKartlari);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Genel";
             // 
@@ -460,6 +463,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.imageList1616.Images.SetKeyName(12, "icons8_students_48px.png");
             this.imageList1616.Images.SetKeyName(13, "icons8_training_48px.png");
             // 
+            // btnIletisimKartlari
+            // 
+            this.btnIletisimKartlari.Caption = "İletişim Kartları";
+            this.btnIletisimKartlari.Id = 27;
+            this.btnIletisimKartlari.Name = "btnIletisimKartlari";
+            // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -531,5 +540,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private System.Windows.Forms.ImageList imageList1616;
+        private DevExpress.XtraBars.BarButtonItem btnIletisimKartlari;
     }
 }

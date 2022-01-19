@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevExpress.XtraEditors;
+﻿using System.ComponentModel;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls
 {
-  public  class MyIbanTextEdit: MyTextEdit
+    public  class MyIbanTextEdit: MyTextEdit
     {
         [ToolboxItem(true)]
         public MyIbanTextEdit()
