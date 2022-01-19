@@ -32,7 +32,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected BarItem[] HideItems;
         protected internal IslemTuru BaseIslemTuru;
         protected internal long Id;
-        protected internal bool RefreshYapilacak; 
+        protected internal bool RefreshYapilacak;
         #endregion
 
         public BaseEditForm()
@@ -60,6 +60,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                 control.KeyDown += Control_KeyDown;
                 control.GotFocus += Control_GotFocus;
                 control.Leave += Control_Leave;
+                control.Enter += Control_Enter;
+
 
                 switch (control)
                 {
@@ -102,6 +104,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
 
         }
+
+        protected virtual void  Control_Enter(object sender, EventArgs e) { }
 
         protected virtual void FiltreUygula() { }
 
@@ -227,7 +231,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             IsLoaded = true;
             GuncelNesneOlustur();
             SablonYukle();
-             ButonGizleGoster();
+            ButonGizleGoster();
 
 
             // Güncelleme Yapılacak
@@ -238,7 +242,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         private void ButonGizleGoster()
         {
-          
+
             ShowItems?.ForEach(x => x.Visibility = BarItemVisibility.Always);
             HideItems?.ForEach(x => x.Visibility = BarItemVisibility.Never);
 
@@ -313,14 +317,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             Yukle();
             if (Kaydet(true))
                 Close();
-           
+
         }
 
         protected virtual void BaskiOnizleme() { }
 
-        protected virtual void Yazdir() 
-        { 
-           
+        protected virtual void Yazdir()
+        {
+
         }
 
         protected virtual void SecimYap(object sender) { }

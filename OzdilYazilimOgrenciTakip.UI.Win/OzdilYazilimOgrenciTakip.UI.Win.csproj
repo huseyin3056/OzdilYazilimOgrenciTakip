@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="DevExpress.Charts.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -67,9 +68,12 @@
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -347,6 +351,18 @@
     <Compile Include="Forms\OdemeTuruForms\OdemeTuruListForm.Designer.cs">
       <DependentUpon>OdemeTuruListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\OgrenciForms\OgrenciEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OgrenciForms\OgrenciEditForm.Designer.cs">
+      <DependentUpon>OgrenciEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\OgrenciForms\OgrenciListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OgrenciForms\OgrenciListForm.Designer.cs">
+      <DependentUpon>OgrenciListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\OkulForms\OkulEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -471,6 +487,7 @@
     <Compile Include="Functions\FilterFunctions.cs" />
     <Compile Include="Functions\GeneralFunctions.cs" />
     <Compile Include="Functions\SelectFunctions.cs" />
+    <Compile Include="Functions\SelectPictureFunctions.cs" />
     <Compile Include="Functions\TablePrintingFunctions.cs" />
     <Compile Include="GenelForms\AnaForm.cs">
       <SubType>Form</SubType>
@@ -714,6 +731,12 @@
     <EmbeddedResource Include="Forms\OdemeTuruForms\OdemeTuruListForm.resx">
       <DependentUpon>OdemeTuruListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OgrenciForms\OgrenciEditForm.resx">
+      <DependentUpon>OgrenciEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OgrenciForms\OgrenciListForm.resx">
+      <DependentUpon>OgrenciListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\OkulForms\OkulEditForm.resx">
       <DependentUpon>OkulEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -804,6 +827,9 @@
       <DependentUpon>SmallNavigator.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\OzdilYazilimOgrenciTakip.Model.Dto.OgrenciL.datasource" />
+    <None Include="Properties\DataSources\OzdilYazilimOgrenciTakip.Model.Dto.OgrenciS.datasource" />
+    <None Include="Properties\DataSources\OzdilYazilimOgrenciTakip.Model.Entities.Ogrenci.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

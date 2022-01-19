@@ -56,6 +56,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             DevExpress.XtraLayout.RowDefinition rowDefinition17 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition18 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
+            this.txtKartNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyCardEdit();
             this.myTelefonNoTextEdit6 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyTelefonNoTextEdit();
             this.txtAnaAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyTextEdit();
             this.txtAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyMemoEdit();
@@ -147,11 +148,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.layoutControlItem44 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem38 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem46 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtKartNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyCardEdit();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKartNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myTelefonNoTextEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAnaAdi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
@@ -245,7 +246,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKartNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             this.SuspendLayout();
             // 
@@ -319,6 +319,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.myDataLayoutControl.Size = new System.Drawing.Size(748, 466);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
+            // 
+            // txtKartNo
+            // 
+            this.txtKartNo.EnterMoveNextControl = true;
+            this.txtKartNo.Location = new System.Drawing.Point(112, 252);
+            this.txtKartNo.MenuManager = this.ribbonControl;
+            this.txtKartNo.Name = "txtKartNo";
+            this.txtKartNo.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtKartNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.txtKartNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtKartNo.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtKartNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.txtKartNo.Properties.MaskSettings.Set("mask", "\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?");
+            this.txtKartNo.Properties.MaskSettings.Set("isAutoComplete", false);
+            this.txtKartNo.Properties.MaskSettings.Set("isOptimistic", false);
+            this.txtKartNo.Properties.MaxLength = 19;
+            this.txtKartNo.Size = new System.Drawing.Size(231, 20);
+            this.txtKartNo.StatusBarAciklama = "Kart No Giriniz";
+            this.txtKartNo.StyleController = this.myDataLayoutControl;
+            this.txtKartNo.TabIndex = 14;
             // 
             // myTelefonNoTextEdit6
             // 
@@ -1827,26 +1847,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.layoutControlItem46.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem46.TextVisible = false;
             // 
-            // txtKartNo
-            // 
-            this.txtKartNo.EnterMoveNextControl = true;
-            this.txtKartNo.Location = new System.Drawing.Point(112, 252);
-            this.txtKartNo.MenuManager = this.ribbonControl;
-            this.txtKartNo.Name = "txtKartNo";
-            this.txtKartNo.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtKartNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.txtKartNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
-            this.txtKartNo.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtKartNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
-            this.txtKartNo.Properties.MaskSettings.Set("mask", "\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?");
-            this.txtKartNo.Properties.MaskSettings.Set("isAutoComplete", false);
-            this.txtKartNo.Properties.MaskSettings.Set("isOptimistic", false);
-            this.txtKartNo.Properties.MaxLength = 19;
-            this.txtKartNo.Size = new System.Drawing.Size(231, 20);
-            this.txtKartNo.StatusBarAciklama = "Kart No Giriniz";
-            this.txtKartNo.StyleController = this.myDataLayoutControl;
-            this.txtKartNo.TabIndex = 14;
-            // 
             // layoutControlItem15
             // 
             this.layoutControlItem15.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
@@ -1874,6 +1874,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtKartNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myTelefonNoTextEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAnaAdi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
@@ -1967,7 +1968,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem46)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKartNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

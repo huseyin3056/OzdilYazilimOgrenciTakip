@@ -58,6 +58,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnCariKartlar = new DevExpress.XtraBars.BarButtonItem();
             this.btnOdemeTuruKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnBankaHesapKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIletisimKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -79,7 +80,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imageList1616 = new System.Windows.Forms.ImageList(this.components);
-            this.btnIletisimKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOgrenciKartlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -117,9 +118,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnCariKartlar,
             this.btnOdemeTuruKartlari,
             this.btnBankaHesapKartlari,
-            this.btnIletisimKartlari});
+            this.btnIletisimKartlari,
+            this.btnOgrenciKartlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 28;
+            this.ribbonControl1.MaxItemId = 29;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -292,6 +294,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnBankaHesapKartlari.Id = 26;
             this.btnBankaHesapKartlari.Name = "btnBankaHesapKartlari";
             // 
+            // btnIletisimKartlari
+            // 
+            this.btnIletisimKartlari.Caption = "İletişim Kartları";
+            this.btnIletisimKartlari.Id = 27;
+            this.btnIletisimKartlari.Name = "btnIletisimKartlari";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -304,6 +312,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             // ribbonPageGroup9
             // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnOgrenciKartlari);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Öğrenci";
             // 
@@ -463,11 +472,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.imageList1616.Images.SetKeyName(12, "icons8_students_48px.png");
             this.imageList1616.Images.SetKeyName(13, "icons8_training_48px.png");
             // 
-            // btnIletisimKartlari
+            // btnOgrenciKartlari
             // 
-            this.btnIletisimKartlari.Caption = "İletişim Kartları";
-            this.btnIletisimKartlari.Id = 27;
-            this.btnIletisimKartlari.Name = "btnIletisimKartlari";
+            this.btnOgrenciKartlari.Caption = "Öğrenci Kartları";
+            this.btnOgrenciKartlari.Id = 28;
+            this.btnOgrenciKartlari.Name = "btnOgrenciKartlari";
             // 
             // AnaForm
             // 
@@ -541,5 +550,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private System.Windows.Forms.ImageList imageList1616;
         private DevExpress.XtraBars.BarButtonItem btnIletisimKartlari;
+        private DevExpress.XtraBars.BarButtonItem btnOgrenciKartlari;
     }
 }

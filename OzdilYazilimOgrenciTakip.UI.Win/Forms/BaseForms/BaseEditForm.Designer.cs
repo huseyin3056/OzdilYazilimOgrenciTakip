@@ -29,18 +29,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
+            this.components = new System.ComponentModel.Container();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem5 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip6 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip8 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem8 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem8 = new DevExpress.Utils.ToolTipItem();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnyeni = new DevExpress.XtraBars.BarButtonItem();
             this.btnKaydet = new DevExpress.XtraBars.BarButtonItem();
@@ -58,7 +59,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.resimMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.btnResimEkle = new DevExpress.XtraBars.BarButtonItem();
+            this.btnResimSil = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -80,9 +85,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnYazdir,
             this.btnBaskiOnIzleme,
             this.btnUygula,
-            this.btnFarkliKaydet});
+            this.btnFarkliKaydet,
+            this.btnResimEkle,
+            this.btnResimSil});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 14;
+            this.ribbonControl.MaxItemId = 16;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -106,13 +113,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnyeni.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.addfile_32x32;
             this.btnyeni.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Insert));
             this.btnyeni.Name = "btnyeni";
-            toolTipTitleItem1.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
-            toolTipTitleItem1.Text = "(Insert)";
-            toolTipItem1.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
-            toolTipItem1.Text = "Yeni";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.btnyeni.SuperTip = superToolTip1;
+            toolTipTitleItem5.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
+            toolTipTitleItem5.Text = "(Insert)";
+            toolTipItem5.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
+            toolTipItem5.Text = "Yeni";
+            superToolTip5.Items.Add(toolTipTitleItem5);
+            superToolTip5.Items.Add(toolTipItem5);
+            this.btnyeni.SuperTip = superToolTip5;
             // 
             // btnKaydet
             // 
@@ -122,11 +129,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnKaydet.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.save_32x32;
             this.btnKaydet.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F2);
             this.btnKaydet.Name = "btnKaydet";
-            toolTipTitleItem2.Text = "Kaydet";
-            toolTipItem2.Text = "Kaydet";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.btnKaydet.SuperTip = superToolTip2;
+            toolTipTitleItem6.Text = "Kaydet";
+            toolTipItem6.Text = "Kaydet";
+            superToolTip6.Items.Add(toolTipTitleItem6);
+            superToolTip6.Items.Add(toolTipItem6);
+            this.btnKaydet.SuperTip = superToolTip6;
             // 
             // btnGeriAl
             // 
@@ -210,13 +217,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnUygula.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.insertrangefilter_32x32;
             this.btnUygula.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.F8);
             this.btnUygula.Name = "btnUygula";
-            toolTipTitleItem3.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
-            toolTipTitleItem3.Text = "(F8)";
-            toolTipItem3.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
-            toolTipItem3.Text = "Filtrele";
-            superToolTip3.Items.Add(toolTipTitleItem3);
-            superToolTip3.Items.Add(toolTipItem3);
-            this.btnUygula.SuperTip = superToolTip3;
+            toolTipTitleItem7.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
+            toolTipTitleItem7.Text = "(F8)";
+            toolTipItem7.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
+            toolTipItem7.Text = "Filtrele";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            superToolTip7.Items.Add(toolTipItem7);
+            this.btnUygula.SuperTip = superToolTip7;
             this.btnUygula.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // btnFarkliKaydet
@@ -227,12 +234,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnFarkliKaydet.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.saveall_32x32;
             this.btnFarkliKaydet.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F2));
             this.btnFarkliKaydet.Name = "btnFarkliKaydet";
-            toolTipTitleItem4.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
-            toolTipTitleItem4.Text = "(Shift+F2)";
-            toolTipItem4.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
-            superToolTip4.Items.Add(toolTipTitleItem4);
-            superToolTip4.Items.Add(toolTipItem4);
-            this.btnFarkliKaydet.SuperTip = superToolTip4;
+            toolTipTitleItem8.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
+            toolTipTitleItem8.Text = "(Shift+F2)";
+            toolTipItem8.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
+            superToolTip8.Items.Add(toolTipTitleItem8);
+            superToolTip8.Items.Add(toolTipItem8);
+            this.btnFarkliKaydet.SuperTip = superToolTip8;
             this.btnFarkliKaydet.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // ribbonPage1
@@ -271,6 +278,29 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
+            // resimMenu
+            // 
+            this.resimMenu.ItemLinks.Add(this.btnResimEkle);
+            this.resimMenu.ItemLinks.Add(this.btnResimSil);
+            this.resimMenu.Name = "resimMenu";
+            this.resimMenu.Ribbon = this.ribbonControl;
+            // 
+            // btnResimEkle
+            // 
+            this.btnResimEkle.Caption = "Resim Ekle";
+            this.btnResimEkle.Id = 14;
+            this.btnResimEkle.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.addfile_16x16;
+            this.btnResimEkle.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.Insert);
+            this.btnResimEkle.Name = "btnResimEkle";
+            // 
+            // btnResimSil
+            // 
+            this.btnResimSil.Caption = "Resim Sil";
+            this.btnResimSil.Id = 15;
+            this.btnResimSil.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.deletelist_16x16;
+            this.btnResimSil.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.Delete);
+            this.btnResimSil.Name = "btnResimSil";
+            // 
             // BaseEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +316,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.ShowInTaskbar = false;
             this.StatusBar = this.ribbonStatusBar1;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,5 +340,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected DevExpress.XtraBars.BarButtonItem btnCikis;
         protected DevExpress.XtraBars.BarButtonItem btnUygula;
         protected DevExpress.XtraBars.BarButtonItem btnFarkliKaydet;
+        private DevExpress.XtraBars.BarButtonItem btnResimEkle;
+        private DevExpress.XtraBars.BarButtonItem btnResimSil;
+        protected DevExpress.XtraBars.PopupMenu resimMenu;
     }
 }

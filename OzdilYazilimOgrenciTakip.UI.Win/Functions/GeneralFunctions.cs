@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
@@ -205,6 +208,36 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
         {
             var settings = new PrinterSettings();
             return settings.PrinterName;
+        }
+
+        public static void ShowPopupMenu(this MouseEventArgs e, PopupMenu popupMenu)
+        {
+            if (e.Button != MouseButtons.Right) return;
+
+            popupMenu.ShowPopup(Control.MousePosition);
+        }
+
+        public static byte[] ResimYukle()
+        {
+            var dialog = new OpenFileDialog
+            {
+                Title = "Resim Seç",
+                Filter="Resim Dosyaları(*.png,*.jpg,*.bmp,*.png,*.gif) | *.png; *.jpg; *.bmp; *.png; *.gif  | Bmp Dosyaları|*.bmp | Gif Dosyaları |*.gif | Jpg Dosyaları |*.jpeg | Png Dosyaları | *.png ",
+                InitialDirectory=@"C:\"
+              
+
+            };
+
+            byte[] Resim()
+            {
+                using (var stream =new MemoryStream())
+                {
+                    Image.FromFile(dialog.FileName).Save(stream, ImageFormat.Png);
+                    return stream.ToArray();
+                }
+            }
+
+            return dialog.ShowDialog() != DialogResult.OK ? null : Resim();
         }
     }
 }
