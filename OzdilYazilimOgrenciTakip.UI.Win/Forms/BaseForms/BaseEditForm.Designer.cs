@@ -55,13 +55,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnBaskiOnIzleme = new DevExpress.XtraBars.BarButtonItem();
             this.btnUygula = new DevExpress.XtraBars.BarButtonItem();
             this.btnFarkliKaydet = new DevExpress.XtraBars.BarButtonItem();
+            this.btnResimEkle = new DevExpress.XtraBars.BarButtonItem();
+            this.btnResimSil = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.resimMenu = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.btnResimEkle = new DevExpress.XtraBars.BarButtonItem();
-            this.btnResimSil = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).BeginInit();
             this.SuspendLayout();
@@ -170,7 +170,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.statusBarAciklama.ItemAppearance.Normal.ForeColor = System.Drawing.Color.DarkBlue;
             this.statusBarAciklama.ItemAppearance.Normal.Options.UseForeColor = true;
             this.statusBarAciklama.Name = "statusBarAciklama";
-            this.statusBarAciklama.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // statusBarKisayol
             // 
@@ -242,6 +241,22 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnFarkliKaydet.SuperTip = superToolTip8;
             this.btnFarkliKaydet.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
+            // btnResimEkle
+            // 
+            this.btnResimEkle.Caption = "Resim Ekle";
+            this.btnResimEkle.Id = 14;
+            this.btnResimEkle.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.addfile_16x16;
+            this.btnResimEkle.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.Insert);
+            this.btnResimEkle.Name = "btnResimEkle";
+            // 
+            // btnResimSil
+            // 
+            this.btnResimSil.Caption = "Resim Sil";
+            this.btnResimSil.Id = 15;
+            this.btnResimSil.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.deletelist_16x16;
+            this.btnResimSil.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.Delete);
+            this.btnResimSil.Name = "btnResimSil";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -285,22 +300,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.resimMenu.Name = "resimMenu";
             this.resimMenu.Ribbon = this.ribbonControl;
             // 
-            // btnResimEkle
-            // 
-            this.btnResimEkle.Caption = "Resim Ekle";
-            this.btnResimEkle.Id = 14;
-            this.btnResimEkle.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.addfile_16x16;
-            this.btnResimEkle.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.Insert);
-            this.btnResimEkle.Name = "btnResimEkle";
-            // 
-            // btnResimSil
-            // 
-            this.btnResimSil.Caption = "Resim Sil";
-            this.btnResimSil.Id = 15;
-            this.btnResimSil.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.deletelist_16x16;
-            this.btnResimSil.ItemShortcut = new DevExpress.XtraBars.BarShortcut(System.Windows.Forms.Keys.Delete);
-            this.btnResimSil.Name = "btnResimSil";
-            // 
             // BaseEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,9 +326,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.BarStaticItem statusBarAciklama;
-        private DevExpress.XtraBars.BarStaticItem statusBarKisayol;
-        private DevExpress.XtraBars.BarStaticItem statusBarKisayolAciklama;
         protected DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
         protected DevExpress.XtraBars.BarButtonItem btnyeni;
         protected DevExpress.XtraBars.BarButtonItem btnKaydet;
@@ -343,5 +339,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         private DevExpress.XtraBars.BarButtonItem btnResimEkle;
         private DevExpress.XtraBars.BarButtonItem btnResimSil;
         protected DevExpress.XtraBars.PopupMenu resimMenu;
+        protected internal DevExpress.XtraBars.BarStaticItem statusBarAciklama;
+        protected internal DevExpress.XtraBars.BarStaticItem statusBarKisayol;
+        protected internal DevExpress.XtraBars.BarStaticItem statusBarKisayolAciklama;
     }
 }

@@ -10,6 +10,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
+using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
@@ -239,5 +240,32 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
             return dialog.ShowDialog() != DialogResult.OK ? null : Resim();
         }
+
+        public static void RefreshDataSource(this GridView tablo)
+        {
+            var source = tablo.DataController.ListSource.Cast<IBaseHareketEntity>().ToList();
+            if (!source.Any(x => x.Delete)) return;
+            var rowHandle = tablo.FocusedRowHandle;
+
+            tablo.CustomRowFilter += Tablo_CustomRowFilter;
+            tablo.RefreshData();
+            tablo.CustomRowFilter -= Tablo_CustomRowFilter;
+            tablo.RowFocus(rowHandle);
+
+
+            void Tablo_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
+            {
+                var entity = source[e.ListSourceRow];
+                if (entity == null) return;
+
+                if (!entity.Delete) return;
+                e.Visible = false;
+                e.Handled = true;
+
+            }
+
+        }
+
+        
     }
 }

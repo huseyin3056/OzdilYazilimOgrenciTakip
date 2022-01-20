@@ -30,5 +30,12 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions
             return hedef;
 
         }
+
+
+
+        public static IEnumerable<TTarget> EntityListConvert<TTarget>(this IEnumerable<IBaseEntity> source)
+        {
+           return  source?.Select(x => x.EntityConvert<TTarget>()).ToList();
+        }
     }
 }

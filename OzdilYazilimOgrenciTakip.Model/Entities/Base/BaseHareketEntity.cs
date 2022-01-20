@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 
 namespace OzdilYazilimOgrenciTakip.Model.Entities.Base
 {
-   public class BaseHareketEntity
+    public class BaseHareketEntity: IBaseEntity
     {
 
         public int Id { get; set; }
