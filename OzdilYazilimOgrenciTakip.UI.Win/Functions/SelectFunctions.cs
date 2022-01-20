@@ -8,6 +8,8 @@ using OzdilYazilimOgrenciTakip.UI.Win.Forms.GorevForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetTuruForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IlceForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IlForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimTuruForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IsyeriForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.MeslekForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.OzelKodForms;
@@ -205,6 +207,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                         {
                             _btnEdit.Id = entity.Id;
                             _btnEdit.EditValue = entity.GorevAdi;
+                        }
+                    }
+                    break;
+
+                case "txtIndirimTuru":
+                    {
+                        var entity = (IndirimTuru)ShowListForms<IndirimTuruListForm>.ShowDialogListForm(KartTuru.Indirim, _btnEdit.Id);
+                        if (entity != null)
+                        {
+                            _btnEdit.Id = entity.Id;
+                            _btnEdit.EditValue = entity.IndirimTuruAdi;
                         }
                     }
                     break;

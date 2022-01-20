@@ -313,6 +313,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_maintenance_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_maintenance_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_old_man_16px {
             get {
                 object obj = ResourceManager.GetObject("icons8_old_man_16px", resourceCulture);
@@ -333,6 +343,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_parenting_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_parenting_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_proforma_invoice_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_proforma_invoice_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_report_card_16px {
             get {
                 object obj = ResourceManager.GetObject("icons8_report_card_16px", resourceCulture);
@@ -343,9 +373,39 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_slice_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_slice_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_stack_of_coins_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_stack_of_coins_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_student_male_16px {
             get {
                 object obj = ResourceManager.GetObject("icons8_student_male_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_student_male_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_student_male_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -366,6 +426,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Properties {
         internal static System.Drawing.Bitmap icons8_support_16px {
             get {
                 object obj = ResourceManager.GetObject("icons8_support_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_menu_male_32px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_user_menu_male_32px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

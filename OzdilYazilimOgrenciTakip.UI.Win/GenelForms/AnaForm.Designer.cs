@@ -59,6 +59,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnOdemeTuruKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnBankaHesapKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnIletisimKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOgrenciKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIndirimKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -80,7 +82,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imageList1616 = new System.Windows.Forms.ImageList(this.components);
-            this.btnOgrenciKartlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -119,9 +120,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnOdemeTuruKartlari,
             this.btnBankaHesapKartlari,
             this.btnIletisimKartlari,
-            this.btnOgrenciKartlari});
+            this.btnOgrenciKartlari,
+            this.btnIndirimKartlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 29;
+            this.ribbonControl1.MaxItemId = 30;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -134,7 +136,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribbonControl1.Size = new System.Drawing.Size(977, 161);
+            this.ribbonControl1.Size = new System.Drawing.Size(977, 177);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -300,13 +302,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnIletisimKartlari.Id = 27;
             this.btnIletisimKartlari.Name = "btnIletisimKartlari";
             // 
+            // btnOgrenciKartlari
+            // 
+            this.btnOgrenciKartlari.Caption = "Öğrenci Kartları";
+            this.btnOgrenciKartlari.Id = 28;
+            this.btnOgrenciKartlari.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_student_male_16px;
+            this.btnOgrenciKartlari.Name = "btnOgrenciKartlari";
+            // 
+            // btnIndirimKartlari
+            // 
+            this.btnIndirimKartlari.Caption = "İndirim Kartları";
+            this.btnIndirimKartlari.Id = 29;
+            this.btnIndirimKartlari.Name = "btnIndirimKartlari";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup9,
             this.ribbonPageGroup10,
             this.ribbonPageGroup1});
-            this.ribbonPage1.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_student_male_16px;
+            this.ribbonPage1.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_student_male_32px;
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ÖĞRENCİ";
             // 
@@ -344,7 +359,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup2});
-            this.ribbonPage3.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_old_man_16px;
+            this.ribbonPage3.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_parenting_32px;
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "VELİ";
             // 
@@ -362,7 +377,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5,
             this.ribbonPageGroup3});
-            this.ribbonPage6.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_support_16px;
+            this.ribbonPage6.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_maintenance_32px;
             this.ribbonPage6.Name = "ribbonPage6";
             this.ribbonPage6.Text = "HİZMET";
             // 
@@ -376,6 +391,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnIndirimTuruKartlari);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnIndirimKartlari);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "İndirim";
             // 
@@ -383,7 +399,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             this.ribbonPage7.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup6});
-            this.ribbonPage7.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_paper_money_16px;
+            this.ribbonPage7.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_stack_of_coins_32px;
             this.ribbonPage7.Name = "ribbonPage7";
             this.ribbonPage7.Text = "FİNANS";
             // 
@@ -402,7 +418,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             this.ribbonPage8.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup7});
-            this.ribbonPage8.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_bill_16px;
+            this.ribbonPage8.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_proforma_invoice_32px;
             this.ribbonPage8.Name = "ribbonPage8";
             this.ribbonPage8.Text = "FATURA";
             // 
@@ -415,7 +431,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup4});
-            this.ribbonPage5.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_report_card_16px;
+            this.ribbonPage5.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_slice_32px;
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "RAPORLAR";
             // 
@@ -428,7 +444,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             this.ribbonPage9.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup8});
-            this.ribbonPage9.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_account_16px;
+            this.ribbonPage9.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_user_menu_male_32px;
             this.ribbonPage9.Name = "ribbonPage9";
             this.ribbonPage9.Text = "KULLANICI";
             // 
@@ -471,12 +487,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.imageList1616.Images.SetKeyName(11, "icons8_student_male_48px.png");
             this.imageList1616.Images.SetKeyName(12, "icons8_students_48px.png");
             this.imageList1616.Images.SetKeyName(13, "icons8_training_48px.png");
-            // 
-            // btnOgrenciKartlari
-            // 
-            this.btnOgrenciKartlari.Caption = "Öğrenci Kartları";
-            this.btnOgrenciKartlari.Id = 28;
-            this.btnOgrenciKartlari.Name = "btnOgrenciKartlari";
             // 
             // AnaForm
             // 
@@ -551,5 +561,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private System.Windows.Forms.ImageList imageList1616;
         private DevExpress.XtraBars.BarButtonItem btnIletisimKartlari;
         private DevExpress.XtraBars.BarButtonItem btnOgrenciKartlari;
+        private DevExpress.XtraBars.BarButtonItem btnIndirimKartlari;
     }
 }
