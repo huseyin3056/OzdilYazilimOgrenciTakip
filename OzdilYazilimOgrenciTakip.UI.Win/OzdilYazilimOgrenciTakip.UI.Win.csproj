@@ -500,6 +500,7 @@
     <Compile Include="Functions\GeneralFunctions.cs" />
     <Compile Include="Functions\SelectFunctions.cs" />
     <Compile Include="Functions\SelectPictureFunctions.cs" />
+    <Compile Include="Functions\SelectRowFunctions.cs" />
     <Compile Include="Functions\TablePrintingFunctions.cs" />
     <Compile Include="GenelForms\AnaForm.cs">
       <SubType>Form</SubType>
@@ -616,6 +617,12 @@
     </Compile>
     <Compile Include="UserControls\UserControl\Base\BaseTablo.Designer.cs">
       <DependentUpon>BaseTablo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.Designer.cs">
+      <DependentUpon>IndiriminUygulanacagiHizmetlerTable.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AileBilgiForms\AileBilgiEditForm.resx">
       <DependentUpon>AileBilgiEditForm.cs</DependentUpon>
@@ -852,6 +859,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\Base\BaseTablo.resx">
       <DependentUpon>BaseTablo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.resx">
+      <DependentUpon>IndiriminUygulanacagiHizmetlerTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\OzdilYazilimOgrenciTakip.Model.Dto.OgrenciL.datasource" />

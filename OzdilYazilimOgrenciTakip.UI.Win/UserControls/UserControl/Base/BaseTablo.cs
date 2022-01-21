@@ -13,6 +13,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.Interfaces;
 using System.Linq;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Interfaces;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
+using System.Collections.Generic;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 {
@@ -20,12 +21,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
     {
         private bool _isLoaded;
         private bool _tabloSablonKayitEdilecek;
-        protected GridView tablo;
+        protected GridView Tablo;
         protected internal bool TableValueChanged;
         protected internal BaseEditForm OwnerForm;
         protected BarItem[] ShowItems;
         protected BarItem[] HideItems;
         protected IBaseBll Bll;
+        protected IList<long> ListeDisiTutulacakKayitlar;
 
         public BaseTablo()
         {
@@ -44,15 +46,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 insUpNavigator.Navigator.ButtonClick += Navigator_ButtonClick;
 
                 // Table Events
-                tablo.CellValueChanged += Tablo_CellValueChanged;
-                tablo.MouseUp += Tablo_MouseUp;
-                tablo.GotFocus += Tablo_GotFocus;
-                tablo.LostFocus += Tablo_LostFocus;
-                tablo.KeyDown += Tablo_KeyDown;
-                tablo.FocusedColumnChanged += Tablo_FocusedColumnChanged;
-                tablo.ColumnPositionChanged += Tablo_SablonChanged;
-                tablo.ColumnWidthChanged += Tablo_SablonChanged;
-                tablo.EndSorting += Tablo_SablonChanged;
+                Tablo.CellValueChanged += Tablo_CellValueChanged;
+                Tablo.MouseUp += Tablo_MouseUp;
+                Tablo.GotFocus += Tablo_GotFocus;
+                Tablo.LostFocus += Tablo_LostFocus;
+                Tablo.KeyDown += Tablo_KeyDown;
+                Tablo.FocusedColumnChanged += Tablo_FocusedColumnChanged;
+                Tablo.ColumnPositionChanged += Tablo_SablonChanged;
+                Tablo.ColumnWidthChanged += Tablo_SablonChanged;
+                Tablo.EndSorting += Tablo_SablonChanged;
 
             }
         }
@@ -63,7 +65,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             _isLoaded = true;
             TableValueChanged = false;
             OwnerForm.ButtonEnabledDurumu();
-            insUpNavigator.Navigator.NavigatableControl = tablo.GridControl;
+            insUpNavigator.Navigator.NavigatableControl = Tablo.GridControl;
             SablonYukle();
             Listele();
             ButonGizleGoster();
@@ -80,14 +82,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         private void SablonKaydet()
         {
             if (_tabloSablonKayitEdilecek)
-                tablo.TabloSablonKaydet(tablo.ViewCaption);
+                Tablo.TabloSablonKaydet(Tablo.ViewCaption);
 
         }
         protected virtual void Listele() { }
 
         private void SablonYukle()
         {
-            tablo.TabloSablonYukle(tablo.ViewCaption);
+            Tablo.TabloSablonYukle(Tablo.ViewCaption);
 
         }
 
@@ -117,12 +119,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         protected virtual void HareketSil()
         {
-            if (tablo.DataRowCount == 0) return;
+            if (Tablo.DataRowCount == 0) return;
 
             if (Messages.SilMesaj("İşlem Satırı") != DialogResult.Yes) return;
 
-            tablo.GetRow<IBaseHareketEntity>().Delete = true;
-            tablo.RefreshDataSource();
+            Tablo.GetRow<IBaseHareketEntity>().Delete = true;
+            Tablo.RefreshDataSource();
             ButonEnableDurumu(true);
 
         }
@@ -136,7 +138,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         protected internal bool Kaydet()
         {
-            var source = tablo.DataController.ListSource;
+            var source = Tablo.DataController.ListSource;
 
             var insert = source.Cast<IBaseHareketEntity>().Where(x => x.Insert && !x.Delete).Cast<BaseHareketEntity>().ToList();
             var update = source.Cast<IBaseHareketEntity>().Where(x => x.Update && !x.Delete).Cast<BaseHareketEntity>().ToList();
@@ -146,19 +148,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
                 if (!((IBaseHareketGenelBll)Bll).Insert(insert))
                 {
-                    Messages.HataMesaji($"{tablo.ViewCaption} Tablosundaki Hareketler Eklenemedi");
+                    Messages.HataMesaji($"{Tablo.ViewCaption} Tablosundaki Hareketler Eklenemedi");
                     return false;
                 }
 
             if (!((IBaseHareketGenelBll)Bll).Update(update))
             {
-                Messages.HataMesaji($"{tablo.ViewCaption} Tablosundaki Hareketler Güncellenemedi");
+                Messages.HataMesaji($"{Tablo.ViewCaption} Tablosundaki Hareketler Güncellenemedi");
                 return false;
             }
 
             if (!((IBaseHareketGenelBll)Bll).Delete(delete))
             {
-                Messages.HataMesaji($"{tablo.ViewCaption} Tablosundaki Hareketler Silinemedi");
+                Messages.HataMesaji($"{Tablo.ViewCaption} Tablosundaki Hareketler Silinemedi");
                 return false;
             }
 
@@ -186,7 +188,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         {
             if (!_isLoaded) return;
 
-            var entity = tablo.GetRow<IBaseHareketEntity>();
+            var entity = Tablo.GetRow<IBaseHareketEntity>();
             if (!entity.Insert)
                 entity.Update = true;
 
@@ -198,7 +200,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         {
             if (popupMenu == null) return;
 
-            btnHareketSil.Enabled = tablo.RowCount > 0;
+            btnHareketSil.Enabled = Tablo.RowCount > 0;
             e.SagMenuGoster(popupMenu);
 
         }
@@ -225,7 +227,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             switch (e.KeyCode)
             {
                 case Keys.Escape:
-                    if (tablo.IsEditorFocused)
+                    if (Tablo.IsEditorFocused)
                         insUpNavigator.Navigator.Buttons.DoClick(insUpNavigator.Navigator.Buttons.CancelEdit);
                     else
                         OwnerForm.Close();

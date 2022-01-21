@@ -36,6 +36,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
+        public static T GetRow<T>(this GridView tablo, int rowHandle)
+        {
+            if (tablo.FocusedRowHandle > -1) return (T)tablo.GetRow(rowHandle);
+          
+                Messages.KartSecmemeUyariMesaji();
+
+            return default(T);
+
+        }
+
+
+
         private static VeriDegisimYeri VeriDegisimYeriGetir<T>(T oldEntity, T currentEntity)
         {
 

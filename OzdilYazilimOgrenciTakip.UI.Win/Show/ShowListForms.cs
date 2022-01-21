@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
+using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Show
@@ -48,6 +49,23 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
                 frm.ShowDialog();
 
                 return frm.DialogResult == DialogResult.OK ? frm.SelectedEntity : null;
+
+            }
+
+        }
+
+        public static IEnumerable<IBaseEntity> ShowDialogListForm(KartTuru kartTuru, IList<long> listeDisiTutulacakKayitlar, bool multiSelect, params object[] prm)
+        {
+            // Yetki Kontrolü
+
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
+            {
+                frm.ListeDisiTutulacakKayitlar = listeDisiTutulacakKayitlar;
+                frm.MultiSelect = multiSelect;
+                frm.Yukle();
+                frm.ShowDialog();
+
+              //  return frm.DialogResult == DialogResult.OK ? frm.SelectedEntity : null;
 
             }
 

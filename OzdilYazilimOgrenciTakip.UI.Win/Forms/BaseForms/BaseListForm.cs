@@ -13,6 +13,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.FiltreForms;
 using OzdilYazilimOgrenciTakip.Model.Entities;
+using System.Collections.Generic;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 {
@@ -33,7 +34,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected ControlNavigator Navigator;
         protected internal long? SeciliGelecekId;
         protected BarItem[] ShowItems;
-        protected BarItem[] HideItems; 
+        protected BarItem[] HideItems;
+        protected internal IList<long> ListeDisiTutulacakKayitlar;
+
         #endregion
 
 
