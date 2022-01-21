@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Printing;
@@ -291,6 +293,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
-        
+        public  static BindingList<T> ToBindingList<T>(this IEnumerable<BaseHareketEntity> list)
+        {
+            return new BindingList<T>((IList<T>)list);
+
+        }
     }
 }

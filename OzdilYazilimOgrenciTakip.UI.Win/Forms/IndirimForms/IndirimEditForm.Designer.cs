@@ -40,7 +40,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
-            this.hizmetTablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFormTable.IndiriminUygulanacagiHizmetlerTable();
             this.tglDurum = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyToggleSwitch();
             this.txtAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyMemoEdit();
             this.txtIndirimTuru = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyButtonEdit();
@@ -52,6 +51,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.hizmetTablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFormTable.IndiriminUygulanacagiHizmetlerTable();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).BeginInit();
@@ -101,14 +101,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.myDataLayoutControl.Size = new System.Drawing.Size(898, 216);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
-            // 
-            // hizmetTablo
-            // 
-            this.hizmetTablo.Location = new System.Drawing.Point(387, 12);
-            this.hizmetTablo.MinimumSize = new System.Drawing.Size(300, 150);
-            this.hizmetTablo.Name = "hizmetTablo";
-            this.hizmetTablo.Size = new System.Drawing.Size(499, 150);
-            this.hizmetTablo.TabIndex = 5;
             // 
             // tglDurum
             // 
@@ -302,6 +294,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.layoutControlItem5.Size = new System.Drawing.Size(99, 24);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
+            // 
+            // hizmetTablo
+            // 
+            this.hizmetTablo.Location = new System.Drawing.Point(387, 12);
+            this.hizmetTablo.MinimumSize = new System.Drawing.Size(300, 150);
+            this.hizmetTablo.Name = "hizmetTablo";
+            this.hizmetTablo.Size = new System.Drawing.Size(499, 150);
+            this.hizmetTablo.TabIndex = 5;
             // 
             // layoutControlItem6
             // 

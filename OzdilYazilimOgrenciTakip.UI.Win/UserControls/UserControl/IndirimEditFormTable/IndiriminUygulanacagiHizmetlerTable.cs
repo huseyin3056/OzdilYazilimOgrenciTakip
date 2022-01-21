@@ -24,7 +24,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
 
         protected override void Listele()
         {
-            tablo.GridControl.DataSource = ((IndiriminUygulanacagiHizmetBilgileriBll)Bll).List(x=>x.IndirimId==OwnerForm.Id);
+            tablo.GridControl.DataSource = ((IndiriminUygulanacagiHizmetBilgileriBll)Bll).List(x=>x.IndirimId==OwnerForm.Id).ToBindingList<IndiriminUygulanacagiHizmetBilgileriL>();
 
 
         }

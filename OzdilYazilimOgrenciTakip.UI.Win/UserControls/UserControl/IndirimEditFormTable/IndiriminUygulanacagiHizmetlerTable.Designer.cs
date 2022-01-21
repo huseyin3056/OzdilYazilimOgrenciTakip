@@ -44,7 +44,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             // 
             // insUpNavigator
             // 
-            this.insUpNavigator.Location = new System.Drawing.Point(0, 176);
+            this.insUpNavigator.Location = new System.Drawing.Point(0, 226);
             this.insUpNavigator.Size = new System.Drawing.Size(400, 24);
             // 
             // grid
@@ -56,7 +56,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.grid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryTutar,
             this.repositoryOran});
-            this.grid.Size = new System.Drawing.Size(400, 176);
+            this.grid.Size = new System.Drawing.Size(400, 226);
             this.grid.TabIndex = 5;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -89,7 +89,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.tablo.OptionsView.ColumnAutoWidth = false;
             this.tablo.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
             this.tablo.OptionsView.RowAutoHeight = true;
-            this.tablo.OptionsView.ShowAutoFilterRow = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
             this.tablo.StatusBarAciklama = null;
@@ -111,7 +110,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.colHizmetAdi.StatusBarKisaYolAciklama = null;
             this.colHizmetAdi.Visible = true;
             this.colHizmetAdi.VisibleIndex = 0;
-            this.colHizmetAdi.Width = 120;
+            this.colHizmetAdi.Width = 150;
             // 
             // colIndirimTutar
             // 
@@ -127,7 +126,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.colIndirimTutar.StatusBarKisaYolAciklama = null;
             this.colIndirimTutar.Visible = true;
             this.colIndirimTutar.VisibleIndex = 1;
-            this.colIndirimTutar.Width = 100;
+            this.colIndirimTutar.Width = 120;
             // 
             // repositoryTutar
             // 
@@ -158,7 +157,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.colIndirimOrani.StatusBarKisaYolAciklama = null;
             this.colIndirimOrani.Visible = true;
             this.colIndirimOrani.VisibleIndex = 2;
-            this.colIndirimOrani.Width = 90;
+            this.colIndirimOrani.Width = 110;
             // 
             // repositoryOran
             // 
@@ -180,7 +179,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.Controls.Add(this.grid);
             this.MinimumSize = new System.Drawing.Size(300, 150);
             this.Name = "IndiriminUygulanacagiHizmetlerTable";
-            this.Size = new System.Drawing.Size(400, 200);
+            this.Size = new System.Drawing.Size(400, 250);
             this.Controls.SetChildIndex(this.insUpNavigator, 0);
             this.Controls.SetChildIndex(this.grid, 0);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
