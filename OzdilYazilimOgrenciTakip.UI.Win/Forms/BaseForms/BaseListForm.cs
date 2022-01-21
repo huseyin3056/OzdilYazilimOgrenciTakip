@@ -36,6 +36,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected BarItem[] ShowItems;
         protected BarItem[] HideItems;
         protected internal IList<long> ListeDisiTutulacakKayitlar;
+        protected internal SelectRowFunctions RowSelect;
+        protected internal bool EklenebilecekEntityVar=false;
+        protected internal IList<BaseEntity> SelectedEntities;
 
         #endregion
 

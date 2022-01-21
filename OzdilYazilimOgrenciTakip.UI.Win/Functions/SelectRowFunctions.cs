@@ -16,7 +16,7 @@ using DevExpress.XtraEditors.Drawing;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 {
-    public  class SelectRowFunctions
+    public class SelectRowFunctions
     {
         private GridView _tablo;
         private GridColumn _column;
@@ -33,7 +33,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
-        public int SelectedRowCount => _selectedRows.Count;
+        public int SelectedRowCount()
+        {
+            return _selectedRows.Count;
+        }
 
         public BaseEntity GetSelecetedRow(int index)
         {
@@ -113,7 +116,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             _selectedRows.Clear();
             _tablo = tablo;
 
-            _checkEdit =(RepositoryItemCheckEdit)_tablo.GridControl.RepositoryItems.Add("CheckEdit");
+            _checkEdit = (RepositoryItemCheckEdit)_tablo.GridControl.RepositoryItems.Add("CheckEdit");
             _column = tablo.Columns.Add();
             _column.OptionsColumn.AllowSort = DefaultBoolean.False;
             _column.Visible = true;
@@ -127,7 +130,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             _column.ColumnEdit = _checkEdit;
             _tablo.FocusedColumn = _column;
 
-            if(_tablo is BandedGridView bView)
+            if (_tablo is BandedGridView bView)
             {
                 bView.Bands["bndSecim"].Visible = true;
                 bView.Bands["bndSecim"].VisibleIndex = 0;
@@ -147,7 +150,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             if (_tablo == null) return;
             _column?.Dispose();
 
-            if(_checkEdit !=null)
+            if (_checkEdit != null)
             {
                 _tablo.GridControl.RepositoryItems.Remove(_checkEdit);
                 _checkEdit.Dispose();
@@ -168,7 +171,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
         private void CheckBoxEkle(GraphicsCache cache, Rectangle r, bool check)
         {
             var info = (CheckEditViewInfo)_checkEdit.CreateViewInfo();
-            var painter =(CheckEditPainter) _checkEdit.CreatePainter();
+            var painter = (CheckEditPainter)_checkEdit.CreatePainter();
 
             if (info == null) return;
             info.EditValue = check;
@@ -176,7 +179,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             info.CalcViewInfo(cache.Graphics);
             var arg = new ControlGraphicsInfoArgs(info, cache, r);
             painter?.Draw(arg);
-            
+
 
 
         }
@@ -186,11 +189,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             var point = _tablo.GridControl.PointToClient(Control.MousePosition);
             GridHitInfo info = _tablo.CalcHitInfo(point);
 
-            if(info.Column==_column)
+            if (info.Column == _column)
             {
                 if (info.InColumn)
                 {
-                    if (SelectedRowCount == _tablo.DataRowCount)
+                    if (SelectedRowCount() == _tablo.DataRowCount)
                         ClearSelection();
                     else
                         SelectAll();
@@ -202,9 +205,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
             }
 
-            else if(info.InRow)
+            else if (info.InRow)
                 RowSelection(info.RowHandle);
-       
+
         }
 
         private void Tablo_CustomDrawColumnHeader(object sender, ColumnHeaderCustomDrawEventArgs e)
@@ -212,7 +215,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             if (e.Column != _column) return;
             e.Info.InnerElements.Clear();
             e.Painter.DrawObject(e.Info);
-            CheckBoxEkle(e.Cache, e.Bounds, SelectedRowCount == _tablo.DataRowCount);
+            CheckBoxEkle(e.Cache, e.Bounds, SelectedRowCount() == _tablo.DataRowCount);
             e.Handled = true;
         }
 
@@ -241,6 +244,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             e.Appearance.ForeColor = SystemColors.HighlightText;
 
         }
-       
+
     }
 }

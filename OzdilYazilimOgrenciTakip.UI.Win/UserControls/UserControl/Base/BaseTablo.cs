@@ -27,7 +27,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         protected BarItem[] ShowItems;
         protected BarItem[] HideItems;
         protected IBaseBll Bll;
-        protected IList<long> ListeDisiTutulacakKayitlar;
+        protected internal  IList<long> ListeDisiTutulacakKayitlar;
 
         public BaseTablo()
         {

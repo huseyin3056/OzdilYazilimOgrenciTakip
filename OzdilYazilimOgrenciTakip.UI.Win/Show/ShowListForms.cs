@@ -11,13 +11,13 @@ using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 {
-    public class ShowListForms<TForm> where TForm:BaseListForm 
+    public class ShowListForms<TForm> where TForm : BaseListForm
     {
         public static void ShowListForm(KartTuru kartTuru)
         {
             // Yetki Kontrolü Yapılacak
 
-            var frm =(TForm) Activator.CreateInstance(typeof(TForm));
+            var frm = (TForm)Activator.CreateInstance(typeof(TForm));
             frm.MdiParent = Form.ActiveForm;
 
             frm.Yukle();
@@ -26,11 +26,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
         }
 
-        public static void ShowListForm(KartTuru kartTuru,params object[] prm)
+        public static void ShowListForm(KartTuru kartTuru, params object[] prm)
         {
             // Yetki Kontrolü Yapılacak
 
-            var frm = (TForm)Activator.CreateInstance(typeof(TForm),prm);
+            var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm);
             frm.MdiParent = Form.ActiveForm;
 
             frm.Yukle();
@@ -39,10 +39,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
         }
 
-        public static BaseEntity ShowDialogListForm(KartTuru kartTuru,long? seciliGelecekId, params object[] prm)
+        public static BaseEntity ShowDialogListForm(KartTuru kartTuru, long? seciliGelecekId, params object[] prm)
         {
             // Yetki Kontrolü
-            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm),prm))
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
             {
                 frm.SeciliGelecekId = seciliGelecekId;
                 frm.Yukle();
@@ -58,15 +58,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
         {
             // Yetki Kontrolü
 
-          using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
             {
                 frm.ListeDisiTutulacakKayitlar = listeDisiTutulacakKayitlar;
                 frm.MultiSelect = multiSelect;
                 frm.Yukle();
-                frm.ShowDialog();
+                frm.RowSelect = new Functions.SelectRowFunctions(frm.Tablo);
+                if (frm.EklenebilecekEntityVar)
 
-            //  return frm.DialogResult == DialogResult.OK ? frm.SelectedEntity : null;
-            return null;
+                    frm.ShowDialog();
+
+                return frm.DialogResult == DialogResult.OK ? frm.SelectedEntities : null;
+
+
 
             }
 
