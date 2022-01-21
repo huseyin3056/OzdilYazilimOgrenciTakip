@@ -58,14 +58,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
         {
             // Yetki Kontrolü
 
-            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
+          using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
             {
                 frm.ListeDisiTutulacakKayitlar = listeDisiTutulacakKayitlar;
                 frm.MultiSelect = multiSelect;
                 frm.Yukle();
                 frm.ShowDialog();
 
-              //  return frm.DialogResult == DialogResult.OK ? frm.SelectedEntity : null;
+            //  return frm.DialogResult == DialogResult.OK ? frm.SelectedEntity : null;
+            return null;
 
             }
 

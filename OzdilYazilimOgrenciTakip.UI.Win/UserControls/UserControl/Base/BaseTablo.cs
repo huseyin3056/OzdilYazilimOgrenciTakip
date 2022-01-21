@@ -69,7 +69,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             SablonYukle();
             Listele();
             ButonGizleGoster();
-            //   Tablo_LostFocus(tablo, EventArgs.Empty);
+            //   Tablo_LostFocus(Tablo, EventArgs.Empty);
 
         }
 
@@ -152,16 +152,22 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                     return false;
                 }
 
-            if (!((IBaseHareketGenelBll)Bll).Update(update))
+            if(update.Any())
             {
-                Messages.HataMesaji($"{Tablo.ViewCaption} Tablosundaki Hareketler Güncellenemedi");
-                return false;
+                if (!((IBaseHareketGenelBll)Bll).Update(update))
+                {
+                    Messages.HataMesaji($"{Tablo.ViewCaption} Tablosundaki Hareketler Güncellenemedi");
+                    return false;
+                }
             }
 
-            if (!((IBaseHareketGenelBll)Bll).Delete(delete))
+            if(delete.Any())
             {
-                Messages.HataMesaji($"{Tablo.ViewCaption} Tablosundaki Hareketler Silinemedi");
-                return false;
+                if (!((IBaseHareketGenelBll)Bll).Delete(delete))
+                {
+                    Messages.HataMesaji($"{Tablo.ViewCaption} Tablosundaki Hareketler Silinemedi");
+                    return false;
+                }
             }
 
             ButonEnableDurumu(false);

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
@@ -265,7 +266,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             tablo.RowFocus(rowHandle);
 
 
-            void Tablo_CustomRowFilter(object sender, DevExpress.XtraGrid.Views.Base.RowFilterEventArgs e)
+            void Tablo_CustomRowFilter(object sender,RowFilterEventArgs e)
             {
                 var entity = source[e.ListSourceRow];
                 if (entity == null) return;
