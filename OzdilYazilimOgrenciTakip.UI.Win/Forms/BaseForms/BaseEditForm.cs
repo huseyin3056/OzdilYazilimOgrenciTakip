@@ -116,6 +116,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         }
 
+
+        protected virtual void TabloYukle()
+        {
+
+        }
+
+
         private void SablonYukle()
         {
 
@@ -432,7 +439,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         {
             if (!IsLoaded) return;
             GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity);
-
 
         }
 

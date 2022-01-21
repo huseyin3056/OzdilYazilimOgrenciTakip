@@ -62,7 +62,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             tablo.FocusedColumn = colIndirimTutar;
 
             ButonEnableDurumu(true);
+        }
 
+        protected internal override bool HataliGiris()
+        {
+            return base.HataliGiris();
 
 
 

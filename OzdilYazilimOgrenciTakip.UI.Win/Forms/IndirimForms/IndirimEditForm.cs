@@ -27,6 +27,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new IndirimS() : ((IndirimBll)Bll).Single(FilterFunctions.Filter<Indirim>(Id));
             NesneyiKontrollereBagla();
+            TabloYukle();
             if (BaseIslemTuru != IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((IndirimBll)Bll).YeniKodVer(x => x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId);      
@@ -59,16 +60,25 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             ButtonEnabledDurumu();
         }
 
-      
+        protected internal override void ButtonEnabledDurumu()
+        {
+            if (!IsLoaded) return;
+            GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity,hizmetTablo.TableValueChanged);
+
+        }
+
 
         protected override bool EntityInsert()
         {
-            return ((IndirimBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId);
+            if (hizmetTablo.HataliGiris()) return false;
+
+            return ((IndirimBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && hizmetTablo.Kaydet();
 
         }
         protected override bool EntityUpdate()
         {
-            return ((IndirimBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId);
+            if (hizmetTablo.HataliGiris()) return false;
+            return ((IndirimBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && hizmetTablo.Kaydet();
 
         }
 
@@ -80,6 +90,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
 
                 if (sender == txtIndirimTuru)
                     sec.Sec(txtIndirimTuru);
+
+        }
+
+        protected override void TabloYukle()
+        {
+
+            hizmetTablo.OwnerForm = this;
+            hizmetTablo.Yukle();
+
 
         }
 

@@ -100,6 +100,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
+        public static void ButtonEnabledDurumu<T>(BarButtonItem btnYeni, BarButtonItem btnKaydet, BarButtonItem btnGeriAl, BarButtonItem btnSil, T oldEntity, T currentEntity, bool tableValueChanged)
+        {
+            var veriDegisimYeri =tableValueChanged?VeriDegisimYeri.Tablo: VeriDegisimYeriGetir(oldEntity, currentEntity);
+            var buttonEnabledDurumu = veriDegisimYeri == VeriDegisimYeri.Alan || veriDegisimYeri == VeriDegisimYeri.Tablo;
+
+            btnKaydet.Enabled = buttonEnabledDurumu;
+            btnGeriAl.Enabled = buttonEnabledDurumu;
+            btnYeni.Enabled = !buttonEnabledDurumu;
+            btnSil.Enabled = !buttonEnabledDurumu;
+
+        }
+
         public static void ButtonEnabledDurumu<T>(BarButtonItem btnKaydet, BarButtonItem btnFarkliKaydet, BarButtonItem btnSil, IslemTuru islemTuru, T oldEntity, T currentEntity)
         {
             var veriDegisimYeri = VeriDegisimYeriGetir(oldEntity, currentEntity);

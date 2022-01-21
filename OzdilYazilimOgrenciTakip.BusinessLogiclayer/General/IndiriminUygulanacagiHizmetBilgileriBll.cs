@@ -7,6 +7,7 @@ using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
@@ -27,7 +28,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 SubeId=x.SubeId,
                 DonemId=x.DonemId
 
-            });
+            }).ToList();
         }
 
     }

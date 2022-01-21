@@ -27,7 +27,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         protected BarItem[] ShowItems;
         protected BarItem[] HideItems;
         protected IBaseBll Bll;
-        protected internal  IList<long> ListeDisiTutulacakKayitlar;
+        protected internal IList<long> ListeDisiTutulacakKayitlar;
 
         public BaseTablo()
         {
@@ -136,6 +136,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
+        protected internal virtual bool HataliGiris() { return false; }
+
         protected internal bool Kaydet()
         {
             var source = Tablo.DataController.ListSource;
@@ -152,7 +154,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                     return false;
                 }
 
-            if(update.Any())
+            if (update.Any())
             {
                 if (!((IBaseHareketGenelBll)Bll).Update(update))
                 {
@@ -161,7 +163,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 }
             }
 
-            if(delete.Any())
+            if (delete.Any())
             {
                 if (!((IBaseHareketGenelBll)Bll).Delete(delete))
                 {
@@ -261,6 +263,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         private void Tablo_FocusedColumnChanged(object sender, FocusedColumnChangedEventArgs e)
         {
+            if (OwnerForm == null) return;
             OwnerForm.statusBarKisayol.Visibility = BarItemVisibility.Never;
             OwnerForm.statusBarKisayolAciklama.Visibility = BarItemVisibility.Never;
 

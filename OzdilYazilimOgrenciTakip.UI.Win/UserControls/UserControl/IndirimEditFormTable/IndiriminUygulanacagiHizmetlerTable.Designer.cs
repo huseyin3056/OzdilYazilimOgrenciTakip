@@ -33,8 +33,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridView();
             this.colHizmetAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colIndirimTutar = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colIndirimOrani = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.repositoryTutar = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
+            this.colIndirimOrani = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.repositoryOran = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
@@ -44,8 +44,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             // 
             // insUpNavigator
             // 
-            this.insUpNavigator.Location = new System.Drawing.Point(0, 276);
-            this.insUpNavigator.Size = new System.Drawing.Size(480, 24);
+            this.insUpNavigator.Location = new System.Drawing.Point(0, 176);
+            this.insUpNavigator.Size = new System.Drawing.Size(400, 24);
             // 
             // grid
             // 
@@ -56,7 +56,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.grid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryTutar,
             this.repositoryOran});
-            this.grid.Size = new System.Drawing.Size(480, 276);
+            this.grid.Size = new System.Drawing.Size(400, 176);
             this.grid.TabIndex = 5;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -111,7 +111,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.colHizmetAdi.StatusBarKisaYolAciklama = null;
             this.colHizmetAdi.Visible = true;
             this.colHizmetAdi.VisibleIndex = 0;
-            this.colHizmetAdi.Width = 193;
+            this.colHizmetAdi.Width = 120;
             // 
             // colIndirimTutar
             // 
@@ -127,7 +127,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.colIndirimTutar.StatusBarKisaYolAciklama = null;
             this.colIndirimTutar.Visible = true;
             this.colIndirimTutar.VisibleIndex = 1;
-            this.colIndirimTutar.Width = 147;
+            this.colIndirimTutar.Width = 100;
+            // 
+            // repositoryTutar
+            // 
+            this.repositoryTutar.AutoHeight = false;
+            this.repositoryTutar.BeepOnError = false;
+            this.repositoryTutar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryTutar.DisplayFormat.FormatString = "n2";
+            this.repositoryTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryTutar.EditFormat.FormatString = "n2";
+            this.repositoryTutar.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryTutar.MaskSettings.Set("mask", "n2");
+            this.repositoryTutar.Name = "repositoryTutar";
             // 
             // colIndirimOrani
             // 
@@ -145,20 +158,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.colIndirimOrani.StatusBarKisaYolAciklama = null;
             this.colIndirimOrani.Visible = true;
             this.colIndirimOrani.VisibleIndex = 2;
-            this.colIndirimOrani.Width = 105;
-            // 
-            // repositoryTutar
-            // 
-            this.repositoryTutar.AutoHeight = false;
-            this.repositoryTutar.BeepOnError = false;
-            this.repositoryTutar.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryTutar.DisplayFormat.FormatString = "n2";
-            this.repositoryTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryTutar.EditFormat.FormatString = "n2";
-            this.repositoryTutar.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryTutar.MaskSettings.Set("mask", "n2");
-            this.repositoryTutar.Name = "repositoryTutar";
+            this.colIndirimOrani.Width = 90;
             // 
             // repositoryOran
             // 
@@ -178,9 +178,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grid);
-            this.MinimumSize = new System.Drawing.Size(480, 300);
+            this.MinimumSize = new System.Drawing.Size(300, 150);
             this.Name = "IndiriminUygulanacagiHizmetlerTable";
-            this.Size = new System.Drawing.Size(480, 300);
+            this.Size = new System.Drawing.Size(400, 200);
             this.Controls.SetChildIndex(this.insUpNavigator, 0);
             this.Controls.SetChildIndex(this.grid, 0);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
