@@ -78,7 +78,11 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
 
         }
 
+        public static void KartBulunamadiMesaji(string kartTuru)
+        {
+            UyariMesaji($" İşlem yapılabilecek  {kartTuru} bulunamadı. ");
 
+        }
 
 
 

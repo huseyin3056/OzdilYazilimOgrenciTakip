@@ -187,8 +187,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             else if (e.Button == insUpNavigator.Navigator.Buttons.Remove)
                 HareketSil();
 
-            //if (e.Button == insUpNavigator.Navigator.Buttons.Append || e.Button == insUpNavigator.Navigator.Buttons.Remove)
-            //    e.Handled = true;
+            if (e.Button == insUpNavigator.Navigator.Buttons.Append || e.Button == insUpNavigator.Navigator.Buttons.Remove)
+                e.Handled = true;
 
         }
 

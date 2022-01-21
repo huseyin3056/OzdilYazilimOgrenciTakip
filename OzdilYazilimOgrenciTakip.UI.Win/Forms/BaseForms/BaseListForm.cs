@@ -14,6 +14,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.FiltreForms;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using System.Collections.Generic;
+using OzdilYazilimOgrenciTakip.Common.Message;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 {
@@ -68,11 +69,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         }
 
-        private void SelectEntity()
+        protected virtual void SelectEntity()
         {
             if (MultiSelect)
             {
-                // Güncellenecek
+                SelectedEntities = new List<BaseEntity>();
+                if(RowSelect.SelectedRowCount()==0)
+                {
+                    Messages.KartSecmemeUyariMesaji();
+                    return;
+
+                }
+
+                SelectedEntities = RowSelect.GetSelecetedRows();
+
             }
             else
             {

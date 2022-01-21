@@ -30,7 +30,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HizmetListForm));
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.ustPanel = new DevExpress.XtraEditors.PanelControl();
             this.txtHizmetBaslamaTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.longNavigator = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.Navigators.LongNavigator();
@@ -42,14 +42,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             this.colHizmetTuruId = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colHizmetTuruAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colBaslamaTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.repositoryTarih = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colBitisTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colUcret = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.repositoryTarih = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemUcret = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
+            this.colAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ustPanel)).BeginInit();
+            this.ustPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtHizmetBaslamaTarihi.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHizmetBaslamaTarihi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -78,16 +78,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
             // 
-            // panelControl1
+            // ustPanel
             // 
-            this.panelControl1.Controls.Add(this.txtHizmetBaslamaTarihi);
-            this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 109);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(798, 35);
-            this.panelControl1.TabIndex = 2;
-            this.panelControl1.Visible = false;
+            this.ustPanel.Controls.Add(this.txtHizmetBaslamaTarihi);
+            this.ustPanel.Controls.Add(this.labelControl1);
+            this.ustPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ustPanel.Location = new System.Drawing.Point(0, 109);
+            this.ustPanel.Name = "ustPanel";
+            this.ustPanel.Size = new System.Drawing.Size(798, 35);
+            this.ustPanel.TabIndex = 2;
+            this.ustPanel.Visible = false;
             // 
             // txtHizmetBaslamaTarihi
             // 
@@ -267,6 +267,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             this.colBaslamaTarihi.VisibleIndex = 3;
             this.colBaslamaTarihi.Width = 110;
             // 
+            // repositoryTarih
+            // 
+            this.repositoryTarih.AutoHeight = false;
+            this.repositoryTarih.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryTarih.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryTarih.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.repositoryTarih.Name = "repositoryTarih";
+            // 
             // colBitisTarihi
             // 
             this.colBitisTarihi.AppearanceCell.Options.UseTextOptions = true;
@@ -297,29 +307,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             this.colUcret.VisibleIndex = 5;
             this.colUcret.Width = 110;
             // 
-            // colAciklama
-            // 
-            this.colAciklama.Caption = "Açıklama";
-            this.colAciklama.FieldName = "Aciklama";
-            this.colAciklama.Name = "colAciklama";
-            this.colAciklama.OptionsColumn.AllowEdit = false;
-            this.colAciklama.StatusBarAciklama = null;
-            this.colAciklama.StatusBarKisaYol = null;
-            this.colAciklama.StatusBarKisaYolAciklama = null;
-            this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 6;
-            this.colAciklama.Width = 300;
-            // 
-            // repositoryTarih
-            // 
-            this.repositoryTarih.AutoHeight = false;
-            this.repositoryTarih.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryTarih.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryTarih.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.repositoryTarih.Name = "repositoryTarih";
-            // 
             // repositoryItemUcret
             // 
             this.repositoryItemUcret.AutoHeight = false;
@@ -333,6 +320,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             this.repositoryItemUcret.MaskSettings.Set("mask", "n2");
             this.repositoryItemUcret.Name = "repositoryItemUcret";
             // 
+            // colAciklama
+            // 
+            this.colAciklama.Caption = "Açıklama";
+            this.colAciklama.FieldName = "Aciklama";
+            this.colAciklama.Name = "colAciklama";
+            this.colAciklama.OptionsColumn.AllowEdit = false;
+            this.colAciklama.StatusBarAciklama = null;
+            this.colAciklama.StatusBarKisaYol = null;
+            this.colAciklama.StatusBarKisaYolAciklama = null;
+            this.colAciklama.Visible = true;
+            this.colAciklama.VisibleIndex = 6;
+            this.colAciklama.Width = 300;
+            // 
             // HizmetListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,19 +340,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             this.ClientSize = new System.Drawing.Size(798, 449);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.longNavigator);
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.ustPanel);
             this.IconOptions.ShowIcon = false;
             this.MinimumSize = new System.Drawing.Size(800, 450);
             this.Name = "HizmetListForm";
             this.Text = "Hizmet Kartları";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
-            this.Controls.SetChildIndex(this.panelControl1, 0);
+            this.Controls.SetChildIndex(this.ustPanel, 0);
             this.Controls.SetChildIndex(this.longNavigator, 0);
             this.Controls.SetChildIndex(this.grid, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ustPanel)).EndInit();
+            this.ustPanel.ResumeLayout(false);
+            this.ustPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtHizmetBaslamaTarihi.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHizmetBaslamaTarihi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
@@ -367,7 +367,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
 
         #endregion
 
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl ustPanel;
         private UserControls.Controls.MyDateEdit txtHizmetBaslamaTarihi;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private UserControls.Controls.Navigators.LongNavigator longNavigator;
