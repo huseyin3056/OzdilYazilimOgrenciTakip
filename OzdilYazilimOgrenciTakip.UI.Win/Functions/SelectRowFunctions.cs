@@ -33,10 +33,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
-        public int SelectedRowCount()
-        {
-            return _selectedRows.Count;
-        }
+        public int SelectedRowCount => _selectedRows.Count;
 
         public BaseEntity GetSelecetedRow(int index)
         {
@@ -55,7 +52,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         public bool IsRowSelected(int rowHandle)
         {
-            var row = _tablo.GetRow<BaseEntity>(rowHandle);
+            var row = (BaseEntity)_tablo.GetRow<BaseEntity>(rowHandle);
             return GetSelecetedRowIndex(row) > -1;
 
         }
@@ -84,7 +81,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
-        private void SelecetRow(int rowHandle, bool select)
+        private void SelectRow(int rowHandle, bool select)
         {
             if (IsRowSelected(rowHandle) == select) return;
 
@@ -104,7 +101,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
         {
             if (!_tablo.IsDataRow(rowHandle)) return;
 
-            SelecetRow(rowHandle, !IsRowSelected(rowHandle));
+            SelectRow(rowHandle, !IsRowSelected(rowHandle));
 
         }
 
@@ -184,6 +181,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
+        
+
         private void Tablo_Click(object sender, EventArgs e)
         {
             var point = _tablo.GridControl.PointToClient(Control.MousePosition);
@@ -193,7 +192,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             {
                 if (info.InColumn)
                 {
-                    if (SelectedRowCount() == _tablo.DataRowCount)
+                    if (SelectedRowCount== _tablo.DataRowCount)
                         ClearSelection();
                     else
                         SelectAll();
@@ -215,7 +214,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             if (e.Column != _column) return;
             e.Info.InnerElements.Clear();
             e.Painter.DrawObject(e.Info);
-            CheckBoxEkle(e.Cache, e.Bounds, SelectedRowCount() == _tablo.DataRowCount);
+            CheckBoxEkle(e.Cache, e.Bounds, SelectedRowCount== _tablo.DataRowCount);
             e.Handled = true;
         }
 
