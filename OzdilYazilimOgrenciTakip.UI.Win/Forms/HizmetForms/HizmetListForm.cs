@@ -14,6 +14,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
 {
     public partial class HizmetListForm : BaseListForm
     {
+      
 
         private readonly Expression<Func<Hizmet, bool>> _filter;
 
@@ -24,7 +25,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
 
             Bll = new HizmetBll();
             _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId;
-
+         
+            
+           // ustPanel.Visible = true; // ben sonradan koydum
 
         }
 
@@ -90,7 +93,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
 
         protected override void SelectEntity()
         {
-            base.SelectEntity();
+           base.SelectEntity();
 
             if(MultiSelect)
             SelectedEntities.ForEach(x => ((HizmetL)x).BaslamaTarihi = txtHizmetBaslamaTarihi.DateTime.Date);

@@ -140,7 +140,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         {
             if (!IsMdiChild)
             {
-                // Güncellenecek
+                
                 SelectEntity();
             }
 
