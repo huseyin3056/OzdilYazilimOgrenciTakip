@@ -23,6 +23,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
         }
 
 
+
         protected internal override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new HizmetS() : ((HizmetBll)Bll).Single(FilterFunctions.Filter<Hizmet>(Id));
