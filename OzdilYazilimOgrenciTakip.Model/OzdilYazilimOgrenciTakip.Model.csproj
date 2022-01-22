@@ -62,6 +62,7 @@
     <Compile Include="Dto\OgrenciDto.cs" />
     <Compile Include="Dto\OkulDto.cs" />
     <Compile Include="Dto\SinifDto.cs" />
+    <Compile Include="Dto\TahakkukDto.cs" />
     <Compile Include="Entities\AileBilgi.cs" />
     <Compile Include="Entities\Avukat.cs" />
     <Compile Include="Entities\Banka.cs" />

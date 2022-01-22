@@ -1,4 +1,5 @@
-﻿using OzdilYazilimOgrenciTakip.Model.Attributes;
+﻿using OzdilYazilimOgrenciTakip.Common.Enums;
+using OzdilYazilimOgrenciTakip.Model.Attributes;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -21,39 +22,47 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [Column(TypeName = "date")]
         public DateTime KayitTarihi { get; set; } = DateTime.Now.Date;
 
-
+        public KayitSekli KayitSekli { get; set; } = KayitSekli.YeniKayit;
+        public KayitDurumu KayitDurumu { get; set; } = KayitDurumu.KesinKayit;
 
         [ ZorunluAlan("Sınıf Adı", "txtSinif")]
         public long SinifId { get; set; }
 
-
-
-        //
-        //
-
-
-
-        [Column(TypeName = "date")]
-        public DateTime BaslamaTarihi { get; set; }
-        [Column(TypeName = "date")]
-        public DateTime BitisTarihi { get; set; }
-
-        [Column(TypeName = "money")]
-        public decimal Ucret { get; set; }
-
+        public long? GeldigiOkulId  { get; set; }
+        public long? KontenjanId { get; set; }
+        public long? YabanciDilId { get; set; }
+        public long? RehberId { get; set; }
+        public long? TesvikId { get; set; }
+        public SonrakiDonemKayitDurumu SonrakiDonemKayitDurumu { get; set; } = SonrakiDonemKayitDurumu.KayitYenileyecek;
 
         [StringLength(500)]
-        public string Aciklama { get; set; }
+        public string SonrakiDonemKayitDurumuAciklama { get; set; }
+
+        public long? OzelKod1Id { get; set; }
+        public long? OzelKod2Id { get; set; }
+        public long? OzelKod3Id { get; set; }
+        public long? OzelKod4Id { get; set; }
+        public long? OzelKod5Id { get; set; }
 
         public long SubeId { get; set; }
-        public Sube Sube { get; set; }
-
         public long DonemId { get; set; }
+
+      
+        public Ogrenci Ogrenci { get; set; }
+        public Sinif Sinif { get; set; }
+        public Okul GeldigiOkul { get; set; }
+        public Kontenjan Kontenjan { get; set; }
+        public YabanciDil YabanciDil { get; set; }
+        public Rehber Rehber { get; set; }
+        public Tesvik Tesvik { get; set; }
+        public OzelKod OzelKod1 { get; set; }
+        public OzelKod OzelKod2 { get; set; }
+        public OzelKod OzelKod3 { get; set; }
+        public OzelKod OzelKod4 { get; set; }
+        public OzelKod OzelKod5 { get; set; }
+        public Sube Sube { get; set; }
         public Donem Donem { get; set; }
 
 
-        [ZorunluAlan("Hizmet Türü Adı", "txtHizmetTuru")]
-        public long HizmetTuruId { get; set; }
-        public HizmetTuru HizmetTuru { get; set; }
     }
 }
