@@ -21,6 +21,10 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [StringLength(500)]
         public string Aciklama { get; set; }
 
-        
+
+        [InverseProperty("Il")]
+        public ICollection<Ilce> Ilce { get; set; }
+
+
     }
 }

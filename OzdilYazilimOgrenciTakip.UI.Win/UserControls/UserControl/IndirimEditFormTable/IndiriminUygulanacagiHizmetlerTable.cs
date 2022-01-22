@@ -1,5 +1,6 @@
 ﻿using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
+using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
@@ -34,7 +35,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             var source = tablo.DataController.ListSource;
             ListeDisiTutulacakKayitlar = source.Cast<IndiriminUygulanacagiHizmetBilgileriL>().Where(x => !x.Delete).Select(x => x.HizmetId).ToList();
 
-            var entities = ShowListForms<HizmetListForm>.ShowDialogListForm(Common.Enums.KartTuru.Hizmet, ListeDisiTutulacakKayitlar, true).EntityListConvert<HizmetL>();
+            var entities = ShowListForms<HizmetListForm>.ShowDialogListForm(Common.Enums.KartTuru.Hizmet, ListeDisiTutulacakKayitlar, true,false).EntityListConvert<HizmetL>();
 
             if (entities == null) return;
 
@@ -66,7 +67,21 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
 
         protected internal override bool HataliGiris()
         {
-            return base.HataliGiris();
+            if (!TableValueChanged) return false;
+
+            for (int i = 0; i < tablo.DataRowCount; i++)
+            {
+                var entity = tablo.GetRow<IndiriminUygulanacagiHizmetBilgileriL>(i);
+                if (entity.IndirimTutari == 0 || entity.IndirimOrani == 0) continue;
+                tablo.Focus();
+                tablo.FocusedRowHandle = i;
+                Messages.HataMesaji("İndirim Tutarı Veya İndirim Oranı Alanlarından Sadece Birinin Değeri 0'dan büyük olmalıdır.");
+                return true;
+
+
+            }
+
+            return false;
 
 
 

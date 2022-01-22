@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using OzdilYazilimOgrenciTakip.Model.Attributes;
@@ -25,6 +26,10 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
      
         [StringLength(500)]
         public string Aciklama { get; set; }
+
+
+        [InverseProperty("Banka")]
+        public ICollection<BankaSube> BankaSube   { get; set; }
 
     }
 }

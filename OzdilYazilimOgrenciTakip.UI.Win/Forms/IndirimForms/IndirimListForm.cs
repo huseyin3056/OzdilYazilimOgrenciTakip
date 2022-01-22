@@ -31,5 +31,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
 
         }
 
+        
+
     }
 }

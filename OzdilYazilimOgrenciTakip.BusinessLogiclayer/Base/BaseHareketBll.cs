@@ -10,20 +10,20 @@ using System.Linq.Expressions;
 
 namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
 {
-    public class BaseHareketBll<T, TContext> : IBaseBll   where T : BaseHareketEntity where TContext : DbContext
+    public class BaseHareketBll<T, TContext> : IBaseBll,IBaseHareketGenelBll  where T : BaseHareketEntity where TContext : DbContext
     {
         
         private IUnitOfWork<T> _uow;
 
 
-        protected IQueryable<TResult> List<TResult>(Expression<Func<T, bool>> filter, Expression<Func<T, TResult>> selector)
+        public IQueryable<TResult> List<TResult>(Expression<Func<T, bool>> filter, Expression<Func<T, TResult>> selector)
         {
             GeneralFunctions.CreateUnitOfWork<T, TContext>(ref _uow);
             return _uow.Rep.Select(filter, selector);
 
         }
 
-        protected bool Insert(IList<BaseHareketEntity> entities)
+        public bool Insert(IList<BaseHareketEntity> entities)
         {
             GeneralFunctions.CreateUnitOfWork<T, TContext>(ref _uow);
          
@@ -32,7 +32,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
             return _uow.Save();
         }
 
-        protected bool Update(IList<BaseHareketEntity> entities)
+        public bool Update(IList<BaseHareketEntity> entities)
         {
             GeneralFunctions.CreateUnitOfWork<T, TContext>(ref _uow);
 
@@ -41,7 +41,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
 
         }
 
-        protected bool Delete(IList<BaseHareketEntity> entities)
+        public bool Delete(IList<BaseHareketEntity> entities)
         {
             GeneralFunctions.CreateUnitOfWork<T, TContext>(ref _uow);         
 

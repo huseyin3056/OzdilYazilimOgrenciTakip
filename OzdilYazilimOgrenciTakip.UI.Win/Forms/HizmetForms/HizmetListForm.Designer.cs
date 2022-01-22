@@ -105,6 +105,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtHizmetBaslamaTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtHizmetBaslamaTarihi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.txtHizmetBaslamaTarihi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtHizmetBaslamaTarihi.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtHizmetBaslamaTarihi.Size = new System.Drawing.Size(100, 20);

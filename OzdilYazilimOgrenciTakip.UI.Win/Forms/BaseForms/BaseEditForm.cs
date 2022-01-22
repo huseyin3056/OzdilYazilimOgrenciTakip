@@ -103,9 +103,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                         ControlEvents(ctrl);
 
 
+
+
+
+
         }
 
-        protected virtual void  Control_Enter(object sender, EventArgs e) { }
+        protected virtual void Control_Enter(object sender, EventArgs e) { }
 
         protected virtual void FiltreUygula() { }
 

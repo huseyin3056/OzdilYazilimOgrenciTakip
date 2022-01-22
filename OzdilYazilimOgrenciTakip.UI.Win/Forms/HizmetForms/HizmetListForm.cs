@@ -27,7 +27,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId;
          
             
-           // ustPanel.Visible = true; // ben sonradan koydum
+         
 
         }
 
@@ -57,9 +57,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
         protected override void Listele()
         {
             var list = ((HizmetBll)Bll).List(_filter);
-            tablo.GridControl.DataSource = list;
-            //   ((HizmetBll)Bll).List(x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId);
-
+            Tablo.GridControl.DataSource = list;
+          
             if (!MultiSelect) return;
 
             if (list.Any())

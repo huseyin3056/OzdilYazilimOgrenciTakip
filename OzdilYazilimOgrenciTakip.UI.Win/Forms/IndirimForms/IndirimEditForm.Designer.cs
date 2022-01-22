@@ -82,7 +82,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(898, 109);
+            this.ribbonControl.Size = new System.Drawing.Size(938, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // myDataLayoutControl
@@ -98,14 +98,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.myDataLayoutControl.Name = "myDataLayoutControl";
             this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl.Root = this.Root;
-            this.myDataLayoutControl.Size = new System.Drawing.Size(898, 216);
+            this.myDataLayoutControl.Size = new System.Drawing.Size(938, 366);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
             // 
             // tglDurum
             // 
             this.tglDurum.EnterMoveNextControl = true;
-            this.tglDurum.Location = new System.Drawing.Point(288, 12);
+            this.tglDurum.Location = new System.Drawing.Point(292, 12);
             this.tglDurum.MenuManager = this.ribbonControl;
             this.tglDurum.Name = "tglDurum";
             this.tglDurum.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
@@ -128,7 +128,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.txtAciklama.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtAciklama.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtAciklama.Properties.MaxLength = 500;
-            this.txtAciklama.Size = new System.Drawing.Size(302, 68);
+            this.txtAciklama.Size = new System.Drawing.Size(306, 68);
             this.txtAciklama.StatusBarAciklama = "Açıklama Giriniz";
             this.txtAciklama.StyleController = this.myDataLayoutControl;
             this.txtAciklama.TabIndex = 2;
@@ -161,7 +161,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.txtIndirimAdi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtIndirimAdi.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtIndirimAdi.Properties.MaxLength = 50;
-            this.txtIndirimAdi.Size = new System.Drawing.Size(302, 20);
+            this.txtIndirimAdi.Size = new System.Drawing.Size(306, 20);
             this.txtIndirimAdi.StatusBarAciklama = "İndirim Adı Giriniz";
             this.txtIndirimAdi.StyleController = this.myDataLayoutControl;
             this.txtIndirimAdi.TabIndex = 0;
@@ -229,7 +229,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             rowDefinition3,
             rowDefinition4,
             rowDefinition5});
-            this.Root.Size = new System.Drawing.Size(898, 216);
+            this.Root.Size = new System.Drawing.Size(938, 366);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -253,7 +253,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.ColumnSpan = 4;
             this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem2.Size = new System.Drawing.Size(375, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(379, 24);
             this.layoutControlItem2.Text = "İndirim Adı";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(57, 13);
             // 
@@ -279,7 +279,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.OptionsTableLayoutItem.ColumnSpan = 4;
             this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 3;
-            this.layoutControlItem4.Size = new System.Drawing.Size(375, 72);
+            this.layoutControlItem4.Size = new System.Drawing.Size(379, 72);
             this.layoutControlItem4.Text = "Açıklama";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(57, 13);
             // 
@@ -288,7 +288,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem5.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem5.Control = this.tglDurum;
-            this.layoutControlItem5.Location = new System.Drawing.Point(276, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(280, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem5.Size = new System.Drawing.Size(99, 24);
@@ -297,10 +297,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             // 
             // hizmetTablo
             // 
-            this.hizmetTablo.Location = new System.Drawing.Point(387, 12);
-            this.hizmetTablo.MinimumSize = new System.Drawing.Size(300, 150);
+            this.hizmetTablo.Location = new System.Drawing.Point(391, 12);
+            this.hizmetTablo.MinimumSize = new System.Drawing.Size(530, 320);
             this.hizmetTablo.Name = "hizmetTablo";
-            this.hizmetTablo.Size = new System.Drawing.Size(499, 150);
+            this.hizmetTablo.Size = new System.Drawing.Size(535, 320);
             this.hizmetTablo.TabIndex = 5;
             // 
             // layoutControlItem6
@@ -308,10 +308,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem6.Control = this.hizmetTablo;
-            this.layoutControlItem6.Location = new System.Drawing.Point(375, 0);
+            this.layoutControlItem6.Location = new System.Drawing.Point(379, 0);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.OptionsTableLayoutItem.ColumnIndex = 4;
-            this.layoutControlItem6.Size = new System.Drawing.Size(503, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(539, 24);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -319,10 +319,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 349);
+            this.ClientSize = new System.Drawing.Size(938, 499);
             this.Controls.Add(this.myDataLayoutControl);
             this.IconOptions.ShowIcon = false;
-            this.MinimumSize = new System.Drawing.Size(650, 200);
+            this.MinimumSize = new System.Drawing.Size(940, 500);
             this.Name = "IndirimEditForm";
             this.Text = "İndirim Kartı";
             this.Controls.SetChildIndex(this.ribbonControl, 0);

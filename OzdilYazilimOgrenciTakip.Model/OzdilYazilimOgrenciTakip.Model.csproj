@@ -101,6 +101,7 @@
     <Compile Include="Entities\Sinif.cs" />
     <Compile Include="Entities\SinifGrup.cs" />
     <Compile Include="Entities\Sube.cs" />
+    <Compile Include="Entities\Tahakkuk.cs" />
     <Compile Include="Entities\Tesvik.cs" />
     <Compile Include="Entities\YabanciDil.cs" />
     <Compile Include="Entities\Yakinlik.cs" />

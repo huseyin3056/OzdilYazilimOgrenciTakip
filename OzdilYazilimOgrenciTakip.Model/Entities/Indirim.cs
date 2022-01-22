@@ -1,5 +1,6 @@
 ﻿using OzdilYazilimOgrenciTakip.Model.Attributes;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -28,6 +29,10 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
 
         public long DonemId { get; set; }
         public Donem Donem { get; set; }
-      
+
+
+        [InverseProperty("Indirim")]
+        public ICollection<IndiriminUygulanacagiHizmetBilgileri> IndiriminUygulanacagiHizmetBilgileri  { get; set; }
+
     }
 }

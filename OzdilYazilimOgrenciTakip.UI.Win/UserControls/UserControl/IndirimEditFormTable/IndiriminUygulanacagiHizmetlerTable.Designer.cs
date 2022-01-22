@@ -44,8 +44,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             // 
             // insUpNavigator
             // 
-            this.insUpNavigator.Location = new System.Drawing.Point(0, 226);
-            this.insUpNavigator.Size = new System.Drawing.Size(400, 24);
+            this.insUpNavigator.Location = new System.Drawing.Point(0, 296);
+            this.insUpNavigator.Size = new System.Drawing.Size(530, 24);
             // 
             // grid
             // 
@@ -56,7 +56,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.grid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryTutar,
             this.repositoryOran});
-            this.grid.Size = new System.Drawing.Size(400, 226);
+            this.grid.Size = new System.Drawing.Size(530, 296);
             this.grid.TabIndex = 5;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -91,9 +91,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.tablo.OptionsView.RowAutoHeight = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
-            this.tablo.StatusBarAciklama = null;
-            this.tablo.StatusBarKisaYol = null;
-            this.tablo.StatusBarKisaYolAciklama = null;
+            this.tablo.StatusBarAciklama = "Bu İndirimin Uygulanacağı Hizmet Kartlarını Giriniz";
+            this.tablo.StatusBarKisaYol = "Shift+Insert :";
+            this.tablo.StatusBarKisaYolAciklama = "Hizmet Kartı Ekle";
             this.tablo.ViewCaption = "İndirimin Uygulanacağı Hizmetler";
             // 
             // colHizmetAdi
@@ -105,12 +105,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.colHizmetAdi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colHizmetAdi.OptionsFilter.AllowAutoFilter = false;
             this.colHizmetAdi.OptionsFilter.AllowFilter = false;
-            this.colHizmetAdi.StatusBarAciklama = null;
+            this.colHizmetAdi.StatusBarAciklama = "Hizmet Adı Giriniz";
             this.colHizmetAdi.StatusBarKisaYol = null;
             this.colHizmetAdi.StatusBarKisaYolAciklama = null;
             this.colHizmetAdi.Visible = true;
             this.colHizmetAdi.VisibleIndex = 0;
-            this.colHizmetAdi.Width = 150;
+            this.colHizmetAdi.Width = 200;
             // 
             // colIndirimTutar
             // 
@@ -121,12 +121,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.colIndirimTutar.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colIndirimTutar.OptionsFilter.AllowAutoFilter = false;
             this.colIndirimTutar.OptionsFilter.AllowFilter = false;
-            this.colIndirimTutar.StatusBarAciklama = null;
+            this.colIndirimTutar.StatusBarAciklama = "Tutar Giriniz";
             this.colIndirimTutar.StatusBarKisaYol = null;
             this.colIndirimTutar.StatusBarKisaYolAciklama = null;
             this.colIndirimTutar.Visible = true;
             this.colIndirimTutar.VisibleIndex = 1;
-            this.colIndirimTutar.Width = 120;
+            this.colIndirimTutar.Width = 150;
             // 
             // repositoryTutar
             // 
@@ -152,12 +152,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.colIndirimOrani.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colIndirimOrani.OptionsFilter.AllowAutoFilter = false;
             this.colIndirimOrani.OptionsFilter.AllowFilter = false;
-            this.colIndirimOrani.StatusBarAciklama = null;
+            this.colIndirimOrani.StatusBarAciklama = "İndirim Oranı Giriniz";
             this.colIndirimOrani.StatusBarKisaYol = null;
             this.colIndirimOrani.StatusBarKisaYolAciklama = null;
             this.colIndirimOrani.Visible = true;
             this.colIndirimOrani.VisibleIndex = 2;
-            this.colIndirimOrani.Width = 110;
+            this.colIndirimOrani.Width = 150;
             // 
             // repositoryOran
             // 
@@ -170,6 +170,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.repositoryOran.EditFormat.FormatString = "n0";
             this.repositoryOran.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryOran.MaskSettings.Set("mask", "n0");
+            this.repositoryOran.MaxValue = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
             this.repositoryOran.Name = "repositoryOran";
             // 
             // IndiriminUygulanacagiHizmetlerTable
@@ -177,9 +182,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.IndirimEditFo
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.grid);
-            this.MinimumSize = new System.Drawing.Size(300, 150);
+            this.MinimumSize = new System.Drawing.Size(530, 320);
             this.Name = "IndiriminUygulanacagiHizmetlerTable";
-            this.Size = new System.Drawing.Size(400, 250);
+            this.Size = new System.Drawing.Size(530, 320);
             this.Controls.SetChildIndex(this.insUpNavigator, 0);
             this.Controls.SetChildIndex(this.grid, 0);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();

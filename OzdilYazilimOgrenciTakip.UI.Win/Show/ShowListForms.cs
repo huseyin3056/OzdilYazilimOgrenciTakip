@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
@@ -68,9 +65,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
                     frm.ShowDialog();
 
-                return frm.DialogResult == DialogResult.OK ? frm.SelectedEntities : null;
-
-
+                //    return frm.DialogResult == DialogResult.OK ? frm.SelectedEntities : null;
+              
+                return frm.SelectedEntities;
+             
 
             }
 

@@ -69,7 +69,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             SablonYukle();
             Listele();
             ButonGizleGoster();
-            //   Tablo_LostFocus(Tablo, EventArgs.Empty);
+            Tablo_LostFocus(Tablo, EventArgs.Empty);
 
         }
 
@@ -140,6 +140,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         protected internal bool Kaydet()
         {
+            insUpNavigator.Navigator.Buttons.DoClick(insUpNavigator.Navigator.Buttons.EndEdit);
+
             var source = Tablo.DataController.ListSource;
 
             var insert = source.Cast<IBaseHareketEntity>().Where(x => x.Insert && !x.Delete).Cast<BaseHareketEntity>().ToList();
@@ -275,13 +277,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 OwnerForm.statusBarKisayol.Visibility = BarItemVisibility.Always;
                 OwnerForm.statusBarKisayolAciklama.Visibility = BarItemVisibility.Always;
 
-                OwnerForm.statusBarAciklama.Caption = ((IStatusBarAciklama)sender).StatusBarAciklama;
-                OwnerForm.statusBarKisayol.Caption = ((IStatusBarKisaYol)sender).StatusBarKisaYol;
-                OwnerForm.statusBarKisayolAciklama.Caption = ((IStatusBarKisaYol)sender).StatusBarKisaYolAciklama;
+                OwnerForm.statusBarAciklama.Caption = ((IStatusBarAciklama)e.FocusedColumn).StatusBarAciklama;
+                OwnerForm.statusBarKisayol.Caption = ((IStatusBarKisaYol)e.FocusedColumn).StatusBarKisaYol;
+                OwnerForm.statusBarKisayolAciklama.Caption = ((IStatusBarKisaYol)e.FocusedColumn).StatusBarKisaYolAciklama;
             }
 
             else if (((IStatusBarKisaYol)e.FocusedColumn).StatusBarAciklama != null)
-                OwnerForm.statusBarKisayolAciklama.Caption = ((IStatusBarKisaYol)sender).StatusBarKisaYolAciklama;
+                OwnerForm.statusBarAciklama.Caption = ((IStatusBarKisaYol)e.FocusedColumn).StatusBarAciklama;
         }
 
         private void Tablo_SablonChanged(object sender, EventArgs e)
