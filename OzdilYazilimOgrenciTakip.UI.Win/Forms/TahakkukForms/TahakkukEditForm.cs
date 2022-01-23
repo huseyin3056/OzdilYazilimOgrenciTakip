@@ -40,6 +40,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
         }
 
+        public TahakkukEditForm(params object[] prm): this()
+        {
+            _ogrenci =(Ogrenci) prm[0];
+        }
+
 
         protected internal override void Yukle()
         {
@@ -53,11 +58,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         protected override void NesneyiKontrollereBagla()
         {
             var entity = (TahakkukS)OldEntity;
-            txtTCKimlikNo.Text = entity.TcKimlikNo;
-            txtAdi.Text = entity.Adi;
-            txtSoyadi.Text = entity.SoyAdi;
-            txtBabaAdi.Text = entity.BabaAdi;
-            txtAnaAdi.Text = entity.AnaAdi;
+            txtTCKimlikNo.Text =BaseIslemTuru==IslemTuru.EntityInsert?_ogrenci.TcKimlikNo: entity.TcKimlikNo;
+            txtAdi.Text =  BaseIslemTuru == IslemTuru.EntityInsert ? _ogrenci.Adi : entity.Adi;
+            txtSoyadi.Text =  BaseIslemTuru == IslemTuru.EntityInsert ? _ogrenci.SoyAdi: entity.SoyAdi;
+            txtBabaAdi.Text = BaseIslemTuru == IslemTuru.EntityInsert ? _ogrenci.BabaAdi : entity.AnaAdi;
+            txtAnaAdi.Text = BaseIslemTuru == IslemTuru.EntityInsert ? _ogrenci.AnaAdi : entity.AnaAdi;
             txtDurum.Text = entity.Durum ? IptalDurumu.DevamEdiyor.ToName() : IptalDurumu.IptalEdildi.ToName();
             txtKod.Text = entity.Kod;
             txtOkulNo.Text = entity.OkulNo;

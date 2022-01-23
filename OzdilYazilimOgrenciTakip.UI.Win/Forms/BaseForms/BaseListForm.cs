@@ -38,7 +38,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected BarItem[] HideItems;
         protected internal IList<long> ListeDisiTutulacakKayitlar;
         protected internal SelectRowFunctions RowSelect;
-        protected internal bool EklenebilecekEntityVar=false;
+        protected internal bool EklenebilecekEntityVar = false;
         protected internal IList<BaseEntity> SelectedEntities;
 
         #endregion
@@ -74,7 +74,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             if (MultiSelect)
             {
                 SelectedEntities = new List<BaseEntity>();
-                if(RowSelect.SelectedRowCount==0)
+                if (RowSelect.SelectedRowCount == 0)
                 {
                     Messages.KartSecmemeUyariMesaji();
                     return;
@@ -97,7 +97,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         private void FiltreSec()
         {
-            var entity =(Filtre) ShowListForms<FiltreListForm>.ShowDialogListForm(KartTuru.Filtre,_filtreId,BaseKartTuru,Tablo.GridControl);
+            var entity = (Filtre)ShowListForms<FiltreListForm>.ShowDialogListForm(KartTuru.Filtre, _filtreId, BaseKartTuru, Tablo.GridControl);
             if (entity == null) return;
             _filtreId = entity.Id;
             Tablo.ActiveFilterString = entity.FiltreMetni;
@@ -140,7 +140,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         {
             if (!IsMdiChild)
             {
-                
+
                 SelectEntity();
             }
 
@@ -205,8 +205,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         private void BaseListForm_SizeChanged(object sender, System.EventArgs e)
         {
-            if(!IsMdiChild)
-            _formSablonKayitEdilecek = true;
+            if (!IsMdiChild)
+                _formSablonKayitEdilecek = true;
         }
 
         private void BaseListForm_LocationChanged(object sender, System.EventArgs e)
@@ -265,7 +265,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         {
             btnSec.Visibility = AktifPasifButonGoster ? BarItemVisibility.Never : IsMdiChild ? BarItemVisibility.Never : BarItemVisibility.Always;
             barEnter.Visibility = IsMdiChild ? BarItemVisibility.Never : BarItemVisibility.Always;
-            barEnterAciklama.Visibility=IsMdiChild? BarItemVisibility.Never : BarItemVisibility.Always;
+            barEnterAciklama.Visibility = IsMdiChild ? BarItemVisibility.Never : BarItemVisibility.Always;
             btnAktifPasifKartlar.Visibility = AktifPasifButonGoster ? BarItemVisibility.Always : !IsMdiChild ? BarItemVisibility.Never : BarItemVisibility.Always;
 
             ShowItems?.ForEach(x => x.Visibility = BarItemVisibility.Always);
@@ -394,6 +394,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                     Tablo.HideCustomization();
             }
 
+            else if (e.Item == btnTahakkukYap)
+            {
+                TahakkukYap();
+            }
+
             else if (e.Item == btnBagliKartlar)
             {
 
@@ -429,8 +434,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             Cursor.Current = DefaultCursor;
         }
 
+        protected virtual void TahakkukYap() { }
 
-     protected virtual void BagliKartAc() { }
+        protected virtual void BagliKartAc() { }
 
         private void Tablo_DoubleClick(object sender, System.EventArgs e)
         {

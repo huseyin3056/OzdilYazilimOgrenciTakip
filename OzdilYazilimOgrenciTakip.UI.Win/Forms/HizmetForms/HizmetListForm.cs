@@ -15,19 +15,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
     public partial class HizmetListForm : BaseListForm
     {
       
-
         private readonly Expression<Func<Hizmet, bool>> _filter;
-
 
         public HizmetListForm()
         {
             InitializeComponent();
 
             Bll = new HizmetBll();
-            _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId;
-         
-            
-         
+            _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId;      
 
         }
 
@@ -51,7 +46,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             Navigator = longNavigator.Navigator;
             TarihAyarla();
 
-
         }
 
         protected override void Listele()
@@ -65,8 +59,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
                 EklenebilecekEntityVar = true;
             else
                 Messages.KartBulunamadiMesaji("Kart");
-
-
 
         }
 
@@ -85,17 +77,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
                 ? AnaForm.EgitimBaslamaTarihi : DateTime.Now.Date > AnaForm.EgitimBaslamaTarihi && DateTime.Now.Date <= AnaForm.DonemBitisTarihi
                 ? DateTime.Now.Date : DateTime.Now.Date > AnaForm.DonemBitisTarihi ? AnaForm.DonemBitisTarihi : DateTime.Now.Date;
 
-
-
-
         }
 
         protected override void SelectEntity()
         {
            base.SelectEntity();
 
-            if(MultiSelect)
-            SelectedEntities.ForEach(x => ((HizmetL)x).BaslamaTarihi = txtHizmetBaslamaTarihi.DateTime.Date);
+            if (MultiSelect)
+                SelectedEntities.ForEach(x => ((HizmetL)x).BaslamaTarihi = txtHizmetBaslamaTarihi.DateTime.Date);
 
         }
     }

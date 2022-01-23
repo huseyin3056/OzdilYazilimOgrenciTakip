@@ -344,9 +344,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtOzelKod5.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtOzelKod5.Size = new System.Drawing.Size(135, 20);
-            this.txtOzelKod5.StatusBarAciklama = null;
+            this.txtOzelKod5.StatusBarAciklama = "Özel Kod Giriniz";
             this.txtOzelKod5.StatusBarKisaYol = "F4";
-            this.txtOzelKod5.StatusBarKisaYolAciklama = null;
+            this.txtOzelKod5.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtOzelKod5.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtOzelKod5.TabIndex = 16;
             // 
@@ -363,9 +363,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtOzelKod4.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtOzelKod4.Size = new System.Drawing.Size(135, 20);
-            this.txtOzelKod4.StatusBarAciklama = null;
+            this.txtOzelKod4.StatusBarAciklama = "Özel Kod Giriniz";
             this.txtOzelKod4.StatusBarKisaYol = "F4";
-            this.txtOzelKod4.StatusBarKisaYolAciklama = null;
+            this.txtOzelKod4.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtOzelKod4.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtOzelKod4.TabIndex = 15;
             // 
@@ -382,9 +382,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtOzelKod3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtOzelKod3.Size = new System.Drawing.Size(135, 20);
-            this.txtOzelKod3.StatusBarAciklama = null;
+            this.txtOzelKod3.StatusBarAciklama = "Özel Kod Giriniz";
             this.txtOzelKod3.StatusBarKisaYol = "F4";
-            this.txtOzelKod3.StatusBarKisaYolAciklama = null;
+            this.txtOzelKod3.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtOzelKod3.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtOzelKod3.TabIndex = 14;
             // 
@@ -401,9 +401,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtOzelKod2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtOzelKod2.Size = new System.Drawing.Size(135, 20);
-            this.txtOzelKod2.StatusBarAciklama = null;
+            this.txtOzelKod2.StatusBarAciklama = "Özel Kod Giriniz";
             this.txtOzelKod2.StatusBarKisaYol = "F4";
-            this.txtOzelKod2.StatusBarKisaYolAciklama = null;
+            this.txtOzelKod2.StatusBarKisaYolAciklama = "SEçim Yap";
             this.txtOzelKod2.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtOzelKod2.TabIndex = 13;
             // 
@@ -420,9 +420,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtOzelKod1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtOzelKod1.Size = new System.Drawing.Size(135, 20);
-            this.txtOzelKod1.StatusBarAciklama = null;
+            this.txtOzelKod1.StatusBarAciklama = "Özel Kod Giriniz";
             this.txtOzelKod1.StatusBarKisaYol = "F4";
-            this.txtOzelKod1.StatusBarKisaYolAciklama = null;
+            this.txtOzelKod1.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtOzelKod1.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtOzelKod1.TabIndex = 12;
             // 
@@ -452,9 +452,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtSonrakiDonemKayitDurumu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtSonrakiDonemKayitDurumu.Size = new System.Drawing.Size(155, 20);
-            this.txtSonrakiDonemKayitDurumu.StatusBarAciklama = null;
+            this.txtSonrakiDonemKayitDurumu.StatusBarAciklama = "Sonraki Dönem Kayıt Durumunu Giriniz";
             this.txtSonrakiDonemKayitDurumu.StatusBarKisaYol = null;
-            this.txtSonrakiDonemKayitDurumu.StatusBarKisaYolAciklama = null;
+            this.txtSonrakiDonemKayitDurumu.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtSonrakiDonemKayitDurumu.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtSonrakiDonemKayitDurumu.TabIndex = 10;
             // 
@@ -471,9 +471,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtRehber.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtRehber.Size = new System.Drawing.Size(135, 20);
-            this.txtRehber.StatusBarAciklama = null;
+            this.txtRehber.StatusBarAciklama = "Rehber Giriniz";
             this.txtRehber.StatusBarKisaYol = "F4";
-            this.txtRehber.StatusBarKisaYolAciklama = null;
+            this.txtRehber.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtRehber.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtRehber.TabIndex = 9;
             // 
@@ -490,9 +490,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtTesvik.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtTesvik.Size = new System.Drawing.Size(135, 20);
-            this.txtTesvik.StatusBarAciklama = null;
+            this.txtTesvik.StatusBarAciklama = "Teşvik Durumu Giriniz";
             this.txtTesvik.StatusBarKisaYol = "F4";
-            this.txtTesvik.StatusBarKisaYolAciklama = null;
+            this.txtTesvik.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtTesvik.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtTesvik.TabIndex = 8;
             // 
@@ -509,9 +509,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtKontenjan.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtKontenjan.Size = new System.Drawing.Size(135, 20);
-            this.txtKontenjan.StatusBarAciklama = null;
+            this.txtKontenjan.StatusBarAciklama = "Kontenjan Giriniz";
             this.txtKontenjan.StatusBarKisaYol = "F4";
-            this.txtKontenjan.StatusBarKisaYolAciklama = null;
+            this.txtKontenjan.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtKontenjan.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtKontenjan.TabIndex = 7;
             // 
@@ -528,9 +528,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtGeldigiOkul.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtGeldigiOkul.Size = new System.Drawing.Size(145, 20);
-            this.txtGeldigiOkul.StatusBarAciklama = null;
+            this.txtGeldigiOkul.StatusBarAciklama = "Geldiği Okul Giriniz";
             this.txtGeldigiOkul.StatusBarKisaYol = "F4";
-            this.txtGeldigiOkul.StatusBarKisaYolAciklama = null;
+            this.txtGeldigiOkul.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtGeldigiOkul.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtGeldigiOkul.TabIndex = 6;
             // 
@@ -547,9 +547,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtYabanciDil.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtYabanciDil.Size = new System.Drawing.Size(145, 20);
-            this.txtYabanciDil.StatusBarAciklama = null;
+            this.txtYabanciDil.StatusBarAciklama = "Yabancı Dil Giriniz";
             this.txtYabanciDil.StatusBarKisaYol = "F4";
-            this.txtYabanciDil.StatusBarKisaYolAciklama = null;
+            this.txtYabanciDil.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtYabanciDil.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtYabanciDil.TabIndex = 5;
             // 
@@ -566,9 +566,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtSinif.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtSinif.Size = new System.Drawing.Size(145, 20);
-            this.txtSinif.StatusBarAciklama = null;
+            this.txtSinif.StatusBarAciklama = "Sınıf Giriniz";
             this.txtSinif.StatusBarKisaYol = "F4";
-            this.txtSinif.StatusBarKisaYolAciklama = null;
+            this.txtSinif.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtSinif.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtSinif.TabIndex = 4;
             // 
@@ -584,9 +584,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtKayitDurumu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtKayitDurumu.Size = new System.Drawing.Size(145, 20);
-            this.txtKayitDurumu.StatusBarAciklama = null;
+            this.txtKayitDurumu.StatusBarAciklama = "Kayıt Durumu Giriniz";
             this.txtKayitDurumu.StatusBarKisaYol = null;
-            this.txtKayitDurumu.StatusBarKisaYolAciklama = null;
+            this.txtKayitDurumu.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtKayitDurumu.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtKayitDurumu.TabIndex = 3;
             // 
@@ -602,9 +602,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtKayitSekli.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtKayitSekli.Size = new System.Drawing.Size(145, 20);
-            this.txtKayitSekli.StatusBarAciklama = null;
+            this.txtKayitSekli.StatusBarAciklama = "Kayıt Şekli Giriniz";
             this.txtKayitSekli.StatusBarKisaYol = null;
-            this.txtKayitSekli.StatusBarKisaYolAciklama = null;
+            this.txtKayitSekli.StatusBarKisaYolAciklama = "Seçim yap";
             this.txtKayitSekli.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtKayitSekli.TabIndex = 2;
             // 
@@ -627,7 +627,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.txtKayitTarihi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtKayitTarihi.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtKayitTarihi.Size = new System.Drawing.Size(145, 20);
-            this.txtKayitTarihi.StatusBarAciklama = null;
+            this.txtKayitTarihi.StatusBarAciklama = "Tarih Giriniz";
             this.txtKayitTarihi.StatusBarKisaYol = "F4 :";
             this.txtKayitTarihi.StatusBarKisaYolAciklama = "Tarih Seç :";
             this.txtKayitTarihi.StyleController = this.DataLayoutControlGenelBilgiler;
@@ -643,7 +643,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.txtOkulNo.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtOkulNo.Properties.MaxLength = 50;
             this.txtOkulNo.Size = new System.Drawing.Size(145, 20);
-            this.txtOkulNo.StatusBarAciklama = null;
+            this.txtOkulNo.StatusBarAciklama = "Okul No Giriniz";
             this.txtOkulNo.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtOkulNo.TabIndex = 0;
             // 
@@ -661,7 +661,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.txtKod.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtKod.Properties.MaxLength = 20;
             this.txtKod.Size = new System.Drawing.Size(145, 20);
-            this.txtKod.StatusBarAciklama = "Kod Giriniz";
+            this.txtKod.StatusBarAciklama = "Öğrenci No Giriniz";
             this.txtKod.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtKod.TabIndex = 17;
             // 

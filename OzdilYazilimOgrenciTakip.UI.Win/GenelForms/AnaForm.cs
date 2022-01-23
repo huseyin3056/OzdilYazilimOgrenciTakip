@@ -31,6 +31,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 {
@@ -219,6 +220,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             else if (e.Item == btnIndirimKartlari)
             {
                 ShowListForms<IndirimListForm>.ShowListForm(KartTuru.Indirim);
+            }
+
+            else if (e.Item == btnTahakkukKartlari)
+            {
+                ShowListForms<TahakkukListForm>.ShowListForm(KartTuru.Tahakkuk);
             }
 
 
