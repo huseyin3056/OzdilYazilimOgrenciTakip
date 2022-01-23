@@ -72,6 +72,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             txtSinif.Id = entity.SinifId;
             txtSinif.Text = entity.SinifAdi;
             txtYabanciDil.Id = entity.YabanciDilId;
+            txtYabanciDil.Text = entity.YabanciDilAdi;
             txtGeldigiOkul.Id = entity.GeldigiOkulId;
             txtGeldigiOkul.Text = entity.GeldigiOkulAdi;
             txtKontenjan.Id = entity.KontenjanId;

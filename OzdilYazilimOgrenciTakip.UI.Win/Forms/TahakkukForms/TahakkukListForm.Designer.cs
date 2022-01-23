@@ -33,35 +33,35 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.longNavigator = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.Navigators.LongNavigator();
             this.grid = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridControl();
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridView();
-            this.colId = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colOgrenciNo = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colOkulNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colTcKimlikNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colSoyadi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colBabaAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colAnaAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colOgrenciNo = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colOkulNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colKayitTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colKayitSekli = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colKayitDurumu = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colSinif = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
+            this.colYabanciDil = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colGeldigiOkul = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colKontenjan = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
-            this.colYabanciDil = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
-            this.colRehber = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colTesvik = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
+            this.colRehber = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
+            this.colSubeAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
+            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSonrakiKayitDurumu = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colSonrakiKayitDurumuAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colOzelKod1 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colOzelKod2 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colOzelKod3 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colOzelKod4 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colOzelKod5 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
-            this.colSubeAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colId = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
@@ -175,46 +175,24 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.tablo.StatusBarKisaYolAciklama = null;
             this.tablo.ViewCaption = "Tahakkuk Kartları";
             // 
-            // colId
+            // gridBand1
             // 
-            this.colId.Caption = "Id";
-            this.colId.FieldName = "Id";
-            this.colId.Name = "colId";
-            this.colId.OptionsColumn.AllowEdit = false;
-            this.colId.OptionsColumn.ShowInCustomizationForm = false;
-            // 
-            // colOgrenciNo
-            // 
-            this.colOgrenciNo.AppearanceCell.Options.UseTextOptions = true;
-            this.colOgrenciNo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colOgrenciNo.Caption = "Öğrenci No";
-            this.colOgrenciNo.FieldName = "Kod";
-            this.colOgrenciNo.Name = "colOgrenciNo";
-            this.colOgrenciNo.OptionsColumn.AllowEdit = false;
-            this.colOgrenciNo.OptionsColumn.ShowInCustomizationForm = false;
-            this.colOgrenciNo.Visible = true;
-            this.colOgrenciNo.Width = 91;
-            // 
-            // colOkulNo
-            // 
-            this.colOkulNo.AppearanceCell.Options.UseTextOptions = true;
-            this.colOkulNo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colOkulNo.Caption = "Okul No";
-            this.colOkulNo.FieldName = "OkulNo";
-            this.colOkulNo.Name = "colOkulNo";
-            this.colOkulNo.OptionsColumn.AllowEdit = false;
-            this.colOkulNo.StatusBarAciklama = null;
-            this.colOkulNo.StatusBarKisaYol = "F4";
-            this.colOkulNo.StatusBarKisaYolAciklama = null;
-            this.colOkulNo.Visible = true;
-            this.colOkulNo.Width = 87;
+            this.gridBand1.Caption = "Öğrenci Bilgileri";
+            this.gridBand1.Columns.Add(this.colTcKimlikNo);
+            this.gridBand1.Columns.Add(this.colAdi);
+            this.gridBand1.Columns.Add(this.colSoyadi);
+            this.gridBand1.Columns.Add(this.colBabaAdi);
+            this.gridBand1.Columns.Add(this.colAnaAdi);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
+            this.gridBand1.Width = 549;
             // 
             // colTcKimlikNo
             // 
             this.colTcKimlikNo.AppearanceCell.Options.UseTextOptions = true;
             this.colTcKimlikNo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTcKimlikNo.Caption = "TC Kimlik";
-            this.colTcKimlikNo.FieldName = "colTcKimlikNo";
+            this.colTcKimlikNo.FieldName = "TcKimlikNo";
             this.colTcKimlikNo.Name = "colTcKimlikNo";
             this.colTcKimlikNo.OptionsColumn.AllowEdit = false;
             this.colTcKimlikNo.StatusBarAciklama = null;
@@ -238,7 +216,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             // colSoyadi
             // 
             this.colSoyadi.Caption = "Soyadı";
-            this.colSoyadi.FieldName = "Soyadi";
+            this.colSoyadi.FieldName = "SoyAdi";
             this.colSoyadi.Name = "colSoyadi";
             this.colSoyadi.OptionsColumn.AllowEdit = false;
             this.colSoyadi.StatusBarAciklama = null;
@@ -270,6 +248,51 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.colAnaAdi.StatusBarKisaYolAciklama = null;
             this.colAnaAdi.Visible = true;
             this.colAnaAdi.Width = 83;
+            // 
+            // gridBand2
+            // 
+            this.gridBand2.Caption = "Tahakkuk Bilgileri";
+            this.gridBand2.Columns.Add(this.colOgrenciNo);
+            this.gridBand2.Columns.Add(this.colOkulNo);
+            this.gridBand2.Columns.Add(this.colKayitTarihi);
+            this.gridBand2.Columns.Add(this.colKayitSekli);
+            this.gridBand2.Columns.Add(this.colKayitDurumu);
+            this.gridBand2.Columns.Add(this.colSinif);
+            this.gridBand2.Columns.Add(this.colYabanciDil);
+            this.gridBand2.Columns.Add(this.colGeldigiOkul);
+            this.gridBand2.Columns.Add(this.colKontenjan);
+            this.gridBand2.Columns.Add(this.colTesvik);
+            this.gridBand2.Columns.Add(this.colRehber);
+            this.gridBand2.Columns.Add(this.colSubeAdi);
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.VisibleIndex = 1;
+            this.gridBand2.Width = 1167;
+            // 
+            // colOgrenciNo
+            // 
+            this.colOgrenciNo.AppearanceCell.Options.UseTextOptions = true;
+            this.colOgrenciNo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colOgrenciNo.Caption = "Öğrenci No";
+            this.colOgrenciNo.FieldName = "Kod";
+            this.colOgrenciNo.Name = "colOgrenciNo";
+            this.colOgrenciNo.OptionsColumn.AllowEdit = false;
+            this.colOgrenciNo.OptionsColumn.ShowInCustomizationForm = false;
+            this.colOgrenciNo.Visible = true;
+            this.colOgrenciNo.Width = 91;
+            // 
+            // colOkulNo
+            // 
+            this.colOkulNo.AppearanceCell.Options.UseTextOptions = true;
+            this.colOkulNo.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colOkulNo.Caption = "Okul No";
+            this.colOkulNo.FieldName = "OkulNo";
+            this.colOkulNo.Name = "colOkulNo";
+            this.colOkulNo.OptionsColumn.AllowEdit = false;
+            this.colOkulNo.StatusBarAciklama = null;
+            this.colOkulNo.StatusBarKisaYol = "F4";
+            this.colOkulNo.StatusBarKisaYolAciklama = null;
+            this.colOkulNo.Visible = true;
+            this.colOkulNo.Width = 87;
             // 
             // colKayitTarihi
             // 
@@ -312,7 +335,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             // colSinif
             // 
             this.colSinif.Caption = "Sınıf";
-            this.colSinif.FieldName = "Sinif";
+            this.colSinif.FieldName = "SinifAdi";
             this.colSinif.Name = "colSinif";
             this.colSinif.OptionsColumn.AllowEdit = false;
             this.colSinif.StatusBarAciklama = null;
@@ -321,10 +344,22 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.colSinif.Visible = true;
             this.colSinif.Width = 77;
             // 
+            // colYabanciDil
+            // 
+            this.colYabanciDil.Caption = "Yabancı Dil";
+            this.colYabanciDil.FieldName = "YabanciDilAdi";
+            this.colYabanciDil.Name = "colYabanciDil";
+            this.colYabanciDil.OptionsColumn.AllowEdit = false;
+            this.colYabanciDil.StatusBarAciklama = null;
+            this.colYabanciDil.StatusBarKisaYol = "F4";
+            this.colYabanciDil.StatusBarKisaYolAciklama = null;
+            this.colYabanciDil.Visible = true;
+            this.colYabanciDil.Width = 112;
+            // 
             // colGeldigiOkul
             // 
             this.colGeldigiOkul.Caption = "Geldiği Okul";
-            this.colGeldigiOkul.FieldName = "GeldigiOkul";
+            this.colGeldigiOkul.FieldName = "GeldigiOkulAdi";
             this.colGeldigiOkul.Name = "colGeldigiOkul";
             this.colGeldigiOkul.OptionsColumn.AllowEdit = false;
             this.colGeldigiOkul.StatusBarAciklama = null;
@@ -336,7 +371,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             // colKontenjan
             // 
             this.colKontenjan.Caption = "Kontenjan Türü";
-            this.colKontenjan.FieldName = "Kontenjan";
+            this.colKontenjan.FieldName = "KontenjanAdi";
             this.colKontenjan.Name = "colKontenjan";
             this.colKontenjan.OptionsColumn.AllowEdit = false;
             this.colKontenjan.StatusBarAciklama = null;
@@ -345,34 +380,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.colKontenjan.Visible = true;
             this.colKontenjan.Width = 95;
             // 
-            // colYabanciDil
-            // 
-            this.colYabanciDil.Caption = "Yabancı Dil";
-            this.colYabanciDil.FieldName = "YabanciDil";
-            this.colYabanciDil.Name = "colYabanciDil";
-            this.colYabanciDil.OptionsColumn.AllowEdit = false;
-            this.colYabanciDil.StatusBarAciklama = null;
-            this.colYabanciDil.StatusBarKisaYol = "F4";
-            this.colYabanciDil.StatusBarKisaYolAciklama = null;
-            this.colYabanciDil.Visible = true;
-            this.colYabanciDil.Width = 112;
-            // 
-            // colRehber
-            // 
-            this.colRehber.Caption = "Rehber";
-            this.colRehber.FieldName = "Rehber";
-            this.colRehber.Name = "colRehber";
-            this.colRehber.OptionsColumn.AllowEdit = false;
-            this.colRehber.StatusBarAciklama = null;
-            this.colRehber.StatusBarKisaYol = "F4";
-            this.colRehber.StatusBarKisaYolAciklama = null;
-            this.colRehber.Visible = true;
-            this.colRehber.Width = 133;
-            // 
             // colTesvik
             // 
             this.colTesvik.Caption = "Teşvik Türü";
-            this.colTesvik.FieldName = "Tesvik";
+            this.colTesvik.FieldName = "TesvikAdi";
             this.colTesvik.Name = "colTesvik";
             this.colTesvik.OptionsColumn.AllowEdit = false;
             this.colTesvik.StatusBarAciklama = null;
@@ -381,91 +392,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.colTesvik.Visible = true;
             this.colTesvik.Width = 77;
             // 
-            // colSonrakiKayitDurumu
+            // colRehber
             // 
-            this.colSonrakiKayitDurumu.Caption = "Kayıt Durumu";
-            this.colSonrakiKayitDurumu.CustomizationCaption = "Sonraki Dönem Kayıt Durumu";
-            this.colSonrakiKayitDurumu.FieldName = "SonrakiKayitDurumu";
-            this.colSonrakiKayitDurumu.Name = "colSonrakiKayitDurumu";
-            this.colSonrakiKayitDurumu.OptionsColumn.AllowEdit = false;
-            this.colSonrakiKayitDurumu.StatusBarAciklama = null;
-            this.colSonrakiKayitDurumu.StatusBarKisaYol = "F4";
-            this.colSonrakiKayitDurumu.StatusBarKisaYolAciklama = null;
-            this.colSonrakiKayitDurumu.Visible = true;
-            this.colSonrakiKayitDurumu.Width = 92;
-            // 
-            // colSonrakiKayitDurumuAciklama
-            // 
-            this.colSonrakiKayitDurumuAciklama.Caption = "Açıklama";
-            this.colSonrakiKayitDurumuAciklama.CustomizationCaption = "Sonraki Kayit Durumu Aciklama";
-            this.colSonrakiKayitDurumuAciklama.FieldName = "SonrakiKayitDurumuAciklama";
-            this.colSonrakiKayitDurumuAciklama.Name = "colSonrakiKayitDurumuAciklama";
-            this.colSonrakiKayitDurumuAciklama.OptionsColumn.AllowEdit = false;
-            this.colSonrakiKayitDurumuAciklama.StatusBarAciklama = null;
-            this.colSonrakiKayitDurumuAciklama.StatusBarKisaYol = "F4";
-            this.colSonrakiKayitDurumuAciklama.StatusBarKisaYolAciklama = null;
-            this.colSonrakiKayitDurumuAciklama.Visible = true;
-            this.colSonrakiKayitDurumuAciklama.Width = 107;
-            // 
-            // colOzelKod1
-            // 
-            this.colOzelKod1.Caption = "Özel Kod-1";
-            this.colOzelKod1.FieldName = "OzelKod1";
-            this.colOzelKod1.Name = "colOzelKod1";
-            this.colOzelKod1.OptionsColumn.AllowEdit = false;
-            this.colOzelKod1.StatusBarAciklama = null;
-            this.colOzelKod1.StatusBarKisaYol = "F4";
-            this.colOzelKod1.StatusBarKisaYolAciklama = null;
-            this.colOzelKod1.Visible = true;
-            this.colOzelKod1.Width = 70;
-            // 
-            // colOzelKod2
-            // 
-            this.colOzelKod2.Caption = "Özel Kod-2";
-            this.colOzelKod2.FieldName = "OzelKod2";
-            this.colOzelKod2.Name = "colOzelKod2";
-            this.colOzelKod2.OptionsColumn.AllowEdit = false;
-            this.colOzelKod2.StatusBarAciklama = null;
-            this.colOzelKod2.StatusBarKisaYol = "F4";
-            this.colOzelKod2.StatusBarKisaYolAciklama = null;
-            this.colOzelKod2.Visible = true;
-            this.colOzelKod2.Width = 70;
-            // 
-            // colOzelKod3
-            // 
-            this.colOzelKod3.Caption = "Özel Kod-3";
-            this.colOzelKod3.FieldName = "OzelKod3";
-            this.colOzelKod3.Name = "colOzelKod3";
-            this.colOzelKod3.OptionsColumn.AllowEdit = false;
-            this.colOzelKod3.StatusBarAciklama = null;
-            this.colOzelKod3.StatusBarKisaYol = "F4";
-            this.colOzelKod3.StatusBarKisaYolAciklama = null;
-            this.colOzelKod3.Visible = true;
-            this.colOzelKod3.Width = 70;
-            // 
-            // colOzelKod4
-            // 
-            this.colOzelKod4.Caption = "Özel Kod-4";
-            this.colOzelKod4.FieldName = "OzelKod4";
-            this.colOzelKod4.Name = "colOzelKod4";
-            this.colOzelKod4.OptionsColumn.AllowEdit = false;
-            this.colOzelKod4.StatusBarAciklama = null;
-            this.colOzelKod4.StatusBarKisaYol = "F4";
-            this.colOzelKod4.StatusBarKisaYolAciklama = null;
-            this.colOzelKod4.Visible = true;
-            this.colOzelKod4.Width = 70;
-            // 
-            // colOzelKod5
-            // 
-            this.colOzelKod5.Caption = "Özel Kod-5";
-            this.colOzelKod5.FieldName = "OzelKod5";
-            this.colOzelKod5.Name = "colOzelKod5";
-            this.colOzelKod5.OptionsColumn.AllowEdit = false;
-            this.colOzelKod5.StatusBarAciklama = null;
-            this.colOzelKod5.StatusBarKisaYol = "F4";
-            this.colOzelKod5.StatusBarKisaYolAciklama = null;
-            this.colOzelKod5.Visible = true;
-            this.colOzelKod5.Width = 70;
+            this.colRehber.Caption = "Rehber";
+            this.colRehber.FieldName = "RehberAdi";
+            this.colRehber.Name = "colRehber";
+            this.colRehber.OptionsColumn.AllowEdit = false;
+            this.colRehber.StatusBarAciklama = null;
+            this.colRehber.StatusBarKisaYol = "F4";
+            this.colRehber.StatusBarKisaYolAciklama = null;
+            this.colRehber.Visible = true;
+            this.colRehber.Width = 133;
             // 
             // colSubeAdi
             // 
@@ -479,37 +416,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.colSubeAdi.Visible = true;
             this.colSubeAdi.Width = 81;
             // 
-            // gridBand1
-            // 
-            this.gridBand1.Caption = "Öğrenci Bilgileri";
-            this.gridBand1.Columns.Add(this.colTcKimlikNo);
-            this.gridBand1.Columns.Add(this.colAdi);
-            this.gridBand1.Columns.Add(this.colSoyadi);
-            this.gridBand1.Columns.Add(this.colBabaAdi);
-            this.gridBand1.Columns.Add(this.colAnaAdi);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 549;
-            // 
-            // gridBand2
-            // 
-            this.gridBand2.Caption = "Tahakkuk Bilgileri";
-            this.gridBand2.Columns.Add(this.colOgrenciNo);
-            this.gridBand2.Columns.Add(this.colOkulNo);
-            this.gridBand2.Columns.Add(this.colKayitTarihi);
-            this.gridBand2.Columns.Add(this.colKayitSekli);
-            this.gridBand2.Columns.Add(this.colKayitDurumu);
-            this.gridBand2.Columns.Add(this.colSinif);
-            this.gridBand2.Columns.Add(this.colYabanciDil);
-            this.gridBand2.Columns.Add(this.colGeldigiOkul);
-            this.gridBand2.Columns.Add(this.colKontenjan);
-            this.gridBand2.Columns.Add(this.colTesvik);
-            this.gridBand2.Columns.Add(this.colRehber);
-            this.gridBand2.Columns.Add(this.colSubeAdi);
-            this.gridBand2.Name = "gridBand2";
-            this.gridBand2.VisibleIndex = 1;
-            this.gridBand2.Width = 1167;
-            // 
             // gridBand3
             // 
             this.gridBand3.Caption = "Sonraki Dönem";
@@ -518,6 +424,32 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.VisibleIndex = 2;
             this.gridBand3.Width = 199;
+            // 
+            // colSonrakiKayitDurumu
+            // 
+            this.colSonrakiKayitDurumu.Caption = "Kayıt Durumu";
+            this.colSonrakiKayitDurumu.CustomizationCaption = "Sonraki Dönem Kayıt Durumu";
+            this.colSonrakiKayitDurumu.FieldName = "SonrakiDonemKayitDurumu";
+            this.colSonrakiKayitDurumu.Name = "colSonrakiKayitDurumu";
+            this.colSonrakiKayitDurumu.OptionsColumn.AllowEdit = false;
+            this.colSonrakiKayitDurumu.StatusBarAciklama = null;
+            this.colSonrakiKayitDurumu.StatusBarKisaYol = "F4";
+            this.colSonrakiKayitDurumu.StatusBarKisaYolAciklama = null;
+            this.colSonrakiKayitDurumu.Visible = true;
+            this.colSonrakiKayitDurumu.Width = 92;
+            // 
+            // colSonrakiKayitDurumuAciklama
+            // 
+            this.colSonrakiKayitDurumuAciklama.Caption = "Açıklama";
+            this.colSonrakiKayitDurumuAciklama.CustomizationCaption = "Sonraki Dönem Kayit Durumu Aciklama";
+            this.colSonrakiKayitDurumuAciklama.FieldName = "SonrakiDonemKayitDurumuAciklama";
+            this.colSonrakiKayitDurumuAciklama.Name = "colSonrakiKayitDurumuAciklama";
+            this.colSonrakiKayitDurumuAciklama.OptionsColumn.AllowEdit = false;
+            this.colSonrakiKayitDurumuAciklama.StatusBarAciklama = null;
+            this.colSonrakiKayitDurumuAciklama.StatusBarKisaYol = "F4";
+            this.colSonrakiKayitDurumuAciklama.StatusBarKisaYolAciklama = null;
+            this.colSonrakiKayitDurumuAciklama.Visible = true;
+            this.colSonrakiKayitDurumuAciklama.Width = 107;
             // 
             // gridBand4
             // 
@@ -531,6 +463,74 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.gridBand4.VisibleIndex = 3;
             this.gridBand4.Width = 350;
             // 
+            // colOzelKod1
+            // 
+            this.colOzelKod1.Caption = "Özel Kod-1";
+            this.colOzelKod1.FieldName = "OzelKod1Adi";
+            this.colOzelKod1.Name = "colOzelKod1";
+            this.colOzelKod1.OptionsColumn.AllowEdit = false;
+            this.colOzelKod1.StatusBarAciklama = null;
+            this.colOzelKod1.StatusBarKisaYol = "F4";
+            this.colOzelKod1.StatusBarKisaYolAciklama = null;
+            this.colOzelKod1.Visible = true;
+            this.colOzelKod1.Width = 70;
+            // 
+            // colOzelKod2
+            // 
+            this.colOzelKod2.Caption = "Özel Kod-2";
+            this.colOzelKod2.FieldName = "OzelKod2Adi";
+            this.colOzelKod2.Name = "colOzelKod2";
+            this.colOzelKod2.OptionsColumn.AllowEdit = false;
+            this.colOzelKod2.StatusBarAciklama = null;
+            this.colOzelKod2.StatusBarKisaYol = "F4";
+            this.colOzelKod2.StatusBarKisaYolAciklama = null;
+            this.colOzelKod2.Visible = true;
+            this.colOzelKod2.Width = 70;
+            // 
+            // colOzelKod3
+            // 
+            this.colOzelKod3.Caption = "Özel Kod-3";
+            this.colOzelKod3.FieldName = "OzelKod3Adi";
+            this.colOzelKod3.Name = "colOzelKod3";
+            this.colOzelKod3.OptionsColumn.AllowEdit = false;
+            this.colOzelKod3.StatusBarAciklama = null;
+            this.colOzelKod3.StatusBarKisaYol = "F4";
+            this.colOzelKod3.StatusBarKisaYolAciklama = null;
+            this.colOzelKod3.Visible = true;
+            this.colOzelKod3.Width = 70;
+            // 
+            // colOzelKod4
+            // 
+            this.colOzelKod4.Caption = "Özel Kod-4";
+            this.colOzelKod4.FieldName = "OzelKod4Adi";
+            this.colOzelKod4.Name = "colOzelKod4";
+            this.colOzelKod4.OptionsColumn.AllowEdit = false;
+            this.colOzelKod4.StatusBarAciklama = null;
+            this.colOzelKod4.StatusBarKisaYol = "F4";
+            this.colOzelKod4.StatusBarKisaYolAciklama = null;
+            this.colOzelKod4.Visible = true;
+            this.colOzelKod4.Width = 70;
+            // 
+            // colOzelKod5
+            // 
+            this.colOzelKod5.Caption = "Özel Kod-5";
+            this.colOzelKod5.FieldName = "OzelKod5Adi";
+            this.colOzelKod5.Name = "colOzelKod5";
+            this.colOzelKod5.OptionsColumn.AllowEdit = false;
+            this.colOzelKod5.StatusBarAciklama = null;
+            this.colOzelKod5.StatusBarKisaYol = "F4";
+            this.colOzelKod5.StatusBarKisaYolAciklama = null;
+            this.colOzelKod5.Visible = true;
+            this.colOzelKod5.Width = 70;
+            // 
+            // colId
+            // 
+            this.colId.Caption = "Id";
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
+            this.colId.OptionsColumn.ShowInCustomizationForm = false;
+            // 
             // TahakkukListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,7 +540,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
             this.Name = "TahakkukListForm";
-            this.Text = "TahakkukListForm";
+            this.Text = "Tahakkuk Kartları";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.longNavigator, 0);
             this.Controls.SetChildIndex(this.grid, 0);
