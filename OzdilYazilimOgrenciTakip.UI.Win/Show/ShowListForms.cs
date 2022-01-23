@@ -65,9 +65,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
                     frm.ShowDialog();
 
-                //    return frm.DialogResult == DialogResult.OK ? frm.SelectedEntities : null;
+                   return frm.DialogResult == DialogResult.OK ? frm.SelectedEntities : null;
               
-                return frm.SelectedEntities;
+              //  return frm.SelectedEntities; Ben ekledim.
              
 
             }

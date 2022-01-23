@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraBars;
+using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Interfaces;
 using OzdilYazilimOgrenciTakip.Common.Enums;
@@ -32,6 +33,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected BarItem[] HideItems;
         protected internal IslemTuru BaseIslemTuru;
         protected internal long Id;
+        protected bool FarkliSubeIslemi;
         protected internal bool RefreshYapilacak;
         #endregion
 
@@ -85,6 +87,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                         edt.EditValueChanged += Control_EditValueChanged;
                         break;
 
+                    case TabPane tab:
+                        tab.SelectedPageChanged += Control_SelectedPageChanged;
+                        break;
+
 
                 }
             }
@@ -108,6 +114,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
 
         }
+
+       
 
         protected virtual void Control_Enter(object sender, EventArgs e) { }
 
@@ -243,11 +251,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             GuncelNesneOlustur();
             SablonYukle();
             ButonGizleGoster();
+            
+            if(FarkliSubeIslemi)
+            {
+                Messages.UyariMesaji("İşlem Yapılan Kart Şube beya Dönemde Olmadığı İçin Yapılan Değişiklikler Kayıt Edilemez");
 
-
-            // Güncelleme Yapılacak
-
-
+            }
 
         }
 
@@ -445,6 +454,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity);
 
         }
+
+        protected virtual  void Control_SelectedPageChanged(object sender, SelectedPageChangedEventArgs e) { }
+       
+
+        protected virtual void BagliTabloYukle() { }
+
+        protected virtual bool BagliTabloKaydet() { return false; }
+       
+      
 
     }
 }

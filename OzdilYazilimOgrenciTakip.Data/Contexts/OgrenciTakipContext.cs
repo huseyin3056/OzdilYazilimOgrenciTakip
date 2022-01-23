@@ -68,6 +68,7 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<Indirim> Indirim { get; set; }
         public DbSet<IndiriminUygulanacagiHizmetBilgileri> IndiriminUygulanacagiHizmetBilgileri { get; set; }
         public DbSet<Tahakkuk> Tahakkuk { get; set; }
+        public DbSet<KardesBilgileri> KardesBilgileri { get; set; }
 
 
 

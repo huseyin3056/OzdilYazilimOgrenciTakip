@@ -14,7 +14,9 @@ using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
+using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 {
@@ -99,6 +101,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             btnGeriAl.Enabled = buttonEnabledDurumu;
             btnYeni.Enabled = !buttonEnabledDurumu;
             btnSil.Enabled = !buttonEnabledDurumu;
+
+        }
+
+        public static void ButtonEnabledDurumu(BarButtonItem btnYeni, BarButtonItem btnKaydet, BarButtonItem btnGeriAl, BarButtonItem btnSil)
+        {
+
+            btnKaydet.Enabled = false; 
+            btnGeriAl.Enabled = false;
+            btnYeni.Enabled = false;
+            btnSil.Enabled = false;
 
         }
 
@@ -297,6 +309,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
         {
             return new BindingList<T>((IList<T>)list);
 
+        }
+
+        public static BaseTablo AddTable(this BaseTablo tablo, BaseEditForm frm)
+        {
+            tablo.Dock = DockStyle.Fill;
+            tablo.OwnerForm = frm;
+            return tablo;
         }
     }
 }

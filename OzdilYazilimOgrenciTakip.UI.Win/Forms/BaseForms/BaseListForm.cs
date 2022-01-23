@@ -83,6 +83,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
                 SelectedEntities = RowSelect.GetSelecetedRows();
 
+
+                DialogResult = DialogResult.OK; // Ben Ekledim
+                Close(); // Ben Ekledim
+
             }
             else
             {

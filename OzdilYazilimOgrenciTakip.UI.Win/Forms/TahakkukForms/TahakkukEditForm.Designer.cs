@@ -46,10 +46,23 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition8 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition13 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition14 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition19 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition20 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition11 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition12 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition9 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition10 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition11 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition12 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition13 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition14 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition15 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition16 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition17 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition18 = new DevExpress.XtraLayout.RowDefinition();
             this.DataLayoutGenel = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
             this.tabAlt = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -118,6 +131,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.myDataLayoutControl = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataLayoutGenel)).BeginInit();
@@ -180,9 +195,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
+            this.pageAileSinavBilgileri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -624,6 +642,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtKayitTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtKayitTarihi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.txtKayitTarihi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtKayitTarihi.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtKayitTarihi.Size = new System.Drawing.Size(145, 20);
@@ -1224,14 +1243,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageKardesBilgileri.Caption = "Kardeş Bilgileri";
             this.pageKardesBilgileri.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.people_16x16;
             this.pageKardesBilgileri.Name = "pageKardesBilgileri";
-            this.pageKardesBilgileri.Size = new System.Drawing.Size(974, 241);
+            this.pageKardesBilgileri.Size = new System.Drawing.Size(974, 208);
             // 
             // pageAileSinavBilgileri
             // 
             this.pageAileSinavBilgileri.Caption = "Aile / Sınav Bilgileri";
+            this.pageAileSinavBilgileri.Controls.Add(this.myDataLayoutControl);
             this.pageAileSinavBilgileri.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.team_16x16;
             this.pageAileSinavBilgileri.Name = "pageAileSinavBilgileri";
-            this.pageAileSinavBilgileri.Size = new System.Drawing.Size(974, 241);
+            this.pageAileSinavBilgileri.Size = new System.Drawing.Size(974, 208);
             // 
             // pageEvrakPromosyonBilgileri
             // 
@@ -1270,20 +1290,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem2});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
-            columnDefinition10.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition10.Width = 100D;
-            columnDefinition11.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition11.Width = 210D;
+            columnDefinition13.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition13.Width = 100D;
+            columnDefinition14.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition14.Width = 210D;
             this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition10,
-            columnDefinition11});
-            rowDefinition9.Height = 245D;
-            rowDefinition9.SizeType = System.Windows.Forms.SizeType.Absolute;
-            rowDefinition10.Height = 100D;
-            rowDefinition10.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition13,
+            columnDefinition14});
+            rowDefinition19.Height = 245D;
+            rowDefinition19.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition20.Height = 100D;
+            rowDefinition20.SizeType = System.Windows.Forms.SizeType.Percent;
             this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition9,
-            rowDefinition10});
+            rowDefinition19,
+            rowDefinition20});
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 5, 5);
             this.Root.Size = new System.Drawing.Size(998, 516);
             this.Root.TextVisible = false;
@@ -1311,6 +1331,67 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem2.Size = new System.Drawing.Size(768, 261);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
+            // 
+            // myDataLayoutControl
+            // 
+            this.myDataLayoutControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.myDataLayoutControl.Location = new System.Drawing.Point(0, 0);
+            this.myDataLayoutControl.Name = "myDataLayoutControl";
+            this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
+            this.myDataLayoutControl.Root = this.layoutControlGroup2;
+            this.myDataLayoutControl.Size = new System.Drawing.Size(974, 208);
+            this.myDataLayoutControl.TabIndex = 0;
+            this.myDataLayoutControl.Text = "myDataLayoutControl1";
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            columnDefinition10.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition10.Width = 200D;
+            columnDefinition11.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition11.Width = 100D;
+            columnDefinition12.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition12.Width = 99D;
+            this.layoutControlGroup2.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
+            columnDefinition10,
+            columnDefinition11,
+            columnDefinition12});
+            rowDefinition9.Height = 24D;
+            rowDefinition9.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition10.Height = 24D;
+            rowDefinition10.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition11.Height = 24D;
+            rowDefinition11.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition12.Height = 24D;
+            rowDefinition12.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition13.Height = 24D;
+            rowDefinition13.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition14.Height = 24D;
+            rowDefinition14.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition15.Height = 24D;
+            rowDefinition15.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition16.Height = 24D;
+            rowDefinition16.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition17.Height = 24D;
+            rowDefinition17.SizeType = System.Windows.Forms.SizeType.Absolute;
+            rowDefinition18.Height = 100D;
+            rowDefinition18.SizeType = System.Windows.Forms.SizeType.Percent;
+            this.layoutControlGroup2.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
+            rowDefinition9,
+            rowDefinition10,
+            rowDefinition11,
+            rowDefinition12,
+            rowDefinition13,
+            rowDefinition14,
+            rowDefinition15,
+            rowDefinition16,
+            rowDefinition17,
+            rowDefinition18});
+            this.layoutControlGroup2.Size = new System.Drawing.Size(974, 237);
+            this.layoutControlGroup2.TextVisible = false;
             // 
             // TahakkukEditForm
             // 
@@ -1386,9 +1467,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
+            this.pageAileSinavBilgileri.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1464,5 +1548,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem26;
+        private UserControls.Controls.MyDataLayoutControl myDataLayoutControl;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
     }
 }

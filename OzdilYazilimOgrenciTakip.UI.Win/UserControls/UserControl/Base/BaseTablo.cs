@@ -21,7 +21,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
     {
         private bool _isLoaded;
         private bool _tabloSablonKayitEdilecek;
-        protected GridView Tablo;
+        protected internal GridView Tablo;
         protected internal bool TableValueChanged;
         protected internal BaseEditForm OwnerForm;
         protected BarItem[] ShowItems;
@@ -55,10 +55,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 Tablo.ColumnPositionChanged += Tablo_SablonChanged;
                 Tablo.ColumnWidthChanged += Tablo_SablonChanged;
                 Tablo.EndSorting += Tablo_SablonChanged;
+                Tablo.DoubleClick += Tablo_DoubleClick;
 
             }
         }
 
+        private void Tablo_DoubleClick(object sender, EventArgs e)
+        {
+            OpenEntity();
+        }
 
         protected internal void Yukle()
         {
@@ -108,6 +113,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 HareketSil();
             }
 
+            else if(e.Item==btnKartDuzenle)
+            {
+                OpenEntity();
+            }
+
             Cursor.Current = DefaultCursor;
 
         }
@@ -137,6 +147,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         }
 
         protected internal virtual bool HataliGiris() { return false; }
+        protected virtual void OpenEntity() { }
 
         protected internal bool Kaydet()
         {
@@ -211,6 +222,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             if (popupMenu == null) return;
 
             btnHareketSil.Enabled = Tablo.RowCount > 0;
+            btnKartDuzenle.Enabled = Tablo.RowCount > 0;
             e.SagMenuGoster(popupMenu);
 
         }
@@ -258,6 +270,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 case Keys.Delete when e.Shift:
                     HareketSil();
                     break;
+
+                case Keys.F3 :
+                    OpenEntity();
+                    break;
+
+
 
             }
         }
