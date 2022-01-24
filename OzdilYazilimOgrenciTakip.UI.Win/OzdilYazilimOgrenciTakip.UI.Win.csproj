@@ -648,6 +648,12 @@
     <Compile Include="UserControls\UserControl\TahakkukEditFormTable\EvrakBilgileriTable.Designer.cs">
       <DependentUpon>EvrakBilgileriTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\IletisimBilgileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\IletisimBilgileriTable.Designer.cs">
+      <DependentUpon>IletisimBilgileriTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControl\TahakkukEditFormTable\KardesBilgileriTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -917,6 +923,9 @@
     <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\EvrakBilgileriTable.resx">
       <DependentUpon>EvrakBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\IletisimBilgileriTable.resx">
+      <DependentUpon>IletisimBilgileriTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\KardesBilgileriTable.resx">
       <DependentUpon>KardesBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -927,6 +936,7 @@
       <DependentUpon>SinavBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\OzdilYazilimOgrenciTakip.Model.Dto.IletisimBilgileriL.datasource" />
     <None Include="Properties\DataSources\OzdilYazilimOgrenciTakip.Model.Dto.OgrenciL.datasource" />
     <None Include="Properties\DataSources\OzdilYazilimOgrenciTakip.Model.Dto.OgrenciS.datasource" />
     <None Include="Properties\DataSources\OzdilYazilimOgrenciTakip.Model.Entities.Ogrenci.datasource" />

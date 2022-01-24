@@ -73,6 +73,7 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<SinavBilgileri> SinavBilgileri { get; set; }
         public DbSet<EvrakBilgileri> EvrakBilgileri { get; set; }
         public DbSet<PromosyonBilgileri> PromosyonBilgileri { get; set; }
+        public DbSet<IletisimBilgileri> IletisimBilgileri { get; set; }
 
 
     }
