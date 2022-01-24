@@ -155,6 +155,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             var insert = source.Cast<IBaseHareketEntity>().Where(x => x.Insert && !x.Delete).Cast<BaseHareketEntity>().ToList();
             var update = source.Cast<IBaseHareketEntity>().Where(x => x.Update && !x.Delete).Cast<BaseHareketEntity>().ToList();
             var delete = source.Cast<IBaseHareketEntity>().Where(x => x.Delete && !x.Insert).Cast<BaseHareketEntity>().ToList();
+            
 
             if (insert.Any())
 

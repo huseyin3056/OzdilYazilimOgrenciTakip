@@ -920,6 +920,9 @@
     <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\KardesBilgileriTable.resx">
       <DependentUpon>KardesBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\PromosyonBilgileriTable.resx">
+      <DependentUpon>PromosyonBilgileriTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\SinavBilgileriTable.resx">
       <DependentUpon>SinavBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
