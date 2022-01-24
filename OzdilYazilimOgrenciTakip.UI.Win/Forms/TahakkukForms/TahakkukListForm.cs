@@ -24,7 +24,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             HideItems = new BarItem[] {btnYeni};
 
-            _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId;
+            _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId && x.Durum == AktifKartlariGoster;
         }
 
         public TahakkukListForm(params object[] prm) : this()

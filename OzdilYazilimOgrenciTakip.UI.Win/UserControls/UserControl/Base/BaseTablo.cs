@@ -39,7 +39,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             // Button Events
 
             foreach (BarItem button in barManager.Items)
-            {
+            
                 button.ItemClick += Button_ItemClick;
 
                 // Navigator Events
@@ -57,7 +57,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 Tablo.EndSorting += Tablo_SablonChanged;
                 Tablo.DoubleClick += Tablo_DoubleClick;
 
-            }
+            
         }
 
         private void Tablo_DoubleClick(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 HareketSil();
             }
 
-            else if(e.Item==btnKartDuzenle)
+            else if (e.Item == btnKartDuzenle)
             {
                 OpenEntity();
             }
@@ -122,10 +122,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
-        protected virtual void HareketEkle()
-        {
-            throw new NotImplementedException();
-        }
+        protected virtual void HareketEkle() { }
 
         protected virtual void HareketSil()
         {
@@ -135,11 +132,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
             Tablo.GetRow<IBaseHareketEntity>().Delete = true;
             Tablo.RefreshDataSource();
-            ButonEnableDurumu(true);
+            ButonEnabledDurumu(true);
 
         }
 
-        protected void ButonEnableDurumu(bool durum)
+        protected void ButonEnabledDurumu(bool durum)
         {
             TableValueChanged = durum;
             OwnerForm.ButtonEnabledDurumu();
@@ -185,7 +182,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 }
             }
 
-            ButonEnableDurumu(false);
+            ButonEnabledDurumu(false);
 
             return true;
 
@@ -213,7 +210,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             if (!entity.Insert)
                 entity.Update = true;
 
-            ButonEnableDurumu(true);
+            ButonEnabledDurumu(true);
 
         }
 
@@ -271,7 +268,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                     HareketSil();
                     break;
 
-                case Keys.F3 :
+                case Keys.F3:
                     OpenEntity();
                     break;
 

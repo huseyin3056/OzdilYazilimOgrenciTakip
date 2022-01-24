@@ -636,6 +636,12 @@
     <Compile Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.Designer.cs">
       <DependentUpon>IndiriminUygulanacagiHizmetlerTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControl\KardesTahakkukEditFormTable\AileBilgileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\KardesTahakkukEditFormTable\AileBilgileriTable.Designer.cs">
+      <DependentUpon>AileBilgileriTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControl\KardesTahakkukEditFormTable\KardesBilgileriTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -886,6 +892,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.resx">
       <DependentUpon>IndiriminUygulanacagiHizmetlerTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\KardesTahakkukEditFormTable\AileBilgileriTable.resx">
+      <DependentUpon>AileBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\KardesTahakkukEditFormTable\KardesBilgileriTable.resx">
       <DependentUpon>KardesBilgileriTable.cs</DependentUpon>

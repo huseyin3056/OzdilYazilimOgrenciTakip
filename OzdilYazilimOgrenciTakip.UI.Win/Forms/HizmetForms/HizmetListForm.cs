@@ -22,7 +22,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             InitializeComponent();
 
             Bll = new HizmetBll();
-            _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId;      
+            _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId && x.Durum == AktifKartlariGoster;       
 
         }
 

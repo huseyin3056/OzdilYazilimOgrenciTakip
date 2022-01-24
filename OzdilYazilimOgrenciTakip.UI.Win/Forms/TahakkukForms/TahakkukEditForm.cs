@@ -10,6 +10,7 @@ using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
+using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukEditFormTable;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakkukEditFormTable;
 using System;
@@ -21,6 +22,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
     {
         private readonly Ogrenci _ogrenci;
         private BaseTablo _kardesBilgileriTable;
+        private BaseTablo _aileBilgileriTable;
+
 
         public TahakkukEditForm()
         {
@@ -78,6 +81,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             if (_kardesBilgileriTable != null)
                 _kardesBilgileriTable.Yukle();
+
+            else if (_aileBilgileriTable != null)
+                _aileBilgileriTable.Yukle();
         }
 
 
@@ -234,6 +240,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             bool TableValueChanged()
             {
                 if (_kardesBilgileriTable != null && _kardesBilgileriTable.TableValueChanged) return true;
+                if (_aileBilgileriTable != null && _aileBilgileriTable.TableValueChanged) return true;
                 return false;
 
             }
@@ -250,6 +257,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         protected override bool BagliTabloKaydet()
         {
             if (_kardesBilgileriTable != null && _kardesBilgileriTable.Kaydet()) return false;
+            if (_aileBilgileriTable != null && _aileBilgileriTable.Kaydet()) return false;
 
             return true;
 
@@ -275,6 +283,21 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 }
                 _kardesBilgileriTable.Tablo.GridControl.Focus();
                     
+
+            }
+
+
+            else if (e.Page == pageAileSinavBilgileri)
+            {
+                if (layoutControlAileSinavBilgileri.Items.Count==0)
+                {
+                    _aileBilgileriTable = new AileBilgileriTable().AddTable(this);
+                    layoutControlAileSinavBilgileri.LayoutControlInsert(_aileBilgileriTable, 0, 0, 0, 0);
+
+                    _aileBilgileriTable.Yukle();
+                }
+                _aileBilgileriTable.Tablo.GridControl.Focus();
+
 
             }
         }

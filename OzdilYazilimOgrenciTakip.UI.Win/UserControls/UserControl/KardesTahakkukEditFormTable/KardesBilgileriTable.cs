@@ -69,7 +69,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakku
             tablo.FocusedRowHandle = tablo.DataRowCount - 1;
             tablo.FocusedColumn = colAdi;
 
-            ButonEnableDurumu(true);
+            ButonEnabledDurumu(true);
         }
 
         protected override void OpenEntity()

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraBars;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraLayout;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
@@ -296,7 +297,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             {
                 var entity = source[e.ListSourceRow];
                 if (entity == null) return;
-
                 if (!entity.Delete) return;
                 e.Visible = false;
                 e.Handled = true;
@@ -316,6 +316,23 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             tablo.Dock = DockStyle.Fill;
             tablo.OwnerForm = frm;
             return tablo;
+        }
+
+        public static void LayoutControlInsert(this LayoutGroup grup, Control control, int columnIndex, int rowIndex,int columnSpan,int rowSpan)
+        {
+            var item = new LayoutControlItem
+            {
+                Control=control,
+                Parent=grup
+
+            };
+
+            item.OptionsTableLayoutItem.ColumnIndex = columnIndex;
+            item.OptionsTableLayoutItem.RowIndex = rowIndex;
+            item.OptionsTableLayoutItem.ColumnSpan = columnSpan;
+            item.OptionsTableLayoutItem.RowSpan = rowSpan;
+
+
         }
     }
 }
