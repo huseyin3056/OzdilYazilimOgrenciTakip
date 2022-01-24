@@ -13,6 +13,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukEditFormTable;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakkukEditFormTable;
+using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditFormTable;
 using System;
 using System.Linq;
 
@@ -23,6 +24,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         private readonly Ogrenci _ogrenci;
         private BaseTablo _kardesBilgileriTable;
         private BaseTablo _aileBilgileriTable;
+        private BaseTablo _sinavBilgileriTable;
+        private BaseTablo _evrakBilgileriTable;
 
 
         public TahakkukEditForm()
@@ -84,6 +87,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             else if (_aileBilgileriTable != null)
                 _aileBilgileriTable.Yukle();
+
+            else if (_sinavBilgileriTable != null)
+                _sinavBilgileriTable.Yukle();
+
+            else if (_evrakBilgileriTable != null)
+                _evrakBilgileriTable.Yukle();
         }
 
 
@@ -215,21 +224,37 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
         protected override bool EntityInsert()
         {
-          var result=((TahakkukBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && BagliTabloKaydet();
+            if (BagliTabloHataliGirisKontrol()) return false;
+            var result = ((TahakkukBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && BagliTabloKaydet();
 
-            if(result)
-
-                BagliTabloYukle();
-            return result;
-        
-        }
-        protected override bool EntityUpdate()
-        {
-          var result=  ((TahakkukBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && BagliTabloKaydet();
             if (result)
 
                 BagliTabloYukle();
             return result;
+
+        }
+        protected override bool EntityUpdate()
+        {
+            if (BagliTabloHataliGirisKontrol()) return false;
+
+            var result = ((TahakkukBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && BagliTabloKaydet();
+            if (result)
+
+                BagliTabloYukle();
+            return result;
+
+        }
+
+        protected override bool BagliTabloHataliGirisKontrol()
+        {
+            if (_sinavBilgileriTable != null && _sinavBilgileriTable.HataliGiris())
+            {
+                tabUst.SelectedPage = pageAileSinavBilgileri;
+                _sinavBilgileriTable.Tablo.GridControl.Focus();
+                return true;
+            }
+
+            return false;
 
         }
 
@@ -241,6 +266,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             {
                 if (_kardesBilgileriTable != null && _kardesBilgileriTable.TableValueChanged) return true;
                 if (_aileBilgileriTable != null && _aileBilgileriTable.TableValueChanged) return true;
+                if (_sinavBilgileriTable != null && _sinavBilgileriTable.TableValueChanged) return true;
+                if (_evrakBilgileriTable != null && _evrakBilgileriTable.TableValueChanged) return true;
                 return false;
 
             }
@@ -258,6 +285,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         {
             if (_kardesBilgileriTable != null && _kardesBilgileriTable.Kaydet()) return false;
             if (_aileBilgileriTable != null && _aileBilgileriTable.Kaydet()) return false;
+            if (_sinavBilgileriTable != null && _sinavBilgileriTable.Kaydet()) return false;
+            if (_evrakBilgileriTable != null && _evrakBilgileriTable.Kaydet()) return false;
+
 
             return true;
 
@@ -266,37 +296,62 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
         protected override void Control_SelectedPageChanged(object sender, SelectedPageChangedEventArgs e)
         {
-            if(e.Page==pageGenelBilgiler)
+            if (e.Page == pageGenelBilgiler)
             {
                 txtOkulNo.Focus();
                 txtOkulNo.SelectAll();
 
             }
 
-          else  if (e.Page == pageKardesBilgileri)
+            else if (e.Page == pageKardesBilgileri)
             {
-                if(pageKardesBilgileri.Controls.Count==0)
+                if (pageKardesBilgileri.Controls.Count == 0)
                 {
                     _kardesBilgileriTable = new KardesBilgileriTable().AddTable(this);
                     pageKardesBilgileri.Controls.Add(_kardesBilgileriTable);
                     _kardesBilgileriTable.Yukle();
                 }
                 _kardesBilgileriTable.Tablo.GridControl.Focus();
-                    
+
 
             }
 
 
             else if (e.Page == pageAileSinavBilgileri)
             {
-                if (layoutControlAileSinavBilgileri.Items.Count==0)
+                if (layoutControlAileSinavBilgileri.Items.Count == 0)
                 {
                     _aileBilgileriTable = new AileBilgileriTable().AddTable(this);
                     layoutControlAileSinavBilgileri.LayoutControlInsert(_aileBilgileriTable, 0, 0, 0, 0);
-
                     _aileBilgileriTable.Yukle();
+
+                    _sinavBilgileriTable = new SinavBilgileriTable().AddTable(this);
+                    layoutControlAileSinavBilgileri.LayoutControlInsert(_sinavBilgileriTable, 1, 0, 0, 0);
+                    _sinavBilgileriTable.Yukle();
+
+
                 }
                 _aileBilgileriTable.Tablo.GridControl.Focus();
+
+
+            }
+
+            else if (e.Page == pageEvrakPromosyonBilgileri)
+            {
+                if (layoutControlEvrakPromosyonBilgileri.Items.Count == 0)
+                {
+                    _evrakBilgileriTable = new EvrakBilgileriTable().AddTable(this);
+                    layoutControlEvrakPromosyonBilgileri.LayoutControlInsert(_evrakBilgileriTable, 0, 0, 0, 0);
+                    _evrakBilgileriTable.Yukle();
+
+                    //_sinavBilgileriTable = new SinavBilgileriTable().AddTable(this);
+                    //layoutControlAileSinavBilgileri.LayoutControlInsert(_sinavBilgileriTable, 1, 0, 0, 0);
+                    //_sinavBilgileriTable.Yukle();
+
+
+                }
+               
+                _evrakBilgileriTable.Tablo.GridControl.Focus();
 
 
             }

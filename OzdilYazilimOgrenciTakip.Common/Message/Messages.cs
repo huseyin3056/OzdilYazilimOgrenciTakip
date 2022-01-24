@@ -84,6 +84,12 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
 
         }
 
+        public static void TabloEksikBilgiMesaji(string tabloAdi)
+        {
+            UyariMesaji($"   {tabloAdi}nda Eksik Bilgi Girişi Var. Lütfen kontrol ediniz  ");
+
+        }
+
 
 
 

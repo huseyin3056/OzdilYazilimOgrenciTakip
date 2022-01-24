@@ -9,6 +9,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Interfaces
     {
 
         IEnumerable<BaseHareketEntity> List(Expression<Func<T, bool>> filter);
+        
 
 
 

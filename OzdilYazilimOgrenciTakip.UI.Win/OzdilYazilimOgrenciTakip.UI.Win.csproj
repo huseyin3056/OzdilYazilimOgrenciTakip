@@ -636,17 +636,35 @@
     <Compile Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.Designer.cs">
       <DependentUpon>IndiriminUygulanacagiHizmetlerTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControl\KardesTahakkukEditFormTable\AileBilgileriTable.cs">
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\AileBilgileriTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControl\KardesTahakkukEditFormTable\AileBilgileriTable.Designer.cs">
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\AileBilgileriTable.Designer.cs">
       <DependentUpon>AileBilgileriTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UserControl\KardesTahakkukEditFormTable\KardesBilgileriTable.cs">
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\EvrakBilgileriTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UserControl\KardesTahakkukEditFormTable\KardesBilgileriTable.Designer.cs">
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\EvrakBilgileriTable.Designer.cs">
+      <DependentUpon>EvrakBilgileriTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\KardesBilgileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\KardesBilgileriTable.Designer.cs">
       <DependentUpon>KardesBilgileriTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\PromosyonBilgileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\PromosyonBilgileriTable.Designer.cs">
+      <DependentUpon>PromosyonBilgileriTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\SinavBilgileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\SinavBilgileriTable.Designer.cs">
+      <DependentUpon>SinavBilgileriTable.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AileBilgiForms\AileBilgiEditForm.resx">
       <DependentUpon>AileBilgiEditForm.cs</DependentUpon>
@@ -893,11 +911,17 @@
     <EmbeddedResource Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.resx">
       <DependentUpon>IndiriminUygulanacagiHizmetlerTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControl\KardesTahakkukEditFormTable\AileBilgileriTable.resx">
+    <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\AileBilgileriTable.resx">
       <DependentUpon>AileBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UserControl\KardesTahakkukEditFormTable\KardesBilgileriTable.resx">
+    <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\EvrakBilgileriTable.resx">
+      <DependentUpon>EvrakBilgileriTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\KardesBilgileriTable.resx">
       <DependentUpon>KardesBilgileriTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\SinavBilgileriTable.resx">
+      <DependentUpon>SinavBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\OzdilYazilimOgrenciTakip.Model.Dto.OgrenciL.datasource" />

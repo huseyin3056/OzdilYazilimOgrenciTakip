@@ -10,7 +10,8 @@ using System.Linq.Expressions;
 
 namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
 {
-    public class BaseHareketBll<T, TContext> : IBaseBll,IBaseHareketGenelBll  where T : BaseHareketEntity where TContext : DbContext
+    public class BaseHareketBll<T, TContext> : IBaseBll,IBaseHareketGenelBll 
+        where T : BaseHareketEntity where TContext : DbContext
     {
         
         private IUnitOfWork<T> _uow;

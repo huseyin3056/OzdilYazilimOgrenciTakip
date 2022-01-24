@@ -462,7 +462,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         protected virtual bool BagliTabloKaydet() { return false; }
        
-      
+      protected virtual bool BagliTabloHataliGirisKontrol() { return false; }
 
     }
 }

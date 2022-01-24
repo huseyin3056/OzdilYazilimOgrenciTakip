@@ -82,6 +82,7 @@
     <Compile Include="General\BankaHesapBll.cs" />
     <Compile Include="General\BankaSubeBll.cs" />
     <Compile Include="General\CariBll.cs" />
+    <Compile Include="General\EvrakBilgileriBll.cs" />
     <Compile Include="General\EvrakBll.cs" />
     <Compile Include="General\FiltreBll.cs" />
     <Compile Include="General\GorevBll.cs" />
@@ -104,9 +105,11 @@
     <Compile Include="General\OkulBll.cs" />
     <Compile Include="Functions\ValidationFunctions.cs" />
     <Compile Include="General\OzelKodBll.cs" />
+    <Compile Include="General\PromosyonBilgileriBll.cs" />
     <Compile Include="General\PromosyonBll.cs" />
     <Compile Include="General\RehberBll.cs" />
     <Compile Include="General\ServisBll.cs" />
+    <Compile Include="General\SinavBilgileriBll.cs" />
     <Compile Include="General\SinifBll.cs" />
     <Compile Include="General\SinifGrupBll.cs" />
     <Compile Include="General\TahakkukBll.cs" />
