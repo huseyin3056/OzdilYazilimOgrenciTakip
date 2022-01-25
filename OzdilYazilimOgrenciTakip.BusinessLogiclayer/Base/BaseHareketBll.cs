@@ -24,7 +24,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
 
         }
 
-        public bool Insert(IList<BaseHareketEntity> entities)
+        public virtual bool Insert(IList<BaseHareketEntity> entities)
         {
             GeneralFunctions.CreateUnitOfWork<T, TContext>(ref _uow);
          
@@ -33,7 +33,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
             return _uow.Save();
         }
 
-        public bool Update(IList<BaseHareketEntity> entities)
+        public virtual bool Update(IList<BaseHareketEntity> entities)
         {
             GeneralFunctions.CreateUnitOfWork<T, TContext>(ref _uow);
 

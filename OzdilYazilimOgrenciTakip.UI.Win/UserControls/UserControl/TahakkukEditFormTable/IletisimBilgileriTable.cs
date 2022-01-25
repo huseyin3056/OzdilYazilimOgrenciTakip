@@ -183,9 +183,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             if (e.FocusedColumn == colYakinlikAdi)
                 e.FocusedColumn.Sec(tablo, insUpNavigator.Navigator, repositoryYakinlik, colYakinlikId);
 
-
-
-
         }
 
     }
