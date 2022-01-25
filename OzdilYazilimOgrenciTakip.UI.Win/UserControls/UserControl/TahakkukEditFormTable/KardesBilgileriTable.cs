@@ -78,7 +78,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakku
             if (entity == null) return;
             ShowEditForms<TahakkukEditForm>.ShowDialogEditForm(KartTuru.Tahakkuk, entity.KardesTahakkukId, entity.SubeId==AnaForm.SubeId);
 
-
         }
 
 

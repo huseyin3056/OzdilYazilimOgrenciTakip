@@ -27,6 +27,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         private BaseTablo _sinavBilgileriTable;
         private BaseTablo _evrakBilgileriTable;
         private BaseTablo _promosyonBilgileriTable;
+        private BaseTablo _iletisimBilgileriTable;
 
 
 
@@ -98,6 +99,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             else if (_promosyonBilgileriTable != null)
                 _promosyonBilgileriTable.Yukle();
+
+            else if (_iletisimBilgileriTable != null)
+                _iletisimBilgileriTable.Yukle();
 
 
         }
@@ -242,7 +246,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         }
         protected override bool EntityUpdate()
         {
-           if (BagliTabloHataliGirisKontrol()) return false;
+            if (BagliTabloHataliGirisKontrol()) return false;
 
             var result = ((TahakkukBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && BagliTabloKaydet();
             if (result)
@@ -261,6 +265,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 return true;
             }
 
+            if (_iletisimBilgileriTable != null && _iletisimBilgileriTable.HataliGiris())
+            {
+                tabUst.SelectedPage = pageIletisimBilgileri;
+                _iletisimBilgileriTable.Tablo.GridControl.Focus();
+                return true;
+            }
+
             return false;
 
         }
@@ -276,6 +287,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 if (_sinavBilgileriTable != null && _sinavBilgileriTable.TableValueChanged) return true;
                 if (_evrakBilgileriTable != null && _evrakBilgileriTable.TableValueChanged) return true;
                 if (_promosyonBilgileriTable != null && _promosyonBilgileriTable.TableValueChanged) return true;
+                if (_iletisimBilgileriTable != null && _iletisimBilgileriTable.TableValueChanged) return true;
 
                 return false;
 
@@ -297,6 +309,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             if (_sinavBilgileriTable != null && _sinavBilgileriTable.Kaydet()) return false;
             if (_evrakBilgileriTable != null && _evrakBilgileriTable.Kaydet()) return false;
             if (_promosyonBilgileriTable != null && _promosyonBilgileriTable.Kaydet()) return false;
+            if (_iletisimBilgileriTable != null && _iletisimBilgileriTable.Kaydet()) return false;
 
 
             return true;
@@ -313,6 +326,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             }
 
+            //
+
+
             else if (e.Page == pageKardesBilgileri)
             {
                 if (pageKardesBilgileri.Controls.Count == 0)
@@ -325,6 +341,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
 
             }
+
+            //
 
 
             else if (e.Page == pageAileSinavBilgileri)
@@ -346,6 +364,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             }
 
+            //
+
             else if (e.Page == pageEvrakPromosyonBilgileri)
             {
                 if (layoutControlEvrakPromosyonBilgileri.Items.Count == 0)
@@ -360,8 +380,22 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
 
                 }
-               
+
                 _promosyonBilgileriTable.Tablo.GridControl.Focus();
+
+            }
+
+            //
+
+            else if (e.Page == pageIletisimBilgileri)
+            {
+                if (pageIletisimBilgileri.Controls.Count == 0)
+                {
+                    _iletisimBilgileriTable = new IletisimBilgileriTable().AddTable(this);
+                    pageIletisimBilgileri.Controls.Add(_iletisimBilgileriTable);
+                    _iletisimBilgileriTable.Yukle();
+                }
+                _iletisimBilgileriTable.Tablo.GridControl.Focus();
 
 
             }
