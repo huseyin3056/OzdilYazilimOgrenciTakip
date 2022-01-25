@@ -363,6 +363,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_invoice_16px {
+            get {
+                object obj = ResourceManager.GetObject("icons8_invoice_16px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_maintenance_32px {
             get {
                 object obj = ResourceManager.GetObject("icons8_maintenance_32px", resourceCulture);
@@ -493,6 +503,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_menu_male_32px1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_user_menu_male_32px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap insertrangefilter_16x16 {
             get {
                 object obj = ResourceManager.GetObject("insertrangefilter_16x16", resourceCulture);
@@ -616,6 +636,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Properties {
         internal static System.Drawing.Bitmap printer {
             get {
                 object obj = ResourceManager.GetObject("printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap publicfix_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("publicfix_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap publicfix_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("publicfix_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

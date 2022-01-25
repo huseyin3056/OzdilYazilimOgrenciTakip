@@ -1,4 +1,4 @@
-﻿using DevExpress.XtraEditors.Controls;
+﻿using DevExpress.XtraGrid.Views.Base;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Common.Enums;
@@ -8,9 +8,9 @@ using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.YakinlikForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
-using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
+using System;
 using System.Linq;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditFormTable
@@ -133,11 +133,60 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             var entity = tablo.GetRow<IletisimBilgileriL>();
             if (entity == null) return;
             ShowEditForms<IletisimEditForm>.ShowDialogEditForm(KartTuru.Tahakkuk, entity.IletisimId,null);
+        }
 
+        protected override void ImageComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var source = tablo.DataController.ListSource.Cast<IletisimBilgileriL>().ToList();
+            if (source.Count == 0) return;
+            var rowHandle = tablo.FocusedRowHandle;
+
+            for (int i = 0; i < tablo.RowCount; i++)
+            {
+                if (i == rowHandle) continue;
+                if (source[i].FaturaAdresi == null) continue;
+                source[i].FaturaAdresi = null;
+
+                if (!source[i].Insert)
+                    source[i].Update = true;
+
+            }
+
+            insUpNavigator.Navigator.Buttons.DoClick(insUpNavigator.Navigator.Buttons.EndEdit);
 
         }
 
+        protected override void CheckEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            var source = tablo.DataController.ListSource.Cast<IletisimBilgileriL>().ToList();
+            if (source.Count == 0) return;
+            var rowHandle = tablo.FocusedRowHandle;
 
+            for (int i = 0; i < tablo.RowCount; i++)
+            {
+                if (i == rowHandle) continue;
+                if (!source[i].Veli) continue;
+                source[i].Veli = false;
+
+                if (!source[i].Insert)
+                    source[i].Update = true;
+
+            }
+
+            insUpNavigator.Navigator.Buttons.DoClick(insUpNavigator.Navigator.Buttons.EndEdit);
+        }
+
+        protected override void Tablo_FocusedColumnChanged(object sender, FocusedColumnChangedEventArgs e)
+        {
+            base.Tablo_FocusedColumnChanged(sender, e);
+
+            if (e.FocusedColumn == colYakinlikAdi)
+                e.FocusedColumn.Sec(tablo, insUpNavigator.Navigator, repositoryYakinlik, colYakinlikId);
+
+
+
+
+        }
 
     }
 }

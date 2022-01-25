@@ -14,6 +14,8 @@ using System.Linq;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Interfaces;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using System.Collections.Generic;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraEditors.Repository;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 {
@@ -39,26 +41,46 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             // Button Events
 
             foreach (BarItem button in barManager.Items)
-            
+
                 button.ItemClick += Button_ItemClick;
 
-                // Navigator Events
-                insUpNavigator.Navigator.ButtonClick += Navigator_ButtonClick;
+            foreach (GridColumn column in Tablo.Columns)
+            {
 
-                // Table Events
-                Tablo.CellValueChanged += Tablo_CellValueChanged;
-                Tablo.MouseUp += Tablo_MouseUp;
-                Tablo.GotFocus += Tablo_GotFocus;
-                Tablo.LostFocus += Tablo_LostFocus;
-                Tablo.KeyDown += Tablo_KeyDown;
-                Tablo.FocusedColumnChanged += Tablo_FocusedColumnChanged;
-                Tablo.ColumnPositionChanged += Tablo_SablonChanged;
-                Tablo.ColumnWidthChanged += Tablo_SablonChanged;
-                Tablo.EndSorting += Tablo_SablonChanged;
-                Tablo.DoubleClick += Tablo_DoubleClick;
 
-            
+                if (column.ColumnEdit == null) continue;
+                var type = column.ColumnEdit.GetType();
+
+                //1. Buton
+                if (type == typeof(RepositoryItemImageComboBox))
+                    ((RepositoryItemImageComboBox)column.ColumnEdit).SelectedValueChanged += ImageComboBox_SelectedValueChanged;
+
+                //2. Buton
+                if (type == typeof(RepositoryItemCheckEdit))
+                    ((RepositoryItemCheckEdit)column.ColumnEdit).CheckedChanged += CheckEdit_CheckedChanged;
+
+
+            }
+
+            // Navigator Events
+            insUpNavigator.Navigator.ButtonClick += Navigator_ButtonClick;
+
+            // Table Events
+            Tablo.CellValueChanged += Tablo_CellValueChanged;
+            Tablo.MouseUp += Tablo_MouseUp;
+            Tablo.GotFocus += Tablo_GotFocus;
+            Tablo.LostFocus += Tablo_LostFocus;
+            Tablo.KeyDown += Tablo_KeyDown;
+            Tablo.FocusedColumnChanged += Tablo_FocusedColumnChanged;
+            Tablo.ColumnPositionChanged += Tablo_SablonChanged;
+            Tablo.ColumnWidthChanged += Tablo_SablonChanged;
+            Tablo.EndSorting += Tablo_SablonChanged;
+            Tablo.DoubleClick += Tablo_DoubleClick;
+
+
         }
+
+
 
         private void Tablo_DoubleClick(object sender, EventArgs e)
         {
@@ -122,6 +144,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
+
+        protected virtual void ImageComboBox_SelectedValueChanged(object sender, EventArgs e) { }
+
+        protected virtual void CheckEdit_CheckedChanged(object sender, EventArgs e) { }
+
+
+
+
+
         protected virtual void HareketEkle() { }
 
         protected virtual void HareketSil()
@@ -155,7 +186,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             var insert = source.Cast<IBaseHareketEntity>().Where(x => x.Insert && !x.Delete).Cast<BaseHareketEntity>().ToList();
             var update = source.Cast<IBaseHareketEntity>().Where(x => x.Update && !x.Delete).Cast<BaseHareketEntity>().ToList();
             var delete = source.Cast<IBaseHareketEntity>().Where(x => x.Delete && !x.Insert).Cast<BaseHareketEntity>().ToList();
-            
+
 
             if (insert.Any())
 
@@ -265,7 +296,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                     HareketEkle();
                     break;
 
-                case Keys.Delete when e.Shift:
+                case Keys.Delete when e.Modifiers == Keys.Shift: // e.Shift
                     HareketSil();
                     break;
 
@@ -279,7 +310,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         }
 
 
-        private void Tablo_FocusedColumnChanged(object sender, FocusedColumnChangedEventArgs e)
+       protected virtual  void Tablo_FocusedColumnChanged(object sender, FocusedColumnChangedEventArgs e)
         {
             if (OwnerForm == null) return;
             OwnerForm.statusBarKisayol.Visibility = BarItemVisibility.Never;

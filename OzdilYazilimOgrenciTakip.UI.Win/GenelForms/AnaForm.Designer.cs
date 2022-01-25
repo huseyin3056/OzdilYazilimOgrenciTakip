@@ -61,6 +61,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnIletisimKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnOgrenciKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnIndirimKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTahakkukKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -82,7 +83,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imageList1616 = new System.Windows.Forms.ImageList(this.components);
-            this.btnTahakkukKartlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -317,6 +317,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnIndirimKartlari.Id = 29;
             this.btnIndirimKartlari.Name = "btnIndirimKartlari";
             // 
+            // btnTahakkukKartlari
+            // 
+            this.btnTahakkukKartlari.Caption = "Tahakkuk Kartları";
+            this.btnTahakkukKartlari.Id = 30;
+            this.btnTahakkukKartlari.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_invoice_16px;
+            this.btnTahakkukKartlari.Name = "btnTahakkukKartlari";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -330,6 +337,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // ribbonPageGroup9
             // 
             this.ribbonPageGroup9.ItemLinks.Add(this.btnOgrenciKartlari);
+            this.ribbonPageGroup9.ItemLinks.Add(this.btnTahakkukKartlari);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Öğrenci";
             // 
@@ -413,7 +421,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPageGroup6.ItemLinks.Add(this.btnBankaKartlari);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnBankaHesapKartlari, true);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnOdemeTuruKartlari);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnTahakkukKartlari);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Finans";
             // 
@@ -490,12 +497,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.imageList1616.Images.SetKeyName(11, "icons8_student_male_48px.png");
             this.imageList1616.Images.SetKeyName(12, "icons8_students_48px.png");
             this.imageList1616.Images.SetKeyName(13, "icons8_training_48px.png");
-            // 
-            // btnTahakkukKartlari
-            // 
-            this.btnTahakkukKartlari.Caption = "Tahakkuk Kartları";
-            this.btnTahakkukKartlari.Id = 30;
-            this.btnTahakkukKartlari.Name = "btnTahakkukKartlari";
             // 
             // AnaForm
             // 

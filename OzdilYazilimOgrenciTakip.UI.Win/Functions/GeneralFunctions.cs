@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
+using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
@@ -32,6 +33,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
+        public static long GetRowCellId(this GridView tablo, GridColumn idColumn)
+        {
+            var value = tablo.GetRowCellValue(tablo.FocusedRowHandle, idColumn);
+            return (long?)value ?? -1;
+
+        }
+
+
         public static T GetRow<T>(this GridView tablo, bool mesajVer = true)
         {
             if (tablo.FocusedRowHandle > -1) return (T)tablo.GetRow(tablo.FocusedRowHandle);
@@ -45,8 +54,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
         public static T GetRow<T>(this GridView tablo, int rowHandle)
         {
             if (tablo.FocusedRowHandle > -1) return (T)tablo.GetRow(rowHandle);
-          
-                Messages.KartSecmemeUyariMesaji();
+
+            Messages.KartSecmemeUyariMesaji();
 
             return default(T);
 
@@ -108,7 +117,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
         public static void ButtonEnabledDurumu(BarButtonItem btnYeni, BarButtonItem btnKaydet, BarButtonItem btnGeriAl, BarButtonItem btnSil)
         {
 
-            btnKaydet.Enabled = false; 
+            btnKaydet.Enabled = false;
             btnGeriAl.Enabled = false;
             btnYeni.Enabled = false;
             btnSil.Enabled = false;
@@ -117,7 +126,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         public static void ButtonEnabledDurumu<T>(BarButtonItem btnYeni, BarButtonItem btnKaydet, BarButtonItem btnGeriAl, BarButtonItem btnSil, T oldEntity, T currentEntity, bool tableValueChanged)
         {
-            var veriDegisimYeri =tableValueChanged?VeriDegisimYeri.Tablo: VeriDegisimYeriGetir(oldEntity, currentEntity);
+            var veriDegisimYeri = tableValueChanged ? VeriDegisimYeri.Tablo : VeriDegisimYeriGetir(oldEntity, currentEntity);
             var buttonEnabledDurumu = veriDegisimYeri == VeriDegisimYeri.Alan || veriDegisimYeri == VeriDegisimYeri.Tablo;
 
             btnKaydet.Enabled = buttonEnabledDurumu;
@@ -263,15 +272,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             var dialog = new OpenFileDialog
             {
                 Title = "Resim Seç",
-                Filter="Resim Dosyaları(*.png,*.jpg,*.bmp,*.png,*.gif) | *.png; *.jpg; *.bmp; *.png; *.gif  | Bmp Dosyaları|*.bmp | Gif Dosyaları |*.gif | Jpg Dosyaları |*.jpeg | Png Dosyaları | *.png ",
-                InitialDirectory=@"C:\"
-              
+                Filter = "Resim Dosyaları(*.png,*.jpg,*.bmp,*.png,*.gif) | *.png; *.jpg; *.bmp; *.png; *.gif  | Bmp Dosyaları|*.bmp | Gif Dosyaları |*.gif | Jpg Dosyaları |*.jpeg | Png Dosyaları | *.png ",
+                InitialDirectory = @"C:\"
+
 
             };
 
             byte[] Resim()
             {
-                using (var stream =new MemoryStream())
+                using (var stream = new MemoryStream())
                 {
                     Image.FromFile(dialog.FileName).Save(stream, ImageFormat.Png);
                     return stream.ToArray();
@@ -293,7 +302,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             tablo.RowFocus(rowHandle);
 
 
-            void Tablo_CustomRowFilter(object sender,RowFilterEventArgs e)
+            void Tablo_CustomRowFilter(object sender, RowFilterEventArgs e)
             {
                 var entity = source[e.ListSourceRow];
                 if (entity == null) return;
@@ -305,7 +314,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
-        public  static BindingList<T> ToBindingList<T>(this IEnumerable<BaseHareketEntity> list)
+        public static BindingList<T> ToBindingList<T>(this IEnumerable<BaseHareketEntity> list)
         {
             return new BindingList<T>((IList<T>)list);
 
@@ -318,12 +327,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             return tablo;
         }
 
-        public static void LayoutControlInsert(this LayoutGroup grup, Control control, int columnIndex, int rowIndex,int columnSpan,int rowSpan)
+        public static void LayoutControlInsert(this LayoutGroup grup, Control control, int columnIndex, int rowIndex, int columnSpan, int rowSpan)
         {
             var item = new LayoutControlItem
             {
-                Control=control,
-                Parent=grup
+                Control = control,
+                Parent = grup
 
             };
 

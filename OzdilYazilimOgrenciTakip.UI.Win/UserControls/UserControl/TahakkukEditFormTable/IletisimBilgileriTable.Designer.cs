@@ -29,7 +29,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.grid = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridControl();
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridView();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -155,9 +154,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.tablo.OptionsView.RowAutoHeight = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
-            this.tablo.StatusBarAciklama = null;
-            this.tablo.StatusBarKisaYol = "F4";
-            this.tablo.StatusBarKisaYolAciklama = null;
+            this.tablo.StatusBarAciklama = "İletişim Bilgileri Seçiniz";
+            this.tablo.StatusBarKisaYol = "Shift+Insert";
+            this.tablo.StatusBarKisaYolAciklama = "Seçim Yap";
             this.tablo.ViewCaption = "İletişim Bilgileri";
             // 
             // gridBand1

@@ -512,6 +512,7 @@
     <Compile Include="Functions\GeneralFunctions.cs" />
     <Compile Include="Functions\SelectFunctions.cs" />
     <Compile Include="Functions\SelectPictureFunctions.cs" />
+    <Compile Include="Functions\SelectRepositoryFunctions.cs" />
     <Compile Include="Functions\SelectRowFunctions.cs" />
     <Compile Include="Functions\TablePrintingFunctions.cs" />
     <Compile Include="GenelForms\AnaForm.cs">
@@ -1190,6 +1191,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\addfooter_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\publicfix_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\publicfix_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_user_menu_male_32px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_invoice_16px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
