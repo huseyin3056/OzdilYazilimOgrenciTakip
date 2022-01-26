@@ -29,6 +29,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         private BaseTablo _promosyonBilgileriTable;
         private BaseTablo _iletisimBilgileriTable;
         private BaseTablo _eposBilgileriTable;
+        private BaseTablo _bilgiNotlariTable;
 
 
 
@@ -107,8 +108,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             else if (_eposBilgileriTable != null)
                 _eposBilgileriTable.Yukle();
 
-
-
+            else if (_bilgiNotlariTable != null)
+                _bilgiNotlariTable.Yukle();
 
         }
 
@@ -152,11 +153,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             txtOzelKod5.Id = entity.OzelKod5Id;
             txtOzelKod5.Text = entity.OzelKod5Adi;
 
-
-
-
-
-
         }
         protected override void GuncelNesneOlustur()
         {
@@ -177,15 +173,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 RehberId = txtRehber.Id,
                 SonrakiDonemKayitDurumu = txtSonrakiDonemKayitDurumu.Text.GetEnum<SonrakiDonemKayitDurumu>(),
                 SonrakiDonemKayitDurumuAciklama = txtSonrakiDonemKayitDurumuAciklama.Text,
-
-
                 OzelKod1Id = txtOzelKod1.Id,
                 OzelKod2Id = txtOzelKod2.Id,
                 OzelKod3Id = txtOzelKod3.Id,
                 OzelKod4Id = txtOzelKod4.Id,
                 OzelKod5Id = txtOzelKod5.Id,
                 Durum = txtDurum.Text.GetEnum<IptalDurumu>() == IptalDurumu.DevamEdiyor,
-
                 DonemId = AnaForm.DonemId,
                 SubeId = AnaForm.SubeId
 
@@ -218,7 +211,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 else if (sender == txtRehber)
                     sec.Sec(txtRehber);
 
-
                 else if (sender == txtOzelKod1)
                     sec.Sec(txtOzelKod1, KartTuru.Tahakkuk);
 
@@ -233,8 +225,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
                 else if (sender == txtOzelKod5)
                     sec.Sec(txtOzelKod5, KartTuru.Tahakkuk);
-
-
 
 
         }
@@ -286,6 +276,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 return true;
             }
 
+            if (_bilgiNotlariTable != null && _bilgiNotlariTable.HataliGiris())
+            {
+
+                tabUst.SelectedPage = pageNotlar;
+                _bilgiNotlariTable.Tablo.GridControl.Focus();
+                return true;
+            }
+
             return false;
 
         }
@@ -303,6 +301,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 if (_promosyonBilgileriTable != null && _promosyonBilgileriTable.TableValueChanged) return true;
                 if (_iletisimBilgileriTable != null && _iletisimBilgileriTable.TableValueChanged) return true;
                 if (_eposBilgileriTable != null && _eposBilgileriTable.TableValueChanged) return true;
+                if (_bilgiNotlariTable!= null && _bilgiNotlariTable.TableValueChanged) return true;
 
 
                 return false;
@@ -327,6 +326,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             if (_promosyonBilgileriTable != null && _promosyonBilgileriTable.Kaydet()) return false;
             if (_iletisimBilgileriTable != null && _iletisimBilgileriTable.Kaydet()) return false;
             if (_eposBilgileriTable != null && _eposBilgileriTable.Kaydet()) return false;
+            if (_bilgiNotlariTable != null && _bilgiNotlariTable.Kaydet()) return false;
 
 
             return true;
@@ -429,6 +429,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 _eposBilgileriTable.Tablo.GridControl.Focus();
 
             }
+
+            //
+            else if (e.Page == pageNotlar)
+            {
+                if (pageNotlar.Controls.Count == 0)
+                {
+                    _bilgiNotlariTable = new BilgiNotlariTable().AddTable(this);
+                    pageNotlar.Controls.Add(_bilgiNotlariTable);
+                    _bilgiNotlariTable.Yukle();
+                }
+                _bilgiNotlariTable.Tablo.GridControl.Focus();
+
+            }
+
 
 
         }

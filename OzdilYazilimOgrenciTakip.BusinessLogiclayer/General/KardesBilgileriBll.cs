@@ -27,7 +27,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 KayitDurumu = x.KardesTahakkuk.KayitDurumu,
                 IptalDurumu = x.KardesTahakkuk.Durum ? Common.Enums.IptalDurumu.DevamEdiyor : Common.Enums.IptalDurumu.IptalEdildi,
                 SubeAdi=x.KardesTahakkuk.Sube.SubeAdi,
-                SubeId=x.KardesTahakkuk.SubeId
+               SubeId=x.KardesTahakkuk.SubeId
 
 
             }).ToList();

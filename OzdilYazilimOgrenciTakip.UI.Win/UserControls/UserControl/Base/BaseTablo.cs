@@ -177,6 +177,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         protected internal virtual bool HataliGiris() { return false; }
         protected virtual void OpenEntity() { }
 
+        protected virtual void SutunGizleGoster() { }
+        protected virtual void RowCellAllowEdit() { }
+
         protected internal bool Kaydet()
         {
             insUpNavigator.Navigator.Buttons.DoClick(insUpNavigator.Navigator.Buttons.EndEdit);
@@ -246,12 +249,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
-        private void Tablo_MouseUp(object sender, MouseEventArgs e)
+        protected virtual  void Tablo_MouseUp(object sender, MouseEventArgs e)
         {
             if (popupMenu == null) return;
+            if (e.Button != MouseButtons.Right) return;
 
             btnHareketSil.Enabled = Tablo.RowCount > 0;
             btnKartDuzenle.Enabled = Tablo.RowCount > 0;
+            btnIptalEt.Enabled = Tablo.RowCount > 0;
+            btnIptalGeriAl.Enabled = Tablo.RowCount > 0;
+
             e.SagMenuGoster(popupMenu);
 
         }

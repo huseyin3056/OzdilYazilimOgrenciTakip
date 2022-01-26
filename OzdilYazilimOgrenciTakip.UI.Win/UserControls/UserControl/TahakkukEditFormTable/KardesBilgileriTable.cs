@@ -34,7 +34,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakku
         protected override void HareketEkle()
         {
             var source = tablo.DataController.ListSource;
-            ListeDisiTutulacakKayitlar = source.Cast<KardesBilgileriL>().Where(x => !x.Delete).Select(x => x.TahakkukId).ToList();
+            ListeDisiTutulacakKayitlar = source.Cast<KardesBilgileriL>().Where(x => !x.Delete).Select(x => x.KardesTahakkukId).ToList();
             ListeDisiTutulacakKayitlar.Add(OwnerForm.Id);
 
 

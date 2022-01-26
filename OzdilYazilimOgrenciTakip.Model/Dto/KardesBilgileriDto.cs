@@ -17,6 +17,8 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public IptalDurumu IptalDurumu { get; set; }
         public string SubeAdi { get; set; }
         public long SubeId { get; set; }
+
+
         public bool Insert { get ; set ; }
         public bool Update { get; set; }
         public bool Delete { get; set; }

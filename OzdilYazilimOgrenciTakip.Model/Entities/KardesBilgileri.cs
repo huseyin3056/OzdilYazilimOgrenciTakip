@@ -7,6 +7,8 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public long TahakkukId { get; set; }
 
         public long KardesTahakkukId { get; set; }
+
+        // İlişki
         public Tahakkuk KardesTahakkuk { get; set; }
 
 

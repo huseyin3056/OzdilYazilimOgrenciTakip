@@ -50,7 +50,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         public static bool GunTarihininOncesineHizmetBaslamaTarihiGirilebilir = true;
         public static bool GunTarihininSonrasinaHizmetBaslamaTarihiGirilebilir = true;
 
-
+        public static bool HizmetTahakkukKurusKullan = false;
 
 
 

@@ -12,6 +12,8 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [StringLength(500)]
         public string Aciklama { get; set; }
 
+
+        // İlişki
         public AileBilgi AileBilgi { get; set; }
        
     }

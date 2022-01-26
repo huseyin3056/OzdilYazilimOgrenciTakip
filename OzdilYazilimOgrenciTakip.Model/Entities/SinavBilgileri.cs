@@ -18,7 +18,11 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
 
         [Required,StringLength(20)]
         public string PuanTuru { get; set; }
+
+        
         public double Puan { get; set; }
+
+        [Required]
         public int Sira { get; set; }
         public double Yuzde { get; set; }
 

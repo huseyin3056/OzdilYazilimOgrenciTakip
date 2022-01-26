@@ -33,7 +33,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukE
         {
             var source = tablo.DataController.ListSource;
             ListeDisiTutulacakKayitlar = source.Cast<AileBilgileriL>().Where(x => !x.Delete).Select(x => x.AileBilgiId).ToList();
-            ListeDisiTutulacakKayitlar.Add(OwnerForm.Id);
+           
 
 
             var entities = ShowListForms<AileBilgiListForm>.ShowDialogListForm(Common.Enums.KartTuru.AileBilgi, ListeDisiTutulacakKayitlar, true, false).EntityListConvert<AileBilgi>();

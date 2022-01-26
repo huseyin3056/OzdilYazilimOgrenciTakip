@@ -1,48 +1,53 @@
-﻿using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
+﻿using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Dto;
+using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
+using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
-using System;
+using System.Linq;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditFormTable
 {
-    public partial class SinavBilgileriTable : BaseTablo
+    public partial class BilgiNotlariTable : BaseTablo
     {
-        public SinavBilgileriTable()
+        public BilgiNotlariTable()
         {
             InitializeComponent();
 
-
-            Bll = new SinavBilgileriBll();
+            Bll = new BilgiNotlariBll();
             Tablo = tablo;
             EventsLoad();
         }
 
+
+
         protected override void Listele()
         {
-            tablo.GridControl.DataSource = ((SinavBilgileriBll)Bll).List(x => x.TahakkukId == OwnerForm.Id).ToBindingList<SinavBilgileriL>();
+            tablo.GridControl.DataSource = ((BilgiNotlariBll)Bll).List(x => x.TahakkukId == OwnerForm.Id).ToBindingList<BilgiNotlariL>();
 
         }
 
         protected override void HareketEkle()
         {
             var source = tablo.DataController.ListSource;
+          
+                var row = new BilgiNotlariL
+                {
+                    TahakkukId = OwnerForm.Id,
+                    Tarih=System.DateTime.Now,             
+                    Insert = true,
 
-            var row = new SinavBilgileriL
-            {
-                TahakkukId = OwnerForm.Id,
-                Tarih = DateTime.Now.Date,
-                Insert = true,
+                };
+                source.Add(row);
 
-            };
-            source.Add(row);
-
+        
 
             tablo.Focus();
             tablo.RefreshDataSource();
             tablo.FocusedRowHandle = tablo.DataRowCount - 1;
-            tablo.FocusedColumn = colSinavAdi;
+            tablo.FocusedColumn = colBilgiNotu;
 
             ButonEnabledDurumu(true);
         }
@@ -56,22 +61,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
 
             for (int i = 0; i < tablo.DataRowCount; i++)
             {
-                var entity = tablo.GetRow<SinavBilgileriL>(i);
-                if (string.IsNullOrEmpty(entity.SinavAdi))
+                var entity = tablo.GetRow<BilgiNotlariL>(i);
+
+                if (string.IsNullOrEmpty(entity.BilgiNotu))
                 {
                     tablo.FocusedRowHandle = i;
-                    tablo.FocusedColumn = colSinavAdi;
-                    tablo.SetColumnError(colSinavAdi, "Sınav Adı Alanına Geçerli Bir Değer Giriniz");
+                    tablo.FocusedColumn = colBilgiNotu;
+                    tablo.SetColumnError(colBilgiNotu, "Bilgi Notu Alanına Geçerli Bir Değer Giriniz");
 
                 }
 
-                if (string.IsNullOrEmpty(entity.PuanTuru))
-                {
-                    tablo.FocusedRowHandle = i;
-                    tablo.FocusedColumn = colPuanTuru;
-                    tablo.SetColumnError(colPuanTuru, "Puan Türü  Alanına Geçerli Bir Değer Giriniz");
-
-                }
 
                 if (!tablo.HasColumnErrors) continue;
 
@@ -81,9 +80,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             }
 
             return false;
-
-
-
 
         }
 
