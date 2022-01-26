@@ -43,12 +43,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         public static long DonemId=1;
         public static long SubeId=1;
 
-        public static DateTime EgitimBaslamaTarihi = new DateTime(2020, 03, 01);
-        public static DateTime DonemBaslamaTarihi = new DateTime(2023, 01, 01);
-        public static DateTime DonemBitisTarihi = new DateTime(2024, 01, 01);
+        public static DateTime EgitimBaslamaTarihi = new DateTime(2021, 08, 01);
+        public static DateTime DonemBaslamaTarihi = new DateTime(2021, 08, 01);
+        public static DateTime DonemBitisTarihi = new DateTime(2022, 01, 01);
 
         public static bool GunTarihininOncesineHizmetBaslamaTarihiGirilebilir = true;
         public static bool GunTarihininSonrasinaHizmetBaslamaTarihiGirilebilir = true;
+
+        public static bool GunTarihininOncesineHizmetIptalTarihiGirilebilir = true;
+        public static bool GunTarihininSonrasinaHizmetIptalTarihiGirilebilir = true;
+
 
         public static bool HizmetTahakkukKurusKullan = false;
 

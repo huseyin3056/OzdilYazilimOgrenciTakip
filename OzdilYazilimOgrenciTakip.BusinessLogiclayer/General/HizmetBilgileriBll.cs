@@ -20,7 +20,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 Id=x.Id,
                 TahakkukId=x.TahakkukId,
                 HizmetId=x.HizmetId,
-                HizmetAdi=x.IptalEdildi?$"{x.Hizmet.HizmetAdi} - ( *** İptal Edildi *** )":x.Hizmet.HizmetAdi,
+                HizmetAdi=x.IptalEdildi?x.Hizmet.HizmetAdi +" ( *** İptal Edildi *** ) ":x.Hizmet.HizmetAdi,
                 HizmetTuruId=x.HizmetTuruId,
                 HizmetTipi=x.HizmetTuru.HizmetTipi,
                 ServisId=x.ServisId,

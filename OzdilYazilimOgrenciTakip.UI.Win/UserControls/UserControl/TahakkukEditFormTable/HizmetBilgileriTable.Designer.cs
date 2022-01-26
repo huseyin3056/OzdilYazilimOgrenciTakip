@@ -37,29 +37,32 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colServisId = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colServisYeriAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colIslemTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.repositoryTarih = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colBaslamaTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colBrutUcret = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colKistDusulenUcret = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.repositoryDecimal = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
+            this.colKistDonemDusulenUcret = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colNetUcret = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colIptalEdildi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colEgitimDonemiGunSayisi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colAlinanHizmetGunSayisi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colGunlukUcret = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colIptalTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.repositoryIptalTarihi = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colIptalNedeniId = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colIptalNedeniAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.repositoryIptalNedeni = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.colGittigiOkulId = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colGittigiOkulAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colIptalAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.repositoryTarih = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.repositoryDecimal = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
-            this.repositoryIptalNedeni = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.repositoryGittigiOkul = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colIptalAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryTarih)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryTarih.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDecimal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalNedeni)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryGittigiOkul)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +82,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.repositoryTarih,
             this.repositoryDecimal,
             this.repositoryIptalNedeni,
-            this.repositoryGittigiOkul});
+            this.repositoryGittigiOkul,
+            this.repositoryIptalTarihi});
             this.grid.Size = new System.Drawing.Size(728, 296);
             this.grid.TabIndex = 5;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -106,7 +110,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIslemTarihi,
             this.colBaslamaTarihi,
             this.colBrutUcret,
-            this.colKistDusulenUcret,
+            this.colKistDonemDusulenUcret,
             this.colNetUcret,
             this.colIptalEdildi,
             this.colEgitimDonemiGunSayisi,
@@ -223,8 +227,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIslemTarihi.StatusBarKisaYol = null;
             this.colIslemTarihi.StatusBarKisaYolAciklama = null;
             this.colIslemTarihi.Visible = true;
-            this.colIslemTarihi.VisibleIndex = 1;
+            this.colIslemTarihi.VisibleIndex = 5;
             this.colIslemTarihi.Width = 80;
+            // 
+            // repositoryTarih
+            // 
+            this.repositoryTarih.AutoHeight = false;
+            this.repositoryTarih.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryTarih.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryTarih.MaskSettings.Set("useAdvancingCaret", true);
+            this.repositoryTarih.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
+            this.repositoryTarih.Name = "repositoryTarih";
             // 
             // colBaslamaTarihi
             // 
@@ -244,7 +259,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colBaslamaTarihi.StatusBarKisaYol = null;
             this.colBaslamaTarihi.StatusBarKisaYolAciklama = null;
             this.colBaslamaTarihi.Visible = true;
-            this.colBaslamaTarihi.VisibleIndex = 2;
+            this.colBaslamaTarihi.VisibleIndex = 1;
             this.colBaslamaTarihi.Width = 80;
             // 
             // colBrutUcret
@@ -265,27 +280,40 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colBrutUcret.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BrutUcret", "{0:n2}")});
             this.colBrutUcret.Visible = true;
-            this.colBrutUcret.VisibleIndex = 3;
+            this.colBrutUcret.VisibleIndex = 2;
             // 
-            // colKistDusulenUcret
+            // repositoryDecimal
             // 
-            this.colKistDusulenUcret.Caption = "Kıst Dönem Düşülen Ücret";
-            this.colKistDusulenUcret.ColumnEdit = this.repositoryDecimal;
-            this.colKistDusulenUcret.FieldName = "KistDusulenUcret";
-            this.colKistDusulenUcret.Name = "colKistDusulenUcret";
-            this.colKistDusulenUcret.OptionsColumn.AllowEdit = false;
-            this.colKistDusulenUcret.OptionsColumn.AllowMove = false;
-            this.colKistDusulenUcret.OptionsColumn.AllowShowHide = false;
-            this.colKistDusulenUcret.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
-            this.colKistDusulenUcret.OptionsFilter.AllowAutoFilter = false;
-            this.colKistDusulenUcret.OptionsFilter.AllowFilter = false;
-            this.colKistDusulenUcret.StatusBarAciklama = null;
-            this.colKistDusulenUcret.StatusBarKisaYol = null;
-            this.colKistDusulenUcret.StatusBarKisaYolAciklama = null;
-            this.colKistDusulenUcret.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KistDusulenUcret", "{0:n2}")});
-            this.colKistDusulenUcret.Visible = true;
-            this.colKistDusulenUcret.VisibleIndex = 4;
+            this.repositoryDecimal.AutoHeight = false;
+            this.repositoryDecimal.BeepOnError = false;
+            this.repositoryDecimal.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryDecimal.DisplayFormat.FormatString = "c2";
+            this.repositoryDecimal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryDecimal.EditFormat.FormatString = "{0:n2}";
+            this.repositoryDecimal.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryDecimal.MaskSettings.Set("mask", "c2");
+            this.repositoryDecimal.Name = "repositoryDecimal";
+            // 
+            // colKistDonemDusulenUcret
+            // 
+            this.colKistDonemDusulenUcret.Caption = "Kıst Dönem Düşülen Ücret";
+            this.colKistDonemDusulenUcret.ColumnEdit = this.repositoryDecimal;
+            this.colKistDonemDusulenUcret.FieldName = "KistDonemDusulenUcret";
+            this.colKistDonemDusulenUcret.Name = "colKistDonemDusulenUcret";
+            this.colKistDonemDusulenUcret.OptionsColumn.AllowEdit = false;
+            this.colKistDonemDusulenUcret.OptionsColumn.AllowMove = false;
+            this.colKistDonemDusulenUcret.OptionsColumn.AllowShowHide = false;
+            this.colKistDonemDusulenUcret.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.colKistDonemDusulenUcret.OptionsFilter.AllowAutoFilter = false;
+            this.colKistDonemDusulenUcret.OptionsFilter.AllowFilter = false;
+            this.colKistDonemDusulenUcret.StatusBarAciklama = null;
+            this.colKistDonemDusulenUcret.StatusBarKisaYol = null;
+            this.colKistDonemDusulenUcret.StatusBarKisaYolAciklama = null;
+            this.colKistDonemDusulenUcret.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KistDonemDusulenUcret", "{0:n2}")});
+            this.colKistDonemDusulenUcret.Visible = true;
+            this.colKistDonemDusulenUcret.VisibleIndex = 3;
             // 
             // colNetUcret
             // 
@@ -305,7 +333,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colNetUcret.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NetUcret", "{0:n2}")});
             this.colNetUcret.Visible = true;
-            this.colNetUcret.VisibleIndex = 5;
+            this.colNetUcret.VisibleIndex = 4;
             // 
             // colIptalEdildi
             // 
@@ -376,8 +404,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             // 
             this.colIptalTarihi.AppearanceCell.Options.UseTextOptions = true;
             this.colIptalTarihi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colIptalTarihi.Caption = "İptal tarihi";
-            this.colIptalTarihi.ColumnEdit = this.repositoryTarih;
+            this.colIptalTarihi.Caption = "İptal Tarihi";
+            this.colIptalTarihi.ColumnEdit = this.repositoryIptalTarihi;
             this.colIptalTarihi.FieldName = "IptalTarihi";
             this.colIptalTarihi.Name = "colIptalTarihi";
             this.colIptalTarihi.OptionsColumn.AllowEdit = false;
@@ -392,6 +420,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalTarihi.Visible = true;
             this.colIptalTarihi.VisibleIndex = 9;
             this.colIptalTarihi.Width = 80;
+            // 
+            // repositoryIptalTarihi
+            // 
+            this.repositoryIptalTarihi.AutoHeight = false;
+            this.repositoryIptalTarihi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryIptalTarihi.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryIptalTarihi.MaskSettings.Set("useAdvancingCaret", true);
+            this.repositoryIptalTarihi.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
+            this.repositoryIptalTarihi.Name = "repositoryIptalTarihi";
             // 
             // colIptalNedeniId
             // 
@@ -421,6 +460,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalNedeniAdi.StatusBarKisaYolAciklama = null;
             this.colIptalNedeniAdi.Visible = true;
             this.colIptalNedeniAdi.VisibleIndex = 10;
+            // 
+            // repositoryIptalNedeni
+            // 
+            this.repositoryIptalNedeni.AutoHeight = false;
+            this.repositoryIptalNedeni.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryIptalNedeni.Name = "repositoryIptalNedeni";
+            this.repositoryIptalNedeni.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             // 
             // colGittigiOkulId
             // 
@@ -452,9 +499,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colGittigiOkulAdi.VisibleIndex = 11;
             this.colGittigiOkulAdi.Width = 120;
             // 
+            // repositoryGittigiOkul
+            // 
+            this.repositoryGittigiOkul.AutoHeight = false;
+            this.repositoryGittigiOkul.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryGittigiOkul.Name = "repositoryGittigiOkul";
+            this.repositoryGittigiOkul.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            // 
             // colIptalAciklama
             // 
-            this.colIptalAciklama.Caption = "Açıklama";
+            this.colIptalAciklama.Caption = "İptal Açıklama";
             this.colIptalAciklama.FieldName = "IptalAciklama";
             this.colIptalAciklama.Name = "colIptalAciklama";
             this.colIptalAciklama.OptionsColumn.AllowEdit = false;
@@ -470,45 +525,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalAciklama.VisibleIndex = 12;
             this.colIptalAciklama.Width = 108;
             // 
-            // repositoryTarih
-            // 
-            this.repositoryTarih.AutoHeight = false;
-            this.repositoryTarih.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryTarih.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryTarih.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.repositoryTarih.MaskSettings.Set("useAdvancingCaret", true);
-            this.repositoryTarih.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
-            this.repositoryTarih.Name = "repositoryTarih";
-            // 
-            // repositoryDecimal
-            // 
-            this.repositoryDecimal.AutoHeight = false;
-            this.repositoryDecimal.BeepOnError = false;
-            this.repositoryDecimal.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryDecimal.EditFormat.FormatString = "{0:n2}";
-            this.repositoryDecimal.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryDecimal.MaskSettings.Set("mask", "{0:n2}");
-            this.repositoryDecimal.Name = "repositoryDecimal";
-            // 
-            // repositoryIptalNedeni
-            // 
-            this.repositoryIptalNedeni.AutoHeight = false;
-            this.repositoryIptalNedeni.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryIptalNedeni.Name = "repositoryIptalNedeni";
-            this.repositoryIptalNedeni.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            // 
-            // repositoryGittigiOkul
-            // 
-            this.repositoryGittigiOkul.AutoHeight = false;
-            this.repositoryGittigiOkul.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryGittigiOkul.Name = "repositoryGittigiOkul";
-            this.repositoryGittigiOkul.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            // 
             // HizmetBilgileriTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,6 +539,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             ((System.ComponentModel.ISupportInitialize)(this.repositoryTarih.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryTarih)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDecimal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalNedeni)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryGittigiOkul)).EndInit();
             this.ResumeLayout(false);
@@ -542,7 +560,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         private Grid.MyGridColumn colIslemTarihi;
         private Grid.MyGridColumn colBaslamaTarihi;
         private Grid.MyGridColumn colBrutUcret;
-        private Grid.MyGridColumn colKistDusulenUcret;
+        private Grid.MyGridColumn colKistDonemDusulenUcret;
         private Grid.MyGridColumn colNetUcret;
         private Grid.MyGridColumn colIptalEdildi;
         private Grid.MyGridColumn colEgitimDonemiGunSayisi;
@@ -558,5 +576,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryDecimal;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryIptalNedeni;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryGittigiOkul;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryIptalTarihi;
     }
 }

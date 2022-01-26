@@ -7,6 +7,7 @@ using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IptalNedeniForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.YakinlikForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using System;
@@ -153,11 +154,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                 case "repositoryGittigiOkul":
                     {
                         var id = _tablo.GetRowCellId(_idColumn);
-                        var entity = (BankaL)ShowListForms<BankaListForm>.ShowDialogListForm(KartTuru.Banka, id);
+                        var entity = (OkulL)ShowListForms<OkulListForm>.ShowDialogListForm(KartTuru.Okul, id);
                         if (entity != null)
                         {
                             _tablo.SetFocusedRowCellValue(_idColumn, entity.Id);
-                            _tablo.SetFocusedRowCellValue(_nameColumn, entity.BankaAdi);
+                            _tablo.SetFocusedRowCellValue(_nameColumn, entity.OkulAdi);
                             _navigator.Buttons.DoClick(_navigator.Buttons.EndEdit);
                         }
                     }

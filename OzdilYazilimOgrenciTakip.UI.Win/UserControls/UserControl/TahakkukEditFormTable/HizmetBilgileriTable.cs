@@ -103,7 +103,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
 
             var toplamGunSayisi = (int)(egitimBitisTarihi - egitimBaslamaTarihi).TotalDays + 1;
             var gunlukUcret = entity.BrutUcret / toplamGunSayisi;
-            var alinanHizmetGunSayisi = entity.IptalEdildi ? (int)(egitimBitisTarihi - entity.BaslamaTarihi).TotalDays + 1 : (int)(entity.Iptaltarihi - entity.BaslamaTarihi).Value.TotalDays + 1;
+            var alinanHizmetGunSayisi = entity.Iptaltarihi==null ? (int)(egitimBitisTarihi - entity.BaslamaTarihi).TotalDays + 1 : (int)(entity.Iptaltarihi - entity.BaslamaTarihi).Value.TotalDays + 1;
             var odenecekUcret = alinanHizmetGunSayisi > 0 ? gunlukUcret * alinanHizmetGunSayisi : 0;
             var kistDonemDusulenHizmet = entity.BrutUcret - odenecekUcret;
             kistDonemDusulenHizmet = Math.Round(kistDonemDusulenHizmet,AnaForm.HizmetTahakkukKurusKullan?2:0);
@@ -155,7 +155,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         {
             base.Tablo_MouseUp(sender, e);
 
-            var entity = tablo.GetRow<HizmetBilgileriL>();
+            var entity =(HizmetBilgileriL) tablo.GetRow(Tablo.FocusedRowHandle);
             if (entity == null) return;
 
             btnHareketSil.Enabled =! entity.IptalEdildi;
@@ -172,6 +172,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
 
             else if (e.FocusedColumn == colGittigiOkulAdi)
                 e.FocusedColumn.Sec(tablo, insUpNavigator.Navigator, repositoryGittigiOkul, colGittigiOkulAdi);
+
+            else if(e.FocusedColumn==colIptalTarihi)
+            {
+                var entity = tablo.GetRow<HizmetBilgileriL>();
+                if (entity.Iptaltarihi == null) return;
+
+                repositoryIptalTarihi.MinValue = AnaForm.GunTarihininOncesineHizmetIptalTarihiGirilebilir ? entity.BaslamaTarihi : DateTime.Now.Date;
+                repositoryIptalTarihi.MaxValue = AnaForm.GunTarihininSonrasinaHizmetIptalTarihiGirilebilir ? AnaForm.DonemBitisTarihi.AddDays(-1) : DateTime.Now.Date;
+
+
+
+                
+
+            }
 
 
 

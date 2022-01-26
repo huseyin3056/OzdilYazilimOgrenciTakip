@@ -41,7 +41,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
             // Yetki Kontrolü
             using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
             {
-                frm.SeciliGelecekId = seciliGelecekId;
+                frm.SeciliGelecekId = seciliGelecekId;                        
                 frm.Yukle();
                 frm.ShowDialog();
 
