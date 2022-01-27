@@ -90,7 +90,11 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
 
         }
 
+        public static void IptalHareketSilinemezMesaji()
+        {
+            UyariMesaji("İptal Edilen Hareketler Silinemez");
 
+        }
 
 
     }

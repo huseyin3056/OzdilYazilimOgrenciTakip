@@ -56,6 +56,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
         public static bool HizmetTahakkukKurusKullan = false;
         public static bool IndirimTahakkukKurusKullan = false;
+        public static bool GittigiOkulZorunlu = true;
+
 
 
 

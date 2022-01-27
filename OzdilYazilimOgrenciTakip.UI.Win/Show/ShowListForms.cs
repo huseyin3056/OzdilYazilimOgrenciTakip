@@ -80,7 +80,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
                 frm.MultiSelect = multiSelect;
                 frm.Yukle();
                 frm.RowSelect = new Functions.SelectRowFunctions(frm.Tablo);
-                if (frm.EklenebilecekEntityVar)
 
                     frm.ShowDialog();
 

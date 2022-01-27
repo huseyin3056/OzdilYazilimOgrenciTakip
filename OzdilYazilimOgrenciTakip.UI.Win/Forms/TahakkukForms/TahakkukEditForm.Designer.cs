@@ -61,6 +61,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageHizmetBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.hizmetBilgileriTable = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditFormTable.HizmetBilgileriTable();
             this.pageIndirimBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.indirimBilgileriTable = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditFormTable.IndirimBilgileriTable();
             this.pageOdemePlani = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.pageGeriOdemeler = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.tabUst = new DevExpress.XtraBars.Navigation.TabPane();
@@ -136,6 +137,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             ((System.ComponentModel.ISupportInitialize)(this.tabAlt)).BeginInit();
             this.tabAlt.SuspendLayout();
             this.pageHizmetBilgileri.SuspendLayout();
+            this.pageIndirimBilgileri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabUst)).BeginInit();
             this.tabUst.SuspendLayout();
             this.pageGenelBilgiler.SuspendLayout();
@@ -280,11 +282,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             // pageIndirimBilgileri
             // 
             this.pageIndirimBilgileri.Caption = "İndirim Bilgileri";
+            this.pageIndirimBilgileri.Controls.Add(this.indirimBilgileriTable);
             this.pageIndirimBilgileri.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.employeethank_16x16;
             this.pageIndirimBilgileri.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.pageIndirimBilgileri.Name = "pageIndirimBilgileri";
             this.pageIndirimBilgileri.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.pageIndirimBilgileri.Size = new System.Drawing.Size(764, 257);
+            this.pageIndirimBilgileri.Size = new System.Drawing.Size(764, 224);
+            // 
+            // indirimBilgileriTable
+            // 
+            this.indirimBilgileriTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.indirimBilgileriTable.Location = new System.Drawing.Point(0, 0);
+            this.indirimBilgileriTable.Name = "indirimBilgileriTable";
+            this.indirimBilgileriTable.Size = new System.Drawing.Size(764, 224);
+            this.indirimBilgileriTable.TabIndex = 0;
             // 
             // pageOdemePlani
             // 
@@ -673,7 +684,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtKayitTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtKayitTarihi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.txtKayitTarihi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtKayitTarihi.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtKayitTarihi.Size = new System.Drawing.Size(145, 20);
@@ -1447,6 +1457,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             ((System.ComponentModel.ISupportInitialize)(this.tabAlt)).EndInit();
             this.tabAlt.ResumeLayout(false);
             this.pageHizmetBilgileri.ResumeLayout(false);
+            this.pageIndirimBilgileri.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabUst)).EndInit();
             this.tabUst.ResumeLayout(false);
             this.pageGenelBilgiler.ResumeLayout(false);
@@ -1592,5 +1603,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         private UserControls.Controls.MyDataLayoutControl myDataLayoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlEvrakPromosyonBilgileri;
         protected internal UserControls.UserControl.TahakkukEditFormTable.HizmetBilgileriTable hizmetBilgileriTable;
+        protected internal UserControls.UserControl.TahakkukEditFormTable.IndirimBilgileriTable indirimBilgileriTable;
     }
 }

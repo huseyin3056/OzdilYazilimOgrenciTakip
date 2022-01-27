@@ -34,25 +34,25 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIndirimAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colHizmetAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colIslemTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.repositoryTarih = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colIptalTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.repositoryIptalTarihi = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colBrutIndirim = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.repositoryDecimal = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.colKistDonemDusulenIndirim = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colNetIndirim = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colIptalNedeniId = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colIptalNedeniAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colIptalAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.repositoryIptalTarihi = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryIptalNedeni = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.repositoryDecimal = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
-            this.repositoryTarih = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.colIptalAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalNedeni)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryDecimal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryTarih)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryTarih.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDecimal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalNedeni)).BeginInit();
             this.SuspendLayout();
             // 
             // insUpNavigator
@@ -112,6 +112,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.tablo.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.tablo.OptionsView.HeaderFilterButtonShowMode = DevExpress.XtraEditors.Controls.FilterButtonShowMode.Button;
             this.tablo.OptionsView.RowAutoHeight = true;
+            this.tablo.OptionsView.ShowFooter = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
             this.tablo.StatusBarAciklama = null;
@@ -169,6 +170,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIslemTarihi.Visible = true;
             this.colIslemTarihi.VisibleIndex = 2;
             // 
+            // repositoryTarih
+            // 
+            this.repositoryTarih.AutoHeight = false;
+            this.repositoryTarih.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryTarih.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryTarih.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
+            this.repositoryTarih.Name = "repositoryTarih";
+            // 
             // colIptalTarihi
             // 
             this.colIptalTarihi.AppearanceCell.Options.UseTextOptions = true;
@@ -185,7 +196,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalTarihi.StatusBarKisaYol = null;
             this.colIptalTarihi.StatusBarKisaYolAciklama = null;
             this.colIptalTarihi.Visible = true;
-            this.colIptalTarihi.VisibleIndex = 3;
+            this.colIptalTarihi.VisibleIndex = 6;
+            // 
+            // repositoryIptalTarihi
+            // 
+            this.repositoryIptalTarihi.AutoHeight = false;
+            this.repositoryIptalTarihi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryIptalTarihi.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryIptalTarihi.MaskSettings.Set("useAdvancingCaret", true);
+            this.repositoryIptalTarihi.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
+            this.repositoryIptalTarihi.Name = "repositoryIptalTarihi";
             // 
             // colBrutIndirim
             // 
@@ -200,9 +222,24 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colBrutIndirim.StatusBarAciklama = null;
             this.colBrutIndirim.StatusBarKisaYol = null;
             this.colBrutIndirim.StatusBarKisaYolAciklama = null;
+            this.colBrutIndirim.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BrutIndirim", "{0:n2}")});
             this.colBrutIndirim.Visible = true;
-            this.colBrutIndirim.VisibleIndex = 4;
+            this.colBrutIndirim.VisibleIndex = 3;
             this.colBrutIndirim.Width = 111;
+            // 
+            // repositoryDecimal
+            // 
+            this.repositoryDecimal.AutoHeight = false;
+            this.repositoryDecimal.BeepOnError = false;
+            this.repositoryDecimal.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryDecimal.DisplayFormat.FormatString = "c2";
+            this.repositoryDecimal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryDecimal.EditFormat.FormatString = "c2";
+            this.repositoryDecimal.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryDecimal.MaskSettings.Set("mask", "c2");
+            this.repositoryDecimal.Name = "repositoryDecimal";
             // 
             // colKistDonemDusulenIndirim
             // 
@@ -217,8 +254,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colKistDonemDusulenIndirim.StatusBarAciklama = null;
             this.colKistDonemDusulenIndirim.StatusBarKisaYol = null;
             this.colKistDonemDusulenIndirim.StatusBarKisaYolAciklama = null;
+            this.colKistDonemDusulenIndirim.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KistDonemDusulenIndirim", "{0:n2}")});
             this.colKistDonemDusulenIndirim.Visible = true;
-            this.colKistDonemDusulenIndirim.VisibleIndex = 5;
+            this.colKistDonemDusulenIndirim.VisibleIndex = 4;
             this.colKistDonemDusulenIndirim.Width = 104;
             // 
             // colNetIndirim
@@ -234,8 +273,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colNetIndirim.StatusBarAciklama = null;
             this.colNetIndirim.StatusBarKisaYol = null;
             this.colNetIndirim.StatusBarKisaYolAciklama = null;
+            this.colNetIndirim.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "NetIndirim", "{0:n2}")});
             this.colNetIndirim.Visible = true;
-            this.colNetIndirim.VisibleIndex = 6;
+            this.colNetIndirim.VisibleIndex = 5;
             this.colNetIndirim.Width = 100;
             // 
             // colIptalNedeniId
@@ -269,6 +310,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalNedeniAdi.VisibleIndex = 7;
             this.colIptalNedeniAdi.Width = 113;
             // 
+            // repositoryIptalNedeni
+            // 
+            this.repositoryIptalNedeni.AutoHeight = false;
+            this.repositoryIptalNedeni.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.repositoryIptalNedeni.Name = "repositoryIptalNedeni";
+            // 
             // colIptalAciklama
             // 
             this.colIptalAciklama.Caption = "İptal  Açıklama";
@@ -285,48 +333,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalAciklama.VisibleIndex = 8;
             this.colIptalAciklama.Width = 153;
             // 
-            // repositoryIptalTarihi
-            // 
-            this.repositoryIptalTarihi.AutoHeight = false;
-            this.repositoryIptalTarihi.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryIptalTarihi.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryIptalTarihi.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.repositoryIptalTarihi.MaskSettings.Set("useAdvancingCaret", true);
-            this.repositoryIptalTarihi.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
-            this.repositoryIptalTarihi.Name = "repositoryIptalTarihi";
-            // 
-            // repositoryIptalNedeni
-            // 
-            this.repositoryIptalNedeni.AutoHeight = false;
-            this.repositoryIptalNedeni.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.repositoryIptalNedeni.Name = "repositoryIptalNedeni";
-            // 
-            // repositoryDecimal
-            // 
-            this.repositoryDecimal.AutoHeight = false;
-            this.repositoryDecimal.BeepOnError = false;
-            this.repositoryDecimal.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryDecimal.DisplayFormat.FormatString = "c2";
-            this.repositoryDecimal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryDecimal.EditFormat.FormatString = "c2";
-            this.repositoryDecimal.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryDecimal.MaskSettings.Set("mask", "c2");
-            this.repositoryDecimal.Name = "repositoryDecimal";
-            // 
-            // repositoryTarih
-            // 
-            this.repositoryTarih.AutoHeight = false;
-            this.repositoryTarih.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryTarih.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryTarih.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
-            this.repositoryTarih.Name = "repositoryTarih";
-            // 
             // IndirimBilgileriTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,12 +344,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.Controls.SetChildIndex(this.grid, 0);
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalNedeni)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryDecimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryTarih.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryTarih)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalTarihi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryDecimal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryIptalNedeni)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

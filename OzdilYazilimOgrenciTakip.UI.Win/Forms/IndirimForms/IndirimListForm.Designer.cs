@@ -195,7 +195,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms
             this.IconOptions.ShowIcon = false;
             this.MinimumSize = new System.Drawing.Size(800, 485);
             this.Name = "IndirimListForm";
-            this.Text = "IndirimListForm";
+            this.Text = "İndirim Kartları";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.longNavigator, 0);
             this.Controls.SetChildIndex(this.grid, 0);

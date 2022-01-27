@@ -76,15 +76,27 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             Tablo.ColumnWidthChanged += Tablo_SablonChanged;
             Tablo.EndSorting += Tablo_SablonChanged;
             Tablo.DoubleClick += Tablo_DoubleClick;
+            Tablo.FocusedRowObjectChanged += Tablo_FocusedRowObjectChanged;
+           
 
 
         }
 
-
+        private void Tablo_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
 
         private void Tablo_DoubleClick(object sender, EventArgs e)
         {
             OpenEntity();
+        }
+
+        private void Tablo_FocusedRowObjectChanged(object sender, FocusedRowObjectChangedEventArgs e)
+        {
+            SutunGizleGoster();
+            RowCellAllowEdit();
+            
         }
 
         protected internal void Yukle()
@@ -167,6 +179,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
+     
+
+
         protected void ButonEnabledDurumu(bool durum)
         {
             TableValueChanged = durum;
@@ -237,7 +252,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
-        private void Tablo_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        protected virtual  void Tablo_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
             if (!_isLoaded) return;
 
