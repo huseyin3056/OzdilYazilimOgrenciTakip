@@ -195,6 +195,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         protected virtual void SutunGizleGoster() { }
         protected virtual void RowCellAllowEdit() { }
 
+        protected virtual void IptalEt() { }
+
         protected internal bool Kaydet()
         {
             insUpNavigator.Navigator.Buttons.DoClick(insUpNavigator.Navigator.Buttons.EndEdit);

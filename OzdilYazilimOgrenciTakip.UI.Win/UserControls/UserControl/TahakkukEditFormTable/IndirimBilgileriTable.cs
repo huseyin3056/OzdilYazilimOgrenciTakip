@@ -2,9 +2,12 @@
 using DevExpress.XtraGrid.Views.Base;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
+using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Dto;
+using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IptalNedeniForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
@@ -191,6 +194,80 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             tablo.RefreshDataSource();
             ButonEnabledDurumu(true);
 
+
+        }
+
+        protected override void IptalEt()
+        {
+
+            var indirimEntity = tablo.GetRow<IndirimBilgileriL>();
+            if (indirimEntity == null || indirimEntity.IptalEdildi || indirimEntity.Insert) return;
+            if (Messages.IptalMesaj("İndirim Bilgisi") != DialogResult.Yes) return;
+
+            var hizmetEntity = ((TahakkukEditForm)OwnerForm).hizmetBilgileriTable.Tablo.DataController.ListSource.Cast<HizmetBilgileriL>().FirstOrDefault(x=> !x.IptalEdildi && x.HizmetId== indirimEntity.HizmetId);
+            if (hizmetEntity == null) return;
+
+            var gunlukIndirim = indirimEntity.BrutIndirim / hizmetEntity.EgitimDonemiGunSayisi;
+            var alinanHizmetGunSayisi =(int) (DateTime.Now.Date - hizmetEntity.BaslamaTarihi).TotalDays + 1;
+            var brutIndirim = gunlukIndirim * alinanHizmetGunSayisi;
+            var kistDonemDusulenIndirim = indirimEntity.BrutIndirim - brutIndirim;
+            kistDonemDusulenIndirim = Math.Round(kistDonemDusulenIndirim, AnaForm.IndirimTahakkukKurusKullan ? 2 : 0);
+
+            var iptalNedeni = (IptalNedeni)ShowListForms<IptalNedeniListForm>.ShowDialogListForm(KartTuru.IptalNedeni, -1);
+            if (iptalNedeni != null)
+            {
+                indirimEntity.IptalNedeniId = iptalNedeni.Id;
+                indirimEntity.IptalNedeniAdi = iptalNedeni.IptalNedeniAdi;
+
+
+            }
+
+            indirimEntity.IndirimAdi = $"{indirimEntity.IndirimAdi } - ( **** İptal Edildi ****)";
+            if (!indirimEntity.ManuelGirilenTutar) indirimEntity.KistDonemDusulenIndirim = kistDonemDusulenIndirim > 0 ? kistDonemDusulenIndirim : 0;
+            indirimEntity.NetIndirim = indirimEntity.BrutIndirim - indirimEntity.KistDonemDusulenIndirim;
+            indirimEntity.IptalTarihi = DateTime.Now.Date;
+            indirimEntity.IptalEdildi = true;
+            indirimEntity.Update = true;
+
+            TopluIndirimHesapla();
+            tablo.UpdateSummary();
+            tablo.RowCellEnabled();
+            tablo.FocusedColumn = colIptalAciklama;
+            ButonEnabledDurumu(true);
+
+
+        }
+
+       
+        protected internal void TopluIptalEt(HizmetBilgileriL entity)
+        {
+            var source = tablo.DataController.ListSource.Cast<IndirimBilgileriL>();
+            if (source == null) return;
+
+            foreach (var item in source)   // source.ForEach(x=>  ile aynı şey
+            {
+                if (item.HizmetId != entity.HizmetId || item.IptalEdildi) return;
+
+                var gunlukIndirim = item.BrutIndirim / entity.EgitimDonemiGunSayisi;
+
+                var brutIndirim = gunlukIndirim * entity.AlinanHizmetGunSayisi;
+                var kistDonemDusulenIndirim = item.BrutIndirim - brutIndirim;
+                kistDonemDusulenIndirim = Math.Round(kistDonemDusulenIndirim, AnaForm.IndirimTahakkukKurusKullan ? 2 : 0);
+
+                item.IndirimAdi = $"{item.IndirimAdi } - ( **** İptal Edildi ****)";
+                if (!item.ManuelGirilenTutar) item.KistDonemDusulenIndirim = kistDonemDusulenIndirim > 0 ? kistDonemDusulenIndirim : 0;
+                item.NetIndirim = item.BrutIndirim - item.KistDonemDusulenIndirim;
+                item.IptalTarihi = DateTime.Now.Date;
+                item.IptalEdildi = true;
+                item.HizmetHareketId = entity.Id;
+                item.IptalNedeniId = entity.IptalNedeniId;
+                item.IptalNedeniAdi = entity.IptalNedeniAdi;
+
+                if(!item.Insert)item.Update = true;
+            }
+
+            TopluIndirimHesapla();
+            tablo.UpdateSummary();
 
         }
 

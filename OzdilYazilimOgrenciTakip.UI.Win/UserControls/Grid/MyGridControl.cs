@@ -121,6 +121,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid
         {
             return new MyGridColumnCollection(this);
         }
+
+        
     }
 
     internal class MyGridColumnCollection : GridColumnCollection

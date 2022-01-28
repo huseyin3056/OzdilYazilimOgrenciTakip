@@ -99,6 +99,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             ButonEnabledDurumu(true);
         }
 
+     
+
         protected internal override bool HataliGiris()
         {
             if (!TableValueChanged) return false;

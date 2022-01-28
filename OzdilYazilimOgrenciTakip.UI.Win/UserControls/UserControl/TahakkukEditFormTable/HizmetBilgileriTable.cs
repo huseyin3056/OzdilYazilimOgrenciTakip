@@ -2,10 +2,13 @@
 using DevExpress.XtraGrid.Views.Base;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
+using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IptalNedeniForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.ServisForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
@@ -101,6 +104,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
 
         protected internal override bool HataliGiris()
         {
+            bool IndirimToplamiHzimetToplamindanBuyuk(long hizmetId)
+            {
+                var hizmetToplami = tablo.DataController.ListSource.Cast<HizmetBilgileriL>().Where(x => x.HizmetId == hizmetId && !x.Delete).Sum(x => x.BrutUcret - x.KistDonemDusulenUcret);
+                var indirimToplami = ((TahakkukEditForm)OwnerForm).indirimBilgileriTable.Tablo.DataController.ListSource.Cast<IndirimBilgileriL>().Where(x => x.HizmetId == hizmetId && !x.Delete).Sum(x => x.BrutIndirim * x.KistDonemDusulenIndirim);
+                return indirimToplami > hizmetToplami;
+            }
 
             if (!TableValueChanged) return false;
 
@@ -127,10 +136,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
                 }
 
 
-                if (!tablo.HasColumnErrors) continue;
+                if (tablo.HasColumnErrors)
+                {
+                    Messages.TabloEksikBilgiMesaji($"{tablo.ViewCaption} Tablosu ");
+                    return true;
+                }
 
-                Messages.TabloEksikBilgiMesaji($"{tablo.ViewCaption} Tablosu ");
-                return true;
+               if(IndirimToplamiHzimetToplamindanBuyuk(entity.HizmetId))
+                {
+                    tablo.FocusedRowHandle = i;
+                    Messages.HataMesaji($"{entity.HizmetAdi} Kartına uygulanan indirimlerin toplamı kartın toplam tutarını aşmaktadır.");
+                    return true;
+
+                }
 
             }
 
@@ -158,6 +176,42 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             entity.EgitimDonemiGunSayisi = toplamGunSayisi;
             entity.AlinanHizmetGunSayisi = alinanHizmetGunSayisi;
             entity.GunlukUcret = gunlukUcret;
+
+
+        }
+
+        protected override void IptalEt()
+        {
+            var entity = tablo.GetRow<HizmetBilgileriL>();
+            if (entity == null || entity.IptalEdildi || entity.Insert) return;
+            if (Messages.IptalMesaj("Hizmet Bilgisi") != DialogResult.Yes) return;
+
+            var iptalNedeni =(IptalNedeni) ShowListForms<IptalNedeniListForm>.ShowDialogListForm(KartTuru.IptalNedeni, -1);
+            if(iptalNedeni !=null)
+            {
+                entity.IptalNedeniId = iptalNedeni.Id;
+                entity.IptalNedeniAdi = iptalNedeni.IptalNedeniAdi;
+
+
+            }
+
+            if(entity.HizmetTipi== HizmetTipi.Egitim)
+            {
+                var gittigiOkul = (OkulL)ShowListForms<OkulListForm>.ShowDialogListForm(KartTuru.Okul, -1);
+                if (gittigiOkul != null)
+                {
+                    entity.GittigiOkulId = gittigiOkul.Id;
+                    entity.GittigiOkulAdi = gittigiOkul.OkulAdi;
+
+
+                }
+            }
+
+            entity.Iptaltarihi = DateTime.Now.Date;
+            entity.HizmetAdi = $"{entity.HizmetAdi} - ( **** İptal Edildi ****)";
+            entity.IptalEdildi = true;
+            entity.Update = true;
+            UcretHesapla(entity);
 
 
         }

@@ -96,6 +96,11 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
 
         }
 
+        public static DialogResult IptalMesaj(string kartAdi)
+        {
+            return HayirSeciliEvetHayir($"Seçtiğiniz {kartAdi} İptal Edilecektir. Onaylıyormusunuz?", "İptal Onayı");
+
+        }
 
     }
 }
