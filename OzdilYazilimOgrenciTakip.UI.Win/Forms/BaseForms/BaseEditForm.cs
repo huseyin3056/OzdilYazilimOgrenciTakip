@@ -115,7 +115,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         }
 
-       
+
 
         protected virtual void Control_Enter(object sender, EventArgs e) { }
 
@@ -251,8 +251,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             GuncelNesneOlustur();
             SablonYukle();
             ButonGizleGoster();
-            
-            if(FarkliSubeIslemi)
+
+            if (FarkliSubeIslemi)
             {
                 Messages.UyariMesaji("İşlem Yapılan Kart Şube beya Dönemde Olmadığı İçin Yapılan Değişiklikler Kayıt Edilemez");
 
@@ -308,6 +308,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                 FiltreUygula();
             }
 
+            else if (e.Item == btnTaksitOlustur)
+            {
+
+                TaksitOlustur();
+            }
+
             else if (e.Item == btnYazdir)
             {
 
@@ -329,6 +335,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
             Cursor.Current = DefaultCursor;
         }
+
+
 
         private void FarkliKaydet()
         {
@@ -370,6 +378,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                 Close();
             }
         }
+
+        protected virtual void TaksitOlustur() { }
+
+
 
         private bool Kaydet(bool kapanis)
         {
@@ -455,14 +467,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         }
 
-        protected virtual  void Control_SelectedPageChanged(object sender, SelectedPageChangedEventArgs e) { }
-       
+        protected virtual void Control_SelectedPageChanged(object sender, SelectedPageChangedEventArgs e) { }
+
 
         protected virtual void BagliTabloYukle() { }
 
         protected virtual bool BagliTabloKaydet() { return false; }
-       
-      protected virtual bool BagliTabloHataliGirisKontrol() { return false; }
+
+        protected virtual bool BagliTabloHataliGirisKontrol() { return false; }
 
     }
 }

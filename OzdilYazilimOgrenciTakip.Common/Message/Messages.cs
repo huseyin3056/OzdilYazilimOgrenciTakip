@@ -102,5 +102,18 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
 
         }
 
+        public static DialogResult IptalGeriAlMesaj(string kartAdi)
+        {
+            return HayirSeciliEvetHayir($"Seçtiğiniz {kartAdi} Kartına Uygulanan İptal İşlemi  Geri Alınacaktır. Onaylıyormusunuz?", "İptal Geri Al Onayı");
+
+        }
+
+        public static void SecimHataMesaji(string alanAdi)
+        {
+            UyariMesaji($"{alanAdi} Seçimi Yapmalısınız ...");
+
+        }
+
+
     }
 }

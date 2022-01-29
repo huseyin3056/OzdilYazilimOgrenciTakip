@@ -271,6 +271,84 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
 
         }
 
+        protected override void IptalGeriAl()
+        {
+            bool HizmetAlindi(long hizmetId)
+            {
+                return ((TahakkukEditForm)OwnerForm).hizmetBilgileriTable.Tablo.DataController.ListSource.Cast<HizmetBilgileriL>().Any(x => x.HizmetId == hizmetId && !x.IptalEdildi);
+
+            }
+
+            bool AyniIndirimAlindi(long indirimId,long hizmetId)
+            {
+                return tablo.DataController.ListSource.Cast<IndirimBilgileriL>().Any(x => x.IndirimId == indirimId && x.HizmetId == hizmetId && !x.IptalEdildi && !x.Delete);
+
+            }
+
+            var entity = tablo.GetRow<IndirimBilgileriL>();
+            if (entity == null || !entity.IptalEdildi ) return;
+            if (Messages.IptalGeriAlMesaj(entity.IndirimAdi) != DialogResult.Yes) return;
+
+            if(entity.HizmetHareketId==null && HizmetAlindi(entity.HizmetId))
+            {
+                Messages.HataMesaji("İndirimin Uygulandığı Hizmet  İptal Edilmiş. İptal Edilen Hizmet  Geri Alınmadan veya Yeni Bir Hizmet Alınmadan İptal İşlemi Geri Alınamaz.");
+                return;
+            }
+
+            if(entity.HizmetHareketId!=null)
+            {
+                Messages.HataMesaji("İptal Edilen İndirim ,Hizmet Hareketleri Tablosundan Geri Alınabilir. ");
+                return;
+            }
+
+            if(AyniIndirimAlindi(entity.IndirimId,entity.HizmetId))
+            {
+                Messages.HataMesaji("İptal İşleminin Geri Alınması Durumunda Aynı İndirimden  Birden Fazla Alım Durumu Oluşuyor");
+                return;
+            }
+
+
+            entity.IndirimAdi = entity.IndirimAdi.Remove(entity.IndirimAdi.Length - 27, 27);
+            entity.IptalEdildi = false;
+            entity.IptalTarihi = null;
+            entity.IptalNedeniAdi = null;
+            entity.IptalNedeniId = null;
+            entity.HizmetHareketId = null;
+            entity.IptalAciklama = null;
+            entity.Update = true;
+
+            TopluIndirimHesapla();
+            tablo.RefreshDataSource();
+            tablo.UpdateSummary();
+            tablo.RowCellEnabled();
+            ButonEnabledDurumu(true);
+
+        }
+
+        protected internal void  TopluIptalGeriAl(int hizmetHareketId)
+        {
+            var source = tablo.DataController.ListSource.Cast<IndirimBilgileriL>().Where(x => x.HizmetHareketId == hizmetHareketId);
+
+            source.ForEach(x =>
+            {
+                x.IndirimAdi = x.IndirimAdi.Remove(x.IndirimAdi.Length - 27, 27);
+                x.IptalEdildi = false;
+                x.IptalTarihi = null;
+                x.IptalNedeniAdi = null;
+                x.IptalNedeniId = null;
+                x.HizmetHareketId = null;
+                x.IptalAciklama = null;
+                x.Update = true;
+            });
+
+
+            TopluIndirimHesapla();
+            tablo.RefreshDataSource();
+            tablo.UpdateSummary();
+
+
+        }
+
         protected override void Tablo_MouseUp(object sender, MouseEventArgs e)
         {
             base.Tablo_MouseUp(sender, e);
@@ -318,7 +396,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             if(entity.Insert)
             {
                 colBrutIndirim.OptionsColumn.AllowEdit = entity.ManuelGirilenTutar && !entity.IptalEdildi;
-                colKistDonemDusulenIndirim.OptionsColumn.AllowEdit = entity.ManuelGirilenTutar && entity.IptalEdildi;
+                colKistDonemDusulenIndirim.OptionsColumn.AllowEdit = entity.ManuelGirilenTutar && !entity.IptalEdildi;
 
             }
             else

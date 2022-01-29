@@ -275,7 +275,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 return true;
             }
 
-            if(_eposBilgileriTable!=null && _eposBilgileriTable.HataliGiris())
+            if (_eposBilgileriTable != null && _eposBilgileriTable.HataliGiris())
             {
 
                 tabUst.SelectedPage = pageEposBilgileri;
@@ -292,7 +292,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             }
 
 
-            if ( hizmetBilgileriTable.HataliGiris())
+            if (hizmetBilgileriTable.HataliGiris())
             {
 
                 tabUst.SelectedPage = pageHizmetBilgileri;
@@ -318,7 +318,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 if (_promosyonBilgileriTable != null && _promosyonBilgileriTable.TableValueChanged) return true;
                 if (_iletisimBilgileriTable != null && _iletisimBilgileriTable.TableValueChanged) return true;
                 if (_eposBilgileriTable != null && _eposBilgileriTable.TableValueChanged) return true;
-                if (_bilgiNotlariTable!= null && _bilgiNotlariTable.TableValueChanged) return true;
+                if (_bilgiNotlariTable != null && _bilgiNotlariTable.TableValueChanged) return true;
                 if (hizmetBilgileriTable.TableValueChanged) return true;
                 if (indirimBilgileriTable.TableValueChanged) return true;
 
@@ -385,7 +385,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             else if (e.Page == pageAileSinavBilgileri)
             {
-                if (layoutControlAileSinavBilgileri.Items.Count == 0)
+                 if (layoutControlAileSinavBilgileri.Items.Count == 0)     
                 {
                     _aileBilgileriTable = new AileBilgileriTable().AddTable(this);
                     layoutControlAileSinavBilgileri.LayoutControlInsert(_aileBilgileriTable, 0, 0, 0, 0);

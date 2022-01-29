@@ -37,6 +37,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             this.btnKartDuzenle = new DevExpress.XtraBars.BarButtonItem();
             this.btnIptalEt = new DevExpress.XtraBars.BarButtonItem();
             this.btnIptalGeriAl = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBelgeHareketleri = new DevExpress.XtraBars.BarButtonItem();
             this.barManager = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -62,7 +63,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             new DevExpress.XtraBars.LinkPersistInfo(this.btnHareketSil),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnKartDuzenle),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIptalEt),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnIptalGeriAl)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnIptalGeriAl),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBelgeHareketleri)});
             this.popupMenu.Manager = this.barManager;
             this.popupMenu.Name = "popupMenu";
             // 
@@ -111,6 +113,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             this.btnIptalGeriAl.ShortcutKeyDisplayString = "Ctrl+R";
             this.btnIptalGeriAl.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
+            // btnBelgeHareketleri
+            // 
+            this.btnBelgeHareketleri.Caption = "Belge Hareketleri";
+            this.btnBelgeHareketleri.Id = 6;
+            this.btnBelgeHareketleri.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.documentmap_16x161;
+            this.btnBelgeHareketleri.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.documentmap_32x321;
+            this.btnBelgeHareketleri.Name = "btnBelgeHareketleri";
+            this.btnBelgeHareketleri.ShortcutKeyDisplayString = "F4";
+            this.btnBelgeHareketleri.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
             // barManager
             // 
             this.barManager.DockControls.Add(this.barDockControlTop);
@@ -124,8 +136,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             this.barButtonItem1,
             this.btnKartDuzenle,
             this.btnIptalEt,
-            this.btnIptalGeriAl});
-            this.barManager.MaxItemId = 6;
+            this.btnIptalGeriAl,
+            this.btnBelgeHareketleri});
+            this.barManager.MaxItemId = 8;
             // 
             // barDockControlTop
             // 
@@ -197,5 +210,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         protected DevExpress.XtraBars.BarButtonItem btnIptalGeriAl;
         protected DevExpress.XtraBars.BarButtonItem btnHareketEkle;
         protected DevExpress.XtraBars.BarButtonItem btnHareketSil;
+        protected internal DevExpress.XtraBars.BarButtonItem btnBelgeHareketleri;
     }
 }

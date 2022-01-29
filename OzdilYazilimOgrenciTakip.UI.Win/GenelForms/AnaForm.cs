@@ -43,9 +43,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         public static long DonemId=1;
         public static long SubeId=1;
 
-        public static DateTime EgitimBaslamaTarihi = new DateTime(2021, 08, 01);
-        public static DateTime DonemBaslamaTarihi = new DateTime(2021, 08, 01);
-        public static DateTime DonemBitisTarihi = new DateTime(2022, 01, 01);
+        public static DateTime EgitimBaslamaTarihi = new DateTime(2021, 01, 01);
+        public static DateTime DonemBaslamaTarihi = new DateTime(2021, 01, 01);
+        public static DateTime DonemBitisTarihi = new DateTime(2023, 01, 01);
 
         public static bool GunTarihininOncesineHizmetBaslamaTarihiGirilebilir = true;
         public static bool GunTarihininSonrasinaHizmetBaslamaTarihiGirilebilir = true;
@@ -57,7 +57,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         public static bool HizmetTahakkukKurusKullan = false;
         public static bool IndirimTahakkukKurusKullan = false;
         public static bool GittigiOkulZorunlu = true;
-
+        public static DateTime MaksimumTaksitTarihi= new DateTime(2023, 01, 01);
+        public static byte MaksimumTaksitSayisi = 12;
 
 
 

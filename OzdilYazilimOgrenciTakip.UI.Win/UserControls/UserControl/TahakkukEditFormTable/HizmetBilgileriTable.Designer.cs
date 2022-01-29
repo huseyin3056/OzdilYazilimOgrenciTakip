@@ -29,6 +29,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            this.colIptalEdildi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.grid = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridControl();
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridView();
             this.colHizmetId = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
@@ -43,7 +46,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.repositoryDecimal = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.colKistDonemDusulenUcret = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colNetUcret = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colIptalEdildi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colEgitimDonemiGunSayisi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colAlinanHizmetGunSayisi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colGunlukUcret = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
@@ -71,6 +73,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             // 
             this.insUpNavigator.Location = new System.Drawing.Point(0, 296);
             this.insUpNavigator.Size = new System.Drawing.Size(728, 24);
+            // 
+            // colIptalEdildi
+            // 
+            this.colIptalEdildi.Caption = "IptalEdildi";
+            this.colIptalEdildi.FieldName = "IptalEdildi";
+            this.colIptalEdildi.Name = "colIptalEdildi";
+            this.colIptalEdildi.OptionsColumn.AllowEdit = false;
+            this.colIptalEdildi.OptionsColumn.ShowInCustomizationForm = false;
+            this.colIptalEdildi.StatusBarAciklama = null;
+            this.colIptalEdildi.StatusBarKisaYol = null;
+            this.colIptalEdildi.StatusBarKisaYolAciklama = null;
             // 
             // grid
             // 
@@ -122,6 +135,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colGittigiOkulId,
             this.colGittigiOkulAdi,
             this.colIptalAciklama});
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Column = this.colIptalEdildi;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.MistyRose;
+            formatConditionRuleValue1.Appearance.FontStyleDelta = System.Drawing.FontStyle.Italic;
+            formatConditionRuleValue1.Appearance.ForeColor = System.Drawing.Color.Red;
+            formatConditionRuleValue1.Appearance.Options.HighPriority = true;
+            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue1.Appearance.Options.UseFont = true;
+            formatConditionRuleValue1.Appearance.Options.UseForeColor = true;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Equal;
+            formatConditionRuleValue1.Value1 = true;
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            this.tablo.FormatRules.Add(gridFormatRule1);
             this.tablo.GridControl = this.grid;
             this.tablo.Name = "tablo";
             this.tablo.OptionsCustomization.AllowColumnMoving = false;
@@ -142,9 +169,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.tablo.OptionsView.ShowFooter = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
-            this.tablo.StatusBarAciklama = null;
-            this.tablo.StatusBarKisaYol = null;
-            this.tablo.StatusBarKisaYolAciklama = null;
+            this.tablo.StatusBarAciklama = "Öğrenciye Verilen Hizmetleri Seçiniz";
+            this.tablo.StatusBarKisaYol = "Shift+Insert :";
+            this.tablo.StatusBarKisaYolAciklama = "Seçim Yap";
             this.tablo.ViewCaption = "Hizmet Bilgileri";
             // 
             // colHizmetId
@@ -169,7 +196,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colHizmetAdi.StatusBarKisaYolAciklama = null;
             this.colHizmetAdi.Visible = true;
             this.colHizmetAdi.VisibleIndex = 0;
-            this.colHizmetAdi.Width = 141;
+            this.colHizmetAdi.Width = 232;
             // 
             // colHizmetTuruId
             // 
@@ -335,17 +362,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colNetUcret.Visible = true;
             this.colNetUcret.VisibleIndex = 4;
             // 
-            // colIptalEdildi
-            // 
-            this.colIptalEdildi.Caption = "IptalEdildi";
-            this.colIptalEdildi.FieldName = "IptalEdildi";
-            this.colIptalEdildi.Name = "colIptalEdildi";
-            this.colIptalEdildi.OptionsColumn.AllowEdit = false;
-            this.colIptalEdildi.OptionsColumn.ShowInCustomizationForm = false;
-            this.colIptalEdildi.StatusBarAciklama = null;
-            this.colIptalEdildi.StatusBarKisaYol = null;
-            this.colIptalEdildi.StatusBarKisaYolAciklama = null;
-            // 
             // colEgitimDonemiGunSayisi
             // 
             this.colEgitimDonemiGunSayisi.Caption = "Eğitim Dönemi Gün Sayısı";
@@ -406,7 +422,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalTarihi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colIptalTarihi.Caption = "İptal Tarihi";
             this.colIptalTarihi.ColumnEdit = this.repositoryIptalTarihi;
-            this.colIptalTarihi.FieldName = "IptalTarihi";
+            this.colIptalTarihi.FieldName = "Iptaltarihi";
             this.colIptalTarihi.Name = "colIptalTarihi";
             this.colIptalTarihi.OptionsColumn.AllowEdit = false;
             this.colIptalTarihi.OptionsColumn.AllowMove = false;
@@ -414,9 +430,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalTarihi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colIptalTarihi.OptionsFilter.AllowAutoFilter = false;
             this.colIptalTarihi.OptionsFilter.AllowFilter = false;
-            this.colIptalTarihi.StatusBarAciklama = null;
-            this.colIptalTarihi.StatusBarKisaYol = null;
-            this.colIptalTarihi.StatusBarKisaYolAciklama = null;
+            this.colIptalTarihi.StatusBarAciklama = "Tarih Seçiniz";
+            this.colIptalTarihi.StatusBarKisaYol = "F4";
+            this.colIptalTarihi.StatusBarKisaYolAciklama = "Seçim Yap";
             this.colIptalTarihi.Visible = true;
             this.colIptalTarihi.VisibleIndex = 9;
             this.colIptalTarihi.Width = 80;
@@ -428,6 +444,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryIptalTarihi.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryIptalTarihi.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.repositoryIptalTarihi.MaskSettings.Set("useAdvancingCaret", true);
             this.repositoryIptalTarihi.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.repositoryIptalTarihi.Name = "repositoryIptalTarihi";
@@ -455,11 +472,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalNedeniAdi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colIptalNedeniAdi.OptionsFilter.AllowAutoFilter = false;
             this.colIptalNedeniAdi.OptionsFilter.AllowFilter = false;
-            this.colIptalNedeniAdi.StatusBarAciklama = null;
-            this.colIptalNedeniAdi.StatusBarKisaYol = null;
-            this.colIptalNedeniAdi.StatusBarKisaYolAciklama = null;
+            this.colIptalNedeniAdi.StatusBarAciklama = "İptal Nedeni Seçiniz";
+            this.colIptalNedeniAdi.StatusBarKisaYol = "F4";
+            this.colIptalNedeniAdi.StatusBarKisaYolAciklama = "Seçim Yap";
             this.colIptalNedeniAdi.Visible = true;
             this.colIptalNedeniAdi.VisibleIndex = 10;
+            this.colIptalNedeniAdi.Width = 135;
             // 
             // repositoryIptalNedeni
             // 
@@ -492,12 +510,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colGittigiOkulAdi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colGittigiOkulAdi.OptionsFilter.AllowAutoFilter = false;
             this.colGittigiOkulAdi.OptionsFilter.AllowFilter = false;
-            this.colGittigiOkulAdi.StatusBarAciklama = null;
-            this.colGittigiOkulAdi.StatusBarKisaYol = null;
-            this.colGittigiOkulAdi.StatusBarKisaYolAciklama = null;
+            this.colGittigiOkulAdi.StatusBarAciklama = "Okul Seçiniz";
+            this.colGittigiOkulAdi.StatusBarKisaYol = "F4";
+            this.colGittigiOkulAdi.StatusBarKisaYolAciklama = "Seçim Yap";
             this.colGittigiOkulAdi.Visible = true;
             this.colGittigiOkulAdi.VisibleIndex = 11;
-            this.colGittigiOkulAdi.Width = 120;
+            this.colGittigiOkulAdi.Width = 124;
             // 
             // repositoryGittigiOkul
             // 
@@ -518,9 +536,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colIptalAciklama.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colIptalAciklama.OptionsFilter.AllowAutoFilter = false;
             this.colIptalAciklama.OptionsFilter.AllowFilter = false;
-            this.colIptalAciklama.StatusBarAciklama = null;
+            this.colIptalAciklama.StatusBarAciklama = "İptal Açıklaması Girin";
             this.colIptalAciklama.StatusBarKisaYol = null;
-            this.colIptalAciklama.StatusBarKisaYolAciklama = null;
+            this.colIptalAciklama.StatusBarKisaYolAciklama = "Seçim Yap";
             this.colIptalAciklama.Visible = true;
             this.colIptalAciklama.VisibleIndex = 12;
             this.colIptalAciklama.Width = 108;

@@ -99,6 +99,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             
         }
 
+
         protected internal void Yukle()
         {
             _isLoaded = true;
@@ -152,6 +153,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 OpenEntity();
             }
 
+            else if(e.Item==btnIptalEt)
+            {
+                IptalEt();
+            }
+
+            else if(e.Item==btnIptalGeriAl)
+            {
+                IptalGeriAl();
+
+            }
+
             Cursor.Current = DefaultCursor;
 
         }
@@ -196,6 +208,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         protected virtual void RowCellAllowEdit() { }
 
         protected virtual void IptalEt() { }
+
+        protected virtual void IptalGeriAl() { }
+
 
         protected internal bool Kaydet()
         {
@@ -327,6 +342,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 case Keys.F3:
                     OpenEntity();
                     break;
+
+                case Keys.T when e.Control:
+                    IptalEt();
+                    break;
+
+                case Keys.R when e.Control:
+                    IptalGeriAl();
+                    break;
+
 
 
 
