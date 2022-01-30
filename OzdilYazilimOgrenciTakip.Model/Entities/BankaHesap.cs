@@ -60,6 +60,8 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public Sube Sube { get; set; }
         public long SubeId { get; set; }
 
+       
+
 
         [StringLength(500)]
         public string Aciklama { get; set; }

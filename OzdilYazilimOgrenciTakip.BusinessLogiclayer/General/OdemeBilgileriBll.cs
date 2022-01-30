@@ -29,41 +29,42 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 OdemeTuruId = x.OdemeBelgesi.OdemeTuruId,
                 OdemeTuruAdi = x.OdemeBelgesi.OdemeTuru.OdemeTuruAdi,
                 OdemeTipi = x.OdemeBelgesi.OdemeTipi,
-                BankaHesapId=x.OdemeBelgesi.BankaHesapId,
-                BankaHesapAdi=x.OdemeBelgesi.BankaHesap.HesapAdi,
-                BlokeGunSayisi=x.OdemeBelgesi.BlokeGunSayisi,
-                GirisTarihi=x.OdemeBelgesi.GirisTarihi,
-                Vade=x.OdemeBelgesi.Vade,
-                HesabaGecisTarihi=x.OdemeBelgesi.HesabaGecisTarihi,
-                Tutar=x.OdemeBelgesi.Tutar,
+                BankaHesapId = x.OdemeBelgesi.BankaHesapId,
+                BankaHesapAdi = x.OdemeBelgesi.BankaHesap.HesapAdi,
+                BlokeGunSayisi = x.OdemeBelgesi.BlokeGunSayisi,
+                GirisTarihi = x.OdemeBelgesi.GirisTarihi,
+                Vade = x.OdemeBelgesi.Vade,
+                HesabaGecisTarihi = x.OdemeBelgesi.HesabaGecisTarihi,
+                Tutar = x.OdemeBelgesi.Tutar,
                 TakipNo = x.OdemeBelgesi.TakipNo,
-                BankaId =x.OdemeBelgesi.BankaId,
-                BankaAdi=x.OdemeBelgesi.Banka.BankaAdi,
-                BankaSubeId=x.OdemeBelgesi.BankaSubeId,
-                BankaSubeAdi=x.OdemeBelgesi.BankaSube.SubeAdi,
-                BelgeNo=x.OdemeBelgesi.BelgeNo,
-                HesapNo=x.OdemeBelgesi.HesapNo,
-                AsilBorclu=x.OdemeBelgesi.AsilBorclu,
-                Ciranta=x.OdemeBelgesi.Ciranta,
-                TutarYazi=x.OdemeBelgesi.TutarYazi,
-                VadeYazi=x.OdemeBelgesi.VadeYazi,
-                Aciklama=x.OdemeBelgesi.Aciklama,
-                SubeAdi=x.OdemeBelgesi.Tahakkuk.Sube.SubeAdi,
-                SubeIlAdi=x.OdemeBelgesi.Tahakkuk.Sube.AdresIl.IlAdi,
-                Tahsil=0,
-                Tahsilde=0,
-                Iade=0,
-                Kalan=x.OdemeBelgesi.Tutar,
-                BelgeDurumu=Common.Enums.BelgeDurumu.Portfoyde,
-                SonHareketId=null,
-                SonHareketTarihi=null,
-                SonIslemYeri=null
-              
+                BankaId = x.OdemeBelgesi.BankaId,
+                BankaAdi = x.OdemeBelgesi.Banka.BankaAdi,
+                BankaSubeId = x.OdemeBelgesi.BankaSubeId,
+                BankaSubeAdi = x.OdemeBelgesi.BankaSube.SubeAdi,
+                BelgeNo = x.OdemeBelgesi.BelgeNo,
+                HesapNo = x.OdemeBelgesi.HesapNo,
+                AsilBorclu = x.OdemeBelgesi.AsilBorclu,
+                Ciranta = x.OdemeBelgesi.Ciranta,
+                TutarYazi = x.OdemeBelgesi.TutarYazi,
+                VadeYazi = x.OdemeBelgesi.VadeYazi,
+                Aciklama = x.OdemeBelgesi.Aciklama,
+                SubeAdi = x.OdemeBelgesi.Tahakkuk.Sube.SubeAdi,
+                SubeIlAdi = x.OdemeBelgesi.Tahakkuk.Sube.AdresIl.IlAdi,
+                Tahsil = 0,
+                Tahsilde = 0,
+                Iade = 0,
+                Kalan = x.OdemeBelgesi.Tutar,
+                BelgeDurumu = Common.Enums.BelgeDurumu.Portfoyde,
+                SonHareketId = null,
+                SonHareketTarihi = null,
+                SonIslemYeri = null
+
 
 
 
 
             }).ToList();
-            
+
         }
+    }
 }

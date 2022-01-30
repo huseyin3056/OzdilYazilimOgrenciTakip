@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzdilYazilimOgrenciTakip.UI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzdilYazilimOgrenciTakip.Dal", "OzdilYazilimOgrenciTakip.Dal\OzdilYazilimOgrenciTakip.Dal.csproj", "{BD9CF4F3-1189-455C-9DBC-1E1D9417D707}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDenemeler", "ConsoleDenemeler\ConsoleDenemeler.csproj", "{FDD78155-FB1E-459C-8881-25CA9002B937}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{BD9CF4F3-1189-455C-9DBC-1E1D9417D707}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD9CF4F3-1189-455C-9DBC-1E1D9417D707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD9CF4F3-1189-455C-9DBC-1E1D9417D707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD78155-FB1E-459C-8881-25CA9002B937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD78155-FB1E-459C-8881-25CA9002B937}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD78155-FB1E-459C-8881-25CA9002B937}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD78155-FB1E-459C-8881-25CA9002B937}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

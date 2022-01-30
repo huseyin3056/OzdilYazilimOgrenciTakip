@@ -3,6 +3,7 @@ using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaSubeForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.GorevForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetTuruForms;
@@ -31,10 +32,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
         private MyButtonEdit _btnEdit;
         private MyButtonEdit _prmEdit;
         private KartTuru _kartTuru;
+        private OdemeTipi _odemeTipi;
 
         public void Sec(MyButtonEdit btnEdit)
         {
             _btnEdit = btnEdit;
+            SecimYap();
+        }
+
+        public void Sec(MyButtonEdit btnEdit,OdemeTipi odemeTipi)
+        {
+            _btnEdit = btnEdit;
+            _odemeTipi = odemeTipi;
             SecimYap();
         }
 
@@ -290,6 +299,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                         {
                             _btnEdit.Id = entity.Id;
                             _btnEdit.EditValue = entity.AdiSoyadi;
+                        }
+                    }
+                    break;
+
+                case "txtBankaHesapNo":
+                    {
+                        var entity = (BankaHesapL)ShowListForms<BankaHesapListForm>.ShowDialogListForm(KartTuru.BankaHesap, _btnEdit.Id, _odemeTipi);
+                        if (entity != null)
+                        {
+                            _btnEdit.Tag = entity.BlokeGunSayisi;
+                            _btnEdit.Id = entity.Id;
+                            _btnEdit.EditValue = entity.HesapAdi;
                         }
                     }
                     break;

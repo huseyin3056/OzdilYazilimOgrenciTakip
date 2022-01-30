@@ -187,7 +187,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             _formSablonKayitEdilecek = true;
         }
 
-        private void BaseEditForm_FormClosing(object sender, FormClosingEventArgs e)
+       protected virtual void BaseEditForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SablonKaydet();
             if (btnKaydet.Visibility == BarItemVisibility.Never || !btnKaydet.Enabled) return;

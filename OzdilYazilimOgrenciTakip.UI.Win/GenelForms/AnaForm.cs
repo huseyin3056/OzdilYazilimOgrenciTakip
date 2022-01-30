@@ -56,6 +56,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
         public static bool HizmetTahakkukKurusKullan = false;
         public static bool IndirimTahakkukKurusKullan = false;
+        public static bool OdemePlaniKurusKullan = false;
         public static bool GittigiOkulZorunlu = true;
         public static DateTime MaksimumTaksitTarihi= new DateTime(2023, 01, 01);
         public static byte MaksimumTaksitSayisi = 12;
