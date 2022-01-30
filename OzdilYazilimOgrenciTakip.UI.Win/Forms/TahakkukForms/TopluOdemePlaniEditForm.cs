@@ -6,6 +6,7 @@ using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
+using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 using System;
 using System.Collections;
 using System.Windows.Forms;
@@ -21,30 +22,27 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         private readonly decimal _bakiye;
         private readonly DateTime _kayitTarihi;
         private readonly int _dahaOnceGirilenTaksitSayisi;
-        private bool _maksimumTaksitSayisinaUlasildi;
 
 
 
 
 
-        public TopluOdemePlaniEditForm(IList source, long tahakkukId, decimal bakiye, DateTime kayitTarihi, int dahaOnceGirilenTaksitSayisi, bool maksimumTaksitSayisinaUlasildi)
+
+        public TopluOdemePlaniEditForm(params object[] prm)
         {
             InitializeComponent();
 
-            _source = source;
-            _tahakkukId = tahakkukId;
-            _bakiye = bakiye;
-            _kayitTarihi = kayitTarihi;
-            _dahaOnceGirilenTaksitSayisi = dahaOnceGirilenTaksitSayisi;
-            _maksimumTaksitSayisinaUlasildi = maksimumTaksitSayisinaUlasildi;
-
-
+            _source = (IList)prm[0];
+            _tahakkukId = (long)prm[1];
+            _bakiye = (decimal)prm[2];
+            _kayitTarihi =(DateTime) prm[3];
+            _dahaOnceGirilenTaksitSayisi = (int)prm[4];
 
             DataLayoutControl = myDataLayoutControl;
             EventsLoad();
 
             ShowItems = new DevExpress.XtraBars.BarItem[] { btnTaksitOlustur };
-            HideItems = new DevExpress.XtraBars.BarItem[] { btnyeni, btnFarkliKaydet, btnGeriAl, btnSil };
+            HideItems = new DevExpress.XtraBars.BarItem[] {btnKaydet, btnyeni, btnFarkliKaydet, btnGeriAl, btnSil };
 
 
 
@@ -62,9 +60,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             txtTaksitSayisi.Properties.MinValue = 1;
             txtTaksitSayisi.Properties.MaxValue = AnaForm.MaksimumTaksitSayisi - _dahaOnceGirilenTaksitSayisi;
 
-            if (AnaForm.MaksimumTaksitSayisi - _dahaOnceGirilenTaksitSayisi > 0) return;
+            if (AnaForm.MaksimumTaksitSayisi - _dahaOnceGirilenTaksitSayisi > 0)  
+                ShowDialog();
+          else
             Messages.HataMesaji("Maksimum Taksit Sayısı Aşılıyor");
-            _maksimumTaksitSayisinaUlasildi = true;
+         
 
 
         }
@@ -84,7 +84,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
         private bool HataliGiris()
         {
-            if (txtIlkTaksitTarihi.DateTime.Date.AddMonths((int)txtTaksitSayisi.Value) > AnaForm.MaksimumTaksitTarihi)
+            if (txtIlkTaksitTarihi.DateTime.Date.AddMonths((int)txtTaksitSayisi.Value-1) > AnaForm.MaksimumTaksitTarihi)
             {
                 Messages.HataMesaji("Maksimum Taksit Tarihi Aşılıyor");
                 return true;
@@ -245,9 +245,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             }
         }
 
-        protected override void Control_EditValueChanged(object sender, EventArgs e)
+      
+
+        protected override void Control_IdChanged(object sender, IdChangedEventArgs e)
         {
-           if(sender==txtOdemeTuru)
+            if (sender == txtOdemeTuru)
             {
                 _odemeTipi = txtOdemeTuru.Id == null ? OdemeTipi.Acik : txtOdemeTuru.Tag.ToString().GetEnum<OdemeTipi>();
                 ControlEnableChange(_odemeTipi);
@@ -256,18 +258,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             }
 
-           else if(sender==txtBankaHesap)
-                _blokeGunSayisi =Convert.ToByte( txtBankaHesap.Tag);
+            else if (sender == txtBankaHesap)
+                _blokeGunSayisi = Convert.ToByte(txtBankaHesap.Tag);
 
-           else if(sender==txtBanka)
+            else if (sender == txtBanka)
             {
                 txtBankaSube.Id = null;
                 txtBankaSube.Text = null;
 
             }
-
-
-
         }
 
         protected override void Control_EnabledChange(object sender, EventArgs e)

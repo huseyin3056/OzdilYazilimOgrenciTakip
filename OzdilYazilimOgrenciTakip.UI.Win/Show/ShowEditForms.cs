@@ -52,5 +52,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
             }
         }
+
+
+        public static bool ShowDialogEditForm( params object[] prm)
+        {
+           
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
+            {
+                frm.Yukle();
+                return frm.DialogResult == System.Windows.Forms.DialogResult.OK;
+            }
+        }
     }
 }

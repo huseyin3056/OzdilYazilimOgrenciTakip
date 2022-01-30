@@ -15,6 +15,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakkukEditFormTable;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditFormTable;
 using System;
+using System.Drawing;
 using System.Linq;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
@@ -117,6 +118,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             indirimBilgileriTable.OwnerForm = this;
             indirimBilgileriTable.Yukle();
+
+            odemeBilgileriTable.OwnerForm = this;
+            odemeBilgileriTable.Yukle();
+
+            odemeBilgileriTable.insUpNavigator.Navigator.TextLocation = NavigatorButtonsTextLocation.Begin;
+            odemeBilgileriTable.insUpNavigator.Navigator.TextStringFormat = "Taksit ( {0} / {1}) ";
+            odemeBilgileriTable.insUpNavigator.Navigator.Appearance.ForeColor = SystemColors.HotTrack;
+
 
         }
 
@@ -300,6 +309,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 return true;
             }
 
+            if (odemeBilgileriTable.HataliGiris())
+            {
+
+                tabUst.SelectedPage = pageOdemeBilgileri;
+                odemeBilgileriTable.Tablo.GridControl.Focus();
+                return true;
+            }
+
 
             return false;
 
@@ -321,6 +338,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 if (_bilgiNotlariTable != null && _bilgiNotlariTable.TableValueChanged) return true;
                 if (hizmetBilgileriTable.TableValueChanged) return true;
                 if (indirimBilgileriTable.TableValueChanged) return true;
+                if (odemeBilgileriTable.TableValueChanged) return true;
 
 
                 return false;
@@ -348,6 +366,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             if (_bilgiNotlariTable != null && _bilgiNotlariTable.Kaydet()) return false;
             if (!hizmetBilgileriTable.Kaydet()) return false;
             if (!indirimBilgileriTable.Kaydet()) return false;
+            if (!odemeBilgileriTable.Kaydet()) return false;
 
 
             return true;
@@ -467,11 +486,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             //
 
-            else if (e.Page == pageIndirimBilgileri)
+            else if (e.Page == pageHizmetBilgileri)
                 hizmetBilgileriTable.Tablo.GridControl.Focus();
 
             else if (e.Page == pageIndirimBilgileri)
                 indirimBilgileriTable.Tablo.GridControl.Focus();
+
+            else if (e.Page == pageOdemeBilgileri)
+                odemeBilgileriTable.Tablo.GridControl.Focus();
 
 
         }

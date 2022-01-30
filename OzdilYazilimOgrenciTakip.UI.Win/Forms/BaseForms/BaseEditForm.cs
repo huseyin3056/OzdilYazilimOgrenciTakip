@@ -214,7 +214,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             SecimYap(sender);
         }
 
-        private void Control_IdChanged(object sender, IdChangedEventArgs e)
+       protected virtual  void Control_IdChanged(object sender, IdChangedEventArgs e)
         {
             if (!IsLoaded) return;
             GuncelNesneOlustur();

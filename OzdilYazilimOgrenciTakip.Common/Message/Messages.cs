@@ -114,6 +114,14 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
 
         }
 
+        public static void OdemeBelgesiSilinemezMesaj(bool dahaSonra)
+        {
+            UyariMesaji(dahaSonra
+                ?"Ödeme Belgesinin Daha Sonra İşlem Görmüş Hareketleri var. Ödeme Belgesi Silinemez"
+                : "Ödeme Belgesinin İşlem Görmüş Hareketleri var.Ödeme Belgesi Silinemez");
+
+        }
+
 
     }
 }
