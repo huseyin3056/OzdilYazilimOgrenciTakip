@@ -9,8 +9,7 @@ using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 
 namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
 {
-    public class BaseGenelBll<T> : BaseBll<T, OgrenciTakipContext>
-          where T : BaseEntity
+    public class BaseGenelBll<T> : BaseBll<T, OgrenciTakipContext>    where T : BaseEntity
     {
 
         private KartTuru _kartTuru;

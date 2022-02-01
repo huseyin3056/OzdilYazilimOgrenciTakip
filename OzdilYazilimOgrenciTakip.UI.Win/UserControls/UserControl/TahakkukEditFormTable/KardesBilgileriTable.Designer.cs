@@ -34,10 +34,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakku
             this.colAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colSoyadi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colSinifAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.colSubeAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colKayitSekli = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colKayitDurumu = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colIptalDurumu = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colSubeAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             this.SuspendLayout();
@@ -92,9 +92,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakku
             this.tablo.OptionsView.RowAutoHeight = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
-            this.tablo.StatusBarAciklama = null;
-            this.tablo.StatusBarKisaYol = null;
-            this.tablo.StatusBarKisaYolAciklama = null;
+            this.tablo.StatusBarAciklama = "Kardeş Bilgileri Giriniz";
+            this.tablo.StatusBarKisaYol = "Shift+Insert";
+            this.tablo.StatusBarKisaYolAciklama = "Kardeş Öğrenciler Seçiniz";
             this.tablo.ViewCaption = "Kardeş Bilgileri";
             // 
             // colAdi
@@ -138,6 +138,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakku
             this.colSinifAdi.VisibleIndex = 2;
             this.colSinifAdi.Width = 94;
             // 
+            // colSubeAdi
+            // 
+            this.colSubeAdi.Caption = "Şube Adı";
+            this.colSubeAdi.FieldName = "SubeAdi";
+            this.colSubeAdi.Name = "colSubeAdi";
+            this.colSubeAdi.OptionsColumn.AllowEdit = false;
+            this.colSubeAdi.StatusBarAciklama = null;
+            this.colSubeAdi.StatusBarKisaYol = null;
+            this.colSubeAdi.StatusBarKisaYolAciklama = null;
+            this.colSubeAdi.Visible = true;
+            this.colSubeAdi.VisibleIndex = 3;
+            this.colSubeAdi.Width = 104;
+            // 
             // colKayitSekli
             // 
             this.colKayitSekli.Caption = "Kayıt Şekli";
@@ -176,19 +189,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakku
             this.colIptalDurumu.Visible = true;
             this.colIptalDurumu.VisibleIndex = 6;
             this.colIptalDurumu.Width = 111;
-            // 
-            // colSubeAdi
-            // 
-            this.colSubeAdi.Caption = "Şube Adı";
-            this.colSubeAdi.FieldName = "SubeAdi";
-            this.colSubeAdi.Name = "colSubeAdi";
-            this.colSubeAdi.OptionsColumn.AllowEdit = false;
-            this.colSubeAdi.StatusBarAciklama = null;
-            this.colSubeAdi.StatusBarKisaYol = null;
-            this.colSubeAdi.StatusBarKisaYolAciklama = null;
-            this.colSubeAdi.Visible = true;
-            this.colSubeAdi.VisibleIndex = 3;
-            this.colSubeAdi.Width = 104;
             // 
             // KardesBilgileriTable
             // 

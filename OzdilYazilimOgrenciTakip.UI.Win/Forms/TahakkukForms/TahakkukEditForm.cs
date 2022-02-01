@@ -4,6 +4,7 @@ using DevExpress.XtraEditors;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Functions;
+using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
@@ -34,6 +35,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
 
 
+
         public TahakkukEditForm()
         {
             InitializeComponent();
@@ -55,6 +57,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             btnYazdir.Caption = "Kayıt Evrakları";
 
+            KayitSonrasiFormuKapat = false;
 
         }
 
@@ -88,44 +91,93 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             }
 
-            if (_kardesBilgileriTable != null)
+            if (_kardesBilgileriTable != null && TableValueChanged(_kardesBilgileriTable))
                 _kardesBilgileriTable.Yukle();
 
-            else if (_aileBilgileriTable != null)
+            if (_aileBilgileriTable != null && TableValueChanged(_aileBilgileriTable))
                 _aileBilgileriTable.Yukle();
 
-            else if (_sinavBilgileriTable != null)
+            if (_sinavBilgileriTable != null && TableValueChanged(_sinavBilgileriTable))
                 _sinavBilgileriTable.Yukle();
 
-            else if (_evrakBilgileriTable != null)
+            if (_evrakBilgileriTable != null && TableValueChanged(_evrakBilgileriTable))
                 _evrakBilgileriTable.Yukle();
 
-            else if (_promosyonBilgileriTable != null)
+            if (_promosyonBilgileriTable != null && TableValueChanged(_promosyonBilgileriTable))
                 _promosyonBilgileriTable.Yukle();
 
-            else if (_iletisimBilgileriTable != null)
+            if (_iletisimBilgileriTable != null && TableValueChanged(_iletisimBilgileriTable))
                 _iletisimBilgileriTable.Yukle();
 
-            else if (_eposBilgileriTable != null)
+            if (_eposBilgileriTable != null && TableValueChanged(_eposBilgileriTable))
                 _eposBilgileriTable.Yukle();
 
-            else if (_bilgiNotlariTable != null)
+            if (_bilgiNotlariTable != null && TableValueChanged(_bilgiNotlariTable))
                 _bilgiNotlariTable.Yukle();
 
+            if (hizmetBilgileriTable.OwnerForm == null)
+            {
+                hizmetBilgileriTable.OwnerForm = this;
+                hizmetBilgileriTable.Yukle();
 
-            hizmetBilgileriTable.OwnerForm = this;
-            hizmetBilgileriTable.Yukle();
+            }
 
-            indirimBilgileriTable.OwnerForm = this;
-            indirimBilgileriTable.Yukle();
+            if (indirimBilgileriTable.OwnerForm == null)
+            {
+                indirimBilgileriTable.OwnerForm = this;
+                indirimBilgileriTable.Yukle();
+            }
 
-            odemeBilgileriTable.OwnerForm = this;
-            odemeBilgileriTable.Yukle();
+            if (odemeBilgileriTable.OwnerForm == null)
+            {
+                odemeBilgileriTable.OwnerForm = this;
+                odemeBilgileriTable.Yukle();
+                odemeBilgileriTable.insUpNavigator.Navigator.TextLocation = NavigatorButtonsTextLocation.Begin;
+                odemeBilgileriTable.insUpNavigator.Navigator.TextStringFormat = "Taksit ( {0} / {1}) ";
+                odemeBilgileriTable.insUpNavigator.Navigator.Appearance.ForeColor = SystemColors.HotTrack;
+            }
 
-            odemeBilgileriTable.insUpNavigator.Navigator.TextLocation = NavigatorButtonsTextLocation.Begin;
-            odemeBilgileriTable.insUpNavigator.Navigator.TextStringFormat = "Taksit ( {0} / {1}) ";
-            odemeBilgileriTable.insUpNavigator.Navigator.Appearance.ForeColor = SystemColors.HotTrack;
 
+            if (geriOdemeBilgileriTable.OwnerForm == null)
+            {
+                geriOdemeBilgileriTable.OwnerForm = this;
+                geriOdemeBilgileriTable.Yukle();
+            }
+
+
+
+            if(TableValueChanged(hizmetBilgileriTable))
+            {
+                var rowHandle = hizmetBilgileriTable.Tablo.FocusedRowHandle;
+                hizmetBilgileriTable.Yukle();
+                hizmetBilgileriTable.Tablo.FocusedRowHandle = rowHandle;
+            }
+
+
+            if (TableValueChanged(indirimBilgileriTable))
+            {
+                var rowHandle = indirimBilgileriTable.Tablo.FocusedRowHandle;
+                indirimBilgileriTable.Yukle();
+                indirimBilgileriTable.Tablo.FocusedRowHandle = rowHandle;
+            }
+
+            if (TableValueChanged(odemeBilgileriTable))
+            {
+                var rowHandle = odemeBilgileriTable.Tablo.FocusedRowHandle;
+                odemeBilgileriTable.Yukle();
+                odemeBilgileriTable.Tablo.FocusedRowHandle = rowHandle;
+            }
+
+            if (TableValueChanged(geriOdemeBilgileriTable))
+            {
+                var rowHandle = geriOdemeBilgileriTable.Tablo.FocusedRowHandle;
+                geriOdemeBilgileriTable.Yukle();
+                geriOdemeBilgileriTable.Tablo.FocusedRowHandle = rowHandle;
+            }
+
+
+
+            Toplamlar();
 
         }
 
@@ -247,10 +299,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
         protected override bool EntityInsert()
         {
+            if (!DurumKontrol()) return false;
+
             if (BagliTabloHataliGirisKontrol()) return false;
             var result = ((TahakkukBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && BagliTabloKaydet();
 
-            if (result)
+            if (result && !KayitSonrasiFormuKapat)
 
                 BagliTabloYukle();
             return result;
@@ -258,10 +312,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         }
         protected override bool EntityUpdate()
         {
+            if (!DurumKontrol()) return false;
+
             if (BagliTabloHataliGirisKontrol()) return false;
 
             var result = ((TahakkukBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && BagliTabloKaydet();
-            if (result)
+            if (result && !KayitSonrasiFormuKapat)
 
                 BagliTabloYukle();
             return result;
@@ -317,6 +373,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 return true;
             }
 
+            if (geriOdemeBilgileriTable.HataliGiris())
+            {
+                tabUst.SelectedPage = pageGeriOdemeBilgileri;
+                geriOdemeBilgileriTable.Tablo.GridControl.Focus();
+                return true;
+            }
+
 
             return false;
 
@@ -339,11 +402,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 if (hizmetBilgileriTable.TableValueChanged) return true;
                 if (indirimBilgileriTable.TableValueChanged) return true;
                 if (odemeBilgileriTable.TableValueChanged) return true;
+                if (geriOdemeBilgileriTable.TableValueChanged) return true;
 
 
                 return false;
 
             }
+
+            if (hizmetBilgileriTable.TableValueChanged || indirimBilgileriTable.TableValueChanged || odemeBilgileriTable.TableValueChanged || geriOdemeBilgileriTable.TableValueChanged)
+                Toplamlar();
+
 
             if (FarkliSubeIslemi)
                 GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil);
@@ -367,10 +435,53 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             if (!hizmetBilgileriTable.Kaydet()) return false;
             if (!indirimBilgileriTable.Kaydet()) return false;
             if (!odemeBilgileriTable.Kaydet()) return false;
+            if (!geriOdemeBilgileriTable.Kaydet()) return false;
 
 
             return true;
 
+
+        }
+
+        private void Toplamlar()
+        {
+            var hizmetBilgileriToplami = hizmetBilgileriTable.Tablo.DataController.ListSource.Cast<HizmetBilgileriL>().Where(x => !x.Delete ).Sum(x => x.BrutUcret - x.KistDonemDusulenUcret);
+            var indirimBilgileriToplami = indirimBilgileriTable.Tablo.DataController.ListSource.Cast<IndirimBilgileriL>().Where(x => !x.Delete).Sum(x => x.BrutIndirim - x.KistDonemDusulenIndirim);
+            var odemeBilgileriToplami = odemeBilgileriTable.Tablo.DataController.ListSource.Cast<OdemeBilgileriL>().Where(x => !x.Delete).Sum(x => x.Tutar);
+            var geriIadelerToplami = odemeBilgileriTable.Tablo.DataController.ListSource.Cast<OdemeBilgileriL>().Where(x => !x.Delete).Sum(x => x.Iade);
+            var geriOdemelerToplami = geriOdemeBilgileriTable.Tablo.DataController.ListSource.Cast<GeriOdemeBilgileriL>().Where(x => !x.Delete).Sum(x => x.Tutar);
+
+            txtHizmetBilgileriToplami.Value = hizmetBilgileriToplami;
+            txtIndirimBilgileriToplami.Value = indirimBilgileriToplami;
+            txtOdemeBilgileriToplami.Value = odemeBilgileriToplami;
+            txtGeriIadelerBilgileriToplami.Value = geriIadelerToplami;
+            txtGeriOdemelerBilgileriToplami.Value = geriOdemelerToplami;
+
+            txtFark.Value = (hizmetBilgileriToplami - indirimBilgileriToplami) - (odemeBilgileriToplami - (geriIadelerToplami + geriOdemelerToplami));
+            txtFark.Properties.Appearance.BackColor = txtFark.Value != 0 ? Color.IndianRed : Color.GreenYellow;
+
+
+        }
+
+        private bool DurumKontrol()
+        {
+            if (txtFark.Value != 0)
+            {
+                Messages.HataMesaji("Ücret Toplamları Farkı Sıfır (0) Olmalıdır");
+                return false;
+            }
+
+            var source = hizmetBilgileriTable.Tablo.DataController.ListSource.Cast<HizmetBilgileriL>();
+            if (!source.Any(x => !x.Delete && !x.IptalEdildi && x.HizmetTipi == HizmetTipi.Egitim))
+            {
+                Messages.UyariMesaji("Eğitim Hizmet Alınmadığı İçin Tahkkuk Pasif Duruma Alınacaktır");
+                txtDurum.Text = IptalDurumu.IptalEdildi.ToName();
+
+            }
+            else
+
+                txtDurum.Text = IptalDurumu.DevamEdiyor.ToName();
+            return true;
 
         }
 
@@ -404,7 +515,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             else if (e.Page == pageAileSinavBilgileri)
             {
-                 if (layoutControlAileSinavBilgileri.Items.Count == 0)     
+                if (layoutControlAileSinavBilgileri.Items.Count == 0)
                 {
                     _aileBilgileriTable = new AileBilgileriTable().AddTable(this);
                     layoutControlAileSinavBilgileri.LayoutControlInsert(_aileBilgileriTable, 0, 0, 0, 0);
@@ -494,6 +605,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             else if (e.Page == pageOdemeBilgileri)
                 odemeBilgileriTable.Tablo.GridControl.Focus();
+
+            else if (e.Page == pageGeriOdemeBilgileri)
+                geriOdemeBilgileriTable.Tablo.GridControl.Focus();
 
 
         }

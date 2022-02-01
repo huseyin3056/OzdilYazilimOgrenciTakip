@@ -39,7 +39,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         {
             decimal BakiyeHesapla()
             {
-                return 0;
+                var bakiye = ((TahakkukEditForm)OwnerForm).txtFark.Value;
+                return bakiye <= 0 ? 0 : bakiye;
             }
 
 

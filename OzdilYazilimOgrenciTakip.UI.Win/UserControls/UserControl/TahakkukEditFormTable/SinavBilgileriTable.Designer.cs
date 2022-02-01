@@ -104,9 +104,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.tablo.OptionsView.RowAutoHeight = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
-            this.tablo.StatusBarAciklama = null;
-            this.tablo.StatusBarKisaYol = null;
-            this.tablo.StatusBarKisaYolAciklama = null;
+            this.tablo.StatusBarAciklama = "Sınav Bilgileri Giriniz";
+            this.tablo.StatusBarKisaYol = "Shift+F4";
+            this.tablo.StatusBarKisaYolAciklama = "Sınav Bilgileri Giriniz";
             this.tablo.ViewCaption = "Sınav Bilgileri";
             // 
             // colSinavAdi
@@ -114,8 +114,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colSinavAdi.Caption = "Sınav Adı";
             this.colSinavAdi.FieldName = "SinavAdi";
             this.colSinavAdi.Name = "colSinavAdi";
-            this.colSinavAdi.StatusBarAciklama = null;
-            this.colSinavAdi.StatusBarKisaYol = null;
+            this.colSinavAdi.StatusBarAciklama = "Sınav Adı Giriniz";
+            this.colSinavAdi.StatusBarKisaYol = "";
             this.colSinavAdi.StatusBarKisaYolAciklama = null;
             this.colSinavAdi.Visible = true;
             this.colSinavAdi.VisibleIndex = 0;
@@ -129,9 +129,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colTarih.ColumnEdit = this.repositoryTarih;
             this.colTarih.FieldName = "Tarih";
             this.colTarih.Name = "colTarih";
-            this.colTarih.StatusBarAciklama = null;
-            this.colTarih.StatusBarKisaYol = null;
-            this.colTarih.StatusBarKisaYolAciklama = null;
+            this.colTarih.StatusBarAciklama = "Tarih Seçiniz";
+            this.colTarih.StatusBarKisaYol = "F4";
+            this.colTarih.StatusBarKisaYolAciklama = "Seçim Yap";
             this.colTarih.Visible = true;
             this.colTarih.VisibleIndex = 1;
             this.colTarih.Width = 109;
@@ -152,9 +152,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colPuanTuru.Caption = "Puan Türü";
             this.colPuanTuru.FieldName = "PuanTuru";
             this.colPuanTuru.Name = "colPuanTuru";
-            this.colPuanTuru.StatusBarAciklama = null;
+            this.colPuanTuru.StatusBarAciklama = "Puan Türü Giriniz";
             this.colPuanTuru.StatusBarKisaYol = null;
-            this.colPuanTuru.StatusBarKisaYolAciklama = null;
+            this.colPuanTuru.StatusBarKisaYolAciklama = "Puan Giriniz";
             this.colPuanTuru.Visible = true;
             this.colPuanTuru.VisibleIndex = 2;
             this.colPuanTuru.Width = 105;
@@ -165,7 +165,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colPuan.ColumnEdit = this.repositoryPuan;
             this.colPuan.FieldName = "Puan";
             this.colPuan.Name = "colPuan";
-            this.colPuan.StatusBarAciklama = null;
+            this.colPuan.StatusBarAciklama = "Puan Giriniz";
             this.colPuan.StatusBarKisaYol = null;
             this.colPuan.StatusBarKisaYolAciklama = null;
             this.colPuan.Visible = true;
@@ -196,7 +196,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colSira.ColumnEdit = this.repositorySira;
             this.colSira.FieldName = "Sira";
             this.colSira.Name = "colSira";
-            this.colSira.StatusBarAciklama = null;
+            this.colSira.StatusBarAciklama = "Sınav Sırası Giriniz";
             this.colSira.StatusBarKisaYol = null;
             this.colSira.StatusBarKisaYolAciklama = null;
             this.colSira.Visible = true;
@@ -223,7 +223,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colYuzde.ColumnEdit = this.repositoryYuzde;
             this.colYuzde.FieldName = "Yuzde";
             this.colYuzde.Name = "colYuzde";
-            this.colYuzde.StatusBarAciklama = null;
+            this.colYuzde.StatusBarAciklama = "Sınav Başarı Derece Giriniz";
             this.colYuzde.StatusBarKisaYol = null;
             this.colYuzde.StatusBarKisaYolAciklama = null;
             this.colYuzde.Visible = true;

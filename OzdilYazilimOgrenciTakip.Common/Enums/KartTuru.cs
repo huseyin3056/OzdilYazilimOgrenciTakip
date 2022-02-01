@@ -117,6 +117,9 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         [Description("Tahakkuk Kartı")]
         Tahakkuk = 34,
 
+        [Description("Makbuz Kartı")]
+        Makbuz =35
+
 
 
 

@@ -110,9 +110,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.tablo.OptionsView.RowAutoHeight = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
-            this.tablo.StatusBarAciklama = null;
-            this.tablo.StatusBarKisaYol = null;
-            this.tablo.StatusBarKisaYolAciklama = null;
+            this.tablo.StatusBarAciklama = "Epos Bilgileri Giriniz";
+            this.tablo.StatusBarKisaYol = "Shift+Insert";
+            this.tablo.StatusBarKisaYolAciklama = "Bilgi Giriniz";
             this.tablo.ViewCaption = "Epos Bilgileri";
             // 
             // colAdi

@@ -49,7 +49,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
 
 
 
-            var entities = ShowListForms<HizmetListForm>.ShowDialogListForm(Common.Enums.KartTuru.Hizmet, ListeDisiTutulacakKayitlar, true, false).EntityListConvert<HizmetL>();
+            var entities = ShowListForms<HizmetListForm>.ShowDialogListForm(Common.Enums.KartTuru.Hizmet, ListeDisiTutulacakKayitlar, true, true).EntityListConvert<HizmetL>();
 
             if (entities == null) return;
 

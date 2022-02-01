@@ -7,18 +7,18 @@ namespace OzdilYazilimOgrenciTakip.Data.OgrenciTakipMigration
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialCreate4 : IMigrationMetadata
+    public sealed partial class mig6 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate4));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(mig6));
         
         string IMigrationMetadata.Id
         {
-            get { return "202201171543033_InitialCreate4"; }
+            get { return "202201310838311_mig6"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return Resources.GetString("Source"); }
+            get { return null; }
         }
         
         string IMigrationMetadata.Target

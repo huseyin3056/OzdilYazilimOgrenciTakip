@@ -35,6 +35,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected internal long Id;
         protected bool FarkliSubeIslemi;
         protected internal bool RefreshYapilacak;
+
+
         #endregion
 
         public BaseEditForm()

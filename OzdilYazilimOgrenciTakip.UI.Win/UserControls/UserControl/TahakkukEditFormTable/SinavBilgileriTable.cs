@@ -57,6 +57,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             for (int i = 0; i < tablo.DataRowCount; i++)
             {
                 var entity = tablo.GetRow<SinavBilgileriL>(i);
+
                 if (string.IsNullOrEmpty(entity.SinavAdi))
                 {
                     tablo.FocusedRowHandle = i;

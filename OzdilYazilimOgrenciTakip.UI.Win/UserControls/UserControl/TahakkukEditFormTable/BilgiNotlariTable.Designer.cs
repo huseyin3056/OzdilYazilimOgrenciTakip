@@ -32,8 +32,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.grid = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridControl();
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridView();
             this.colTarih = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colBilgiNotu = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.repositoryTarih = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.colBilgiNotu = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.repositoryMemoEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
@@ -89,9 +89,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.tablo.OptionsView.RowAutoHeight = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
-            this.tablo.StatusBarAciklama = null;
-            this.tablo.StatusBarKisaYol = null;
-            this.tablo.StatusBarKisaYolAciklama = null;
+            this.tablo.StatusBarAciklama = "Bilgi Notu Giriniz";
+            this.tablo.StatusBarKisaYol = "Shift+Insert";
+            this.tablo.StatusBarKisaYolAciklama = "Not Giriniz";
             this.tablo.ViewCaption = "Bilgi Notları";
             // 
             // colTarih
@@ -105,27 +105,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colTarih.OptionsColumn.FixedWidth = true;
             this.colTarih.OptionsFilter.AllowAutoFilter = false;
             this.colTarih.OptionsFilter.AllowFilter = false;
-            this.colTarih.StatusBarAciklama = null;
-            this.colTarih.StatusBarKisaYol = null;
-            this.colTarih.StatusBarKisaYolAciklama = null;
+            this.colTarih.StatusBarAciklama = "Tarih Seçiniz";
+            this.colTarih.StatusBarKisaYol = "F4";
+            this.colTarih.StatusBarKisaYolAciklama = "Seçim Yap";
             this.colTarih.Visible = true;
             this.colTarih.VisibleIndex = 0;
             this.colTarih.Width = 100;
-            // 
-            // colBilgiNotu
-            // 
-            this.colBilgiNotu.Caption = "Not";
-            this.colBilgiNotu.ColumnEdit = this.repositoryMemoEdit;
-            this.colBilgiNotu.FieldName = "BilgiNotu";
-            this.colBilgiNotu.Name = "colBilgiNotu";
-            this.colBilgiNotu.OptionsFilter.AllowAutoFilter = false;
-            this.colBilgiNotu.OptionsFilter.AllowFilter = false;
-            this.colBilgiNotu.StatusBarAciklama = null;
-            this.colBilgiNotu.StatusBarKisaYol = null;
-            this.colBilgiNotu.StatusBarKisaYolAciklama = null;
-            this.colBilgiNotu.Visible = true;
-            this.colBilgiNotu.VisibleIndex = 1;
-            this.colBilgiNotu.Width = 304;
             // 
             // repositoryTarih
             // 
@@ -143,6 +128,21 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.repositoryTarih.MaskSettings.Set("useAdvancingCaret", true);
             this.repositoryTarih.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.repositoryTarih.Name = "repositoryTarih";
+            // 
+            // colBilgiNotu
+            // 
+            this.colBilgiNotu.Caption = "Not";
+            this.colBilgiNotu.ColumnEdit = this.repositoryMemoEdit;
+            this.colBilgiNotu.FieldName = "BilgiNotu";
+            this.colBilgiNotu.Name = "colBilgiNotu";
+            this.colBilgiNotu.OptionsFilter.AllowAutoFilter = false;
+            this.colBilgiNotu.OptionsFilter.AllowFilter = false;
+            this.colBilgiNotu.StatusBarAciklama = "Not Giriniz";
+            this.colBilgiNotu.StatusBarKisaYol = null;
+            this.colBilgiNotu.StatusBarKisaYolAciklama = "Not Girin";
+            this.colBilgiNotu.Visible = true;
+            this.colBilgiNotu.VisibleIndex = 1;
+            this.colBilgiNotu.Width = 304;
             // 
             // repositoryMemoEdit
             // 

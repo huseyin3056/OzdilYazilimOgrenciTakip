@@ -31,8 +31,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         {
             this.grid = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridControl();
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridView();
-            this.colEvrakAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colKod = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.colEvrakAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             this.SuspendLayout();
@@ -81,24 +81,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.tablo.OptionsView.RowAutoHeight = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
-            this.tablo.StatusBarAciklama = null;
-            this.tablo.StatusBarKisaYol = null;
-            this.tablo.StatusBarKisaYolAciklama = null;
+            this.tablo.StatusBarAciklama = "Evrak Bilgileri Seçiniz";
+            this.tablo.StatusBarKisaYol = "Shift+Insert";
+            this.tablo.StatusBarKisaYolAciklama = "Seçim Yap";
             this.tablo.ViewCaption = "Evrak Bilgileri";
-            // 
-            // colEvrakAdi
-            // 
-            this.colEvrakAdi.Caption = "Evrak Adı";
-            this.colEvrakAdi.FieldName = "EvrakAdi";
-            this.colEvrakAdi.Name = "colEvrakAdi";
-            this.colEvrakAdi.OptionsColumn.AllowEdit = false;
-            this.colEvrakAdi.OptionsColumn.ShowInCustomizationForm = false;
-            this.colEvrakAdi.StatusBarAciklama = null;
-            this.colEvrakAdi.StatusBarKisaYol = null;
-            this.colEvrakAdi.StatusBarKisaYolAciklama = null;
-            this.colEvrakAdi.Visible = true;
-            this.colEvrakAdi.VisibleIndex = 1;
-            this.colEvrakAdi.Width = 287;
             // 
             // colKod
             // 
@@ -114,6 +100,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colKod.Visible = true;
             this.colKod.VisibleIndex = 0;
             this.colKod.Width = 152;
+            // 
+            // colEvrakAdi
+            // 
+            this.colEvrakAdi.Caption = "Evrak Adı";
+            this.colEvrakAdi.FieldName = "EvrakAdi";
+            this.colEvrakAdi.Name = "colEvrakAdi";
+            this.colEvrakAdi.OptionsColumn.AllowEdit = false;
+            this.colEvrakAdi.OptionsColumn.ShowInCustomizationForm = false;
+            this.colEvrakAdi.StatusBarAciklama = null;
+            this.colEvrakAdi.StatusBarKisaYol = null;
+            this.colEvrakAdi.StatusBarKisaYolAciklama = null;
+            this.colEvrakAdi.Visible = true;
+            this.colEvrakAdi.VisibleIndex = 1;
+            this.colEvrakAdi.Width = 287;
             // 
             // EvrakBilgileriTable
             // 

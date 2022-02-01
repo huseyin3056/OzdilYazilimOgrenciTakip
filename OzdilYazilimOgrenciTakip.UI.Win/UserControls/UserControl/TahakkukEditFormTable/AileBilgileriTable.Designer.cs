@@ -81,9 +81,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukE
             this.tablo.OptionsView.RowAutoHeight = true;
             this.tablo.OptionsView.ShowGroupPanel = false;
             this.tablo.OptionsView.ShowViewCaption = true;
-            this.tablo.StatusBarAciklama = null;
-            this.tablo.StatusBarKisaYol = null;
-            this.tablo.StatusBarKisaYolAciklama = null;
+            this.tablo.StatusBarAciklama = "Aile Bilgileri Ekleyiniz";
+            this.tablo.StatusBarKisaYol = "Shift+Insert";
+            this.tablo.StatusBarKisaYolAciklama = "Bilgi Ekle";
             this.tablo.ViewCaption = "Aile Bilgileri";
             // 
             // colBilgiAdi
@@ -105,7 +105,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukE
             this.colAciklama.Caption = "Açıklama";
             this.colAciklama.FieldName = "Aciklama";
             this.colAciklama.Name = "colAciklama";
-            this.colAciklama.StatusBarAciklama = null;
+            this.colAciklama.StatusBarAciklama = "Açıklama Giriniz";
             this.colAciklama.StatusBarKisaYol = null;
             this.colAciklama.StatusBarKisaYolAciklama = null;
             this.colAciklama.Visible = true;
