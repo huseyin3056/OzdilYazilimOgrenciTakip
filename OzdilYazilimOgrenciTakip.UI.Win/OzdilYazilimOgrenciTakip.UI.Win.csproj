@@ -1322,6 +1322,59 @@
   <ItemGroup>
     <None Include="Resources\addfile_32x321.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\addfile_16x162.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x163.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x323.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x164.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x324.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x165.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x325.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x166.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x326.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x327.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x168.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x328.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x169.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x329.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_16x1610.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addfile_32x3210.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

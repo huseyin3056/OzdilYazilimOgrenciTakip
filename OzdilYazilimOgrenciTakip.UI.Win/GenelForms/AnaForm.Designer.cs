@@ -83,6 +83,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imageList1616 = new System.Windows.Forms.ImageList(this.components);
+            this.btnMakbuzKartlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -123,9 +124,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnIletisimKartlari,
             this.btnOgrenciKartlari,
             this.btnIndirimKartlari,
-            this.btnTahakkukKartlari});
+            this.btnTahakkukKartlari,
+            this.btnMakbuzKartlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 31;
+            this.ribbonControl1.MaxItemId = 32;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -421,6 +423,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPageGroup6.ItemLinks.Add(this.btnBankaKartlari);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnBankaHesapKartlari, true);
             this.ribbonPageGroup6.ItemLinks.Add(this.btnOdemeTuruKartlari);
+            this.ribbonPageGroup6.ItemLinks.Add(this.btnMakbuzKartlari);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Finans";
             // 
@@ -498,6 +501,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.imageList1616.Images.SetKeyName(12, "icons8_students_48px.png");
             this.imageList1616.Images.SetKeyName(13, "icons8_training_48px.png");
             // 
+            // btnMakbuzKartlari
+            // 
+            this.btnMakbuzKartlari.Caption = "Makbuz Kartları";
+            this.btnMakbuzKartlari.Id = 31;
+            this.btnMakbuzKartlari.Name = "btnMakbuzKartlari";
+            // 
             // AnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,5 +582,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private DevExpress.XtraBars.BarButtonItem btnOgrenciKartlari;
         private DevExpress.XtraBars.BarButtonItem btnIndirimKartlari;
         private DevExpress.XtraBars.BarButtonItem btnTahakkukKartlari;
+        private DevExpress.XtraBars.BarButtonItem btnMakbuzKartlari;
     }
 }

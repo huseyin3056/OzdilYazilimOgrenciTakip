@@ -322,7 +322,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         }
 
-        private void Button_ItemClick(object sender, ItemClickEventArgs e)
+       protected virtual  void Button_ItemClick(object sender, ItemClickEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
 

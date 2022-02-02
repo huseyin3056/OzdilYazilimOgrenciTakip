@@ -32,6 +32,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 {
@@ -53,6 +54,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         public static bool GunTarihininOncesineHizmetIptalTarihiGirilebilir = true;
         public static bool GunTarihininSonrasinaHizmetIptalTarihiGirilebilir = true;
 
+        public static bool GunTarihininOncesineMakbuzTarihiGirilebilir = true;
+        public static bool GunTarihininSonrasinaMakbuzTarihiGirilebilir = true;
+
 
         public static bool HizmetTahakkukKurusKullan = false;
         public static bool IndirimTahakkukKurusKullan = false;
@@ -60,6 +64,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         public static bool GittigiOkulZorunlu = true;
         public static DateTime MaksimumTaksitTarihi= new DateTime(2023, 01, 01);
         public static byte MaksimumTaksitSayisi = 12;
+        public static long? DefaultKasaHesapId;
+        public static string DefaultKasaHesapAdi;
+        public static long? DefaultBankaHesapId;
+        public static string DefaultBankaHesapAdi;
+        public static long? DefaultAvukatHesapId;
+        public static string DefaultAvukatHesapAdi;
 
 
 
@@ -234,6 +244,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             else if (e.Item == btnTahakkukKartlari)
             {
                 ShowListForms<TahakkukListForm>.ShowListForm(KartTuru.Tahakkuk);
+            }
+
+            else if (e.Item == btnMakbuzKartlari)
+            {
+                ShowListForms<MakbuzListForm>.ShowListForm(KartTuru.Makbuz);
             }
 
 

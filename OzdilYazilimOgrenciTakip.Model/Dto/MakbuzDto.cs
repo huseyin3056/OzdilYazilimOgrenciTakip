@@ -2,9 +2,11 @@
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OzdilYazilimOgrenciTakip.Model.Dto
 {
+    [NotMapped]
     public class MakbuzS:Makbuz
     {
         public string HesapAdi { get; set; }

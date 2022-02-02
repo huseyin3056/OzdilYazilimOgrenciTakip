@@ -58,6 +58,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             SizeChanged += BaseEditForm_SizeChanged;
             Load += BaseEditForm_Load;
             FormClosing += BaseEditForm_FormClosing;
+            Shown += BaseEditForm_Shown;
 
             void ControlEvents(Control control)
             {
@@ -189,7 +190,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             _formSablonKayitEdilecek = true;
         }
 
-       protected virtual void BaseEditForm_FormClosing(object sender, FormClosingEventArgs e)
+        protected virtual void BaseEditForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SablonKaydet();
             if (btnKaydet.Visibility == BarItemVisibility.Never || !btnKaydet.Enabled) return;
@@ -197,6 +198,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                 e.Cancel = true;
 
         }
+
+        protected virtual void BaseEditForm_Shown(object sender, EventArgs e) { }
 
         protected virtual void Control_EnabledChange(object sender, EventArgs e) { }
 
@@ -216,7 +219,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             SecimYap(sender);
         }
 
-       protected virtual  void Control_IdChanged(object sender, IdChangedEventArgs e)
+        protected virtual void Control_IdChanged(object sender, IdChangedEventArgs e)
         {
             if (!IsLoaded) return;
             GuncelNesneOlustur();
@@ -359,7 +362,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         protected virtual void SecimYap(object sender) { }
 
-        private void EntityDelete()
+        protected virtual void EntityDelete()
         {
             if (!((IBaseCommonBll)Bll).Delete(OldEntity)) return;
             RefreshYapilacak = true;

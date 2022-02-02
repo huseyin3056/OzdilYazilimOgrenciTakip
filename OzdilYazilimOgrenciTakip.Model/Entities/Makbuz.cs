@@ -29,7 +29,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public long SubeId { get; set; }
         
         //İlişki
-        public Avukat Avukat { get; set; }
+        public Avukat AvukatHesap { get; set; }
         public BankaHesap BankaHesap { get; set; }
         public Cari CariHesap { get; set; }
         public Kasa KasaHesap { get; set; }
