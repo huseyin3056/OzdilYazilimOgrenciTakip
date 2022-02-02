@@ -39,9 +39,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
         protected override void Button_ItemClick(object sender, ItemClickEventArgs e)
         {
-            long id = 0;
+            
 
             base.Button_ItemClick(sender, e);
+
+            long id = 0;
 
             if (e.Item == btnYeniMakbuz)
             {

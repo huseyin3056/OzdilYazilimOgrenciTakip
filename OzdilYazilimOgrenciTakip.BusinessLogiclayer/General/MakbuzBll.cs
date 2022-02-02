@@ -49,6 +49,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
         {
             return BaseList(filter, x => new MakbuzL()
             {
+                Id=x.Id,
                 Kod=x.Kod,
                 Tarih = x.Tarih,
                 MakbuzTuru = x.MakbuzTuru,

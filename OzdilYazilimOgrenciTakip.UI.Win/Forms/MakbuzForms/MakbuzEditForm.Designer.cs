@@ -104,9 +104,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtHesap.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtHesap.Size = new System.Drawing.Size(209, 20);
-            this.txtHesap.StatusBarAciklama = null;
+            this.txtHesap.StatusBarAciklama = "Hesap Adı Seçiniz";
             this.txtHesap.StatusBarKisaYol = "F4";
-            this.txtHesap.StatusBarKisaYolAciklama = null;
+            this.txtHesap.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtHesap.StyleController = this.myDataLayoutControl;
             this.txtHesap.TabIndex = 3;
             // 
@@ -122,9 +122,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtHesapTuru.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtHesapTuru.Size = new System.Drawing.Size(109, 20);
-            this.txtHesapTuru.StatusBarAciklama = null;
-            this.txtHesapTuru.StatusBarKisaYol = null;
-            this.txtHesapTuru.StatusBarKisaYolAciklama = null;
+            this.txtHesapTuru.StatusBarAciklama = "Hesap Türü Seçiniz";
+            this.txtHesapTuru.StatusBarKisaYol = "F4";
+            this.txtHesapTuru.StatusBarKisaYolAciklama = "Seçim Yap";
             this.txtHesapTuru.StyleController = this.myDataLayoutControl;
             this.txtHesapTuru.TabIndex = 2;
             // 
@@ -148,7 +148,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             this.txtTarih.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtTarih.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtTarih.Size = new System.Drawing.Size(89, 20);
-            this.txtTarih.StatusBarAciklama = null;
+            this.txtTarih.StatusBarAciklama = "Tarih Seçiniz";
             this.txtTarih.StatusBarKisaYol = "F4 :";
             this.txtTarih.StatusBarKisaYolAciklama = "Tarih Seç :";
             this.txtTarih.StyleController = this.myDataLayoutControl;
@@ -166,7 +166,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             this.txtMakbuzNo.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtMakbuzNo.Properties.MaxLength = 50;
             this.txtMakbuzNo.Size = new System.Drawing.Size(89, 20);
-            this.txtMakbuzNo.StatusBarAciklama = null;
+            this.txtMakbuzNo.StatusBarAciklama = "Makbuz No Giriniz";
             this.txtMakbuzNo.StyleController = this.myDataLayoutControl;
             this.txtMakbuzNo.TabIndex = 0;
             // 
