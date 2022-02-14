@@ -29,6 +29,22 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression1 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule2 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression2 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OdemeBilgileriTable));
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule3 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression3 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule4 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression4 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule5 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression5 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule6 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression6 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule7 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleExpression formatConditionRuleExpression7 = new DevExpress.XtraEditors.FormatConditionRuleExpression();
+            this.colBelgeDurumu = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.grid = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridControl();
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridView();
             this.colPortfoyNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
@@ -62,7 +78,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colTutarYazi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colVadeYazi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colBelgeDurumu = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colSonHareketTarihi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colSonIslemYeri = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -82,6 +97,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             // 
             this.insUpNavigator.Location = new System.Drawing.Point(0, 370);
             this.insUpNavigator.Size = new System.Drawing.Size(721, 24);
+            // 
+            // colBelgeDurumu
+            // 
+            this.colBelgeDurumu.Caption = "Durum";
+            this.colBelgeDurumu.FieldName = "BelgeDurumu";
+            this.colBelgeDurumu.Name = "colBelgeDurumu";
+            this.colBelgeDurumu.OptionsColumn.AllowEdit = false;
+            this.colBelgeDurumu.StatusBarAciklama = null;
+            this.colBelgeDurumu.StatusBarKisaYol = null;
+            this.colBelgeDurumu.StatusBarKisaYolAciklama = null;
+            this.colBelgeDurumu.Visible = true;
+            this.colBelgeDurumu.VisibleIndex = 9;
             // 
             // grid
             // 
@@ -142,6 +169,74 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colBelgeDurumu,
             this.colSonHareketTarihi,
             this.colSonIslemYeri});
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Column = this.colBelgeDurumu;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRuleExpression1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            formatConditionRuleExpression1.Appearance.Options.HighPriority = true;
+            formatConditionRuleExpression1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleExpression1.Expression = "[BelgeDurumu] = \'TahsiliImkansizHaleGelme\'";
+            gridFormatRule1.Rule = formatConditionRuleExpression1;
+            gridFormatRule2.ApplyToRow = true;
+            gridFormatRule2.Column = this.colBelgeDurumu;
+            gridFormatRule2.Name = "Format1";
+            formatConditionRuleExpression2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            formatConditionRuleExpression2.Appearance.Options.HighPriority = true;
+            formatConditionRuleExpression2.Appearance.Options.UseBackColor = true;
+            formatConditionRuleExpression2.Expression = resources.GetString("formatConditionRuleExpression2.Expression");
+            gridFormatRule2.Rule = formatConditionRuleExpression2;
+            gridFormatRule3.ApplyToRow = true;
+            gridFormatRule3.Column = this.colBelgeDurumu;
+            gridFormatRule3.Name = "Format2";
+            formatConditionRuleExpression3.Appearance.BackColor = System.Drawing.Color.White;
+            formatConditionRuleExpression3.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            formatConditionRuleExpression3.Appearance.Options.HighPriority = true;
+            formatConditionRuleExpression3.Appearance.Options.UseBackColor = true;
+            formatConditionRuleExpression3.Expression = "[BelgeDurumu] = \'KismiTahsilEdildi\'";
+            gridFormatRule3.Rule = formatConditionRuleExpression3;
+            gridFormatRule4.ApplyToRow = true;
+            gridFormatRule4.ColumnApplyTo = this.colBelgeDurumu;
+            gridFormatRule4.Name = "Format3";
+            formatConditionRuleExpression4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            formatConditionRuleExpression4.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            formatConditionRuleExpression4.Appearance.Options.HighPriority = true;
+            formatConditionRuleExpression4.Appearance.Options.UseBackColor = true;
+            formatConditionRuleExpression4.Expression = "[BelgeDurumu] = \'KismiAvukatYoluylaTahsilEtme\'";
+            gridFormatRule4.Rule = formatConditionRuleExpression4;
+            gridFormatRule5.ApplyToRow = true;
+            gridFormatRule5.Column = this.colBelgeDurumu;
+            gridFormatRule5.Name = "Format4";
+            formatConditionRuleExpression5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            formatConditionRuleExpression5.Appearance.Options.HighPriority = true;
+            formatConditionRuleExpression5.Appearance.Options.UseBackColor = true;
+            formatConditionRuleExpression5.Expression = "[BelgeDurumu] = \'BankayaTahsileGonderme\' Or [BelgeDurumu] = \'AvukataGonderme\' Or " +
+    "[BelgeDurumu] = \'CiroEtme\' Or [BelgeDurumu] = \'BlokeyeAlma\'";
+            gridFormatRule5.Rule = formatConditionRuleExpression5;
+            gridFormatRule6.ApplyToRow = true;
+            gridFormatRule6.Column = this.colBelgeDurumu;
+            gridFormatRule6.Name = "Format5";
+            formatConditionRuleExpression6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            formatConditionRuleExpression6.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            formatConditionRuleExpression6.Appearance.Options.HighPriority = true;
+            formatConditionRuleExpression6.Appearance.Options.UseBackColor = true;
+            formatConditionRuleExpression6.Expression = "[BelgeDurumu] = \'PortfoyeKarsiliksizIade\' Or [BelgeDurumu] = \'KarsiliksizOlarakIs" +
+    "aretleme\'";
+            gridFormatRule6.Rule = formatConditionRuleExpression6;
+            gridFormatRule7.ApplyToRow = true;
+            gridFormatRule7.Column = this.colBelgeDurumu;
+            gridFormatRule7.Name = "Format6";
+            formatConditionRuleExpression7.Appearance.BackColor = System.Drawing.Color.DodgerBlue;
+            formatConditionRuleExpression7.Appearance.Options.HighPriority = true;
+            formatConditionRuleExpression7.Appearance.Options.UseBackColor = true;
+            formatConditionRuleExpression7.Expression = "[BelgeDurumu] = \'MusteriyeGeriIade\'";
+            gridFormatRule7.Rule = formatConditionRuleExpression7;
+            this.tablo.FormatRules.Add(gridFormatRule1);
+            this.tablo.FormatRules.Add(gridFormatRule2);
+            this.tablo.FormatRules.Add(gridFormatRule3);
+            this.tablo.FormatRules.Add(gridFormatRule4);
+            this.tablo.FormatRules.Add(gridFormatRule5);
+            this.tablo.FormatRules.Add(gridFormatRule6);
+            this.tablo.FormatRules.Add(gridFormatRule7);
             this.tablo.GridControl = this.grid;
             this.tablo.Name = "tablo";
             this.tablo.OptionsMenu.EnableColumnMenu = false;
@@ -524,18 +619,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colAciklama.StatusBarKisaYolAciklama = null;
             this.colAciklama.Visible = true;
             this.colAciklama.VisibleIndex = 10;
-            // 
-            // colBelgeDurumu
-            // 
-            this.colBelgeDurumu.Caption = "Durum";
-            this.colBelgeDurumu.FieldName = "BelgeDurumu";
-            this.colBelgeDurumu.Name = "colBelgeDurumu";
-            this.colBelgeDurumu.OptionsColumn.AllowEdit = false;
-            this.colBelgeDurumu.StatusBarAciklama = null;
-            this.colBelgeDurumu.StatusBarKisaYol = null;
-            this.colBelgeDurumu.StatusBarKisaYolAciklama = null;
-            this.colBelgeDurumu.Visible = true;
-            this.colBelgeDurumu.VisibleIndex = 9;
             // 
             // colSonHareketTarihi
             // 

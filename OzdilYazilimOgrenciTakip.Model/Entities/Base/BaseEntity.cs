@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using OzdilYazilimOgrenciTakip.Model.Attributes;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
@@ -12,5 +13,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities.Base
 
         [Column(Order = 1),Required,StringLength(20),Kod("Kod","txtKod"),ZorunluAlan("Kod","txtKod")]
         public virtual string Kod { get; set; }
+
+        
     }
 }

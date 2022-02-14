@@ -13,7 +13,7 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         [Description("Bankaya Tahsil Etme")]
         BankaYoluylaTahsilEtme =4,
         [Description("Banka Şubeye Gönderme")]
-        BankaSubeyeGonderme =5,
+        BaskaSubeyeGonderme =5,
         [Description("Blokeye Alma")]
         BlokeyeAlma =6,
         [Description("Bloke Çözümü")]
@@ -34,9 +34,9 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         PortfoyeGeriIade =14,
         [Description("Portföye Karşılıksız İade")]
         PortfoyeKarsiliksizIade =15,
-        [Description("Tahsil Etme Banka")]
+        [Description("Tahsil Etme ( Banka )")]
         TahsilEtmeBanka =16,
-        [Description("Tahsil Etme Kasa")]
+        [Description("Tahsil Etme ( Kasa )")]
         TahsilEtmeKasa =17,
         [Description("Tahsili İmkansız Hale Gelme")]
         TahsiliImkansizHaleGelme =18

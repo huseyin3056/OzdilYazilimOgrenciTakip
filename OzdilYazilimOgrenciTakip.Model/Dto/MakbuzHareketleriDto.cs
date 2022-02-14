@@ -1,4 +1,5 @@
-﻿using OzdilYazilimOgrenciTakip.Common.Enums;
+﻿using DevExpress.DataAccess.ObjectBinding;
+using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using System;
@@ -37,5 +38,36 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public bool Insert { get; set; }
         public bool Update { get; set; }
         public bool Delete { get; set; }
+    }
+
+    [HighlightedClass]
+    public class MakbuzHareketleriR
+    {
+        public string OgrenciNo { get; set; }
+        public string Adi { get; set; }
+        public string Soyadi { get; set; }
+        public string SinifAdi { get; set; }
+        public string SubeAdi { get; set; }
+        public int PortfoyNo { get; set; }
+        public string OdemeTuruAdi { get; set; }
+        public DateTime Vade { get; set; }
+        public decimal Tutar { get; set; }
+        public decimal IslemOncesiTutari { get; set; }
+        public decimal IslemTutari { get; set; }
+        public string AsilBorclu { get; set; }
+        public string Ciranta { get; set; }
+        public string BankaVeSubeAdi { get; set; }
+        public string BelgeNo { get; set; }
+        public string HesapNo { get; set; }
+        public DateTime Tarih { get; set; }
+        public string MakbuzNo { get; set; }
+        public string Hesapturu { get; set; }
+        public string HesapAdi { get; set; }
+        public string BelgeDurumu { get; set; }
+        public string MakbuzTuru { get; set; }
+
+
+
+
     }
 }

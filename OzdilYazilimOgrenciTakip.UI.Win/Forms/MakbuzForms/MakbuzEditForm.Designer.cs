@@ -46,6 +46,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutHesapAdi = new DevExpress.XtraLayout.LayoutControlItem();
+            this.makbuzHareketleriTable = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.GenelEditFormTable.MakbuzHareketleriTable();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
@@ -60,6 +62,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutHesapAdi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -78,6 +81,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             // 
             // myDataLayoutControl
             // 
+            this.myDataLayoutControl.Controls.Add(this.makbuzHareketleriTable);
             this.myDataLayoutControl.Controls.Add(this.txtHesap);
             this.myDataLayoutControl.Controls.Add(this.txtHesapTuru);
             this.myDataLayoutControl.Controls.Add(this.txtTarih);
@@ -144,7 +148,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtTarih.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtTarih.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.txtTarih.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtTarih.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtTarih.Size = new System.Drawing.Size(89, 20);
@@ -178,7 +181,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             this.layoutControlItem1,
             this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutHesapAdi});
+            this.layoutHesapAdi,
+            this.layoutControlItem4});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
@@ -256,6 +260,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             this.layoutHesapAdi.Text = "Hesap Adı";
             this.layoutHesapAdi.TextSize = new System.Drawing.Size(55, 13);
             // 
+            // makbuzHareketleriTable
+            // 
+            this.makbuzHareketleriTable.Location = new System.Drawing.Point(12, 60);
+            this.makbuzHareketleriTable.Name = "makbuzHareketleriTable";
+            this.makbuzHareketleriTable.Size = new System.Drawing.Size(974, 444);
+            this.makbuzHareketleriTable.TabIndex = 4;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem4.Control = this.makbuzHareketleriTable;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.OptionsTableLayoutItem.ColumnSpan = 4;
+            this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 2;
+            this.layoutControlItem4.Size = new System.Drawing.Size(978, 448);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
             // MakbuzEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,6 +305,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutHesapAdi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,13 +315,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
         private UserControls.Controls.MyDataLayoutControl myDataLayoutControl;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private UserControls.Controls.MyButtonEdit txtHesap;
-        private UserControls.Controls.MyComboBoxEdit txtHesapTuru;
         private UserControls.Controls.MyDateEdit txtTarih;
         private UserControls.Controls.MyTextEdit txtMakbuzNo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutHesapAdi;
+        protected internal UserControls.Controls.MyComboBoxEdit txtHesapTuru;
+        protected internal UserControls.Controls.MyButtonEdit txtHesap;
+        private UserControls.UserControl.GenelEditFormTable.MakbuzHareketleriTable makbuzHareketleriTable;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
     }
 }

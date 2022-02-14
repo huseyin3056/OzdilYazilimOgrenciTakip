@@ -112,7 +112,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 return true;
             }
 
-            if (_odemeTipi == OdemeTipi.Senet || _odemeTipi == OdemeTipi.Cek && string.IsNullOrEmpty(txtAsilBorclu.Text))
+            if ((_odemeTipi == OdemeTipi.Senet || _odemeTipi == OdemeTipi.Cek) && string.IsNullOrEmpty(txtAsilBorclu.Text))
             {
                 Messages.HataliVeriMesaji("Asıl Borçlu ");
                 txtAsilBorclu.Focus();

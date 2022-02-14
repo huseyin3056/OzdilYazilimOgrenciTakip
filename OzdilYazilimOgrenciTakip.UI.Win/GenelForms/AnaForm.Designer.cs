@@ -62,6 +62,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnOgrenciKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnIndirimKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnTahakkukKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMakbuzKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSubeKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGenelAmacliRapor = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFaturaKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,7 +87,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imageList1616 = new System.Windows.Forms.ImageList(this.components);
-            this.btnMakbuzKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFaturaTahakkukKartlari = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -125,9 +129,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnOgrenciKartlari,
             this.btnIndirimKartlari,
             this.btnTahakkukKartlari,
-            this.btnMakbuzKartlari});
+            this.btnMakbuzKartlari,
+            this.btnSubeKartlari,
+            this.btnGenelAmacliRapor,
+            this.btnFaturaKartlari,
+            this.btnFaturaTahakkukKartlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 32;
+            this.ribbonControl1.MaxItemId = 36;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -326,6 +334,30 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnTahakkukKartlari.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_invoice_16px;
             this.btnTahakkukKartlari.Name = "btnTahakkukKartlari";
             // 
+            // btnMakbuzKartlari
+            // 
+            this.btnMakbuzKartlari.Caption = "Makbuz Kartları";
+            this.btnMakbuzKartlari.Id = 31;
+            this.btnMakbuzKartlari.Name = "btnMakbuzKartlari";
+            // 
+            // btnSubeKartlari
+            // 
+            this.btnSubeKartlari.Caption = "Şube";
+            this.btnSubeKartlari.Id = 32;
+            this.btnSubeKartlari.Name = "btnSubeKartlari";
+            // 
+            // btnGenelAmacliRapor
+            // 
+            this.btnGenelAmacliRapor.Caption = "Genel Amaçlı Rapor";
+            this.btnGenelAmacliRapor.Id = 33;
+            this.btnGenelAmacliRapor.Name = "btnGenelAmacliRapor";
+            // 
+            // btnFaturaKartlari
+            // 
+            this.btnFaturaKartlari.Caption = "Fatura Kartları";
+            this.btnFaturaKartlari.Id = 34;
+            this.btnFaturaKartlari.Name = "btnFaturaKartlari";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -364,6 +396,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPageGroup1.ItemLinks.Add(this.btnIptalNedeniKartlari);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnYabanciDilKartlari);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnIletisimKartlari);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnSubeKartlari);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnFaturaKartlari);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnFaturaTahakkukKartlari);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Genel";
             // 
@@ -450,6 +485,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnGenelAmacliRapor);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
@@ -501,11 +537,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.imageList1616.Images.SetKeyName(12, "icons8_students_48px.png");
             this.imageList1616.Images.SetKeyName(13, "icons8_training_48px.png");
             // 
-            // btnMakbuzKartlari
+            // btnFaturaTahakkukKartlari
             // 
-            this.btnMakbuzKartlari.Caption = "Makbuz Kartları";
-            this.btnMakbuzKartlari.Id = 31;
-            this.btnMakbuzKartlari.Name = "btnMakbuzKartlari";
+            this.btnFaturaTahakkukKartlari.Caption = "Fatura Tahakkuk Kartları";
+            this.btnFaturaTahakkukKartlari.Id = 35;
+            this.btnFaturaTahakkukKartlari.Name = "btnFaturaTahakkukKartlari";
             // 
             // AnaForm
             // 
@@ -583,5 +619,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private DevExpress.XtraBars.BarButtonItem btnIndirimKartlari;
         private DevExpress.XtraBars.BarButtonItem btnTahakkukKartlari;
         private DevExpress.XtraBars.BarButtonItem btnMakbuzKartlari;
+        private DevExpress.XtraBars.BarButtonItem btnSubeKartlari;
+        private DevExpress.XtraBars.BarButtonItem btnGenelAmacliRapor;
+        private DevExpress.XtraBars.BarButtonItem btnFaturaKartlari;
+        private DevExpress.XtraBars.BarButtonItem btnFaturaTahakkukKartlari;
     }
 }

@@ -2,6 +2,7 @@
 using OzdilYazilimOgrenciTakip.Model.Attributes;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -60,8 +61,16 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public OzelKod OzelKod3 { get; set; }
         public OzelKod OzelKod4 { get; set; }
         public OzelKod OzelKod5 { get; set; }
+
+
         public Sube Sube { get; set; }
         public Donem Donem { get; set; }
+        public ICollection<IletisimBilgileri>    IletisimBilgileri { get; set; }
+        public ICollection<HizmetBilgileri> HizmetBilgileri { get; set; }
+        public ICollection<IndirimBilgileri> IndirimBilgileri { get; set; }
+        public ICollection<Fatura> FaturaBilgileri { get; set; }
+
+
 
 
     }

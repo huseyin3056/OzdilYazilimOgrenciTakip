@@ -7,9 +7,9 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
     {
         [Description("Portföyde")]
         Portfoyde=1,
-        [Description("Tahsil Etme (Kasa)")]
+        [Description("Tahsil Etme ( Kasa )")]
         TahsilEtmeKasa,
-        [Description("Tahsil Etme (Banka)")]
+        [Description("Tahsil Etme ( Banka )")]
         TahsilEtmeBanka,
         [Description("Kısmi Tahsil Edildi")]
         KismiTahsilEdildi,
@@ -29,7 +29,7 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         KismiAvukatYoluylaTahsilEtme,
         [Description("Blokeye Alma")]
         BlokeyeAlma,
-        [Description("Blokey Çözümü")]
+        [Description("Bloke Çözümü")]
         BlokeCozumu,
         [Description("Ciro Etme")]
         CiroEtme,

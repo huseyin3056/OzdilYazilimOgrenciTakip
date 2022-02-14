@@ -22,7 +22,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             InitializeComponent();
 
             Bll = new HizmetBll();
-            _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId && x.Durum == AktifKartlariGoster;       
+            _filter = x => x.Durum == AktifKartlariGoster && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId;    
 
         }
 
@@ -35,7 +35,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
                 ustPanel.Visible = DateTime.Now.Date > AnaForm.EgitimBaslamaTarihi && panelGoster;
             }
 
-            _filter = x => !ListeDisiTutulacakKayitlar.Contains(x.Id) && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId;
+            _filter = x => !ListeDisiTutulacakKayitlar.Contains(x.Id) && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId && x.Durum == AktifKartlariGoster;
         }
 
         protected override void DegiskenleriDoldur()

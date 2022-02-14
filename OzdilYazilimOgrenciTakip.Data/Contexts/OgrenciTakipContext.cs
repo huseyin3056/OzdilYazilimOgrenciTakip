@@ -82,6 +82,8 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<GeriOdemeBilgileri> GeriOdemeleri { get; set; }
         public DbSet<Makbuz> Makbuz { get; set; }
         public DbSet<MakbuzHareketleri> MakbuzHareketleri { get; set; }
+        public DbSet<Rapor> Rapor { get; set; }
+        public DbSet<Fatura> Fatura { get; set; }
 
 
 

@@ -1,6 +1,8 @@
-﻿using OzdilYazilimOgrenciTakip.Common.Enums;
+﻿using DevExpress.DataAccess.ObjectBinding;
+using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OzdilYazilimOgrenciTakip.Model.Dto
@@ -15,10 +17,27 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string GittigiOkulAdi { get; set; }
 
 
-
-
         public bool Insert { get; set ; }
         public bool Update { get; set; }
         public bool Delete { get; set; }
+    }
+
+    [HighlightedClass]
+    public class HizmetBilgileriR
+    {
+        public string HizmetAdi { get; set; }
+        public string ServisYeriAdi { get; set; }
+        public DateTime BaslamaTarihi { get; set; }
+        public DateTime IslemTarihi { get; set; }
+        public decimal BrutUcret { get; set; }
+        public decimal KistDonemDusulenUcret { get; set; }
+        public decimal NetUcret { get; set; }
+        public int EgitimGunSayisi { get; set; }
+        public int AlinanHizmetGunSayisi { get; set; }
+        public decimal GunlukUcret { get; set; }
+        public DateTime? IptalTarihi { get; set; }
+        public string IptalNedeniAdi { get; set; }
+        public string IptalNedeniAciklama { get; set; }
+        public string GittigiOkulAdi { get; set; }
     }
 }

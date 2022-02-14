@@ -80,6 +80,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             switch (_btnEdit.Name)
             {
                 case "txtIl":
+                case "txtAdresIl":
                 case "txtEvAdresIl":
                 case "txtIsAdresIl":
                 case "txtKimlikIl":
@@ -94,6 +95,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                     break;
 
                 case "txtIlce":
+                case "txtAdresIlce":
                 case "txtEvAdresIlce":
                 case "txtIsAdresIlce":
                 case "txtKimlikIlce":

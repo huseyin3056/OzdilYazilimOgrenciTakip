@@ -39,29 +39,55 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
             }
         }
 
-        public static T ShowDialogEditForm<T>(params object[] prm)
-            where T: IBaseEntity
+        public static bool ShowDialogEditForm(params object[] prm)
         {
-            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
-            {
-                frm.Yukle();
-                frm.ShowDialog();
-                
 
-                return (T)frm.ReturnEntity();
-
-            }
-        }
-
-
-        public static bool ShowDialogEditForm( params object[] prm)
-        {
-           
             using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
             {
                 frm.Yukle();
                 return frm.DialogResult == System.Windows.Forms.DialogResult.OK;
             }
         }
+
+        public static bool ShowDialogEditForm(KartTuru kartTuru,params object[] prm)
+        {
+
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
+            {
+                frm.Yukle();
+                frm.ShowDialog();
+                return frm.DialogResult == System.Windows.Forms.DialogResult.OK;
+            }
+        }
+
+
+
+        public static T ShowDialogEditForm<T>(params object[] prm)
+            where T: IBaseEntity
+        {
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
+            {
+                frm.Yukle();
+                frm.ShowDialog();              
+
+                return (T)frm.ReturnEntity();
+
+            }
+        }
+
+        public static void ShowDialogEditForm(KartTuru kartTuru)
+        {
+
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm)))
+            {
+                frm.BaseIslemTuru = IslemTuru.EntityUpdate;
+                frm.Yukle();
+                frm.ShowDialog();
+              
+            }
+        }
+
+
+
     }
 }

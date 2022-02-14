@@ -31,6 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.DataAccess.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -54,10 +55,13 @@
     <Compile Include="Dto\AileBilgileriDto.cs" />
     <Compile Include="Dto\BankaDto.cs" />
     <Compile Include="Dto\BankaHesapDto.cs" />
+    <Compile Include="Dto\BelgeHareketleriDto.cs" />
+    <Compile Include="Dto\BelgeSecimDto.cs" />
     <Compile Include="Dto\BilgiNotlariDto.cs" />
     <Compile Include="Dto\CariDto.cs" />
     <Compile Include="Dto\EposBilgileriDto.cs" />
     <Compile Include="Dto\EvrakBilgileriDto.cs" />
+    <Compile Include="Dto\FaturaDto.cs" />
     <Compile Include="Dto\GeriOdemeBilgileriDto.cs" />
     <Compile Include="Dto\HizmetBilgileriDto.cs" />
     <Compile Include="Dto\HizmetDto.cs" />
@@ -74,8 +78,10 @@
     <Compile Include="Dto\OgrenciDto.cs" />
     <Compile Include="Dto\OkulDto.cs" />
     <Compile Include="Dto\PromosyonBilgileriDto.cs" />
+    <Compile Include="Dto\RaporDto.cs" />
     <Compile Include="Dto\SinavBilgileriDto.cs" />
     <Compile Include="Dto\SinifDto.cs" />
+    <Compile Include="Dto\SubeDto.cs" />
     <Compile Include="Dto\TahakkukDto.cs" />
     <Compile Include="Entities\AileBilgi.cs" />
     <Compile Include="Entities\AileBilgileri.cs" />
@@ -93,6 +99,7 @@
     <Compile Include="Entities\EposBilgileri.cs" />
     <Compile Include="Entities\Evrak.cs" />
     <Compile Include="Entities\EvrakBilgileri.cs" />
+    <Compile Include="Entities\Fatura.cs" />
     <Compile Include="Entities\Filtre.cs" />
     <Compile Include="Entities\Base\Interfaces\IBaseEntity.cs" />
     <Compile Include="Entities\DokumParametreleri.cs" />
@@ -125,6 +132,7 @@
     <Compile Include="Entities\OzelKod.cs" />
     <Compile Include="Entities\Promosyon.cs" />
     <Compile Include="Entities\PromosyonBilgileri.cs" />
+    <Compile Include="Entities\Rapor.cs" />
     <Compile Include="Entities\Rehber.cs" />
     <Compile Include="Entities\Servis.cs" />
     <Compile Include="Entities\SinavBilgileri.cs" />

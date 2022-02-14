@@ -330,7 +330,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl);
             this.IconOptions.ShowIcon = false;
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BaseEditForm";
             this.Ribbon = this.ribbonControl;
@@ -349,15 +348,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
         protected DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl;
-        protected DevExpress.XtraBars.BarButtonItem btnyeni;
-        protected DevExpress.XtraBars.BarButtonItem btnKaydet;
-        protected DevExpress.XtraBars.BarButtonItem btnGeriAl;
-        protected DevExpress.XtraBars.BarButtonItem btnSil;
-        protected DevExpress.XtraBars.BarButtonItem btnYazdir;
-        protected DevExpress.XtraBars.BarButtonItem btnBaskiOnIzleme;
-        protected DevExpress.XtraBars.BarButtonItem btnCikis;
-        protected DevExpress.XtraBars.BarButtonItem btnUygula;
-        protected DevExpress.XtraBars.BarButtonItem btnFarkliKaydet;
         private DevExpress.XtraBars.BarButtonItem btnResimEkle;
         private DevExpress.XtraBars.BarButtonItem btnResimSil;
         protected DevExpress.XtraBars.PopupMenu resimMenu;
@@ -365,5 +355,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected internal DevExpress.XtraBars.BarStaticItem statusBarKisayol;
         protected internal DevExpress.XtraBars.BarStaticItem statusBarKisayolAciklama;
         protected internal DevExpress.XtraBars.BarButtonItem btnTaksitOlustur;
+        protected internal DevExpress.XtraBars.BarButtonItem btnyeni;
+        protected internal DevExpress.XtraBars.BarButtonItem btnKaydet;
+        protected internal DevExpress.XtraBars.BarButtonItem btnGeriAl;
+        protected internal DevExpress.XtraBars.BarButtonItem btnSil;
+        protected internal DevExpress.XtraBars.BarButtonItem btnYazdir;
+        protected internal DevExpress.XtraBars.BarButtonItem btnBaskiOnIzleme;
+        protected internal DevExpress.XtraBars.BarButtonItem btnCikis;
+        protected internal DevExpress.XtraBars.BarButtonItem btnUygula;
+        protected internal DevExpress.XtraBars.BarButtonItem btnFarkliKaydet;
     }
 }

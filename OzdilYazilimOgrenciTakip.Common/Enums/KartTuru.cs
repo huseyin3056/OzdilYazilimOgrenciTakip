@@ -118,7 +118,66 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         Tahakkuk = 34,
 
         [Description("Makbuz Kartı")]
-        Makbuz =35
+        Makbuz =35,
+
+        [Description("Belge Seçim Kartı")]
+        BelgeSecim=36,
+
+        [Description("Belge Hareketleri Kartı")]
+        BelgeHareketleri = 37,
+
+        [Description("Rapor Kartı")]
+        Rapor =38,
+
+        [Description("Rapor Tasarım")]
+        RaporTasarim = 39,
+
+        [Description("Öğrenci Kartı Raporu")]
+        OgrenciKartiRaporu = 40,
+
+        [Description("Banka Ödeme Planı Raporu")]
+        BankaOdemePlaniRaporu = 41,
+
+        [Description("MEB Kayıt Sözleşmesi Raporu")]
+        MebKayitSozlesmesiRaporu = 42,
+
+        [Description("İndirim Dilekçesi Raporu")]
+        IndirimDilekcesiRaporu =43,
+
+        [Description("Kayıt Sözleşmesi Raporu")]
+        KayitSozlesmesiRaporu = 44,
+
+        [Description("Kredi Kartlı Ödeme Talimatı Raporu")]
+        KrediKartliOdemeTalimatiRaporu = 45,
+
+        [Description("Ödeme Senedi  Raporu")]
+        OdemeSenediRaporu=46,
+
+        [Description("Kullanımcı Tanımlı Rapor")]
+        KullaniciTanimliRapor=47,
+
+        [Description("Tahsilat Makbuzu Raporu")]
+        TahsilatMakbuzuRaporu=48,
+
+        [Description("Teslimat Makbuzu Raporu")]
+        TeslimatMakbuzuRaporu = 49,
+
+        [Description("Geri İade Makbuzu Raporu")]
+        GeriIadeMakbuzuRaporu = 50,
+
+        [Description("Genel Makbuz Raporu")]
+        GenelMakbuzRaporu = 51,
+
+        [Description("Şube Kartı")]
+        Sube=52,
+
+        [Description("Fatura Kartı")]
+        Fatura = 53
+
+
+
+
+
 
 
 

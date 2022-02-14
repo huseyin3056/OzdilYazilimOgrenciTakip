@@ -1,6 +1,7 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
 using DevExpress.XtraEditors;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Functions;
@@ -11,6 +12,7 @@ using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukEditFormTable;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakkukEditFormTable;
@@ -146,7 +148,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
 
 
-            if(TableValueChanged(hizmetBilgileriTable))
+            if (TableValueChanged(hizmetBilgileriTable))
             {
                 var rowHandle = hizmetBilgileriTable.Tablo.FocusedRowHandle;
                 hizmetBilgileriTable.Yukle();
@@ -224,6 +226,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         }
         protected override void GuncelNesneOlustur()
         {
+
+
             CurrentEntity = new Tahakkuk
             {
                 Id = Id,
@@ -233,7 +237,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 KayitTarihi = txtKayitTarihi.DateTime.Date,
                 KayitSekli = txtKayitSekli.Text.GetEnum<KayitSekli>(),
                 KayitDurumu = txtKayitDurumu.Text.GetEnum<KayitDurumu>(),
-                SinifId = Convert.ToInt64(txtSinif.Id),
+                SinifId = System.Convert.ToInt64(txtSinif.Id),
                 YabanciDilId = txtYabanciDil.Id,
                 GeldigiOkulId = txtGeldigiOkul.Id,
                 KontenjanId = txtKontenjan.Id,
@@ -249,6 +253,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 Durum = txtDurum.Text.GetEnum<IptalDurumu>() == IptalDurumu.DevamEdiyor,
                 DonemId = AnaForm.DonemId,
                 SubeId = AnaForm.SubeId
+
 
             };
 
@@ -414,10 +419,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
 
             if (FarkliSubeIslemi)
-                GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil);
+                Functions.GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil);
             else
             {
-                GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity, TableValueChanged());
+                Functions.GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity, TableValueChanged());
             }
 
         }
@@ -445,7 +450,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
         private void Toplamlar()
         {
-            var hizmetBilgileriToplami = hizmetBilgileriTable.Tablo.DataController.ListSource.Cast<HizmetBilgileriL>().Where(x => !x.Delete ).Sum(x => x.BrutUcret - x.KistDonemDusulenUcret);
+            var hizmetBilgileriToplami = hizmetBilgileriTable.Tablo.DataController.ListSource.Cast<HizmetBilgileriL>().Where(x => !x.Delete).Sum(x => x.BrutUcret - x.KistDonemDusulenUcret);
             var indirimBilgileriToplami = indirimBilgileriTable.Tablo.DataController.ListSource.Cast<IndirimBilgileriL>().Where(x => !x.Delete).Sum(x => x.BrutIndirim - x.KistDonemDusulenIndirim);
             var odemeBilgileriToplami = odemeBilgileriTable.Tablo.DataController.ListSource.Cast<OdemeBilgileriL>().Where(x => !x.Delete).Sum(x => x.Tutar);
             var geriIadelerToplami = odemeBilgileriTable.Tablo.DataController.ListSource.Cast<OdemeBilgileriL>().Where(x => !x.Delete).Sum(x => x.Iade);
@@ -482,6 +487,35 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
                 txtDurum.Text = IptalDurumu.DevamEdiyor.ToName();
             return true;
+
+        }
+
+        protected override void Yazdir()
+        {
+            if (pageIletisimBilgileri.Controls.Count == 0)
+            {
+                _iletisimBilgileriTable = new IletisimBilgileriTable().AddTable(this);
+                pageIletisimBilgileri.Controls.Add(_iletisimBilgileriTable);
+                _iletisimBilgileriTable.Yukle();
+            }
+
+            if (pageEposBilgileri.Controls.Count == 0)
+            {
+                _eposBilgileriTable = new EposBilgileriTable().AddTable(this);
+                pageEposBilgileri.Controls.Add(_eposBilgileriTable);
+                _eposBilgileriTable.Yukle();
+            }
+
+            var ogrenciBilgileri = ((TahakkukBll)Bll).SingleDetail(x => x.Id == Id);
+            var iletisimBilgileri = _iletisimBilgileriTable.Tablo.DataController.ListSource.Cast<IBaseEntity>().EntityListConvert<IletisimBilgileriR>();
+            var hizmetBilgileri = hizmetBilgileriTable.Tablo.DataController.ListSource.Cast<IBaseEntity>().EntityListConvert<HizmetBilgileriR>();
+            var indirimBilgileri = indirimBilgileriTable.Tablo.DataController.ListSource.Cast<IBaseEntity>().EntityListConvert<IndirimBilgileriR>();
+            var odemeBilgileri = odemeBilgileriTable.Tablo.DataController.ListSource.Cast<IBaseEntity>().EntityListConvert<OdemeBilgileriR>();
+            var geriOdemeBilgileri = geriOdemeBilgileriTable.Tablo.DataController.ListSource.Cast<IBaseEntity>().EntityListConvert<GeriOdemeBilgileriR>();
+            var eposBilgileri = _eposBilgileriTable.Tablo.DataController.ListSource.Cast<IBaseEntity>().EntityListConvert<EposBilgileriR>();
+           
+            ShowListForms<RaporSecim>.ShowDialogListForm(KartTuru.Rapor, false, RaporBolumTuru.TahakkukRaporlari,ogrenciBilgileri, iletisimBilgileri, hizmetBilgileri, indirimBilgileri, odemeBilgileri, geriOdemeBilgileri,eposBilgileri);
+
 
         }
 

@@ -120,7 +120,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             this.btnBelgeHareketleri.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.documentmap_16x161;
             this.btnBelgeHareketleri.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.documentmap_32x321;
             this.btnBelgeHareketleri.Name = "btnBelgeHareketleri";
-            this.btnBelgeHareketleri.ShortcutKeyDisplayString = "F4";
+            this.btnBelgeHareketleri.ShortcutKeyDisplayString = "F6";
             this.btnBelgeHareketleri.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barManager

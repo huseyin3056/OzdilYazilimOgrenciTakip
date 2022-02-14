@@ -1,8 +1,10 @@
 ﻿using DevExpress.XtraGrid.Views.Base;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
+using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
@@ -28,7 +30,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         }
 
 
-        protected override void Listele()
+        protected internal override void Listele()
         {
 
             tablo.GridControl.DataSource = ((OdemeBilgileriBll)Bll).List(x => x.TahakkukId == OwnerForm.Id).ToBindingList<OdemeBilgileriL>();
@@ -210,6 +212,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             tablo.RefreshDataSource();
             ButonEnabledDurumu(true);
 
+
+        }
+
+        protected override void BelgeHareketleri()
+        {
+            var entity = Tablo.GetRow<OdemeBilgileriL>();
+            if (entity == null) return;
+
+            ShowListForms<BelgeHareketleriListForm>.ShowDialogListForm(KartTuru.BelgeHareketleri, null, entity.Id);
 
         }
 

@@ -24,7 +24,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakku
 
         }
 
-        protected override void Listele()
+        protected internal override void Listele()
         {
             tablo.GridControl.DataSource = ((KardesBilgileriBll)Bll).List(x => x.TahakkukId == OwnerForm.Id).ToBindingList<KardesBilgileriL>();
 

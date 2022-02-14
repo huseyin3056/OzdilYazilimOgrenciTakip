@@ -23,7 +23,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukE
         }
 
 
-        protected override void Listele()
+        protected internal override void Listele()
         {
             tablo.GridControl.DataSource = ((AileBilgileriBll)Bll).List(x => x.TahakkukId == OwnerForm.Id).ToBindingList<AileBilgileriL>();
 
@@ -33,8 +33,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukE
         {
             var source = tablo.DataController.ListSource;
             ListeDisiTutulacakKayitlar = source.Cast<AileBilgileriL>().Where(x => !x.Delete).Select(x => x.AileBilgiId).ToList();
-           
-
 
             var entities = ShowListForms<AileBilgiListForm>.ShowDialogListForm(Common.Enums.KartTuru.AileBilgi, ListeDisiTutulacakKayitlar, true, false).EntityListConvert<AileBilgi>();
 

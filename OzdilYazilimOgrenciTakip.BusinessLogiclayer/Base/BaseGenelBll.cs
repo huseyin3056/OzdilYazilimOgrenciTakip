@@ -49,7 +49,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
         }
 
 
-        public bool Delete(BaseEntity entity)
+        public virtual  bool Delete(BaseEntity entity)
         {
             return BaseDelete(entity, _kartTuru);
         }
@@ -62,7 +62,10 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
 
         public string YeniKodVer(Expression<Func<T, bool>> filter)
         {
-            return BaseYeniKodVer(_kartTuru, x => x.Kod, filter);
+           // return BaseYeniKodVer(_kartTuru, x => x.Kod, filter);
+
+            string yeniKod =  BaseYeniKodVer(_kartTuru, x => x.Kod, filter);
+            return yeniKod;
 
         }
 

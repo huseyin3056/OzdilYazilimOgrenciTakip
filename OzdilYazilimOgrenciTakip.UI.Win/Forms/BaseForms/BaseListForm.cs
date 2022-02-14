@@ -81,7 +81,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
                 }
 
-                SelectedEntities = RowSelect.GetSelecetedRows();
+                SelectedEntities = RowSelect.GetSelectedRows();
 
 
                 DialogResult = DialogResult.OK; // Ben Ekledim
@@ -116,6 +116,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
 
         }
+
+        protected virtual void BaskiOnIzleme() { }
+
 
         private void FormCaptionAyarla()
         {
@@ -175,6 +178,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             Tablo.FilterEditorCreated += Tablo_FilterEditorCreated;
             Tablo.ColumnFilterChanged += Tablo_ColumnFilterChanged;
             Tablo.CustomDrawFooterCell += Tablo_CustomDrawFooterCell;
+            Tablo.FocusedRowObjectChanged += Tablo_FocusedRowObjectChanged;
+            Tablo.RowDeleted += Tablo_RowDeleted;
 
 
             // Form Events
@@ -185,6 +190,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             SizeChanged += BaseListForm_SizeChanged;
 
 
+        }
+
+        private void Tablo_RowDeleted(object sender, DevExpress.Data.RowDeletedEventArgs e)
+        {
+            SutunGizleGoster();
+        }
+
+        private void Tablo_FocusedRowObjectChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowObjectChangedEventArgs e)
+        {
+            SutunGizleGoster();
         }
 
         private void Tablo_CustomDrawFooterCell(object sender, FooterCellCustomDrawEventArgs e)
@@ -253,17 +268,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         {
             Tablo.Focus();
             ButonGizleGoster();
-            //SutunGizleGoster();
+            SutunGizleGoster();
 
             if (IsMdiChild || SeciliGelecekId == null) return;
             Tablo.RowFocus("Id", SeciliGelecekId);
 
         }
 
-        private void SutunGizleGoster()
-        {
-            throw new System.NotImplementedException();
-        }
+        protected virtual void SutunGizleGoster() { }
 
         private void ButonGizleGoster()
         {
@@ -322,7 +334,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         }
 
-       protected virtual  void Button_ItemClick(object sender, ItemClickEventArgs e)
+        protected virtual void Button_ItemClick(object sender, ItemClickEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
 
@@ -334,6 +346,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                 link.Item.ItemLinks[0].Focus();
 
             }
+
+       
 
             else if (e.Item == btnStandartExcelDosyasi)
                 Tablo.TabloDisariAktar(DosyaTuru.ExcelStandart, e.Item.Caption, Text);
@@ -417,6 +431,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
             }
 
+            else if(e.Item==btnTabloYazdir)
+            {
+                TablePrintingFunctions.Yazdir(Tablo, Tablo.ViewCaption, AnaForm.SubeAdi);
+            }
+
             else if (e.Item == btnCikis)
             {
 
@@ -433,6 +452,21 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
             }
 
+            else if(e.Item==btnBelgeHareketleri)
+            {
+                BelgeHareketleri();
+            }
+
+
+            else if(e.Item==btnTasarimDegistir)
+            {
+                Duzelt();
+            }
+
+            else if(e.Item==btnBaskiOnizleme)
+            {
+                BaskiOnIzleme();
+            }
 
 
             Cursor.Current = DefaultCursor;
@@ -440,7 +474,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         protected virtual void TahakkukYap() { }
 
+        protected virtual void BelgeHareketleri() { }
+
+
         protected virtual void BagliKartAc() { }
+
+        protected virtual void Duzelt() { }
 
         private void Tablo_DoubleClick(object sender, System.EventArgs e)
         {

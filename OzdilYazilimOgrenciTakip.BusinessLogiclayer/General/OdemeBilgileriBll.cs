@@ -1,5 +1,6 @@
 ﻿using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Interfaces;
+using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Data.Contexts;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
@@ -18,7 +19,18 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             return List(filter, x => new
             {
                 OdemeBelgesi = x,
-                // Toplamlar=
+                Toplamlar = x.MakbuzHareketleri.GroupBy(y => y.OdemeBilgileriId).DefaultIfEmpty().Select(y => new
+                {
+                    Tahsil = y.Where(z => z.BelgeDurumu == BelgeDurumu.AvukatYoluylaTahsilEtme || z.BelgeDurumu == BelgeDurumu.TahsilEtmeBanka || z.BelgeDurumu == BelgeDurumu.BlokeCozumu || z.BelgeDurumu == BelgeDurumu.KismiAvukatYoluylaTahsilEtme || z.BelgeDurumu == BelgeDurumu.KismiTahsilEdildi || z.BelgeDurumu == BelgeDurumu.MahsupEtme || z.BelgeDurumu == BelgeDurumu.OdenmisOlarakIsaretleme || z.BelgeDurumu == BelgeDurumu.TahsilEtmeBanka || z.BelgeDurumu == BelgeDurumu.TahsilEtmeKasa).Select(z => z.IslemTutari).DefaultIfEmpty(0).Sum(),
+                    Iade = y.Where(z => z.BelgeDurumu == BelgeDurumu.MusteriyeGeriIade).Select(z => z.IslemTutari).DefaultIfEmpty(0).Sum() ,
+                    Tahsilde =y.Where(z=>z.BelgeDurumu==Common.Enums.BelgeDurumu.AvukataGonderme || z.BelgeDurumu==BelgeDurumu.BankayaTahsileGonderme || z.BelgeDurumu==BelgeDurumu.CiroEtme || z.BelgeDurumu==BelgeDurumu.BlokeyeAlma).Select(z => z.IslemTutari).DefaultIfEmpty(0).Sum()- y.Where(z => z.BelgeDurumu == BelgeDurumu.AvukatYoluylaTahsilEtme || z.BelgeDurumu == BelgeDurumu.BankaYoluylaTahsilEtme || z.BelgeDurumu == BelgeDurumu.BlokeCozumu || z.BelgeDurumu == BelgeDurumu.KismiAvukatYoluylaTahsilEtme ||  z.BelgeDurumu == BelgeDurumu.OdenmisOlarakIsaretleme || z.BelgeDurumu==BelgeDurumu.PortfoyeGeriIade || z.BelgeDurumu==BelgeDurumu.PortfoyeKarsiliksizIade).Select(z => z.IslemTutari).DefaultIfEmpty(0).Sum(),
+                    BelgeDurumu = y.Any() ? y.OrderByDescending(z => z.Id).FirstOrDefault().BelgeDurumu : BelgeDurumu.Portfoyde,
+                    SonHareketId = (int?)y.Max(z => z.Id),
+                    SonHareketTarihi = (DateTime?)y.OrderByDescending(z => z.Id).FirstOrDefault().Makbuz.Tarih,
+                    SonIslemYeri = y.OrderByDescending(z => z.Id).Select(z => z.Makbuz.AvukatHesapId != null ? z.Makbuz.AvukatHesap.AdiSoyadi : z.Makbuz.BankaHesapId != null ? z.Makbuz.BankaHesap.HesapAdi : z.Makbuz.CariHesapId != null ? z.Makbuz.CariHesap.CariAdi : z.Makbuz.KasaHesapId != null ? z.Makbuz.KasaHesap.KasaAdi : z.Makbuz.SubeHesapId != null ? z.Makbuz.SubeHesap.SubeAdi : null).FirstOrDefault()
+
+
+                }).FirstOrDefault()
 
 
 
@@ -50,14 +62,14 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 Aciklama = x.OdemeBelgesi.Aciklama,
                 SubeAdi = x.OdemeBelgesi.Tahakkuk.Sube.SubeAdi,
                 SubeIlAdi = x.OdemeBelgesi.Tahakkuk.Sube.AdresIl.IlAdi,
-                Tahsil = 0,
-                Tahsilde = 0,
-                Iade = 0,
-                Kalan = x.OdemeBelgesi.Tutar,
-                BelgeDurumu = Common.Enums.BelgeDurumu.Portfoyde,
-                SonHareketId = null,
-                SonHareketTarihi = null,
-                SonIslemYeri = null
+                Tahsil = x.Toplamlar.Tahsil,
+                Tahsilde = x.Toplamlar.Tahsilde,
+                Iade = x.Toplamlar.Iade,
+                Kalan = x.OdemeBelgesi.Tutar-(x.Toplamlar.Tahsil-x.Toplamlar.Iade),
+                BelgeDurumu = x.Toplamlar.BelgeDurumu,
+                SonHareketId = x.Toplamlar.SonHareketId,
+                SonHareketTarihi = x.Toplamlar.SonHareketTarihi,
+                SonIslemYeri = x.Toplamlar.SonIslemYeri
 
 
 

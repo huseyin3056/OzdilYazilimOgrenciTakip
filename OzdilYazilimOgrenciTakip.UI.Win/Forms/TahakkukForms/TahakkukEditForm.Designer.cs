@@ -1199,7 +1199,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem9.OptionsTableLayoutItem.ColumnIndex = 2;
             this.layoutControlItem9.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem9.Size = new System.Drawing.Size(224, 24);
-            this.layoutControlItem9.Text = "Öğrenci No";
+            this.layoutControlItem9.Text = "Tahakkuk No";
             this.layoutControlItem9.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem9.TextSize = new System.Drawing.Size(70, 13);
             this.layoutControlItem9.TextToControlDistance = 5;
@@ -1766,7 +1766,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.ClientSize = new System.Drawing.Size(998, 649);
             this.Controls.Add(this.DataLayoutGenel);
             this.IconOptions.ShowIcon = false;
-            this.MaximizeBox = true;
             this.MinimumSize = new System.Drawing.Size(1000, 650);
             this.Name = "TahakkukEditForm";
             this.Text = "Tahakkuk Kartı";

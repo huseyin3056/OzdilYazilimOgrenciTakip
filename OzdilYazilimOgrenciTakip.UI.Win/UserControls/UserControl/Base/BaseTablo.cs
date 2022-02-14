@@ -77,10 +77,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             Tablo.EndSorting += Tablo_SablonChanged;
             Tablo.DoubleClick += Tablo_DoubleClick;
             Tablo.FocusedRowObjectChanged += Tablo_FocusedRowObjectChanged;
-           
+            Tablo.RowCountChanged += Tablo_RowCountChanged;
+
 
 
         }
+
+        protected virtual  void Tablo_RowCountChanged(object sender, EventArgs e) { }
 
         private void Tablo_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
@@ -96,7 +99,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         {
             SutunGizleGoster();
             RowCellAllowEdit();
-            
+
         }
 
 
@@ -125,7 +128,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 Tablo.TabloSablonKaydet(Tablo.ViewCaption);
 
         }
-        protected virtual void Listele() { }
+        protected internal virtual void Listele() { }
 
         private void SablonYukle()
         {
@@ -153,15 +156,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                 OpenEntity();
             }
 
-            else if(e.Item==btnIptalEt)
+            else if (e.Item == btnIptalEt)
             {
                 IptalEt();
             }
 
-            else if(e.Item==btnIptalGeriAl)
+            else if (e.Item == btnIptalGeriAl)
             {
                 IptalGeriAl();
 
+            }
+
+            else if(e.Item==btnBelgeHareketleri)
+            {
+                BelgeHareketleri();
             }
 
             Cursor.Current = DefaultCursor;
@@ -191,7 +199,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
-     
+
 
 
         protected void ButonEnabledDurumu(bool durum)
@@ -257,6 +265,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
+        protected virtual void BelgeHareketleri() { }
+
         private void Navigator_ButtonClick(object sender, NavigatorButtonClickEventArgs e)
         {
             if (e.Button == insUpNavigator.Navigator.Buttons.Append)
@@ -269,7 +279,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
-        protected virtual  void Tablo_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        protected virtual void Tablo_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
             if (!_isLoaded) return;
 
@@ -281,7 +291,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
-        protected virtual  void Tablo_MouseUp(object sender, MouseEventArgs e)
+        protected virtual void Tablo_MouseUp(object sender, MouseEventArgs e)
         {
             if (popupMenu == null) return;
             if (e.Button != MouseButtons.Right) return;
@@ -351,6 +361,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
                     IptalGeriAl();
                     break;
 
+                case Keys.F6:
+                    BelgeHareketleri();
+                    break;
+
 
 
 
@@ -358,7 +372,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         }
 
 
-       protected virtual  void Tablo_FocusedColumnChanged(object sender, FocusedColumnChangedEventArgs e)
+        protected virtual void Tablo_FocusedColumnChanged(object sender, FocusedColumnChangedEventArgs e)
         {
             if (OwnerForm == null) return;
             OwnerForm.statusBarKisayol.Visibility = BarItemVisibility.Never;

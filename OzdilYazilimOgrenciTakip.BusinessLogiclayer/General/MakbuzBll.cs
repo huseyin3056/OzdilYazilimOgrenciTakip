@@ -31,6 +31,8 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 BankaHesapId = x.BankaHesapId,
                 CariHesapId = x.CariHesapId,
                 SubeHesapId = x.SubeHesapId,
+                KasaHesapId=x.KasaHesapId,
+                
                 HesapAdi = x.HesapTuru == MakbuzHesapTuru.Avukat ? x.AvukatHesap.AdiSoyadi
                      : x.HesapTuru == MakbuzHesapTuru.Banka || x.HesapTuru == MakbuzHesapTuru.Epos || x.HesapTuru == MakbuzHesapTuru.Ots || x.HesapTuru == MakbuzHesapTuru.Pos ? x.BankaHesap.HesapAdi
                      : x.HesapTuru == MakbuzHesapTuru.Cari || x.HesapTuru == MakbuzHesapTuru.Mahsup ? x.CariHesap.CariAdi
@@ -63,6 +65,11 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 HareketSayisi = x.HareketSayisi,
                 MakbuzToplami = x.MakbuzToplami
             }).ToList();
+        }
+
+        public override bool Delete(BaseEntity entity)
+        {
+            return BaseDelete(entity, KartTuru.Makbuz, false);
         }
     }
 }

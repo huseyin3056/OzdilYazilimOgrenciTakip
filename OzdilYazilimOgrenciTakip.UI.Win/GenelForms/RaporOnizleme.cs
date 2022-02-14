@@ -8,7 +8,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         {
             InitializeComponent();
 
-            RaporGosterici.PrintingSystem = (PrintingSystem)prm[0];
+            RaporGosterici.PrintingSystem = (PrintingSystemBase)prm[0];
             Text = $"{Text} ( {prm[1].ToString()} )";
 
         }

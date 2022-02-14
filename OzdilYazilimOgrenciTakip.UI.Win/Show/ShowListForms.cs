@@ -35,7 +35,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
 
         }
-
         public static BaseEntity ShowDialogListForm(KartTuru kartTuru, long? seciliGelecekId, params object[] prm)
         {
             // Yetki Kontrolü
@@ -43,6 +42,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
             {
                 frm.SeciliGelecekId = seciliGelecekId;                        
                 frm.Yukle();
+
+                if(!frm.IsDisposed)
                 frm.ShowDialog();
 
                 return frm.DialogResult == DialogResult.OK ? frm.SelectedEntity : null;

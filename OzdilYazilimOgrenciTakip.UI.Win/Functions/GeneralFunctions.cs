@@ -19,6 +19,9 @@ using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
+using DevExpress.XtraPrinting.Native;
+using DevExpress.Utils.Extensions;
+using DevExpress.XtraReports.UI;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 {
@@ -43,7 +46,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         public static T GetRow<T>(this GridView tablo, bool mesajVer = true)
         {
-            if (tablo.FocusedRowHandle > -1) return (T)tablo.GetRow(tablo.FocusedRowHandle);
+            if (tablo.FocusedRowHandle > -1)
+                return (T)tablo.GetRow(tablo.FocusedRowHandle);
             if (mesajVer)
                 Messages.KartSecmemeUyariMesaji();
 
@@ -147,6 +151,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
+        public static void ButtonEnabledDurumu(BarButtonItem btnKaydet, BarButtonItem btnGeriAl, bool tableValueChanged)
+        {
+
+            var buttonEnabledDurumu = tableValueChanged;
+
+            btnKaydet.Enabled = buttonEnabledDurumu;
+            btnGeriAl.Enabled = buttonEnabledDurumu;
+
+
+        }
+
         public static long IdOlustur(this IslemTuru islemTuru, BaseEntity selectedEntity)
         {
 
@@ -225,6 +240,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
             }
 
+            tablo.Focus();
             tablo.FocusedRowHandle = rowHandle;
 
         }
@@ -352,6 +368,33 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
             tablo.FocusedRowHandle = rowHandle;
 
+        }
+
+        public static void CreateDropDownMenu(this BarButtonItem baseButton, BarItem[] buttonItems)
+        {
+            baseButton.ButtonStyle = BarButtonStyle.CheckDropDown;
+            var popupMenu = new PopupMenu();
+            buttonItems.ForEach(x => x.Visibility = BarItemVisibility.Always);
+            popupMenu.ItemLinks.AddRange(buttonItems);
+            baseButton.DropDownControl = popupMenu;
+
+        }
+
+        public static MyXtraReport StreamToReport(this MemoryStream stream)
+        {
+            return (MyXtraReport)XtraReport.FromStream(stream, true);
+        }
+
+        public static MemoryStream ByteToStream(this Byte[] report)
+        {
+            return new MemoryStream(report);
+        }
+
+        public static MemoryStream ReportToStream(this XtraReport rapor)
+        {
+            var stream = new MemoryStream();
+            rapor.SaveLayout(stream);
+            return stream;
         }
     }
 }

@@ -40,7 +40,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             return _selectedRows[index];
         }
 
-        public IList<BaseEntity> GetSelecetedRows()
+        public IList<BaseEntity> GetSelectedRows()
         {
             return _selectedRows;
         }
@@ -52,7 +52,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         public bool IsRowSelected(int rowHandle)
         {
-            var row = (BaseEntity)_tablo.GetRow<BaseEntity>(rowHandle);
+            var row = (BaseEntity)_tablo.GetRow(rowHandle);
             return GetSelecetedRowIndex(row) > -1;
 
         }

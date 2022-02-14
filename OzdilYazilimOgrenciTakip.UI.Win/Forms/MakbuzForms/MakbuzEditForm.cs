@@ -9,14 +9,16 @@ using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 {
     public partial class MakbuzEditForm : BaseEditForm
     {
-        private readonly MakbuzTuru _makbuzTuru;
+        protected internal readonly MakbuzTuru MakbuzTuru;
         private readonly MakbuzHesapTuru _hesapTuru;
 
         public MakbuzEditForm(params object[] prm)
@@ -34,8 +36,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
             KayitSonrasiFormuKapat = false;
 
-            _makbuzTuru = (MakbuzTuru)prm[0];
+            MakbuzTuru = (MakbuzTuru)prm[0];
             _hesapTuru = (MakbuzHesapTuru)prm[1];
+            FarkliSubeIslemi = prm.Length > 2 && prm[2].GetType()==typeof(bool);
 
 
         }
@@ -43,10 +46,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
         protected internal override void Yukle()
         {
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new MakbuzS() : ((MakbuzBll)Bll).Single(FilterFunctions.Filter<Makbuz>(Id));
-           
+
             AlanIslemleri();
             NesneyiKontrollereBagla();
-
+            TabloYukle();
+            MakbuzTuruEnabled();
             if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtMakbuzNo.Text = ((MakbuzBll)Bll).YeniKodVer(x => x.DonemId == AnaForm.DonemId && x.SubeId == AnaForm.SubeId);
@@ -62,7 +66,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             txtMakbuzNo.Text = entity.Kod;
             txtTarih.DateTime = entity.Tarih;
             txtHesapTuru.SelectedItem = _hesapTuru.ToName();
-           
+
 
             if (BaseIslemTuru == IslemTuru.EntityInsert)
             {
@@ -84,7 +88,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
                         txtHesap.Text = AnaForm.DefaultAvukatHesapAdi;
                         break;
 
-                    case MakbuzHesapTuru.Transfer when _makbuzTuru == MakbuzTuru.GelenBelgeyiOnaylama:
+                    case MakbuzHesapTuru.Transfer when MakbuzTuru == MakbuzTuru.GelenBelgeyiOnaylama:
                         txtHesap.Id = AnaForm.SubeId;
                         txtHesap.Text = AnaForm.SubeAdi;
                         break;
@@ -96,7 +100,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             {
                 txtHesap.Id = entity.AvukatHesapId ?? entity.BankaHesapId ?? entity.CariHesapId ?? entity.KasaHesapId ?? entity.SubeHesapId;
                 txtHesap.Text = entity.HesapAdi;
-
+                
             }
 
 
@@ -111,7 +115,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
                 Id = Id,
                 Kod = txtMakbuzNo.Text,
                 Tarih = txtTarih.DateTime.Date,
-                MakbuzTuru = _makbuzTuru,
+                MakbuzTuru = MakbuzTuru,
                 HesapTuru = hesapTuru,
                 AvukatHesapId = hesapTuru == MakbuzHesapTuru.Avukat ? txtHesap.Id : null,
                 BankaHesapId = hesapTuru == MakbuzHesapTuru.Banka || hesapTuru == MakbuzHesapTuru.Epos || hesapTuru == MakbuzHesapTuru.Ots || hesapTuru == MakbuzHesapTuru.Pos ? txtHesap.Id : null,
@@ -119,8 +123,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
                 KasaHesapId = hesapTuru == MakbuzHesapTuru.Kasa ? txtHesap.Id : null,
                 SubeHesapId = hesapTuru == MakbuzHesapTuru.Transfer ? txtHesap.Id : null,
 
-                HareketSayisi = 0,
-                MakbuzToplami = 0,
+                HareketSayisi = makbuzHareketleriTable.Tablo.DataRowCount,
+                MakbuzToplami = Convert.ToDecimal(makbuzHareketleriTable.colIslemTutari.SummaryText),
 
                 DonemId = AnaForm.DonemId,
                 SubeId = AnaForm.SubeId,
@@ -138,41 +142,41 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
                 GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil);
             else
-                GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity);// ,TableValueChanged());
+                GeneralFunctions.ButtonEnabledDurumu(btnyeni, btnKaydet, btnGeriAl, btnSil, OldEntity, CurrentEntity, makbuzHareketleriTable.TableValueChanged);
 
         }
 
         protected override bool EntityInsert()
         {
-            //  GuncelNesneOlustur();
+            GuncelNesneOlustur();
             if (HataliGiris()) return false;
-            if (BagliTabloHataliGirisKontrol()) return false;
-            var result = ((MakbuzBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId); // BagliTabloKaydet();
+            if (makbuzHareketleriTable.HataliGiris()) return false;
+            var result = ((MakbuzBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId )&& makbuzHareketleriTable.Kaydet();
 
-            //if (result && !KayitSonrasiFormuKapat)
-            //    BagliTabloYukle();
+            if (result && !KayitSonrasiFormuKapat)
+                makbuzHareketleriTable.Yukle();
             return result;
 
         }
 
         protected override bool EntityUpdate()
         {
-            // GuncelNesneOlustur();
+            GuncelNesneOlustur();
             if (HataliGiris()) return false;
-            if (BagliTabloHataliGirisKontrol()) return false;
-            var result = ((MakbuzBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId); // BagliTabloKaydet();
+            if (makbuzHareketleriTable.HataliGiris()) return false;
+            var result = ((MakbuzBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && makbuzHareketleriTable.Kaydet();
 
-            //if (result && !KayitSonrasiFormuKapat)
-            //   BagliTabloYukle();
+            if (result && !KayitSonrasiFormuKapat)
+                makbuzHareketleriTable.Yukle();
 
             return result;
         }
 
         protected override void EntityDelete()
         {
-            // Tablo'da TopluHareketSil() çağrılacak
+            if (!makbuzHareketleriTable.TopluHareketSil()) return;
 
-            // if (!((IBaseCommonBll)Bll).Delete(OldEntity)) return; MakbuzBLL ile aynı anlamda
+           //  if (!((IBaseCommonBll)Bll).Delete(OldEntity)) return; MakbuzBLL ile aynı anlamda
             if (!((MakbuzBll)Bll).Delete(OldEntity)) return;
             RefreshYapilacak = true;
             Close();
@@ -180,7 +184,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
         }
 
-        private bool HataliGiris()
+        protected internal bool HataliGiris()
         {
             if (!txtHesap.Visible || txtHesap.Id != null) return false;
 
@@ -193,10 +197,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
         private void AlanIslemleri()
         {
-            Text = $"{Text} - {_makbuzTuru.ToName()}";
+            Text = $"{Text} - {MakbuzTuru.ToName()}";
             txtTarih.Properties.MinValue = AnaForm.GunTarihininOncesineMakbuzTarihiGirilebilir ? AnaForm.DonemBaslamaTarihi : DateTime.Now.Date;
             txtTarih.Properties.MaxValue = AnaForm.GunTarihininSonrasinaMakbuzTarihiGirilebilir ? AnaForm.DonemBitisTarihi : DateTime.Now.Date;
-            switch (_makbuzTuru)
+            switch (MakbuzTuru)
             {
                 case MakbuzTuru.BlokeyeAlma:
                 case MakbuzTuru.BlokeCozumu:
@@ -227,10 +231,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
         }
 
-        private void MakbuzTuruEnabled()
+        protected internal void MakbuzTuruEnabled()
         {
 
-            switch (_makbuzTuru)
+            switch (MakbuzTuru)
             {
 
                 case MakbuzTuru.BlokeyeAlma:
@@ -242,8 +246,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
                 case MakbuzTuru.BankayaTahsileGonderme:
                 case MakbuzTuru.BankaYoluylaTahsilEtme:
                 case MakbuzTuru.CiroEtme:
-                case MakbuzTuru.BankaSubeyeGonderme:
-                    // Bağlı tabloya ihtiyaç var
+                case MakbuzTuru.BaskaSubeyeGonderme:
+                    txtHesap.Enabled = makbuzHareketleriTable.Tablo.DataRowCount == 0;
+                    txtHesapTuru.Enabled = makbuzHareketleriTable.Tablo.DataRowCount == 0;
                     break;
 
 
@@ -302,6 +307,57 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
         }
 
+        protected override void TabloYukle()
+        {
+            makbuzHareketleriTable.OwnerForm = this;
+            makbuzHareketleriTable.Yukle();
+
+        }
+
+        protected override void Yazdir()
+        {
+            var source = new List<MakbuzHareketleriR>();
+            for (int i= 0;  i< makbuzHareketleriTable.Tablo.DataRowCount; i++)
+            {
+                var entity = makbuzHareketleriTable.Tablo.GetRow<MakbuzHareketleriL>(i);
+                if (entity == null) return;
+
+                var row = new MakbuzHareketleriR
+                {
+                    OgrenciNo=entity.OgrenciNo,
+                    Adi=entity.Adi,
+                    Soyadi=entity.Soyadi,
+                    SinifAdi=entity.SinifAdi,
+                    SubeAdi=entity.OgrenciSubeAdi,
+                    PortfoyNo=entity.OdemeBilgileriId,
+                    OdemeTuruAdi=entity.OdemeTuruAdi,
+                    Vade=entity.Vade,
+                    AsilBorclu=entity.AsilBorclu,
+                    Ciranta=entity.Ciranta,
+                    BankaVeSubeAdi=entity.BankaAdi+" "+entity.OgrenciSubeAdi,
+                    BelgeNo=entity.BelgeNo,
+                    HesapNo=entity.HesapNo,
+                    Tutar=entity.Tutar,
+                    IslemOncesiTutari=entity.IslemOncesiTutar,
+                    IslemTutari=entity.IslemTutari,
+                    Tarih=txtTarih.DateTime.Date,
+                    MakbuzNo=txtMakbuzNo.Text,
+                    MakbuzTuru=MakbuzTuru.ToName(),
+                    Hesapturu=_hesapTuru.ToName(),
+                    HesapAdi=txtHesap.Text,
+                    BelgeDurumu=entity.BelgeDurumu.ToName()
+
+
+                };
+
+                source.Add(row);
+            }
+
+            ShowListForms<RaporSecim>.ShowDialogListForm(KartTuru.Rapor, false, RaporBolumTuru.MakbuzRaporlari,source);
+
+
+        }
+
         protected override void Control_SelectedValueChanged(object sender, EventArgs e)
         {
             if (sender != txtHesapTuru) return;
@@ -316,11 +372,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             if (layoutHesapAdi.Visible && txtHesap.Id == null)
 
                 txtHesap.Focus();
-            //else
-            //    Tabloya Focuslan
-
+            else
+                makbuzHareketleriTable.Tablo.GridControl.Focus();
 
         }
+
+       
 
     }
 }

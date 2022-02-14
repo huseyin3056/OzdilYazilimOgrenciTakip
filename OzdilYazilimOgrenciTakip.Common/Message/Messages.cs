@@ -13,7 +13,7 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
 
         public static void UyariMesaji(string uyariMesaji)
         {
-            XtraMessageBox.Show(uyariMesaji, "Uyarı", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+            XtraMessageBox.Show(uyariMesaji, "Uyarı", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning);
 
         }
 
@@ -122,6 +122,16 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
 
         }
 
+        public static DialogResult RaporuTasarimaGonderMesaj()
+        {
+            return HayirSeciliEvetHayir("Rapor Tasarım Görünümünde Açılacaktor. Onaylıyormusunuz?", "Onay");
 
+        }
+
+        public static void BilgiMesaji(string bilgiMesaji)
+        {
+            XtraMessageBox.Show(bilgiMesaji, "Bilgi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+
+        }
     }
 }

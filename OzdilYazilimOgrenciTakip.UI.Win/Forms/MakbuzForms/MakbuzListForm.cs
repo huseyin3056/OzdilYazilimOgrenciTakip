@@ -123,7 +123,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
             else if (e.Item == btnBaskaSubeyeGonderme)
 
-                id = ShowEditForms<MakbuzEditForm>.ShowDialogEditForm(KartTuru.Makbuz, -1, MakbuzTuru.BankaSubeyeGonderme, MakbuzHesapTuru.Transfer);
+                id = ShowEditForms<MakbuzEditForm>.ShowDialogEditForm(KartTuru.Makbuz, -1, MakbuzTuru.BaskaSubeyeGonderme, MakbuzHesapTuru.Transfer);
 
 
             else if (e.Item == btnGelenBelgeyiOnaylama)

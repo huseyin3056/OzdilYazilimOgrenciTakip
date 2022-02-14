@@ -62,7 +62,10 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions
 
         private static TContext CreateContext<TContext>() where TContext : DbContext
         {
-            return (TContext)Activator.CreateInstance(typeof(TContext), GetConnectionString());
+           // return (TContext)Activator.CreateInstance(typeof(TContext), GetConnectionString());
+            TContext createdContext= (TContext)Activator.CreateInstance(typeof(TContext), GetConnectionString());
+            return createdContext;
+
         }
 
         public static void CreateUnitOfWork<T, TContext>(ref IUnitOfWork<T> uow) where T : class, IBaseEntity where TContext : DbContext
