@@ -133,5 +133,11 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
             XtraMessageBox.Show(bilgiMesaji, "Bilgi", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
 
         }
+
+        public static DialogResult RaporKapatmaMesaj()
+        {
+            return HayirSeciliEvetHayir("Rapor Kapatılacaktır. Onaylıyormusunuz?", "Onay");
+
+        }
     }
 }

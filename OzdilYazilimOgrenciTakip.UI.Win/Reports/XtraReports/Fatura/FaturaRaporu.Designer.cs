@@ -165,13 +165,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             // xrPageBreak1
             // 
-            this.xrPageBreak1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 1070.875F);
+            this.xrPageBreak1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 995.875F);
             this.xrPageBreak1.Name = "xrPageBreak1";
             // 
             // xrLabel28
             // 
             this.xrLabel28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 572.6932F);
+            this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 484.6932F);
             this.xrLabel28.Multiline = true;
             this.xrLabel28.Name = "xrLabel28";
             this.xrLabel28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -182,7 +182,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel29
             // 
             this.xrLabel29.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 615.4016F);
+            this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 527.4016F);
             this.xrLabel29.Multiline = true;
             this.xrLabel29.Name = "xrLabel29";
             this.xrLabel29.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -193,7 +193,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel30
             // 
             this.xrLabel30.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 652.9016F);
+            this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 593.9016F);
             this.xrLabel30.Multiline = true;
             this.xrLabel30.Name = "xrLabel30";
             this.xrLabel30.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -204,7 +204,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel31
             // 
             this.xrLabel31.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 691.4432F);
+            this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 632.4432F);
             this.xrLabel31.Multiline = true;
             this.xrLabel31.Name = "xrLabel31";
             this.xrLabel31.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -215,7 +215,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel32
             // 
             this.xrLabel32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 725.8182F);
+            this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 666.8182F);
             this.xrLabel32.Multiline = true;
             this.xrLabel32.Name = "xrLabel32";
             this.xrLabel32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -227,7 +227,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel33.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TcKimlikNo]")});
-            this.xrLabel33.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 572.6932F);
+            this.xrLabel33.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 484.6932F);
             this.xrLabel33.Multiline = true;
             this.xrLabel33.Name = "xrLabel33";
             this.xrLabel33.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -237,7 +237,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel34.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Adi]")});
-            this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 615.4016F);
+            this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 527.4016F);
             this.xrLabel34.Multiline = true;
             this.xrLabel34.Name = "xrLabel34";
             this.xrLabel34.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -247,7 +247,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel35.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SinifAdi]")});
-            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 652.9016F);
+            this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 593.9016F);
             this.xrLabel35.Multiline = true;
             this.xrLabel35.Name = "xrLabel35";
             this.xrLabel35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -257,7 +257,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel36.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[VeliSoyadi]")});
-            this.xrLabel36.LocationFloat = new DevExpress.Utils.PointFloat(342F, 691.4432F);
+            this.xrLabel36.LocationFloat = new DevExpress.Utils.PointFloat(342F, 632.4432F);
             this.xrLabel36.Multiline = true;
             this.xrLabel36.Name = "xrLabel36";
             this.xrLabel36.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -267,7 +267,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel37.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[VeliAdi]")});
-            this.xrLabel37.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 691.4433F);
+            this.xrLabel37.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 632.4433F);
             this.xrLabel37.Multiline = true;
             this.xrLabel37.Name = "xrLabel37";
             this.xrLabel37.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -277,7 +277,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel38.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FaturaAdres]")});
-            this.xrLabel38.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 725.8182F);
+            this.xrLabel38.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 666.8182F);
             this.xrLabel38.Multiline = true;
             this.xrLabel38.Name = "xrLabel38";
             this.xrLabel38.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -287,7 +287,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel39.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FaturaAdresIlAdi]")});
-            this.xrLabel39.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 815.4016F);
+            this.xrLabel39.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 756.4016F);
             this.xrLabel39.Multiline = true;
             this.xrLabel39.Name = "xrLabel39";
             this.xrLabel39.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -297,7 +297,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel40.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FaturaAdresIlceAdi]")});
-            this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(385.3641F, 815.4016F);
+            this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(385.3641F, 756.4016F);
             this.xrLabel40.Multiline = true;
             this.xrLabel40.Name = "xrLabel40";
             this.xrLabel40.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -307,19 +307,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel41.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tarih]")});
-            this.xrLabel41.LocationFloat = new DevExpress.Utils.PointFloat(542.9999F, 555.6516F);
+            this.xrLabel41.LocationFloat = new DevExpress.Utils.PointFloat(542.9999F, 467.6516F);
             this.xrLabel41.Multiline = true;
             this.xrLabel41.Name = "xrLabel41";
             this.xrLabel41.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel41.SizeF = new System.Drawing.SizeF(100F, 23F);
             this.xrLabel41.StylePriority.UseTextAlignment = false;
             this.xrLabel41.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrLabel41.TextFormatString = "{0:dd.MM.yyyy}";
             // 
             // xrLabel42
             // 
             this.xrLabel42.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FaturaNo]")});
-            this.xrLabel42.LocationFloat = new DevExpress.Utils.PointFloat(542.9999F, 594.5682F);
+            this.xrLabel42.LocationFloat = new DevExpress.Utils.PointFloat(542.9999F, 506.5682F);
             this.xrLabel42.Multiline = true;
             this.xrLabel42.Name = "xrLabel42";
             this.xrLabel42.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -331,7 +332,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel43.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Aciklama]")});
-            this.xrLabel43.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 860.1932F);
+            this.xrLabel43.LocationFloat = new DevExpress.Utils.PointFloat(13.00001F, 801.1932F);
             this.xrLabel43.Multiline = true;
             this.xrLabel43.Name = "xrLabel43";
             this.xrLabel43.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -341,7 +342,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel44.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KdvOrani]")});
-            this.xrLabel44.LocationFloat = new DevExpress.Utils.PointFloat(312.375F, 860.1932F);
+            this.xrLabel44.LocationFloat = new DevExpress.Utils.PointFloat(312.375F, 801.1932F);
             this.xrLabel44.Multiline = true;
             this.xrLabel44.Name = "xrLabel44";
             this.xrLabel44.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -351,7 +352,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel45.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KdvHaricTutar]")});
-            this.xrLabel45.LocationFloat = new DevExpress.Utils.PointFloat(486.3333F, 860.1932F);
+            this.xrLabel45.LocationFloat = new DevExpress.Utils.PointFloat(486.3333F, 801.1932F);
             this.xrLabel45.Multiline = true;
             this.xrLabel45.Name = "xrLabel45";
             this.xrLabel45.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -361,7 +362,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel46
             // 
             this.xrLabel46.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel46.LocationFloat = new DevExpress.Utils.PointFloat(12.99999F, 946.6516F);
+            this.xrLabel46.LocationFloat = new DevExpress.Utils.PointFloat(12.99999F, 884.6516F);
             this.xrLabel46.Multiline = true;
             this.xrLabel46.Name = "xrLabel46";
             this.xrLabel46.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -373,7 +374,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel47.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TutarYazi]")});
-            this.xrLabel47.LocationFloat = new DevExpress.Utils.PointFloat(83.29167F, 946.6516F);
+            this.xrLabel47.LocationFloat = new DevExpress.Utils.PointFloat(83.29167F, 884.6516F);
             this.xrLabel47.Multiline = true;
             this.xrLabel47.Name = "xrLabel47";
             this.xrLabel47.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -382,7 +383,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel48
             // 
             this.xrLabel48.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel48.LocationFloat = new DevExpress.Utils.PointFloat(347.2083F, 946.6516F);
+            this.xrLabel48.LocationFloat = new DevExpress.Utils.PointFloat(347.2083F, 884.6516F);
             this.xrLabel48.Multiline = true;
             this.xrLabel48.Name = "xrLabel48";
             this.xrLabel48.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -396,7 +397,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel49.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KdvHaricTutar]")});
-            this.xrLabel49.LocationFloat = new DevExpress.Utils.PointFloat(486.3334F, 946.6516F);
+            this.xrLabel49.LocationFloat = new DevExpress.Utils.PointFloat(486.3334F, 884.6516F);
             this.xrLabel49.Multiline = true;
             this.xrLabel49.Name = "xrLabel49";
             this.xrLabel49.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -408,7 +409,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel50
             // 
             this.xrLabel50.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel50.LocationFloat = new DevExpress.Utils.PointFloat(347.2083F, 984.1516F);
+            this.xrLabel50.LocationFloat = new DevExpress.Utils.PointFloat(347.2083F, 922.1516F);
             this.xrLabel50.Multiline = true;
             this.xrLabel50.Name = "xrLabel50";
             this.xrLabel50.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -422,7 +423,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel51.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KdvTutari]")});
-            this.xrLabel51.LocationFloat = new DevExpress.Utils.PointFloat(486.3333F, 984.1516F);
+            this.xrLabel51.LocationFloat = new DevExpress.Utils.PointFloat(486.3333F, 922.1516F);
             this.xrLabel51.Multiline = true;
             this.xrLabel51.Name = "xrLabel51";
             this.xrLabel51.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -434,7 +435,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel52
             // 
             this.xrLabel52.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel52.LocationFloat = new DevExpress.Utils.PointFloat(347.2083F, 1022.693F);
+            this.xrLabel52.LocationFloat = new DevExpress.Utils.PointFloat(347.2083F, 960.693F);
             this.xrLabel52.Multiline = true;
             this.xrLabel52.Name = "xrLabel52";
             this.xrLabel52.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -448,7 +449,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel53.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ToplamTutar]")});
-            this.xrLabel53.LocationFloat = new DevExpress.Utils.PointFloat(486.3334F, 1022.693F);
+            this.xrLabel53.LocationFloat = new DevExpress.Utils.PointFloat(486.3334F, 960.693F);
             this.xrLabel53.Multiline = true;
             this.xrLabel53.Name = "xrLabel53";
             this.xrLabel53.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -461,7 +462,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel54.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Soyadi]")});
-            this.xrLabel54.LocationFloat = new DevExpress.Utils.PointFloat(342F, 615.4016F);
+            this.xrLabel54.LocationFloat = new DevExpress.Utils.PointFloat(342F, 527.4016F);
             this.xrLabel54.Multiline = true;
             this.xrLabel54.Name = "xrLabel54";
             this.xrLabel54.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -471,7 +472,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel27.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Soyadi]")});
-            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(339F, 69.75001F);
+            this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(339F, 49.75001F);
             this.xrLabel27.Multiline = true;
             this.xrLabel27.Name = "xrLabel27";
             this.xrLabel27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -481,7 +482,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ToplamTutar]")});
-            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(483.3334F, 477.0417F);
+            this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(483.3334F, 414.0417F);
             this.xrLabel26.Multiline = true;
             this.xrLabel26.Name = "xrLabel26";
             this.xrLabel26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -493,7 +494,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel25
             // 
             this.xrLabel25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(344.2083F, 477.0417F);
+            this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(344.2083F, 414.0417F);
             this.xrLabel25.Multiline = true;
             this.xrLabel25.Name = "xrLabel25";
             this.xrLabel25.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -507,7 +508,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel24.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KdvTutari]")});
-            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(483.3333F, 438.5F);
+            this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(483.3333F, 375.5F);
             this.xrLabel24.Multiline = true;
             this.xrLabel24.Name = "xrLabel24";
             this.xrLabel24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -519,7 +520,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel23
             // 
             this.xrLabel23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(344.2083F, 438.5F);
+            this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(344.2083F, 375.5F);
             this.xrLabel23.Multiline = true;
             this.xrLabel23.Name = "xrLabel23";
             this.xrLabel23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -533,7 +534,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel22.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KdvHaricTutar]")});
-            this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(483.3334F, 401F);
+            this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(483.3334F, 338F);
             this.xrLabel22.Multiline = true;
             this.xrLabel22.Name = "xrLabel22";
             this.xrLabel22.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -545,7 +546,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel21
             // 
             this.xrLabel21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(344.2083F, 401F);
+            this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(344.2083F, 338F);
             this.xrLabel21.Multiline = true;
             this.xrLabel21.Name = "xrLabel21";
             this.xrLabel21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -559,7 +560,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TutarYazi]")});
-            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(80.29167F, 401F);
+            this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(80.29167F, 338F);
             this.xrLabel20.Multiline = true;
             this.xrLabel20.Name = "xrLabel20";
             this.xrLabel20.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -568,7 +569,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel19
             // 
             this.xrLabel19.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(9.999989F, 401F);
+            this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(9.999989F, 338F);
             this.xrLabel19.Multiline = true;
             this.xrLabel19.Name = "xrLabel19";
             this.xrLabel19.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -580,7 +581,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KdvHaricTutar]")});
-            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(483.3333F, 314.5417F);
+            this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(483.3333F, 252.5417F);
             this.xrLabel18.Multiline = true;
             this.xrLabel18.Name = "xrLabel18";
             this.xrLabel18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -591,7 +592,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel17.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KdvOrani]")});
-            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(309.375F, 314.5417F);
+            this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(309.375F, 252.5417F);
             this.xrLabel17.Multiline = true;
             this.xrLabel17.Name = "xrLabel17";
             this.xrLabel17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -601,7 +602,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Aciklama]")});
-            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 314.5417F);
+            this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 252.5417F);
             this.xrLabel16.Multiline = true;
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -611,7 +612,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FaturaNo]")});
-            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(539.9999F, 48.91666F);
+            this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(539.9999F, 43.91666F);
             this.xrLabel15.Multiline = true;
             this.xrLabel15.Name = "xrLabel15";
             this.xrLabel15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -623,19 +624,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel14.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tarih]")});
-            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(539.9999F, 10.00001F);
+            this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(539.9999F, 5.00001F);
             this.xrLabel14.Multiline = true;
             this.xrLabel14.Name = "xrLabel14";
             this.xrLabel14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel14.SizeF = new System.Drawing.SizeF(100F, 23F);
             this.xrLabel14.StylePriority.UseTextAlignment = false;
             this.xrLabel14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.xrLabel14.TextFormatString = "{0:dd.MM.yyyy}";
             // 
             // xrLabel13
             // 
             this.xrLabel13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FaturaAdresIlceAdi]")});
-            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(382.3641F, 269.75F);
+            this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(382.3641F, 215.75F);
             this.xrLabel13.Multiline = true;
             this.xrLabel13.Name = "xrLabel13";
             this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -645,7 +647,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FaturaAdresIlAdi]")});
-            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 269.75F);
+            this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 215.75F);
             this.xrLabel12.Multiline = true;
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -655,17 +657,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel11.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[FaturaAdres]")});
-            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 180.1667F);
+            this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(204.1667F, 160.1667F);
             this.xrLabel11.Multiline = true;
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel11.SizeF = new System.Drawing.SizeF(344.2227F, 70.91667F);
+            this.xrLabel11.SizeF = new System.Drawing.SizeF(427.9999F, 44.875F);
             // 
             // xrLabel10
             // 
             this.xrLabel10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[VeliAdi]")});
-            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 145.7917F);
+            this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 125.7917F);
             this.xrLabel10.Multiline = true;
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -675,7 +677,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[VeliSoyadi]")});
-            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(339F, 145.7917F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(339F, 125.7917F);
             this.xrLabel9.Multiline = true;
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -685,7 +687,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SinifAdi]")});
-            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 107.25F);
+            this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 87.25F);
             this.xrLabel8.Multiline = true;
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -695,7 +697,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel7.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Adi]")});
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 69.75001F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 49.75001F);
             this.xrLabel7.Multiline = true;
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -705,7 +707,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             this.xrLabel6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TcKimlikNo]")});
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 27.04169F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(201.1667F, 7.041691F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -714,7 +716,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel5
             // 
             this.xrLabel5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 180.1667F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 160.1667F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -725,7 +727,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel4
             // 
             this.xrLabel4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 145.7917F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 125.7917F);
             this.xrLabel4.Multiline = true;
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -736,7 +738,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel3
             // 
             this.xrLabel3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 107.25F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 87.25F);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -747,7 +749,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 69.74999F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 49.74999F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -758,7 +760,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 27.04166F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 7.04166F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -794,7 +796,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
         private DevExpress.XtraReports.UI.TopMarginBand TopMargin;
         private DevExpress.XtraReports.UI.BottomMarginBand BottomMargin;
         private DevExpress.XtraReports.UI.DetailBand Detail;
-        private DevExpress.DataAccess.ObjectBinding.ObjectDataSource Fatura_Bilgileri;
         private DevExpress.XtraReports.UI.XRLabel xrLabel5;
         private DevExpress.XtraReports.UI.XRLabel xrLabel4;
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
@@ -850,5 +851,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
         private DevExpress.XtraReports.UI.XRLabel xrLabel52;
         private DevExpress.XtraReports.UI.XRLabel xrLabel53;
         private DevExpress.XtraReports.UI.XRLabel xrLabel54;
+        protected internal DevExpress.DataAccess.ObjectBinding.ObjectDataSource Fatura_Bilgileri;
     }
 }

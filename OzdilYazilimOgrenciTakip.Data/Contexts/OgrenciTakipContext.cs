@@ -2,6 +2,7 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using OzdilYazilimOgrenciTakip.Data.OgrenciTakipMigration;
 using OzdilYazilimOgrenciTakip.Model.Entities;
+using OzdilYazilimOgrenciTakip.Model.Entities.Ozdil;
 
 namespace OzdilYazilimOgrenciTakip.Data.Contexts
 {
@@ -84,6 +85,7 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<MakbuzHareketleri> MakbuzHareketleri { get; set; }
         public DbSet<Rapor> Rapor { get; set; }
         public DbSet<Fatura> Fatura { get; set; }
+        public DbSet<Urun> Urun { get; set; }
 
 
 

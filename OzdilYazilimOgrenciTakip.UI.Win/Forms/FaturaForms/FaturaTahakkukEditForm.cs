@@ -2,10 +2,13 @@
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Functions;
+using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using System;
+using System.Collections.Generic;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms
 {
@@ -81,6 +84,57 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms
             return true;
 
         }
+
+        protected override void Yazdir()
+        {
+            var source = new List<FaturaR>();
+            for (int i = 0; i <faturaTahakkukTable.Tablo.DataRowCount; i++)
+            {
+                var entity = faturaTahakkukTable.Tablo.GetRow<FaturaPlaniL>(i);
+                if (entity == null) return;
+
+                var row = new FaturaR
+                {
+                    OkulNo=entity.OkulNo,
+                    OgrenciNo = entity.OgrenciNo,
+                    TcKimlikNo=entity.TcKimlikNo,
+                    Adi = entity.Adi,
+                    Soyadi = entity.Soyadi,
+                    SinifAdi = entity.SinifAdi,
+                    VeliTcKimlikNo=entity.VeliTcKimlikNo,
+                    VeliAdi=entity.VeliAdi,
+                    VeliSoyadi=entity.VeliSoyadi,
+                    VeliYakinlikAdi=entity.VeliYakinlikAdi,
+                    VeliMeslekAdi=entity.VeliMeslekAdi,
+                    FaturaNo=entity.FaturaNo,
+                    FaturaAdres=entity.FaturaAdres,
+                    FaturaAdresIlAdi=entity.FaturaAdresIlAdi,
+                    FaturaAdresIlceAdi=entity.FaturaAdresIlceAdi,
+                    Aciklama=entity.Aciklama,
+                    Tarih=entity.TahakkukTarih,
+                    Tutar=entity.TahakkukTutar,
+                    Indirim=entity.TahakkukIndirimTutar,
+                    NetTutar=entity.TahakkukNetTutar,
+                    KdvSekli=entity.KdvSekli,
+                    KdvOrani=entity.KdvOrani,
+                    KdvHaricTutar=entity.KdvHaricTutar,
+                    KdvTutari=entity.KdvTutar,
+                    ToplamTutar=entity.ToplamTutar,
+                    TutarYazi=entity.TutarYazi,
+                    Sube=entity.Sube,
+                    Donem=entity.Donem
+                  
+
+                };
+
+                source.Add(row);
+            }
+
+            ShowListForms<RaporSecim>.ShowDialogListForm(KartTuru.Rapor, false, RaporBolumTuru.FaturaDonemRaporlari, source);
+
+
+        }
+
 
         protected override void Control_SelectedValueChanged(object sender, EventArgs e)
         {

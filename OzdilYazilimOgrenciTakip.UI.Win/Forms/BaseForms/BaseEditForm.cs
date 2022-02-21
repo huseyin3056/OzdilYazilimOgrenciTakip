@@ -111,14 +111,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                     foreach (Control ctrl in layout.Controls)
                         ControlEvents(ctrl);
 
-
-
-
-
-
         }
-
-
 
         protected virtual void Control_Enter(object sender, EventArgs e) { }
 
@@ -128,14 +121,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         {
             if (_formSablonKayitEdilecek)
                 Name.FormSablonKaydet(Left, Top, Width, Height, WindowState);
-
         }
 
-
-        protected virtual void TabloYukle()
-        {
-
-        }
+        protected virtual void TabloYukle() { }
 
 
         private void SablonYukle()
@@ -355,10 +343,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         protected virtual void BaskiOnizleme() { }
 
-        protected virtual void Yazdir()
-        {
-
-        }
+        protected virtual void Yazdir() { }
 
         protected virtual void SecimYap(object sender) { }
 
@@ -367,8 +352,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             if (!((IBaseCommonBll)Bll).Delete(OldEntity)) return;
             RefreshYapilacak = true;
             Close();
-
-
 
         }
 
@@ -385,7 +368,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         }
 
         protected virtual void TaksitOlustur() { }
-
 
 
         private bool Kaydet(bool kapanis)

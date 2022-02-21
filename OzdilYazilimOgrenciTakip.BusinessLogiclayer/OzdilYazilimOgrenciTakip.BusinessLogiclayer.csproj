@@ -79,6 +79,7 @@
     <Compile Include="General\AileBilgiBll.cs" />
     <Compile Include="General\AileBilgileriBll.cs" />
     <Compile Include="General\AvukatBll.cs" />
+    <Compile Include="General\AylikKayitRaporuBll.cs" />
     <Compile Include="General\BankaBll.cs" />
     <Compile Include="General\BankaHesapBll.cs" />
     <Compile Include="General\BankaSubeBll.cs" />
@@ -91,8 +92,11 @@
     <Compile Include="General\EvrakBll.cs" />
     <Compile Include="General\FaturaBll.cs" />
     <Compile Include="General\FiltreBll.cs" />
+    <Compile Include="General\GelirDagilimRaporuBll.cs" />
+    <Compile Include="General\GenelAmacliRaporBll.cs" />
     <Compile Include="General\GeriOdemeBilgileriBll.cs" />
     <Compile Include="General\GorevBll.cs" />
+    <Compile Include="General\HizmetAlimRaporuBll.cs" />
     <Compile Include="General\HizmetBilgileriBll.cs" />
     <Compile Include="General\HizmetBll.cs" />
     <Compile Include="General\HizmetTuruBll.cs" />
@@ -102,6 +106,7 @@
     <Compile Include="General\IletisimBll.cs" />
     <Compile Include="General\IndirimBilgileriBll.cs" />
     <Compile Include="General\IndirimBll.cs" />
+    <Compile Include="General\IndirimDagilimRaporuBll.cs" />
     <Compile Include="General\IndiriminUygulanacagiHizmetBilgileriBll.cs" />
     <Compile Include="General\IndirimTuruBll.cs" />
     <Compile Include="General\IptalNedeniBll.cs" />
@@ -112,6 +117,9 @@
     <Compile Include="General\MakbuzBll.cs" />
     <Compile Include="General\MakbuzHareketleriBll.cs" />
     <Compile Include="General\MeslekBll.cs" />
+    <Compile Include="General\MesleklereGoreKayitRaporuBll.cs" />
+    <Compile Include="General\NetUcretRaporuBll.cs" />
+    <Compile Include="General\OdemeBelgeleriRaporuBll.cs" />
     <Compile Include="General\OdemeBilgileriBll.cs" />
     <Compile Include="General\OdemeTuruBll.cs" />
     <Compile Include="General\OgrenciBll.cs" />
@@ -129,6 +137,8 @@
     <Compile Include="General\SubeBll.cs" />
     <Compile Include="General\TahakkukBll.cs" />
     <Compile Include="General\TesvikBll.cs" />
+    <Compile Include="General\UcretOrtalamalariBll.cs" />
+    <Compile Include="General\UcretVeOdemeRaporuBll.cs" />
     <Compile Include="General\YabanciDilBll.cs" />
     <Compile Include="General\YakinlikBll.cs" />
     <Compile Include="Interfaces\IBaseBll.cs" />
@@ -136,6 +146,7 @@
     <Compile Include="Interfaces\IBaseGenelBll.cs" />
     <Compile Include="Interfaces\IBaseHareketGenelBll.cs" />
     <Compile Include="Interfaces\IBaseHareketSelectBll.cs" />
+    <Compile Include="Ozdil\UrunBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

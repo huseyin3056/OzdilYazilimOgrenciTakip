@@ -11,6 +11,7 @@ using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
+using OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura;
 using OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Makbuz;
 using OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Tahakkuk;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
@@ -31,6 +32,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private readonly IEnumerable<GeriOdemeBilgileriR> _geriOdemeBilgileri;
         private readonly IEnumerable<EposBilgileriR> _ePosBilgileri;
         private readonly IEnumerable<MakbuzHareketleriR> _makbuzBilgileri;
+        private readonly IEnumerable<FaturaR> _faturaBilgileri;
         private readonly RaporBolumTuru _raporBolumTuru;
 
         public RaporSecim(params object[] prm)
@@ -39,7 +41,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
             Bll = new RaporBll();
 
-            ShowItems = new DevExpress.XtraBars.BarItem[] { btnYeniRapor, btnBaskiOnizleme};
+            ShowItems = new DevExpress.XtraBars.BarItem[] { btnYeniRapor, btnBaskiOnizleme };
             HideItems = new DevExpress.XtraBars.BarItem[] { btnYeni, btnSec, btnFiltrele, btnKolonlar, barFiltrele, barFiltreleAciklama, barKolonlar, barKolonlarAciklama };
 
             btnDuzelt.CreateDropDownMenu(new DevExpress.XtraBars.BarItem[] { btnTasarimDegistir });
@@ -63,9 +65,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 _ePosBilgileri = (IEnumerable<EposBilgileriR>)prm[7];
             }
 
-           else if (_raporBolumTuru == RaporBolumTuru.MakbuzRaporlari)
+            else if (_raporBolumTuru == RaporBolumTuru.MakbuzRaporlari)
             {
                 _makbuzBilgileri = (IEnumerable<MakbuzHareketleriR>)prm[1];
+            }
+
+            else if (_raporBolumTuru == RaporBolumTuru.FaturaDonemRaporlari || (_raporBolumTuru == RaporBolumTuru.FaturaGenelRaporlar))
+            {
+                _faturaBilgileri = (IEnumerable<FaturaR>)prm[1];
             }
 
         }
@@ -77,7 +84,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             FormShow = new ShowEditForms<RaporEditForm>();
             Navigator = smallNavigator.Navigator;
 
-            if(_raporBolumTuru==RaporBolumTuru.FaturaDonemRaporlari || _raporBolumTuru==RaporBolumTuru.GenelRaporlar || _raporBolumTuru==RaporBolumTuru.MakbuzRaporlari)
+          
+
+            if (_raporBolumTuru == RaporBolumTuru.FaturaGenelRaporlar || _raporBolumTuru == RaporBolumTuru.FaturaDonemRaporlari || _raporBolumTuru == RaporBolumTuru.GenelRaporlar || _raporBolumTuru == RaporBolumTuru.MakbuzRaporlari)
             {
                 switch (_raporBolumTuru)
                 {
@@ -87,19 +96,27 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                             ShowItems = ShowItems.Concat(showItems).ToArray();
                         }
                         break;
-                    case RaporBolumTuru.GenelRaporlar:
-                        break;
-                    case RaporBolumTuru.TahakkukRaporlari:
-                        break;
+
+
                     case RaporBolumTuru.FaturaDonemRaporlari:
-                        break;
+                        {
+
+                            var showItems = new BarItem[] { btnFatura, btnDonemIcmalRaporu };
+                            ShowItems = ShowItems.Concat(showItems).ToArray();
+                            break;
+                        }
+
                     case RaporBolumTuru.FaturaGenelRaporlar:
-                        break;
-                
-                   
+                        {
+                            var showItems = new BarItem[] { btnOgrenciIcmalRaporu };
+                            ShowItems = ShowItems.Concat(showItems).ToArray();
+                            break;
+                        }
+
+
                 }
 
-                var hideItems = new BarItem[] { 
+                var hideItems = new BarItem[] {
                     btnBosRapor,btnOgrenciKarti,btnBankaOdemePlani,btnIndirimTalepDilekcesi,btnMEBKayitSozlesmesi,btnKayitSozlesmesi,
                     btnKrediKartliOdemeTalimati,btnOdemeSenedi
                 };
@@ -113,7 +130,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         protected override void Listele()
         {
             RowSelect?.ClearSelection();
-            Tablo.GridControl.DataSource = ((RaporBll)Bll).List(x=>x.RaporBolumTuru==_raporBolumTuru &&x.Durum==AktifKartlariGoster);
+            Tablo.GridControl.DataSource = ((RaporBll)Bll).List(x => x.RaporBolumTuru == _raporBolumTuru && x.Durum == AktifKartlariGoster);
 
         }
 
@@ -203,9 +220,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                         x.Key.IndirimAdi,
                         x.Key.IptalTarihi,
                         x.Key.Islemtarihi,
-                        BrutIndirim=x.Sum(y=>y.BrutIndirim),
-                        KistDonemDusulenIndirim=x.Sum(y=>y.KistDonemDusulenIndirim),
-                        NetIndirim=x.Sum(y=>y.NetIndirim)
+                        BrutIndirim = x.Sum(y => y.BrutIndirim),
+                        KistDonemDusulenIndirim = x.Sum(y => y.KistDonemDusulenIndirim),
+                        NetIndirim = x.Sum(y => y.NetIndirim)
 
                     });
 
@@ -216,14 +233,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 case BankaOdemePlaniRaporu rpr:
                     rpr.Ogrenci_Bilgileri.DataSource = _ogrenciBilgileri;
 
-                    var secilenOdemeler= _odemeBilgileri.Where(x => x.OdemeTipi == OdemeTipi.Ots);
+                    var secilenOdemeler = _odemeBilgileri.Where(x => x.OdemeTipi == OdemeTipi.Ots);
                     rpr.toplamTutarYazi.Text = secilenOdemeler.Sum(x => x.Tutar).YaziIleTutar();
                     rpr.Odeme_Bilgileri.DataSource = secilenOdemeler;
                     break;
 
 
                 case MebKayitSozlesmesiRaporu rpr:
-                    rpr.Ogrenci_Bilgileri.DataSource = _ogrenciBilgileri;                
+                    rpr.Ogrenci_Bilgileri.DataSource = _ogrenciBilgileri;
                     break;
 
                 case IndirimDilekcesiRaporu rpr:
@@ -231,10 +248,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                     rpr.Indirim_Bilgileri.DataSource = _indirimBilgileri.GroupBy(x => x.IndirimAdi)
                         .Select(x => new
                         {
-                         IndirimAdi=x.Key,
-                         BrutIndirim=x.Sum(y=>y.BrutIndirim),
-                         KistDonemDusulenIndirim=x.Sum(y=>y.KistDonemDusulenIndirim),
-                         NetIndirim=x.Sum(y=>y.NetIndirim)
+                            IndirimAdi = x.Key,
+                            BrutIndirim = x.Sum(y => y.BrutIndirim),
+                            KistDonemDusulenIndirim = x.Sum(y => y.KistDonemDusulenIndirim),
+                            NetIndirim = x.Sum(y => y.NetIndirim)
 
                         });
                     break;
@@ -248,7 +265,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 case KrediKartliOdemeTalimatiRaporu rpr:
                     rpr.Ogrenci_Bilgileri.DataSource = _ogrenciBilgileri;
                     rpr.EPos_Bilgileri.DataSource = _ePosBilgileri;
-                    rpr.Odeme_Bilgileri.DataSource = _odemeBilgileri.Where(x => x.OdemeTipi == OdemeTipi.Epos).OrderBy(x=>x.Vade);
+                    rpr.Odeme_Bilgileri.DataSource = _odemeBilgileri.Where(x => x.OdemeTipi == OdemeTipi.Epos).OrderBy(x => x.Vade);
                     break;
 
                 case OdemeSenediRaporu rpr:
@@ -283,7 +300,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                     break;
 
 
-                case TahsilatMakbuzuRaporu rpr:                  
+                case TahsilatMakbuzuRaporu rpr:
                     rpr.Makbuz_Bilgileri.DataSource = _makbuzBilgileri;
                     break;
 
@@ -300,6 +317,21 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 case GenelMakbuzRaporu rpr:
                     rpr.Makbuz_Bilgileri.DataSource = _makbuzBilgileri;
                     break;
+
+                case FaturaRaporu rpr:
+                    rpr.Fatura_Bilgileri.DataSource = _faturaBilgileri;
+                    break;
+
+                case FaturaDonemIcmalRaporu rpr:
+                    rpr.Fatura_Bilgileri.DataSource = _faturaBilgileri;
+                    break;
+
+
+                case FaturaOgrenciIcmalRaporu rpr:
+                    rpr.Fatura_Bilgileri.DataSource = _faturaBilgileri;
+                    break;
+
+
             }
         }
 
@@ -394,6 +426,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
             else if (e.Item == btnGenelMakbuz)
                 RaporOlustur(KartTuru.GenelMakbuzRaporu, RaporBolumTuru.MakbuzRaporlari, new GenelMakbuzRaporu());
+
+            else if (e.Item == btnFatura)
+                RaporOlustur(KartTuru.FaturaRaporu, RaporBolumTuru.FaturaDonemRaporlari, new FaturaRaporu());
+
+            else if (e.Item == btnDonemIcmalRaporu)
+                RaporOlustur(KartTuru.FaturaDonemIcmalRaporu, RaporBolumTuru.FaturaDonemRaporlari, new FaturaDonemIcmalRaporu());
+
+
+            else if (e.Item == btnOgrenciIcmalRaporu)
+                RaporOlustur(KartTuru.FaturaOgrenciIcmalRaporu, RaporBolumTuru.FaturaGenelRaporlar, new FaturaOgrenciIcmalRaporu());
 
 
 

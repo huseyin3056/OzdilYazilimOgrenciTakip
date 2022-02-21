@@ -42,7 +42,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
         protected override void Listele()
         {
 
-            Tablo.GridControl.DataSource = ((RaporBll)Bll).List(FilterFunctions.Filter<Rapor>(AktifKartlariGoster));
+            Tablo.GridControl.DataSource = ((RaporBll)Bll).List(x=>x.Durum==AktifKartlariGoster && x.RaporTuru==_raporTuru);
         }
 
         protected override void ShowEditForm(long id)

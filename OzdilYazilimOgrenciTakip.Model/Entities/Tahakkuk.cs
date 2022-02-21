@@ -69,6 +69,8 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public ICollection<HizmetBilgileri> HizmetBilgileri { get; set; }
         public ICollection<IndirimBilgileri> IndirimBilgileri { get; set; }
         public ICollection<Fatura> FaturaBilgileri { get; set; }
+        public ICollection<OdemeBilgileri> OdemeBilgileri { get; set; }
+        public ICollection<GeriOdemeBilgileri> GeriOdemeBilgileri { get; set; }
 
 
 

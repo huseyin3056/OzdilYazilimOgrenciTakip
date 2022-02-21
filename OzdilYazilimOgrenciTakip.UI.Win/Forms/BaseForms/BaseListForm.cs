@@ -87,6 +87,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                 DialogResult = DialogResult.OK; // Ben Ekledim
                 Close(); // Ben Ekledim
 
+
             }
             else
             {
@@ -205,7 +206,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         private void Tablo_CustomDrawFooterCell(object sender, FooterCellCustomDrawEventArgs e)
         {
             if (!Tablo.OptionsView.ShowFooter) return;
-            if (e.Column.Summary.Count > 0)
+            if (e.Column.Summary.Count > 0 && e.Column.ColumnEdit != null)
                 e.Appearance.TextOptions.HAlignment = e.Column.ColumnEdit.Appearance.HAlignment;
         }
 

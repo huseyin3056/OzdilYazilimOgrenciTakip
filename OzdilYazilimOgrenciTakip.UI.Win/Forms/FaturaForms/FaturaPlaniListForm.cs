@@ -8,6 +8,8 @@ using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using System.Collections.Generic;
 using System.Linq;
+using DevExpress.XtraPrinting.Native;
+using DevExpress.Utils.Extensions;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms
 {
@@ -19,8 +21,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms
 
             Bll = new TahakkukBll();
 
-            HideItems = new DevExpress.XtraBars.BarItem[] {btnYeni,barInsert,barInsertAciklama,barDelete,barDeleteAciklama,btnAktifPasifKartlar };
-            ShowItems = new DevExpress.XtraBars.BarItem[] { btnTahakkukYap};
+            HideItems = new DevExpress.XtraBars.BarItem[] { btnYeni, barInsert, barInsertAciklama, barDelete, barDeleteAciklama, btnAktifPasifKartlar };
+            ShowItems = new DevExpress.XtraBars.BarItem[] { btnTahakkukYap };
 
             btnSil.Caption = "Fatura Planı İptal Et";
             btnTahakkukYap.Caption = "Toplu Fatura Planı";
@@ -34,7 +36,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms
         {
             Tablo = tablo;
             BaseKartTuru = Common.Enums.KartTuru.Fatura;
-          
+
             Navigator = longNavigator.Navigator;
 
 
@@ -42,16 +44,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms
 
         protected override void Listele()
         {
-            tablo.GridControl.DataSource = ((TahakkukBll)Bll).FaturaTahakkukList(x=>x.SubeId==AnaForm.SubeId && x.DonemId==AnaForm.DonemId);
+            tablo.GridControl.DataSource = ((TahakkukBll)Bll).FaturaTahakkukList(x => x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId);
 
         }
 
         protected override void ShowEditForm(long id)
         {
             var entity = tablo.GetRow<FaturaL>();
-            if (entity ==null) return;
+            if (entity == null) return;
 
-            if(entity.HizmetNetTutar==0)
+            if (entity.HizmetNetTutar == 0)
             {
                 Messages.HataMesaji("Öğrencinin Net Ücreti Sıfır ( 0 ) Olduğu İçin Fatura Planı Oluşturamazsınız");
                 return;
@@ -113,6 +115,70 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms
             progressBarControl.Visible = false;
             Messages.BilgiMesaji("Seçilen Öğrencilere Ait Fatura Planları Başarılı Bir Şekilde İptal Edilmiştir");
             Listele();
+
+        }
+
+        protected override void Yazdir()
+        {
+            var source = new List<FaturaR>();
+
+            using (var bll = new FaturaBll())
+            {
+
+                for (int i = 0; i < Tablo.DataRowCount; i++)
+                {
+                    var entity = Tablo.GetRow<FaturaL>(i);
+                    if (entity == null) return;
+                    var list = bll.FaturaTahakkukList(x => x.TahakkukId == entity.Id).Cast<FaturaPlaniL>();
+                    list.ForEach(x =>
+                    {
+
+                        var row = new FaturaR
+                        {
+                            TahakkukId=x.TahakkukId,
+                            OkulNo = x.OkulNo,
+                            OgrenciNo = x.OgrenciNo,
+                            TcKimlikNo = x.TcKimlikNo,
+                            Adi = x.Adi,
+                            Soyadi = x.Soyadi,
+                            SinifAdi = x.SinifAdi,
+                            VeliTcKimlikNo = x.VeliTcKimlikNo,
+                            VeliAdi = x.VeliAdi,
+                            VeliSoyadi = x.VeliSoyadi,
+                            VeliYakinlikAdi = x.VeliYakinlikAdi,
+                            VeliMeslekAdi = x.VeliMeslekAdi,
+                            FaturaNo=x.FaturaNo,                      
+                            FaturaAdres = x.FaturaAdres,                         
+                            FaturaAdresIlAdi = x.FaturaAdresIlAdi,
+                            FaturaAdresIlceAdi = x.FaturaAdresIlceAdi,
+                            Aciklama = x.Aciklama,
+                            Tarih = x.TahakkukTarih,
+                            Tutar = x.TahakkukTutar,
+                            Indirim = x.TahakkukIndirimTutar,
+                            NetTutar = x.TahakkukNetTutar,
+                            KdvSekli = x.KdvSekli,
+                            KdvOrani = x.KdvOrani,
+                            KdvHaricTutar = x.KdvHaricTutar,
+                            KdvTutari = x.KdvTutar,
+                            ToplamTutar = x.ToplamTutar,
+                            TutarYazi = x.TutarYazi,
+                            PlanTutar=entity.PlanTutar,
+                            PlanIndirim=entity.PlanIndirim,
+                            PlanNetTutar=entity.PlanNetTutar,
+                           
+                            Sube = x.Sube,
+                            Donem = x.Donem
+
+                        };
+
+                        source.Add(row);
+
+                    });
+                }
+
+                ShowListForms<RaporSecim>.ShowDialogListForm(KartTuru.FaturaRaporu, false, RaporBolumTuru.FaturaGenelRaporlar, source);
+
+            }
 
         }
     }

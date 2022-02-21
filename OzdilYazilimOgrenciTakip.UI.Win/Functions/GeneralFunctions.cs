@@ -95,10 +95,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
                 }
 
-                else if (!currentValue.Equals(oldValue))
-                {
+                else if (!currentValue.Equals(oldValue))             
                     return VeriDegisimYeri.Alan;
-                }
 
             }
 
@@ -395,6 +393,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             var stream = new MemoryStream();
             rapor.SaveLayout(stream);
             return stream;
+        }
+
+        public static IEnumerable<T> CheckedComboBoxList<T> (this MyChechedComboBoxEdit comboBox)
+        {
+            var results= comboBox.Properties.Items.Where(x => x.CheckState == CheckState.Checked).Select(x => (T)x.Value);
+
+            return results;
         }
     }
 }

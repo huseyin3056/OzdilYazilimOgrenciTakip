@@ -34,7 +34,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary3 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary4 = new DevExpress.XtraReports.UI.XRSummary();
-            DevExpress.XtraReports.UI.XRSummary xrSummary5 = new DevExpress.XtraReports.UI.XRSummary();
             this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
             this.xrPageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
@@ -299,7 +298,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // xrTableCell1
             // 
             this.xrTableCell1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Tutar]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ToplamTutar]")});
             this.xrTableCell1.Multiline = true;
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.TextFormatString = "{0:N2}";
@@ -474,14 +473,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             // 
             // xrTableCell3
             // 
-            this.xrTableCell3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TOPLAM]")});
             this.xrTableCell3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold);
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseFont = false;
-            xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.xrTableCell3.Summary = xrSummary2;
+            this.xrTableCell3.Text = "TOPLAM";
             this.xrTableCell3.Weight = 3.9452862348501245D;
             // 
             // xrTableCell11
@@ -492,8 +488,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             this.xrTableCell11.Multiline = true;
             this.xrTableCell11.Name = "xrTableCell11";
             this.xrTableCell11.StylePriority.UseFont = false;
-            xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.xrTableCell11.Summary = xrSummary3;
+            xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.xrTableCell11.Summary = xrSummary2;
             this.xrTableCell11.TextFormatString = "{0:N2}";
             this.xrTableCell11.Weight = 0.582777409593644D;
             // 
@@ -505,8 +501,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             this.xrTableCell12.Multiline = true;
             this.xrTableCell12.Name = "xrTableCell12";
             this.xrTableCell12.StylePriority.UseFont = false;
-            xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.xrTableCell12.Summary = xrSummary4;
+            xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.xrTableCell12.Summary = xrSummary3;
             this.xrTableCell12.TextFormatString = "{0:N2}";
             this.xrTableCell12.Weight = 0.45152818812173479D;
             // 
@@ -518,8 +514,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
             this.xrTableCell13.Multiline = true;
             this.xrTableCell13.Name = "xrTableCell13";
             this.xrTableCell13.StylePriority.UseFont = false;
-            xrSummary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
-            this.xrTableCell13.Summary = xrSummary5;
+            xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.xrTableCell13.Summary = xrSummary4;
             this.xrTableCell13.TextFormatString = "{0:N2}";
             this.xrTableCell13.Weight = 0.620502552690541D;
             // 
@@ -556,7 +552,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
         private DevExpress.XtraReports.UI.XRLabel xrLabel3;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
-        private DevExpress.DataAccess.ObjectBinding.ObjectDataSource Fatura_Bilgileri;
         private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
         private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
         private DevExpress.XtraReports.UI.XRTable xrTable8;
@@ -591,5 +586,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Fatura
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell11;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell12;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell13;
+        protected internal DevExpress.DataAccess.ObjectBinding.ObjectDataSource Fatura_Bilgileri;
     }
 }

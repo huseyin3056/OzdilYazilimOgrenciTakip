@@ -2,7 +2,7 @@
 {
     public interface IBaseHareketEntity
     {
-
+        // Properties
         bool Insert { get; set; }
 
        bool Update { get; set; }

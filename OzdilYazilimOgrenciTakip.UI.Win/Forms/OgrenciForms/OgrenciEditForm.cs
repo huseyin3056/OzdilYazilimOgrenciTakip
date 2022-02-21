@@ -33,7 +33,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new OgrenciS() : ((OgrenciBll)Bll).Single(FilterFunctions.Filter<Ogrenci>(Id));
             NesneyiKontrollereBagla();
-
+            TabloYukle();
             if (BaseIslemTuru != IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((OgrenciBll)Bll).YeniKodVer();
@@ -126,6 +126,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
 
         }
 
+        protected override void TabloYukle()
+        {
+
+            tahakkukBilgileriTable.OwnerForm = this;
+            tahakkukBilgileriTable.Yukle();
+
+        }
+
+
         protected override void SecimYap(object sender)
         {
             if (!(sender is ButtonEdit)) return;
@@ -153,6 +162,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
 
              
         }
+
+
 
         protected override void Control_EnabledChange(object sender, EventArgs e)
         {

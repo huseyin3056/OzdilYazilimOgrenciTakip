@@ -35,6 +35,9 @@ using OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.SubeForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms;
+using System.Collections.Generic;
+using OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 {
@@ -44,7 +47,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         public static string SubeAdi = "Şube  Bilgisi Bekleniyor";
 
         public static long DonemId=1;
-        public static long SubeId=1;
+        public static long SubeId= 1;
 
         public static DateTime EgitimBaslamaTarihi = new DateTime(2021, 01, 01);
         public static DateTime DonemBaslamaTarihi = new DateTime(2021, 01, 01);
@@ -74,7 +77,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         public static long? DefaultAvukatHesapId;
         public static string DefaultAvukatHesapAdi;
         public static long KullaniciId = 1;
-
+        public static bool RaporlariOnayAlmadanKapat = false;
+        public static List<long> YetkiliOlunanSubeler=new List<long> { 1, 2, 2022021115380466596 };
 
 
         public AnaForm()
@@ -113,6 +117,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             {
                 ShowListForms<AileBilgiListForm>.ShowListForm(KartTuru.AileBilgi);
             }
+
+            else if (e.Item == btnUrunler)
+            {
+                ShowListForms<UrunListForm>.ShowListForm(KartTuru.UrunTanimi);
+            }
+
 
             else if (e.Item == btnIptalNedeniKartlari)
             {
@@ -272,6 +282,75 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 ShowEditForms<FaturaTahakkukEditForm>.ShowDialogEditForm(KartTuru.Fatura);
             }
 
+            else if (e.Item == btnGenelAmacliRapor)
+            {
+            
+                ShowEditReports<GenelAmacliRapor>.ShowEditReport(KartTuru.GenelAmacliRapor);
+            }
+
+
+            else if (e.Item == btnSinifRaporlari)
+            {
+
+                ShowEditReports<SinifRaporlari>.ShowEditReport(KartTuru.SinifRaporlari);
+            }
+
+
+            else if (e.Item == btnHizmetAlimRapor)
+            {
+
+                ShowEditReports<HizmetAlimRaporu>.ShowEditReport(KartTuru.HizmetAlimRaporu);
+            }
+
+            else if (e.Item == btnNetUcretRaporu)
+            {
+
+                ShowEditReports<NetUcretRaporu>.ShowEditReport(KartTuru.NetUcretRaporu);
+            }
+
+            else if (e.Item == btnUcretveOdemeRaporu)
+            {
+
+                ShowEditReports<UcretVeOdemeRaporu>.ShowEditReport(KartTuru.UcretVeOdemeRaporu);
+            }
+
+            else if (e.Item == btnIndirimDagilimRaporu)
+            {
+
+                ShowEditReports<IndirimDagilimRaporu>.ShowEditReport(KartTuru.IndirimDagilimRaporu);
+            }
+
+            else if (e.Item == btnMesleklereGoreKayitRaporu)
+            {
+
+                ShowEditReports<MesleklereGoreKayitRaporu>.ShowEditReport(KartTuru.MesleklereGoreKayitRaporu);
+            }
+
+            else if (e.Item == btnAylikKayitRaporu)
+            {
+
+                ShowEditReports<AylikKayitRaporu>.ShowEditReport(KartTuru.AylikKayitRaporu);
+            }
+
+            else if (e.Item == btnGelirDagilimRaporu)
+            {
+
+                ShowEditReports<GelirDagilimRaporu>.ShowEditReport(KartTuru.GelirDagilimRaporu);
+            }
+
+            else if (e.Item == btnUcretOrtalamalariRaporu)
+            {
+
+                ShowEditReports<UcretOrtalamalariRaporu>.ShowEditReport(KartTuru.UcretOrtalamalariRaporu);
+            }
+
+            else if (e.Item == btnOdemeBelgeleriRaporu)
+            {
+
+                ShowEditReports<OdemeBelgeleriRaporu>.ShowEditReport(KartTuru.OdemeBelgeleriRaporu);
+            }
+
+          
 
         }
     }

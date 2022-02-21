@@ -39,8 +39,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             BaseKartTuru = Common.Enums.KartTuru.Hizmet;
             FormShow = new ShowEditForms<TahakkukEditForm>();
             Navigator = longNavigator.Navigator;
-          
-
 
         }
 
@@ -55,8 +53,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 EklenebilecekEntityVar = true;
             else
                 Messages.KartBulunamadiMesaji("Kart");
-
-
 
         }
     }

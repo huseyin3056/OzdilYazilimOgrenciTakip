@@ -36,7 +36,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
 
             if (BaseIslemTuru != IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
-            txtKod.Text = ((RaporBll)Bll).YeniKodVer(x=>x.RaporBolumTuru == _raporBolumTuru);
+            txtKod.Text = ((RaporBll)Bll).YeniKodVer(x=>x.RaporBolumTuru == _raporBolumTuru && x.RaporTuru==_raporTuru);
             txtRaporAdi.Focus();
         }
         protected override void NesneyiKontrollereBagla()
@@ -73,13 +73,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
 
         protected override bool EntityInsert()
         {
-            return ((RaporBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.RaporBolumTuru == _raporBolumTuru);
+            return ((RaporBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.RaporBolumTuru == _raporBolumTuru && x.RaporTuru==_raporTuru);
 
         }
 
         protected override bool EntityUpdate()
         {
-            return ((RaporBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.RaporBolumTuru == _raporBolumTuru);
+            return ((RaporBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.RaporBolumTuru == _raporBolumTuru && x.RaporTuru==_raporTuru);
 
         }
     }

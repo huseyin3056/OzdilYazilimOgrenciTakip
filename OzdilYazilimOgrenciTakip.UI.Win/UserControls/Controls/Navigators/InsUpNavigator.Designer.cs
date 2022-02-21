@@ -48,8 +48,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.Navigators
             this.Navigator.Buttons.ImageList = this.imageCollection;
             this.Navigator.Buttons.Last.ImageIndex = 5;
             this.Navigator.Buttons.Next.ImageIndex = 3;
+            this.Navigator.Buttons.NextPage.ImageIndex = 4;
             this.Navigator.Buttons.NextPage.Visible = false;
             this.Navigator.Buttons.Prev.ImageIndex = 2;
+            this.Navigator.Buttons.PrevPage.ImageIndex = 1;
             this.Navigator.Buttons.PrevPage.Visible = false;
             this.Navigator.Buttons.Remove.ImageIndex = 7;
             this.Navigator.Dock = System.Windows.Forms.DockStyle.Bottom;

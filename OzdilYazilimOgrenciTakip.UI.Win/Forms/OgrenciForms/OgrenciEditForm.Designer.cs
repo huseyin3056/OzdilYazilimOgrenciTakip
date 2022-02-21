@@ -111,6 +111,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.tahakkukBilgileriTable = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditFormTable.TahakkukBilgileriTable();
+            this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
@@ -178,6 +180,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -196,6 +199,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             // myDataLayoutControl
             // 
+            this.myDataLayoutControl.Controls.Add(this.tahakkukBilgileriTable);
             this.myDataLayoutControl.Controls.Add(this.txtKod);
             this.myDataLayoutControl.Controls.Add(this.imgResim);
             this.myDataLayoutControl.Controls.Add(this.tglDurum);
@@ -385,7 +389,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtKimlikVerilisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtKimlikVerilisTarihi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.txtKimlikVerilisTarihi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtKimlikVerilisTarihi.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtKimlikVerilisTarihi.Size = new System.Drawing.Size(110, 20);
@@ -575,7 +578,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDogumTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtDogumTarihi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.txtDogumTarihi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtDogumTarihi.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtDogumTarihi.Size = new System.Drawing.Size(114, 20);
@@ -655,9 +657,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtTel.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtTel.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtTel.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtTel.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.txtTel.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
-            this.txtTel.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtTel.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtTel.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtTel.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -724,9 +723,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtTCKimlikNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtTCKimlikNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtTCKimlikNo.Properties.AppearanceFocused.Options.UseBackColor = true;
-            this.txtTCKimlikNo.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
-            this.txtTCKimlikNo.Properties.Mask.EditMask = "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d? ";
-            this.txtTCKimlikNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtTCKimlikNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtTCKimlikNo.Properties.MaskSettings.Set("mask", "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d? ");
             this.txtTCKimlikNo.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -789,7 +785,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem12,
             this.layoutControlItem13,
             this.layoutControlItem17,
-            this.layoutControlItem16});
+            this.layoutControlItem16,
+            this.layoutControlItem30});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
@@ -1252,6 +1249,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem16.Text = "Birey No";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(71, 13);
             // 
+            // tahakkukBilgileriTable
+            // 
+            this.tahakkukBilgileriTable.Location = new System.Drawing.Point(12, 228);
+            this.tahakkukBilgileriTable.Name = "tahakkukBilgileriTable";
+            this.tahakkukBilgileriTable.Size = new System.Drawing.Size(802, 176);
+            this.tahakkukBilgileriTable.TabIndex = 30;
+            // 
+            // layoutControlItem30
+            // 
+            this.layoutControlItem30.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem30.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem30.Control = this.tahakkukBilgileriTable;
+            this.layoutControlItem30.Location = new System.Drawing.Point(0, 216);
+            this.layoutControlItem30.Name = "layoutControlItem30";
+            this.layoutControlItem30.OptionsTableLayoutItem.ColumnSpan = 9;
+            this.layoutControlItem30.OptionsTableLayoutItem.RowIndex = 9;
+            this.layoutControlItem30.Size = new System.Drawing.Size(806, 180);
+            this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem30.TextVisible = false;
+            // 
             // OgrenciEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1331,6 +1348,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1400,5 +1418,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
+        private UserControls.UserControl.TahakkukEditFormTable.TahakkukBilgileriTable tahakkukBilgileriTable;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
     }
 }

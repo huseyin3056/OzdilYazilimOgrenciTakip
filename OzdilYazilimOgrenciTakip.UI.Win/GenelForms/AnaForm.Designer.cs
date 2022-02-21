@@ -66,6 +66,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnSubeKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.btnGenelAmacliRapor = new DevExpress.XtraBars.BarButtonItem();
             this.btnFaturaKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnFaturaTahakkukKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSinifRaporlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnHizmetAlimRapor = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNetUcretRaporu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUcretveOdemeRaporu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIndirimDagilimRaporu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnMesleklereGoreKayitRaporu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAylikKayitRaporu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGelirDagilimRaporu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUcretOrtalamalariRaporu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnOdemeBelgeleriRaporu = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -87,14 +98,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.imageList1616 = new System.Windows.Forms.ImageList(this.components);
-            this.btnFaturaTahakkukKartlari = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUrunler = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
-            this.ribbonControl1.ApplicationCaption = "Öğrenci Takip";
+            this.ribbonControl1.ApplicationCaption = "Öğrenci Takip Otomasyonu";
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -133,9 +144,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnSubeKartlari,
             this.btnGenelAmacliRapor,
             this.btnFaturaKartlari,
-            this.btnFaturaTahakkukKartlari});
+            this.btnFaturaTahakkukKartlari,
+            this.btnSinifRaporlari,
+            this.btnHizmetAlimRapor,
+            this.btnNetUcretRaporu,
+            this.btnUcretveOdemeRaporu,
+            this.btnIndirimDagilimRaporu,
+            this.btnMesleklereGoreKayitRaporu,
+            this.btnAylikKayitRaporu,
+            this.btnGelirDagilimRaporu,
+            this.btnUcretOrtalamalariRaporu,
+            this.btnOdemeBelgeleriRaporu,
+            this.btnUrunler});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 36;
+            this.ribbonControl1.MaxItemId = 47;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -350,6 +372,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             this.btnGenelAmacliRapor.Caption = "Genel Amaçlı Rapor";
             this.btnGenelAmacliRapor.Id = 33;
+            this.btnGenelAmacliRapor.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.gaugestylethreeforthcircular_16x16;
+            this.btnGenelAmacliRapor.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.gaugestylethreeforthcircular_32x32;
             this.btnGenelAmacliRapor.Name = "btnGenelAmacliRapor";
             // 
             // btnFaturaKartlari
@@ -357,6 +381,92 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnFaturaKartlari.Caption = "Fatura Kartları";
             this.btnFaturaKartlari.Id = 34;
             this.btnFaturaKartlari.Name = "btnFaturaKartlari";
+            // 
+            // btnFaturaTahakkukKartlari
+            // 
+            this.btnFaturaTahakkukKartlari.Caption = "Fatura Tahakkuk Kartları";
+            this.btnFaturaTahakkukKartlari.Id = 35;
+            this.btnFaturaTahakkukKartlari.Name = "btnFaturaTahakkukKartlari";
+            // 
+            // btnSinifRaporlari
+            // 
+            this.btnSinifRaporlari.Caption = "Sınıf Raporları";
+            this.btnSinifRaporlari.Id = 36;
+            this.btnSinifRaporlari.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_classroom_1;
+            this.btnSinifRaporlari.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_classroom;
+            this.btnSinifRaporlari.Name = "btnSinifRaporlari";
+            // 
+            // btnHizmetAlimRapor
+            // 
+            this.btnHizmetAlimRapor.Caption = "HizmetAlımRaporu";
+            this.btnHizmetAlimRapor.Id = 37;
+            this.btnHizmetAlimRapor.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_food_service_1;
+            this.btnHizmetAlimRapor.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_food_service_1;
+            this.btnHizmetAlimRapor.Name = "btnHizmetAlimRapor";
+            // 
+            // btnNetUcretRaporu
+            // 
+            this.btnNetUcretRaporu.Caption = "Net Ücret Raporu";
+            this.btnNetUcretRaporu.Id = 38;
+            this.btnNetUcretRaporu.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_duration_finance;
+            this.btnNetUcretRaporu.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_duration_finance_1;
+            this.btnNetUcretRaporu.Name = "btnNetUcretRaporu";
+            // 
+            // btnUcretveOdemeRaporu
+            // 
+            this.btnUcretveOdemeRaporu.Caption = "Ücret ve Ödeme Raporu";
+            this.btnUcretveOdemeRaporu.Id = 39;
+            this.btnUcretveOdemeRaporu.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_receive_cash;
+            this.btnUcretveOdemeRaporu.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_get_cash;
+            this.btnUcretveOdemeRaporu.Name = "btnUcretveOdemeRaporu";
+            // 
+            // btnIndirimDagilimRaporu
+            // 
+            this.btnIndirimDagilimRaporu.Caption = "İndirim Dağılım Raporu";
+            this.btnIndirimDagilimRaporu.Id = 40;
+            this.btnIndirimDagilimRaporu.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_discount;
+            this.btnIndirimDagilimRaporu.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_discount_1;
+            this.btnIndirimDagilimRaporu.Name = "btnIndirimDagilimRaporu";
+            // 
+            // btnMesleklereGoreKayitRaporu
+            // 
+            this.btnMesleklereGoreKayitRaporu.Caption = "Mesleklere Göre Kayıt Raporu";
+            this.btnMesleklereGoreKayitRaporu.Id = 41;
+            this.btnMesleklereGoreKayitRaporu.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_permanent_job;
+            this.btnMesleklereGoreKayitRaporu.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_permanent_job_1;
+            this.btnMesleklereGoreKayitRaporu.Name = "btnMesleklereGoreKayitRaporu";
+            // 
+            // btnAylikKayitRaporu
+            // 
+            this.btnAylikKayitRaporu.Caption = "Aylık Kayıt Raporu";
+            this.btnAylikKayitRaporu.Id = 42;
+            this.btnAylikKayitRaporu.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_calendar_7;
+            this.btnAylikKayitRaporu.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_calendar_7_1;
+            this.btnAylikKayitRaporu.Name = "btnAylikKayitRaporu";
+            // 
+            // btnGelirDagilimRaporu
+            // 
+            this.btnGelirDagilimRaporu.Caption = "Gelir Dağılım Raporu";
+            this.btnGelirDagilimRaporu.Id = 43;
+            this.btnGelirDagilimRaporu.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_receive_euro;
+            this.btnGelirDagilimRaporu.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_receive_euro_1;
+            this.btnGelirDagilimRaporu.Name = "btnGelirDagilimRaporu";
+            // 
+            // btnUcretOrtalamalariRaporu
+            // 
+            this.btnUcretOrtalamalariRaporu.Caption = "Ücret Ortalamaları Raporu";
+            this.btnUcretOrtalamalariRaporu.Id = 44;
+            this.btnUcretOrtalamalariRaporu.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_bell_curve;
+            this.btnUcretOrtalamalariRaporu.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_bell_curve_1;
+            this.btnUcretOrtalamalariRaporu.Name = "btnUcretOrtalamalariRaporu";
+            // 
+            // btnOdemeBelgeleriRaporu
+            // 
+            this.btnOdemeBelgeleriRaporu.Caption = "Ödeme Belgeleri Raporu";
+            this.btnOdemeBelgeleriRaporu.Id = 45;
+            this.btnOdemeBelgeleriRaporu.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_presentation;
+            this.btnOdemeBelgeleriRaporu.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.icons8_presentation_1;
+            this.btnOdemeBelgeleriRaporu.Name = "btnOdemeBelgeleriRaporu";
             // 
             // ribbonPage1
             // 
@@ -472,6 +582,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // 
             // ribbonPageGroup7
             // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnUrunler);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "ribbonPageGroup7";
             // 
@@ -486,8 +597,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.btnGenelAmacliRapor);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnSinifRaporlari);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnHizmetAlimRapor);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnNetUcretRaporu);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnUcretveOdemeRaporu);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnIndirimDagilimRaporu);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnMesleklereGoreKayitRaporu);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnAylikKayitRaporu);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnGelirDagilimRaporu);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnUcretOrtalamalariRaporu);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnOdemeBelgeleriRaporu);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Raporlar";
             // 
             // ribbonPage9
             // 
@@ -537,11 +658,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.imageList1616.Images.SetKeyName(12, "icons8_students_48px.png");
             this.imageList1616.Images.SetKeyName(13, "icons8_training_48px.png");
             // 
-            // btnFaturaTahakkukKartlari
+            // btnUrunler
             // 
-            this.btnFaturaTahakkukKartlari.Caption = "Fatura Tahakkuk Kartları";
-            this.btnFaturaTahakkukKartlari.Id = 35;
-            this.btnFaturaTahakkukKartlari.Name = "btnFaturaTahakkukKartlari";
+            this.btnUrunler.Caption = "Ürünler";
+            this.btnUrunler.Id = 46;
+            this.btnUrunler.Name = "btnUrunler";
             // 
             // AnaForm
             // 
@@ -623,5 +744,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private DevExpress.XtraBars.BarButtonItem btnGenelAmacliRapor;
         private DevExpress.XtraBars.BarButtonItem btnFaturaKartlari;
         private DevExpress.XtraBars.BarButtonItem btnFaturaTahakkukKartlari;
+        private DevExpress.XtraBars.BarButtonItem btnSinifRaporlari;
+        private DevExpress.XtraBars.BarButtonItem btnHizmetAlimRapor;
+        private DevExpress.XtraBars.BarButtonItem btnNetUcretRaporu;
+        private DevExpress.XtraBars.BarButtonItem btnUcretveOdemeRaporu;
+        private DevExpress.XtraBars.BarButtonItem btnIndirimDagilimRaporu;
+        private DevExpress.XtraBars.BarButtonItem btnMesleklereGoreKayitRaporu;
+        private DevExpress.XtraBars.BarButtonItem btnAylikKayitRaporu;
+        private DevExpress.XtraBars.BarButtonItem btnGelirDagilimRaporu;
+        private DevExpress.XtraBars.BarButtonItem btnUcretOrtalamalariRaporu;
+        private DevExpress.XtraBars.BarButtonItem btnOdemeBelgeleriRaporu;
+        private DevExpress.XtraBars.BarButtonItem btnUrunler;
     }
 }

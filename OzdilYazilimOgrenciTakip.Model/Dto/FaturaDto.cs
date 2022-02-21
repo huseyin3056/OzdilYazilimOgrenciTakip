@@ -137,6 +137,9 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public decimal? KdvTutari { get; set; }
         public decimal? ToplamTutar { get; set; }
         public decimal? PlanTutar { get; set; }
+        public decimal? PlanNetTutar { get; set; }
+        public decimal? PlanIndirim { get; set; }
+
         public decimal? ToplamIndirim { get; set; }
         public decimal? ToplamNetTutar { get; set; }
         public string TutarYazi { get; set; }
