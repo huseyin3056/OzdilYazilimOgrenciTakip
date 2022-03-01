@@ -19,7 +19,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimTuruForms
             EventsLoad();
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new IndirimTuru() : ((IndirimTuruBll)Bll).Single(FilterFunctions.Filter<IndirimTuru>(Id));
             NesneyiKontrollereBagla();

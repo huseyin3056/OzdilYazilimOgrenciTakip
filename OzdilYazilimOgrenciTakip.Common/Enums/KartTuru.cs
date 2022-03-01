@@ -219,7 +219,34 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
 
 
         [Description("Ürün Tanımı Kartı")]
-        UrunTanimi =68
+        UrunTanimi =68,
+
+
+        [Description("Tahsilat Raporu")]
+        TahsilatRaporu = 69,
+
+        [Description("Ödemesi Geciken Alacaklar Raporu")]
+        OdemesiGecikenAlacaklarRaporu = 70,
+
+
+        [Description("Açıklama Kartı")]
+        Aciklama =71,
+
+
+        [Description("Kullanıcı Parametre Kartı")]
+        KullaniciParametre =72,
+
+        [Description("Kurum Kartı")]
+        Kurum =73,
+
+        [Description("Dönem Kartı")]
+        Donem = 74,
+
+        [Description("Rol Kartı")]
+        Rol =75,
+
+        [Description("Yetki Kartı")]
+         YetkiKarti= 76
 
 
 

@@ -48,6 +48,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports.Base
         protected ComboBoxEdit HizmetAlimTuru;
         protected ComboBoxEdit HesaplamaSekli;
         protected MyDataLayoutControl DataLayoutControl;
+        protected DateEdit IlkTarih, SonTarih;
+
 
         public BaseRapor()
         {
@@ -181,7 +183,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports.Base
 
         private void BaseRapor_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!AnaForm.RaporlariOnayAlmadanKapat)
+            if (!AnaForm.KullaniciParametreleri.RaporlariOnayAlmadanKapat)
                 if (Messages.RaporKapatmaMesaj() != DialogResult.Yes)
                     e.Cancel = true;
         }
@@ -299,6 +301,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports.Base
                         TablePrintingFunctions.Yazdir(Tablo, Tablo.ViewCaption, Subeler.Text, KayitSekilleri.Text, KayitDurumlari.Text, IptalDurumlari.Text, "Hesaplama Türü", HesaplamaSekli.Text);
                         break;
 
+                    case KartTuru.TahsilatRaporu:
+
+                        TablePrintingFunctions.Yazdir(Tablo, Tablo.ViewCaption, Subeler.Text, KayitSekilleri.Text, KayitDurumlari.Text, IptalDurumlari.Text, "Vade Aralığı", $"{IlkTarih.Text} - {SonTarih.Text}");
+                        break;
+
+
+                    case KartTuru.OdemesiGecikenAlacaklarRaporu:
+
+                        TablePrintingFunctions.Yazdir(Tablo, Tablo.ViewCaption, Subeler.Text, KayitSekilleri.Text, KayitDurumlari.Text, IptalDurumlari.Text, "Vade Aralığı", $"{IlkTarih.Text} - {SonTarih.Text}");
+                        break;
                 }
 
             }
@@ -501,7 +513,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports.Base
             }
         }
 
-        protected void BelgeDurumuYukle()
+        protected virtual  void BelgeDurumuYukle()
         {
             var enums = Enum.GetValues(typeof(BelgeDurumu));
 

@@ -48,19 +48,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             ControlEnableChange(OdemeTipi.Acik);
 
             txtIlkTaksitTarihi.DateTime = _kayitTarihi;
             txtIlkTaksitTarihi.Properties.MinValue = _kayitTarihi;
-            txtIlkTaksitTarihi.Properties.MaxValue = AnaForm.MaksimumTaksitTarihi;
+            txtIlkTaksitTarihi.Properties.MaxValue = AnaForm.DonemParametreleri.MaksimumTaksitTarihi;
             txtSabitTaksit.Value = 0;
             txtBakiye.Value = _bakiye;
             txtTaksitSayisi.Properties.MinValue = 1;
-            txtTaksitSayisi.Properties.MaxValue = AnaForm.MaksimumTaksitSayisi - _dahaOnceGirilenTaksitSayisi;
+            txtTaksitSayisi.Properties.MaxValue = AnaForm.DonemParametreleri.MaksimumTaksitSayisi - _dahaOnceGirilenTaksitSayisi;
 
-            if (AnaForm.MaksimumTaksitSayisi - _dahaOnceGirilenTaksitSayisi > 0)  
+            if (AnaForm.DonemParametreleri.MaksimumTaksitSayisi - _dahaOnceGirilenTaksitSayisi > 0)  
                 ShowDialog();
           else
             Messages.HataMesaji("Maksimum Taksit Sayısı Aşılıyor");
@@ -84,7 +84,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
         private bool HataliGiris()
         {
-            if (txtIlkTaksitTarihi.DateTime.Date.AddMonths((int)txtTaksitSayisi.Value-1) > AnaForm.MaksimumTaksitTarihi)
+            if (txtIlkTaksitTarihi.DateTime.Date.AddMonths((int)txtTaksitSayisi.Value-1) > AnaForm.DonemParametreleri.MaksimumTaksitTarihi)
             {
                 Messages.HataMesaji("Maksimum Taksit Tarihi Aşılıyor");
                 return true;
@@ -148,7 +148,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             if (HataliGiris()) return;
             txtOdemeTuru.Focus();
 
-            var tutar = txtSabitTaksit.Value != 0 ? txtSabitTaksit.Value : Math.Round(txtBakiye.Value / txtTaksitSayisi.Value, AnaForm.OdemePlaniKurusKullan ? 2 : 0);
+            var tutar = txtSabitTaksit.Value != 0 ? txtSabitTaksit.Value : Math.Round(txtBakiye.Value / txtTaksitSayisi.Value, AnaForm.DonemParametreleri.OdemePlaniKurusKullan ? 2 : 0);
             decimal toplamGirilenTutar = 0;
 
             for (int i = 0; i < txtTaksitSayisi.Value; i++)

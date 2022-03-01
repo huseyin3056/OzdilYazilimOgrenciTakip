@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v21.1.Core, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.CodeParser.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -240,6 +241,18 @@
     <Compile Include="Forms\FiltreForms\FiltreListForm.Designer.cs">
       <DependentUpon>FiltreListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\GecikmeAciklamalariForms\GecikmeAciklamalariEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GecikmeAciklamalariForms\GecikmeAciklamalariEditForm.Designer.cs">
+      <DependentUpon>GecikmeAciklamalariEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\GecikmeAciklamalariForms\GecikmeAciklamalariListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\GecikmeAciklamalariForms\GecikmeAciklamalariListForm.Designer.cs">
+      <DependentUpon>GecikmeAciklamalariListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\GorevForms\GorevEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,6 +396,24 @@
     </Compile>
     <Compile Include="Forms\KontenjanForms\KontenjanListForm.Designer.cs">
       <DependentUpon>KontenjanListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\RolEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\RolEditForm.Designer.cs">
+      <DependentUpon>RolEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\RolListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\RolListForm.Designer.cs">
+      <DependentUpon>RolListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\RolYetkiKartlariListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\RolYetkiKartlariListForm.Designer.cs">
+      <DependentUpon>RolYetkiKartlariListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MakbuzForms\BelgeHareketleriListForm.cs">
       <SubType>Form</SubType>
@@ -633,6 +664,24 @@
     <Compile Include="GenelForms\AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenelForms\EmailParametreEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenelForms\EmailParametreEditForm.Designer.cs">
+      <DependentUpon>EmailParametreEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenelForms\KullaniciParametreEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenelForms\KullaniciParametreEditForm.Designer.cs">
+      <DependentUpon>KullaniciParametreEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenelForms\KurumBilgileriEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenelForms\KurumBilgileriEditForm.Designer.cs">
+      <DependentUpon>KurumBilgileriEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenelForms\RaporOnizleme.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -709,11 +758,23 @@
     <Compile Include="Reports\FormReports\OdemeBelgeleriRaporu.Designer.cs">
       <DependentUpon>OdemeBelgeleriRaporu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports\FormReports\OdemesiGecikenAlacaklarRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FormReports\OdemesiGecikenAlacaklarRaporu.Designer.cs">
+      <DependentUpon>OdemesiGecikenAlacaklarRaporu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reports\FormReports\SinifRaporlari.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\FormReports\SinifRaporlari.Designer.cs">
       <DependentUpon>SinifRaporlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FormReports\TahsilatRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FormReports\TahsilatRaporu.Designer.cs">
+      <DependentUpon>TahsilatRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\FormReports\UcretOrtalamalariRaporu.cs">
       <SubType>Form</SubType>
@@ -843,6 +904,9 @@
     <Compile Include="UserControls\Controls\MyCheckEdit.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserControls\Controls\MyColorPickEdit.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\Controls\MyComboBoxEdit.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -938,6 +1002,12 @@
     </Compile>
     <Compile Include="UserControls\UserControl\GenelEditFormTable\MakbuzHareketleriTable.Designer.cs">
       <DependentUpon>MakbuzHareketleriTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\GenelEditFormTable\RolYetkileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\GenelEditFormTable\RolYetkileriTable.Designer.cs">
+      <DependentUpon>RolYetkileriTable.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.cs">
       <SubType>UserControl</SubType>
@@ -1089,6 +1159,12 @@
     <EmbeddedResource Include="Forms\FiltreForms\FiltreListForm.resx">
       <DependentUpon>FiltreListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GecikmeAciklamalariForms\GecikmeAciklamalariEditForm.resx">
+      <DependentUpon>GecikmeAciklamalariEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\GecikmeAciklamalariForms\GecikmeAciklamalariListForm.resx">
+      <DependentUpon>GecikmeAciklamalariListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\GorevForms\GorevEditForm.resx">
       <DependentUpon>GorevEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1160,6 +1236,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KontenjanForms\KontenjanListForm.resx">
       <DependentUpon>KontenjanListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullaniciForms\RolEditForm.resx">
+      <DependentUpon>RolEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullaniciForms\RolListForm.resx">
+      <DependentUpon>RolListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullaniciForms\RolYetkiKartlariListForm.resx">
+      <DependentUpon>RolYetkiKartlariListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MakbuzForms\BelgeHareketleriListForm.resx">
       <DependentUpon>BelgeHareketleriListForm.cs</DependentUpon>
@@ -1281,6 +1366,15 @@
     <EmbeddedResource Include="GenelForms\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenelForms\EmailParametreEditForm.resx">
+      <DependentUpon>EmailParametreEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenelForms\KullaniciParametreEditForm.resx">
+      <DependentUpon>KullaniciParametreEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenelForms\KurumBilgileriEditForm.resx">
+      <DependentUpon>KurumBilgileriEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenelForms\RaporOnizleme.resx">
       <DependentUpon>RaporOnizleme.cs</DependentUpon>
     </EmbeddedResource>
@@ -1328,8 +1422,14 @@
     <EmbeddedResource Include="Reports\FormReports\OdemeBelgeleriRaporu.resx">
       <DependentUpon>OdemeBelgeleriRaporu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FormReports\OdemesiGecikenAlacaklarRaporu.resx">
+      <DependentUpon>OdemesiGecikenAlacaklarRaporu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\FormReports\SinifRaporlari.resx">
       <DependentUpon>SinifRaporlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FormReports\TahsilatRaporu.resx">
+      <DependentUpon>TahsilatRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\FormReports\UcretOrtalamalariRaporu.resx">
       <DependentUpon>UcretOrtalamalariRaporu.cs</DependentUpon>
@@ -1408,6 +1508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\GenelEditFormTable\MakbuzHareketleriTable.resx">
       <DependentUpon>MakbuzHareketleriTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\GenelEditFormTable\RolYetkileriTable.resx">
+      <DependentUpon>RolYetkileriTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.resx">
       <DependentUpon>IndiriminUygulanacagiHizmetlerTable.cs</DependentUpon>
@@ -1958,6 +2061,198 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_presentation_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_request_money.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_request_money_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_low_price_pound.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_low_price_pound_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customeremployees_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculatesheet.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\security_key.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alignhorizontalbottom.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_class.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_class_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_classroom_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_classroom_3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_classroom.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_classroom_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_school_building.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_school_building_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Shuttle_bus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Shuttle_bus_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_school_director.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_school_director_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_employee.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_employee_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Cyber_Monday.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Cyber_Monday_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_password_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_autumn.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_autumn_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_city_buildings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_city_buildings_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_trolleybus.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_trolleybus_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Family_Two_Man_Skin_Type_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Family_Two_Man_Skin_Type_1_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_window_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_translate.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_google_translate_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_rich.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_rich_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_neighbour.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_neighbour_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_manufacturing.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_manufacturing_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_office.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_office_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_phone_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_phone_3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_food_service_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_food_service_3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_maintenance.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_maintenance_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_low_price.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_low_price_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_discount_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_discount_3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cheap.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cheap_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\today_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\today_32x32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

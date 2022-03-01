@@ -25,6 +25,8 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             {
                 Id = x.Id,
                 Kod = x.Kod,
+                OgrenciNo = x.Ogrenci.Kod,    // Ben Ekledim. 22/02/2022
+
                 TcKimlikNo = x.Ogrenci.TcKimlikNo,
                 Adi = x.Ogrenci.Adi,
                 SoyAdi = x.Ogrenci.SoyAdi,
@@ -32,7 +34,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 AnaAdi = x.Ogrenci.AnaAdi,
                 OgrenciId = x.OgrenciId,
                 OkulNo = x.OkulNo,
-                
+
                 KayitTarihi = x.KayitTarihi,
                 KayitSekli = x.KayitSekli,
                 KayitDurumu = x.KayitDurumu,
@@ -63,7 +65,9 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
 
                 SubeId = x.SubeId,
                 DonemId = x.DonemId,
-                Durum = x.Durum
+                Durum = x.Durum,
+
+
 
             });
         }
@@ -74,7 +78,9 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             return BaseSingle(filter, x => new OgrenciR
             {
 
-                OgrenciNo = x.Kod,
+                //  OgrenciNo = x.Kod,
+
+                OgrenciNo = x.Ogrenci.Kod, // Ben Ekledim. 22/02/2022
                 OkulNo = x.OkulNo,
                 TcKimlikNo = x.Ogrenci.TcKimlikNo,
                 Adi = x.Ogrenci.Adi,
@@ -117,6 +123,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 SubeFax = x.Sube.Faks,
                 SubeIbanNo = x.Sube.IbanNo,
                 SubeLogo = x.Sube.Logo,
+
 
                 VeliBilgileri = x.IletisimBilgileri.Where(y => y.Veli).Select(y => new IletisimBilgileriR
                 {
@@ -212,7 +219,8 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             return BaseList(filter, x => new TahakkukL
             {
                 Id = x.Id,
-                Kod = x.Kod,         
+                Kod = x.Kod,
+                OgrenciNo = x.Ogrenci.Kod, // Ben Ekledim. 22/02/2022
                 TcKimlikNo = x.Ogrenci.TcKimlikNo,
                 Adi = x.Ogrenci.Adi,
                 SoyAdi = x.Ogrenci.SoyAdi,
@@ -286,34 +294,35 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             }).Select(x => new FaturaL
             {
                 Id = x.Tahakkuk.Id,
-                OgrenciNo=x.Tahakkuk.Kod,
-               OkulNo=x.Tahakkuk.OkulNo,
+                //  OgrenciNo=x.Tahakkuk.Kod,
+                OgrenciNo = x.Tahakkuk.Ogrenci.Kod, // Ben Ekledim. 22/02/2022
+                OkulNo = x.Tahakkuk.OkulNo,
                 Adi = x.Tahakkuk.Ogrenci.Adi,
                 Soyadi = x.Tahakkuk.Ogrenci.SoyAdi,
                 SinifAdi = x.Tahakkuk.Sinif.SinifAdi,
-                KayitTarihi=x.Tahakkuk.KayitTarihi,
-                KayitSekli=x.Tahakkuk.KayitSekli,
-                KayitDurumu=x.Tahakkuk.KayitDurumu,
-                IptalDurumu=x.Tahakkuk.Durum?IptalDurumu.DevamEdiyor:IptalDurumu.IptalEdildi,
+                KayitTarihi = x.Tahakkuk.KayitTarihi,
+                KayitSekli = x.Tahakkuk.KayitSekli,
+                KayitDurumu = x.Tahakkuk.KayitDurumu,
+                IptalDurumu = x.Tahakkuk.Durum ? IptalDurumu.DevamEdiyor : IptalDurumu.IptalEdildi,
                 VeliAdi = x.VeliBilgileri.Iletisim.Adi,
                 VeliSoyadi = x.VeliBilgileri.Iletisim.SoyAdi,
                 VeliYakinlikAdi = x.VeliBilgileri.Yakinlik.YakinlikAdi,
                 VeliMeslekAdi = x.VeliBilgileri.Iletisim.Meslek.MeslekAdi,
-                HizmetTutar=x.HizmetBilgileri.NetHizmet,
-                HizmetIndirim=x.IndirimBilgileri.NetIndirim,
-                HizmetNetTutar=x.HizmetBilgileri.NetHizmet-x.IndirimBilgileri.NetIndirim,
-                PlanTutar=x.FaturaBilgileri.PlanTutar,
-                PlanIndirim=x.FaturaBilgileri.PlanIndirimTutar,
-                PlanNetTutar=x.FaturaBilgileri.PlanNetTutar,
-                OzelKod1=x.Tahakkuk.OzelKod1.OzelKodAdi,
+                HizmetTutar = x.HizmetBilgileri.NetHizmet,
+                HizmetIndirim = x.IndirimBilgileri.NetIndirim,
+                HizmetNetTutar = x.HizmetBilgileri.NetHizmet - x.IndirimBilgileri.NetIndirim,
+                PlanTutar = x.FaturaBilgileri.PlanTutar,
+                PlanIndirim = x.FaturaBilgileri.PlanIndirimTutar,
+                PlanNetTutar = x.FaturaBilgileri.PlanNetTutar,
+                OzelKod1 = x.Tahakkuk.OzelKod1.OzelKodAdi,
                 OzelKod2 = x.Tahakkuk.OzelKod2.OzelKodAdi,
                 OzelKod3 = x.Tahakkuk.OzelKod3.OzelKodAdi,
                 OzelKod4 = x.Tahakkuk.OzelKod4.OzelKodAdi,
                 OzelKod5 = x.Tahakkuk.OzelKod5.OzelKodAdi
-               
 
 
-            }).OrderBy(x => x.OgrenciNo).ToList(); 
+
+            }).OrderBy(x => x.OgrenciNo).ToList();
         }
 
         public IEnumerable<OgrenciTahakkukL> OgrenciTahakkukList(Expression<Func<Tahakkuk, bool>> filter)
@@ -321,10 +330,10 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             return BaseList(filter, x => new
             {
                 Tahakkuk = x,
-              
+
                 HizmetBilgileri = x.HizmetBilgileri.GroupBy(y => y.TahakkukId).DefaultIfEmpty().Select(y => new
                 {
-                  
+
                     BrutHizmet = y.Select(z => z.BrutUcret).DefaultIfEmpty(0).Sum(),
                     KistDonemDusulenHizmet = y.Select(z => z.KistDonemDusulenUcret).DefaultIfEmpty(0).Sum(),
                     NetHizmet = y.Select(z => z.NetUcret).DefaultIfEmpty(0).Sum()
@@ -341,22 +350,22 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
 
             }).Select(x => new OgrenciTahakkukL
             {
-                TahakkukId=x.Tahakkuk.Id,
-                SubeId=x.Tahakkuk.SubeId,
-                SubeAdi=x.Tahakkuk.Sube.SubeAdi,
-                DonemId=x.Tahakkuk.DonemId,
-                DonemAdi=x.Tahakkuk.Donem.DonemAdi,
-                BrutHizmet=x.HizmetBilgileri.BrutHizmet,
-                KistDonemDusulenHizmet=x.HizmetBilgileri.KistDonemDusulenHizmet,
-                NetHizmet=x.HizmetBilgileri.NetHizmet,
-                BrutIndirim=x.IndirimBilgileri.BrutIndirim,
-                KistDonemDusulenIndirim=x.IndirimBilgileri.KistDonemDusulenIndirim,
-                NetIndirim=x.IndirimBilgileri.NetIndirim,
-                NetUcret=x.HizmetBilgileri.NetHizmet-x.IndirimBilgileri.NetIndirim,
-                IndirimOrani=x.HizmetBilgileri.NetHizmet==0?0:x.IndirimBilgileri.NetIndirim/x.HizmetBilgileri.NetHizmet*100
+                TahakkukId = x.Tahakkuk.Id,
+                SubeId = x.Tahakkuk.SubeId,
+                SubeAdi = x.Tahakkuk.Sube.SubeAdi,
+                DonemId = x.Tahakkuk.DonemId,
+                DonemAdi = x.Tahakkuk.Donem.DonemAdi,
+                BrutHizmet = x.HizmetBilgileri.BrutHizmet,
+                KistDonemDusulenHizmet = x.HizmetBilgileri.KistDonemDusulenHizmet,
+                NetHizmet = x.HizmetBilgileri.NetHizmet,
+                BrutIndirim = x.IndirimBilgileri.BrutIndirim,
+                KistDonemDusulenIndirim = x.IndirimBilgileri.KistDonemDusulenIndirim,
+                NetIndirim = x.IndirimBilgileri.NetIndirim,
+                NetUcret = x.HizmetBilgileri.NetHizmet - x.IndirimBilgileri.NetIndirim,
+                IndirimOrani = x.HizmetBilgileri.NetHizmet == 0 ? 0 : x.IndirimBilgileri.NetIndirim / x.HizmetBilgileri.NetHizmet * 100
 
 
-            }).OrderBy(x=>x.TahakkukId).ToList();
+            }).OrderBy(x => x.TahakkukId).ToList();
         }
 
 

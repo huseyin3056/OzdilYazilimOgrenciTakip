@@ -1,13 +1,10 @@
-﻿using System;
+﻿using OzdilYazilimOgrenciTakip.Dal.Base;
+using OzdilYazilimOgrenciTakip.Dal.Interfaces;
+using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OzdilYazilimOgrenciTakip.Dal.Base;
-using OzdilYazilimOgrenciTakip.Dal.Interfaces;
-using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 
 namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions
 {

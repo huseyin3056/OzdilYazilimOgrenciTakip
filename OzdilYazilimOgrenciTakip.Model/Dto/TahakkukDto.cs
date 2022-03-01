@@ -12,6 +12,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string TcKimlikNo { get; set; }
         public string Adi { get; set; }
         public string SoyAdi { get; set; }
+        public string OgrenciNo { get; set; } // Ben ekledim. 22.02.2022
         public string BabaAdi { get; set; }
         public string AnaAdi { get; set; }
         public string SinifAdi { get; set; }
@@ -37,6 +38,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string SoyAdi { get; set; }
         public string BabaAdi { get; set; }
         public string AnaAdi { get; set; }
+        public string OgrenciNo { get; set; } // Ben ekledim. 22.02.2022
         public string OkulNo { get; set; }
         public DateTime KayitTarihi { get; set; }
         public KayitSekli KayitSekli { get; set; }

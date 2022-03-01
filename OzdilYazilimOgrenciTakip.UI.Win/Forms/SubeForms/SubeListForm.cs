@@ -3,6 +3,7 @@ using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
+using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using System;
 using System.Linq;
@@ -16,9 +17,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.SubeForms
         public SubeListForm()
         {
             InitializeComponent();
-
             Bll = new SubeBll();
-
             _filter = x => x.Durum == AktifKartlariGoster;
 
 
@@ -26,7 +25,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.SubeForms
 
         public SubeListForm(params object[] prm) : this()
         {
+            if ((bool)prm[0])
+                _filter = x => x.Durum == AktifKartlariGoster && x.Id != AnaForm.SubeId;
 
+            else if (!(bool)prm[0])
             _filter = x => !ListeDisiTutulacakKayitlar.Contains(x.Id) && x.Durum == AktifKartlariGoster;
         }
 

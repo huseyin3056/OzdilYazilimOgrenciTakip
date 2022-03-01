@@ -50,5 +50,8 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 Aciklama = x.Aciklama
             }).OrderBy(x => x.Kod).ToList();
         }
+ 
+    
+    
     }
 }

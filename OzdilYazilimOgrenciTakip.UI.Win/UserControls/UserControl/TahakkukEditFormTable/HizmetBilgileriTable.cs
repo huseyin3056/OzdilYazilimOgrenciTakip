@@ -119,7 +119,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             for (int i = 0; i < tablo.DataRowCount; i++)
             {
                 var entity = tablo.GetRow<HizmetBilgileriL>(i);
-                if (entity.IptalEdildi && entity.HizmetTipi == Common.Enums.HizmetTipi.Egitim && AnaForm.GittigiOkulZorunlu && entity.GittigiOkulId == null)
+                if (entity.IptalEdildi && entity.HizmetTipi == Common.Enums.HizmetTipi.Egitim && AnaForm.DonemParametreleri.GittigiOkulZorunlu && entity.GittigiOkulId == null)
                 {
                     tablo.FocusedRowHandle = i;
                     tablo.FocusedColumn = colGittigiOkulAdi;
@@ -157,15 +157,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         }
         private void UcretHesapla(HizmetBilgileriL entity)
         {
-            var egitimBaslamaTarihi = AnaForm.EgitimBaslamaTarihi;
-            var egitimBitisTarihi = AnaForm.DonemBitisTarihi;
+            var egitimBaslamaTarihi = AnaForm.DonemParametreleri.EgitimBaslamaTarihi;
+            var egitimBitisTarihi = AnaForm.DonemParametreleri.DonemBitisTarihi;
 
             var toplamGunSayisi = (int)(egitimBitisTarihi - egitimBaslamaTarihi).TotalDays + 1;
             var gunlukUcret = entity.BrutUcret / toplamGunSayisi;
             var alinanHizmetGunSayisi = entity.Iptaltarihi == null ? (int)(egitimBitisTarihi - entity.BaslamaTarihi).TotalDays + 1 : (int)(entity.Iptaltarihi - entity.BaslamaTarihi).Value.TotalDays + 1;
             var odenecekUcret = alinanHizmetGunSayisi > 0 ? gunlukUcret * alinanHizmetGunSayisi : 0;
             var kistDonemDusulenHizmet = entity.BrutUcret - odenecekUcret;
-            kistDonemDusulenHizmet = Math.Round(kistDonemDusulenHizmet, AnaForm.HizmetTahakkukKurusKullan ? 2 : 0);
+            kistDonemDusulenHizmet = Math.Round(kistDonemDusulenHizmet, AnaForm.DonemParametreleri.HizmetTahakkukKurusKullan ? 2 : 0);
 
             if (entity.BaslamaTarihi > egitimBaslamaTarihi || entity.IptalEdildi)
                 entity.KistDonemDusulenUcret = kistDonemDusulenHizmet;
@@ -318,8 +318,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
                 var entity = tablo.GetRow<HizmetBilgileriL>();
                 if (entity.Iptaltarihi == null) return;
 
-                repositoryIptalTarihi.MinValue = AnaForm.GunTarihininOncesineHizmetIptalTarihiGirilebilir ? entity.BaslamaTarihi : DateTime.Now.Date;
-                repositoryIptalTarihi.MaxValue = AnaForm.GunTarihininSonrasinaHizmetIptalTarihiGirilebilir ? AnaForm.DonemBitisTarihi.AddDays(-1) : DateTime.Now.Date;
+                repositoryIptalTarihi.MinValue = AnaForm.DonemParametreleri.GunTarihininOncesineIptalTarihiGirilebilir ? entity.BaslamaTarihi : DateTime.Now.Date;
+                repositoryIptalTarihi.MaxValue = AnaForm.DonemParametreleri.GunTarihininSonrasinaIptalTarihiGirilebilir ? AnaForm.DonemParametreleri.DonemBitisTarihi.AddDays(-1) : DateTime.Now.Date;
 
 
 

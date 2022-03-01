@@ -36,7 +36,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IlceForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new Ilce() : ((IlceBll)Bll).Single(FilterFunctions.Filter<Ilce>(Id));
             NesneyiKontrollereBagla();

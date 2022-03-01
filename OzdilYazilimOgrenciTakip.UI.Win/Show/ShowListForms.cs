@@ -40,13 +40,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
             // Yetki Kontrolü
             using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
             {
-                frm.SeciliGelecekId = seciliGelecekId;                        
+                frm.SeciliGelecekId = seciliGelecekId;
                 frm.Yukle();
 
-                if(!frm.IsDisposed)
-                frm.ShowDialog();
+                if (!frm.IsDisposed)
+                    frm.ShowDialog();
 
                 return frm.DialogResult == DialogResult.OK ? frm.SelectedEntity : null;
+
+            }
+
+        }
+
+        public static void ShowDialogListForm()
+        {
+
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm)))
+            {
+                frm.AktifPasifButonGoster = true;
+                frm.Yukle();
+                frm.ShowDialog();
 
             }
 
@@ -66,13 +79,32 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
                     frm.ShowDialog();
 
-                   return frm.DialogResult == DialogResult.OK ? frm.SelectedEntities : null;
+                return frm.DialogResult == DialogResult.OK ? frm.SelectedEntities : null;
+
+            }
+        }
+
+        public static IEnumerable<IBaseEntity> ShowDialogListForm( IList<long> listeDisiTutulacakKayitlar, bool multiSelect, params object[] prm)
+        {
+
+
+            using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
+            {
+                frm.ListeDisiTutulacakKayitlar = listeDisiTutulacakKayitlar;
+                frm.MultiSelect = multiSelect;
+                frm.Yukle();
+                frm.RowSelect = new Functions.SelectRowFunctions(frm.Tablo);
+                if (frm.EklenebilecekEntityVar)
+
+                    frm.ShowDialog();
+
+                return frm.DialogResult == DialogResult.OK ? frm.SelectedEntities : null;
 
             }
         }
 
 
-        public static IEnumerable<IBaseEntity> ShowDialogListForm(KartTuru kartTuru,  bool multiSelect, params object[] prm)
+        public static IEnumerable<IBaseEntity> ShowDialogListForm(KartTuru kartTuru, bool multiSelect, params object[] prm)
         {
             // Yetki Kontrolü
 
@@ -82,7 +114,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
                 frm.Yukle();
                 frm.RowSelect = new Functions.SelectRowFunctions(frm.Tablo);
 
-                    frm.ShowDialog();
+                frm.ShowDialog();
 
                 return frm.DialogResult == DialogResult.OK ? frm.SelectedEntities : null;
 

@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DevExpress.Utils;
+using DevExpress.XtraEditors.Mask;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Registrator;
+using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using OzdilYazilimOgrenciTakip.UI.Win.Interfaces;
-using DevExpress.Utils;
-using DevExpress.XtraEditors.Mask;
-using DevExpress.XtraGrid.Views.Base;
-using System.Drawing;
-using DevExpress.XtraGrid.Registrator;
 using System.ComponentModel;
+using System.Drawing;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid
 {

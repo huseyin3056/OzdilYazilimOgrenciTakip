@@ -24,7 +24,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
 
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new HizmetS() : ((HizmetBll)Bll).Single(FilterFunctions.Filter<Hizmet>(Id));
             NesneyiKontrollereBagla();
@@ -94,10 +94,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
         {
             base.Control_EditValueChanged(sender, e);
 
-            txtBaslamaTarihi.Properties.MinValue = AnaForm.EgitimBaslamaTarihi;
-            txtBitisTarihi.Properties.MaxValue = AnaForm.DonemBitisTarihi;
+            txtBaslamaTarihi.Properties.MinValue = AnaForm.DonemParametreleri.EgitimBaslamaTarihi;
+            txtBitisTarihi.Properties.MaxValue = AnaForm.DonemParametreleri.DonemBitisTarihi;
             txtBitisTarihi.Properties.MinValue = txtBaslamaTarihi.DateTime.Date;
-            txtBitisTarihi.Properties.MaxValue = AnaForm.DonemBitisTarihi;
+            txtBitisTarihi.Properties.MaxValue = AnaForm.DonemParametreleri.DonemBitisTarihi;
 
 
         }

@@ -14,6 +14,9 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
 
         private KartTuru _kartTuru;
 
+        public BaseGenelBll() { }
+        public BaseGenelBll(Control ctrl):base(ctrl) { }
+
         public BaseGenelBll(KartTuru kartTuru) { _kartTuru = kartTuru; }
         public BaseGenelBll(Control ctrl, KartTuru kartTuru): base(ctrl) { _kartTuru = kartTuru; }
 

@@ -29,7 +29,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
 
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new Rapor() : ((RaporBll)Bll).Single(FilterFunctions.Filter<Rapor>(Id));
             NesneyiKontrollereBagla();

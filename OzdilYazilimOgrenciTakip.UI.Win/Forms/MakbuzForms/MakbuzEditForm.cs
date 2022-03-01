@@ -38,12 +38,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
             MakbuzTuru = (MakbuzTuru)prm[0];
             _hesapTuru = (MakbuzHesapTuru)prm[1];
-            FarkliSubeIslemi = prm.Length > 2 && prm[2].GetType()==typeof(bool);
+            FarkliSubeIslemi = prm.Length > 2 && (bool)prm[2];
 
 
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new MakbuzS() : ((MakbuzBll)Bll).Single(FilterFunctions.Filter<Makbuz>(Id));
 
@@ -73,19 +73,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
                 switch (_hesapTuru)
                 {
 
-                    case MakbuzHesapTuru.Kasa when AnaForm.DefaultKasaHesapId != null:
-                        txtHesap.Id = AnaForm.DefaultKasaHesapId;
-                        txtHesap.Text = AnaForm.DefaultKasaHesapAdi;
+                    case MakbuzHesapTuru.Kasa when AnaForm.KullaniciParametreleri.DefaultKasaHesapId != null:
+                        txtHesap.Id = AnaForm.KullaniciParametreleri.DefaultKasaHesapId;
+                        txtHesap.Text = AnaForm.KullaniciParametreleri.DefaultKasaHesapAdi;
                         break;
 
-                    case MakbuzHesapTuru.Banka when AnaForm.DefaultBankaHesapId != null:
-                        txtHesap.Id = AnaForm.DefaultBankaHesapId;
-                        txtHesap.Text = AnaForm.DefaultBankaHesapAdi;
+                    case MakbuzHesapTuru.Banka when AnaForm.KullaniciParametreleri.DefaultBankaHesapId != null:
+                        txtHesap.Id = AnaForm.KullaniciParametreleri.DefaultBankaHesapId;
+                        txtHesap.Text = AnaForm.KullaniciParametreleri.DefaultBankaHesapAdi;
                         break;
 
-                    case MakbuzHesapTuru.Avukat when AnaForm.DefaultAvukatHesapId != null:
-                        txtHesap.Id = AnaForm.DefaultAvukatHesapId;
-                        txtHesap.Text = AnaForm.DefaultAvukatHesapAdi;
+                    case MakbuzHesapTuru.Avukat when AnaForm.KullaniciParametreleri.DefaultAvukatHesapId != null:
+                        txtHesap.Id = AnaForm.KullaniciParametreleri.DefaultAvukatHesapId;
+                        txtHesap.Text = AnaForm.KullaniciParametreleri.DefaultAvukatHesapAdi;
                         break;
 
                     case MakbuzHesapTuru.Transfer when MakbuzTuru == MakbuzTuru.GelenBelgeyiOnaylama:
@@ -100,7 +100,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             {
                 txtHesap.Id = entity.AvukatHesapId ?? entity.BankaHesapId ?? entity.CariHesapId ?? entity.KasaHesapId ?? entity.SubeHesapId;
                 txtHesap.Text = entity.HesapAdi;
-                
+
             }
 
 
@@ -151,7 +151,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             GuncelNesneOlustur();
             if (HataliGiris()) return false;
             if (makbuzHareketleriTable.HataliGiris()) return false;
-            var result = ((MakbuzBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId )&& makbuzHareketleriTable.Kaydet();
+            var result = ((MakbuzBll)Bll).Insert(CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.SubeId == AnaForm.SubeId && x.DonemId == AnaForm.DonemId) && makbuzHareketleriTable.Kaydet();
 
             if (result && !KayitSonrasiFormuKapat)
                 makbuzHareketleriTable.Yukle();
@@ -176,7 +176,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
         {
             if (!makbuzHareketleriTable.TopluHareketSil()) return;
 
-           //  if (!((IBaseCommonBll)Bll).Delete(OldEntity)) return; MakbuzBLL ile aynı anlamda
+            //  if (!((IBaseCommonBll)Bll).Delete(OldEntity)) return; MakbuzBLL ile aynı anlamda
             if (!((MakbuzBll)Bll).Delete(OldEntity)) return;
             RefreshYapilacak = true;
             Close();
@@ -198,8 +198,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
         private void AlanIslemleri()
         {
             Text = $"{Text} - {MakbuzTuru.ToName()}";
-            txtTarih.Properties.MinValue = AnaForm.GunTarihininOncesineMakbuzTarihiGirilebilir ? AnaForm.DonemBaslamaTarihi : DateTime.Now.Date;
-            txtTarih.Properties.MaxValue = AnaForm.GunTarihininSonrasinaMakbuzTarihiGirilebilir ? AnaForm.DonemBitisTarihi : DateTime.Now.Date;
+            txtTarih.Properties.MinValue = AnaForm.DonemParametreleri.GunTarihininOncesineMakbuzTarihiGirilebilir ? AnaForm.DonemParametreleri.DonemBaslamaTarihi : DateTime.Now.Date;
+            txtTarih.Properties.MaxValue = AnaForm.DonemParametreleri.GunTarihininSonrasinaMakbuzTarihiGirilebilir ? AnaForm.DonemParametreleri.DonemBitisTarihi : DateTime.Now.Date;
             switch (MakbuzTuru)
             {
                 case MakbuzTuru.BlokeyeAlma:
@@ -317,35 +317,35 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
         protected override void Yazdir()
         {
             var source = new List<MakbuzHareketleriR>();
-            for (int i= 0;  i< makbuzHareketleriTable.Tablo.DataRowCount; i++)
+            for (int i = 0; i < makbuzHareketleriTable.Tablo.DataRowCount; i++)
             {
                 var entity = makbuzHareketleriTable.Tablo.GetRow<MakbuzHareketleriL>(i);
                 if (entity == null) return;
 
                 var row = new MakbuzHareketleriR
                 {
-                    OgrenciNo=entity.OgrenciNo,
-                    Adi=entity.Adi,
-                    Soyadi=entity.Soyadi,
-                    SinifAdi=entity.SinifAdi,
-                    SubeAdi=entity.OgrenciSubeAdi,
-                    PortfoyNo=entity.OdemeBilgileriId,
-                    OdemeTuruAdi=entity.OdemeTuruAdi,
-                    Vade=entity.Vade,
-                    AsilBorclu=entity.AsilBorclu,
-                    Ciranta=entity.Ciranta,
-                    BankaVeSubeAdi=entity.BankaAdi+" "+entity.OgrenciSubeAdi,
-                    BelgeNo=entity.BelgeNo,
-                    HesapNo=entity.HesapNo,
-                    Tutar=entity.Tutar,
-                    IslemOncesiTutari=entity.IslemOncesiTutar,
-                    IslemTutari=entity.IslemTutari,
-                    Tarih=txtTarih.DateTime.Date,
-                    MakbuzNo=txtMakbuzNo.Text,
-                    MakbuzTuru=MakbuzTuru.ToName(),
-                    Hesapturu=_hesapTuru.ToName(),
-                    HesapAdi=txtHesap.Text,
-                    BelgeDurumu=entity.BelgeDurumu.ToName()
+                    OgrenciNo = entity.OgrenciNo,
+                    Adi = entity.Adi,
+                    Soyadi = entity.Soyadi,
+                    SinifAdi = entity.SinifAdi,
+                    SubeAdi = entity.OgrenciSubeAdi,
+                    PortfoyNo = entity.OdemeBilgileriId,
+                    OdemeTuruAdi = entity.OdemeTuruAdi,
+                    Vade = entity.Vade,
+                    AsilBorclu = entity.AsilBorclu,
+                    Ciranta = entity.Ciranta,
+                    BankaVeSubeAdi = entity.BankaAdi + " " + entity.OgrenciSubeAdi,
+                    BelgeNo = entity.BelgeNo,
+                    HesapNo = entity.HesapNo,
+                    Tutar = entity.Tutar,
+                    IslemOncesiTutari = entity.IslemOncesiTutar,
+                    IslemTutari = entity.IslemTutari,
+                    Tarih = txtTarih.DateTime.Date,
+                    MakbuzNo = txtMakbuzNo.Text,
+                    MakbuzTuru = MakbuzTuru.ToName(),
+                    Hesapturu = _hesapTuru.ToName(),
+                    HesapAdi = txtHesap.Text,
+                    BelgeDurumu = entity.BelgeDurumu.ToName()
 
 
                 };
@@ -353,7 +353,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
                 source.Add(row);
             }
 
-            ShowListForms<RaporSecim>.ShowDialogListForm(KartTuru.Rapor, false, RaporBolumTuru.MakbuzRaporlari,source);
+            ShowListForms<RaporSecim>.ShowDialogListForm(KartTuru.Rapor, false, RaporBolumTuru.MakbuzRaporlari, source);
 
 
         }
@@ -377,7 +377,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
         }
 
-       
+
 
     }
 }

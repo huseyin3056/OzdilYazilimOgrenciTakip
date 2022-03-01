@@ -19,7 +19,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MeslekForms
             EventsLoad();
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new Meslek() : ((MeslekBll)Bll).Single(FilterFunctions.Filter<Meslek>(Id));
             NesneyiKontrollereBagla();

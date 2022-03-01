@@ -24,7 +24,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.SinifForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new SinifS() : ((SinifBll)Bll).Single(FilterFunctions.Filter<Sinif>(Id));
             NesneyiKontrollereBagla();

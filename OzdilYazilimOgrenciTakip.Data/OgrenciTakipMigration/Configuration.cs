@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using OzdilYazilimOgrenciTakip.Data.Contexts;
 using System.Data.Entity.Migrations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OzdilYazilimOgrenciTakip.Data.Contexts;
 
 namespace OzdilYazilimOgrenciTakip.Data.OgrenciTakipMigration
 {

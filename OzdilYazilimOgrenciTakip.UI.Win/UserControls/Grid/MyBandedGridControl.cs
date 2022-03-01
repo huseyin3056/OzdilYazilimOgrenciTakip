@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DevExpress.Utils;
+﻿using DevExpress.Utils;
 using DevExpress.XtraEditors.Mask;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid;
@@ -13,8 +6,9 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Registrator;
 using DevExpress.XtraGrid.Views.BandedGrid;
 using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
 using OzdilYazilimOgrenciTakip.UI.Win.Interfaces;
+using System.ComponentModel;
+using System.Drawing;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid
 {
@@ -24,7 +18,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid
     {
         protected override BaseView CreateDefaultView()
         {
-            var view = (MyBandedGridView)CreateView("MyBandedGridView");
+          // var view = (MyBandedGridView)CreateView("MyBandedGridView");
+            var view = (BandedGridView)CreateView("MyBandedGridView");
 
             view.Appearance.BandPanel.ForeColor = Color.DarkBlue;
             view.Appearance.BandPanel.Font = new Font(new FontFamily("Tahoma"), 8.25f, FontStyle.Bold);

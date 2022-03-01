@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DevExpress.LookAndFeel;
+using DevExpress.UserSkins;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
+using System;
+using System.Configuration;
+using System.Windows.Forms;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win
 {
@@ -17,6 +17,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            BonusSkins.Register();
+
+            UserLookAndFeel.Default.SetSkinStyle(ConfigurationManager.AppSettings["Skin"], ConfigurationManager.AppSettings["Palette"]);
+
             Application.Run(new AnaForm());
         }
     }

@@ -19,7 +19,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.GorevForms
             EventsLoad();
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new Gorev() : ((GorevBll)Bll).Single(FilterFunctions.Filter<Gorev>(Id));
             NesneyiKontrollereBagla();

@@ -25,7 +25,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new BankaHesapS() : ((BankaHesapBll)Bll).Single(FilterFunctions.Filter<BankaHesap>(Id));
             NesneyiKontrollereBagla();

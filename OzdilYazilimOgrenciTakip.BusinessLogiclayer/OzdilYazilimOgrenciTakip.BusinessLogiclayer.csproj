@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="Base\BaseBll.cs" />
     <Compile Include="Base\BaseGenelBll.cs" />
+    <Compile Include="Base\BaseGenelYonetimBll.cs" />
     <Compile Include="Base\BaseHareketBll.cs" />
     <Compile Include="Functions\Convert.cs" />
     <Compile Include="Functions\Crypto.cs" />
@@ -87,11 +88,14 @@
     <Compile Include="General\BelgeSecimBll.cs" />
     <Compile Include="General\BilgiNotlariBll.cs" />
     <Compile Include="General\CariBll.cs" />
+    <Compile Include="General\DonemBll.cs" />
+    <Compile Include="General\DonemParametreBll.cs" />
     <Compile Include="General\EposBilgileriBll.cs" />
     <Compile Include="General\EvrakBilgileriBll.cs" />
     <Compile Include="General\EvrakBll.cs" />
     <Compile Include="General\FaturaBll.cs" />
     <Compile Include="General\FiltreBll.cs" />
+    <Compile Include="General\GecikmeAciklamalariBll.cs" />
     <Compile Include="General\GelirDagilimRaporuBll.cs" />
     <Compile Include="General\GenelAmacliRaporBll.cs" />
     <Compile Include="General\GeriOdemeBilgileriBll.cs" />
@@ -114,6 +118,10 @@
     <Compile Include="General\KardesBilgileriBll.cs" />
     <Compile Include="General\KasaBll.cs" />
     <Compile Include="General\KontenjanBll.cs" />
+    <Compile Include="General\KullaniciParametreBll.cs" />
+    <Compile Include="General\KurumBilgileriBll.cs" />
+    <Compile Include="General\KurumBll.cs" />
+    <Compile Include="General\MailParametreBll.cs" />
     <Compile Include="General\MakbuzBll.cs" />
     <Compile Include="General\MakbuzHareketleriBll.cs" />
     <Compile Include="General\MeslekBll.cs" />
@@ -121,6 +129,7 @@
     <Compile Include="General\NetUcretRaporuBll.cs" />
     <Compile Include="General\OdemeBelgeleriRaporuBll.cs" />
     <Compile Include="General\OdemeBilgileriBll.cs" />
+    <Compile Include="General\OdemesiGecikenAlacaklarBll.cs" />
     <Compile Include="General\OdemeTuruBll.cs" />
     <Compile Include="General\OgrenciBll.cs" />
     <Compile Include="General\OkulBll.cs" />
@@ -130,12 +139,15 @@
     <Compile Include="General\PromosyonBll.cs" />
     <Compile Include="General\RaporBll.cs" />
     <Compile Include="General\RehberBll.cs" />
+    <Compile Include="General\RolBll.cs" />
+    <Compile Include="General\RolYetkileriBll.cs" />
     <Compile Include="General\ServisBll.cs" />
     <Compile Include="General\SinavBilgileriBll.cs" />
     <Compile Include="General\SinifBll.cs" />
     <Compile Include="General\SinifGrupBll.cs" />
     <Compile Include="General\SubeBll.cs" />
     <Compile Include="General\TahakkukBll.cs" />
+    <Compile Include="General\TahsilatRaporuBll.cs" />
     <Compile Include="General\TesvikBll.cs" />
     <Compile Include="General\UcretOrtalamalariBll.cs" />
     <Compile Include="General\UcretVeOdemeRaporuBll.cs" />

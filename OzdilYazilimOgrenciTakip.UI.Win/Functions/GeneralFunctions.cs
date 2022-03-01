@@ -1,27 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Drawing.Printing;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
+﻿using DevExpress.Utils.Extensions;
 using DevExpress.XtraBars;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
+using DevExpress.XtraPrinting.Native;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraVerticalGrid;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Properties;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
-using DevExpress.XtraPrinting.Native;
-using DevExpress.Utils.Extensions;
-using DevExpress.XtraReports.UI;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security;
+using System.Windows.Forms;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 {
@@ -95,7 +101,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
                 }
 
-                else if (!currentValue.Equals(oldValue))             
+                else if (!currentValue.Equals(oldValue))
                     return VeriDegisimYeri.Alan;
 
             }
@@ -221,6 +227,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                     edt.Enabled = baseEdit.Id.HasValue && baseEdit.Id > 0;
                     edt.Id = null;
                     edt.EditValue = null;
+                    break;
+
+                case PropertyGridControl pGrd:
+                    pGrd.Enabled = baseEdit.Id.HasValue && baseEdit.Id > 0;
+                    if (!pGrd.Enabled)
+                        pGrd.SelectedObject = null;
                     break;
             }
         }
@@ -395,11 +407,128 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             return stream;
         }
 
-        public static IEnumerable<T> CheckedComboBoxList<T> (this MyChechedComboBoxEdit comboBox)
+        public static IEnumerable<T> CheckedComboBoxList<T>(this MyChechedComboBoxEdit comboBox)
         {
-            var results= comboBox.Properties.Items.Where(x => x.CheckState == CheckState.Checked).Select(x => (T)x.Value);
+            var results = comboBox.Properties.Items.Where(x => x.CheckState == CheckState.Checked).Select(x => (T)x.Value);
 
             return results;
         }
+
+        public static void AppSettingsWrite(string key, string value)
+        {
+            var configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            configuration.AppSettings.Settings[key].Value = value;
+            configuration.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
+        }
+
+
+        public static void CreateConnectionString(string initialCatalog, string server, SecureString kullaniciAdi, SecureString sifre, YetkilendirmeTuru yetkilendirmeTuru)
+        {
+            SqlConnectionStringBuilder builder = null;
+
+            switch (yetkilendirmeTuru)
+            {
+                case YetkilendirmeTuru.SqlServer:
+
+                    builder = new SqlConnectionStringBuilder
+                    {
+                        DataSource = server,
+                        InitialCatalog=initialCatalog,
+                        UserID = kullaniciAdi.ConvertToUnsecureString(),
+                        Password = sifre.ConvertToUnsecureString(),
+                        MultipleActiveResultSets=true
+
+
+                    };
+                    
+                    break;
+                case YetkilendirmeTuru.Windows:
+                    {
+                        builder = new SqlConnectionStringBuilder
+                        {
+                            DataSource = server,
+                            InitialCatalog = initialCatalog,
+                            UserID = kullaniciAdi.ConvertToUnsecureString(),
+                            IntegratedSecurity=true,
+                            MultipleActiveResultSets = true
+
+                        };
+                    };
+                    break;
+
+            }
+
+            var configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            configuration.ConnectionStrings.ConnectionStrings["OgrenciTakipContext"].ConnectionString = builder?.ConnectionString;
+            configuration.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("connectionStrings");
+           // ConfigurationManager.RefreshSection("appSettings"); Yukarıdaki şekilde düzelttim.
+            Settings.Default.Reset();
+            Settings.Default.Save();
+
+
+
+        }
+
+        public static SecureString ConvertToSecureString(this string value)
+        {
+            var secureString = new SecureString();
+
+            if (value.Length > 0)
+                value.ToCharArray().ForEach(x => secureString.AppendChar(x));
+
+            secureString.MakeReadOnly();
+            return secureString;
+
+        }
+
+        public static string ConvertToUnsecureString(this SecureString value)
+        {
+            var result = Marshal.SecureStringToBSTR(value);
+            return Marshal.PtrToStringAuto(result);
+
+        }
+
+        public static bool BaglantiKontrolu(string server,SecureString kullaniciAdi,SecureString sifre,YetkilendirmeTuru yetkilendirmeTuru,bool genelMesajVer=false)
+        {
+            CreateConnectionString("", server, kullaniciAdi, sifre, yetkilendirmeTuru);
+
+            using (var con=new SqlConnection(BusinessLogiclayer.Functions.GeneralFunctions.GetConnectionString()))
+            {
+                try
+                {
+                    if (con.ConnectionString == "") return false;
+                    con.Open();
+                    return true;
+
+
+                }
+                catch (SqlException ex)
+                {
+                    if(genelMesajVer)
+                    {
+                        Messages.HataMesaji("Server Bağlantı Ayarlarınız hatalıdır. Lütfen Kontrol Ediniz");
+                        return false;
+                    }
+
+                    switch (ex.Number)
+                    {
+                        case 18456:
+                            Messages.HataMesaji("Server Kullanıcı Adı veya Şifresi Hatalıdır");
+                            break;
+
+                        default:
+                            Messages.HataMesaji(ex.Message);
+                            break;
+                    }
+                }
+
+                return false;
+            }
+        }
+
+
+
     }
 }

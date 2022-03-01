@@ -30,7 +30,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OzelKodForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new OzelKod() : ((OzelKodBll)Bll).Single(FilterFunctions.Filter<OzelKod>(Id));
             NesneyiKontrollereBagla();

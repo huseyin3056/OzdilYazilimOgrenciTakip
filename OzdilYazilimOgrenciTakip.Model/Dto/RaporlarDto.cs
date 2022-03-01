@@ -7,6 +7,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
     {
         public long OgrenciId { get; set; }
         public long TahakkukId { get; set; }
+        public string TahakkukNo { get; set; } // Ben Ekledim. 22.02.2022
         public long SubeId { get; set; }
         public long DonemId { get; set; }
         public string OgrenciNo { get; set; }
@@ -43,7 +44,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string KontenjanAdi { get; set; }
         public string YabanciDilAdi { get; set; }
         public string RehberAdi { get; set; }
-  
+
         public string TesvikAdi { get; set; }
         public IptalDurumu IptalDurumu { get; set; }
         public string SubeAdi { get; set; }
@@ -65,7 +66,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public DateTime? VeliDogumTarihi { get; set; }
         public KanGrubu? VeliKanGrubu { get; set; }
         public string VeliEvTel { get; set; }
-       
+
         public string VeliIsTel1 { get; set; }
         public string VeliIsTel2 { get; set; }
         public string VeliCepTel1 { get; set; }
@@ -118,7 +119,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string Adi { get; set; }
         public string Soyadi { get; set; }
         public Cinsiyet Cinsiyet { get; set; }
-        public string Telefon { get; set; }     
+        public string Telefon { get; set; }
         public DateTime KayitTarihi { get; set; }
         public KayitSekli KayitSekli { get; set; }
         public KayitDurumu KayitDurumu { get; set; }
@@ -141,7 +142,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string VeliMeslekAdi { get; set; }
         public string VeliIsyeriAdi { get; set; }
         public string VeliGorevAdi { get; set; }
-      
+
 
     }
 
@@ -152,6 +153,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public long TahakkukId { get; set; }
         public long SubeId { get; set; }
         public long DonemId { get; set; }
+        public string TahakkukNo { get; set; } // Ben Ekledim.  22.02.2022
         public string OgrenciNo { get; set; }
         public string OkulNo { get; set; }
         public string TcKimlikNo { get; set; }
@@ -469,6 +471,132 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string OzelKod5 { get; set; }
 
 
+
+
+
+
+
+    }
+
+    public class TahsilatRaporuL
+    {
+        public long SubeId { get; set; }
+        public long DonemId { get; set; }
+        public string OgrenciSubeAdi { get; set; }
+        public string OgrenciNo { get; set; }
+        public string Adi { get; set; }
+        public string Soyadi { get; set; }
+        public string SinifAdi { get; set; }
+        public string SinifGrupAdi { get; set; }
+        public DateTime KayitTarihi { get; set; }
+        public KayitSekli KayitSekli { get; set; }
+        public KayitDurumu KayitDurumu { get; set; }
+        public IptalDurumu IptalDurumu { get; set; }
+        public string BelgeSubeAdi { get; set; }
+        public int PortfoyNo { get; set; }
+        public string OdemeTuruAdi { get; set; }
+        public DateTime GirisTarihi { get; set; }
+        public DateTime Vade { get; set; }
+        public DateTime HesabaGecisTarihi { get; set; }
+        public decimal Tutar { get; set; }
+        public decimal IslemOncesiTutar { get; set; }
+        public decimal IslemTutari { get; set; }
+        public decimal Kalan { get; set; }
+        public BelgeDurumu BelgeDurumu { get; set; }
+
+        public string BelgeNo { get; set; }
+        public string HesapNo { get; set; }
+        public string BankaAdi { get; set; }
+        public string BankaSubeAdi { get; set; }
+        public string AsilBorclu { get; set; }
+        public string Ciranta { get; set; }
+        public byte BlokeGunSayisi { get; set; }
+        public string BankaHesapAdi { get; set; }
+        public string TakipNo { get; set; }
+        public string Aciklama { get; set; }
+
+        public long MakbuzId { get; set; }
+        public string MakbuzNo { get; set; }
+        public DateTime MakbuzTarihi { get; set; }
+        public MakbuzTuru MakbuzTuru { get; set; }
+        public MakbuzHesapTuru MakbuzHesapTuru { get; set; }
+        public string IslemYeri { get; set; }
+        public string TahsilEden { get; set; }
+
+
+        public string OzelKod1 { get; set; }
+        public string OzelKod2 { get; set; }
+        public string OzelKod3 { get; set; }
+        public string OzelKod4 { get; set; }
+        public string OzelKod5 { get; set; }
+
+
+
+
+
+
+
+
+    }
+
+
+    public class OdemesiGecikenAlacaklarRaporuL
+    {
+        public long SubeId { get; set; }
+        public long DonemId { get; set; }
+        public string OgrenciSubeAdi { get; set; }
+        public string OgrenciNo { get; set; }
+        public string Adi { get; set; }
+        public string Soyadi { get; set; }
+        public string SinifAdi { get; set; }
+        public string SinifGrupAdi { get; set; }
+        public DateTime KayitTarihi { get; set; }
+        public KayitSekli KayitSekli { get; set; }
+        public KayitDurumu KayitDurumu { get; set; }
+        public IptalDurumu IptalDurumu { get; set; }
+        public string BelgeSubeAdi { get; set; }
+        public int PortfoyNo { get; set; }
+        public string OdemeTuruAdi { get; set; }
+        public DateTime GirisTarihi { get; set; }
+        public DateTime Vade { get; set; }
+        public DateTime HesabaGecisTarihi { get; set; }
+        public decimal Tutar { get; set; }
+        public decimal Iade { get; set; }
+        public decimal NetTutar { get; set; }
+        public decimal Tahsil { get; set; }
+        public decimal Tahsilde { get; set; }
+        public decimal Kalan { get; set; }
+        public BelgeDurumu BelgeDurumu { get; set; }
+
+        public string BelgeNo { get; set; }
+        public string HesapNo { get; set; }
+        public string BankaAdi { get; set; }
+        public string BankaSubeAdi { get; set; }
+        public string AsilBorclu { get; set; }
+        public string Ciranta { get; set; }
+        public byte BlokeGunSayisi { get; set; }
+        public string BankaHesapAdi { get; set; }
+        public string TakipNo { get; set; }
+        public string Aciklama { get; set; }
+        public DateTime? SonHareketTarih { get; set; }
+        public string SonIslemYeri { get; set; }
+        public string OzelKod1 { get; set; }
+        public string OzelKod2 { get; set; }
+        public string OzelKod3 { get; set; }
+        public string OzelKod4 { get; set; }
+        public string OzelKod5 { get; set; }
+
+        public string VeliAdi { get; set; }
+        public string VeliSoyadi { get; set; }
+        public string Yakinlik { get; set; }
+        public string Meslek { get; set; }
+        public string EvTel { get; set; }
+        public string IsTel1 { get; set; }
+        public string IsTel2 { get; set; }
+        public string CepTel1 { get; set; }
+        public string CepTel2 { get; set; }
+        public string Isyeri { get; set; }
+        public string Gorev { get; set; }
 
 
 
