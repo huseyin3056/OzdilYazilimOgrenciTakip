@@ -29,7 +29,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms
 
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new OkulS() : ((OkulBll)Bll).Single(FilterFunctions.Filter<Okul>(Id));
             NesneyiKontrollereBagla();

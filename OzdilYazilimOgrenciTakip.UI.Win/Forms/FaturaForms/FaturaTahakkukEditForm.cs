@@ -31,7 +31,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms
 
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             txtKdvSekli.SelectedItem = KdvSekli.Dahil.ToName();
             txtFaturaAdresi.SelectedItem = AdresTuru.EvAdresi.ToName();

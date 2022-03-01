@@ -54,8 +54,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             txtKayitDurumu.Properties.Items.AddRange(EnumFunctions.GetEnumDescriptionList<KayitDurumu>());
             txtSonrakiDonemKayitDurumu.Properties.Items.AddRange(EnumFunctions.GetEnumDescriptionList<SonrakiDonemKayitDurumu>());
 
-            txtKayitTarihi.Properties.MinValue = AnaForm.DonemBaslamaTarihi;
-            txtKayitTarihi.Properties.MaxValue = AnaForm.DonemBitisTarihi;
+            txtKayitTarihi.Properties.MinValue = AnaForm.DonemParametreleri.DonemBaslamaTarihi;
+            txtKayitTarihi.Properties.MaxValue = AnaForm.DonemParametreleri.DonemBitisTarihi;
 
             btnYazdir.Caption = "Kayıt Evrakları";
 
@@ -74,7 +74,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new TahakkukS() : ((TahakkukBll)Bll).Single(FilterFunctions.Filter<Tahakkuk>(Id));
             NesneyiKontrollereBagla();
@@ -192,8 +192,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             txtSoyadi.Text = BaseIslemTuru == IslemTuru.EntityInsert ? _ogrenci.SoyAdi : entity.SoyAdi;
             txtBabaAdi.Text = BaseIslemTuru == IslemTuru.EntityInsert ? _ogrenci.BabaAdi : entity.AnaAdi;
             txtAnaAdi.Text = BaseIslemTuru == IslemTuru.EntityInsert ? _ogrenci.AnaAdi : entity.AnaAdi;
-            txtDurum.Text = entity.Durum ? IptalDurumu.DevamEdiyor.ToName() : IptalDurumu.IptalEdildi.ToName();
+            txtDurum.Text = entity.Durum ? IptalDurumu.DevamEdiyor.ToName() : IptalDurumu.IptalEdildi.ToName();       
             txtKod.Text = entity.Kod;
+            txtOgrenciNo.Text= entity.OgrenciNo;
             txtOkulNo.Text = entity.OkulNo;
             txtKayitTarihi.DateTime = entity.KayitTarihi;
             txtKayitSekli.SelectedItem = entity.KayitSekli.ToName();
@@ -230,9 +231,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
             CurrentEntity = new Tahakkuk
             {
-                Id = Id,
-                Kod = txtKod.Text,
-                OgrenciId = BaseIslemTuru == IslemTuru.EntityInsert ? _ogrenci.Id : ((TahakkukS)OldEntity).OgrenciId,
+                Id = Id,         
+                Kod = txtKod.Text,               
+                OgrenciId = BaseIslemTuru == IslemTuru.EntityInsert ? _ogrenci.Id : ((Tahakkuk)OldEntity).OgrenciId,
                 OkulNo = txtOkulNo.Text,
                 KayitTarihi = txtKayitTarihi.DateTime.Date,
                 KayitSekli = txtKayitSekli.Text.GetEnum<KayitSekli>(),
@@ -429,14 +430,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
 
         protected override bool BagliTabloKaydet()
         {
-            if (_kardesBilgileriTable != null && _kardesBilgileriTable.Kaydet()) return false;
-            if (_aileBilgileriTable != null && _aileBilgileriTable.Kaydet()) return false;
-            if (_sinavBilgileriTable != null && _sinavBilgileriTable.Kaydet()) return false;
-            if (_evrakBilgileriTable != null && _evrakBilgileriTable.Kaydet()) return false;
-            if (_promosyonBilgileriTable != null && _promosyonBilgileriTable.Kaydet()) return false;
-            if (_iletisimBilgileriTable != null && _iletisimBilgileriTable.Kaydet()) return false;
-            if (_eposBilgileriTable != null && _eposBilgileriTable.Kaydet()) return false;
-            if (_bilgiNotlariTable != null && _bilgiNotlariTable.Kaydet()) return false;
+            if (_kardesBilgileriTable != null && !_kardesBilgileriTable.Kaydet()) return false;
+            if (_aileBilgileriTable != null && !_aileBilgileriTable.Kaydet()) return false;
+            if (_sinavBilgileriTable != null && !_sinavBilgileriTable.Kaydet()) return false;
+            if (_evrakBilgileriTable != null && !_evrakBilgileriTable.Kaydet()) return false;
+            if (_promosyonBilgileriTable != null && !_promosyonBilgileriTable.Kaydet()) return false;
+            if (_iletisimBilgileriTable != null && !_iletisimBilgileriTable.Kaydet()) return false;
+            if (_eposBilgileriTable != null && !_eposBilgileriTable.Kaydet()) return false;
+            if (_bilgiNotlariTable != null && !_bilgiNotlariTable.Kaydet()) return false;
             if (!hizmetBilgileriTable.Kaydet()) return false;
             if (!indirimBilgileriTable.Kaydet()) return false;
             if (!odemeBilgileriTable.Kaydet()) return false;

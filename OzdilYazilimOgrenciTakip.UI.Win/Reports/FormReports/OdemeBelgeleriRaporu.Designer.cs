@@ -56,6 +56,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports
             DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            this.colBelgeDurumu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.myDataLayoutControl = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
             this.txtBelgeDurumlari = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyChechedComboBoxEdit();
             this.txtOdemeler = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyChechedComboBoxEdit();
@@ -86,7 +87,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports
             this.colTahsil = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colTahsilde = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colKalan = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colBelgeDurumu = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSonHareketTarih = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSonIslemYeri = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -168,6 +168,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports
             // 
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
+            // 
+            // colBelgeDurumu
+            // 
+            this.colBelgeDurumu.AppearanceHeader.Options.UseTextOptions = true;
+            this.colBelgeDurumu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colBelgeDurumu.Caption = "Durum";
+            this.colBelgeDurumu.FieldName = "BelgeDurumu";
+            this.colBelgeDurumu.Name = "colBelgeDurumu";
+            this.colBelgeDurumu.OptionsColumn.AllowEdit = false;
+            this.colBelgeDurumu.Visible = true;
             // 
             // myDataLayoutControl
             // 
@@ -400,7 +410,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports
             this.tablo.OptionsView.ShowViewCaption = true;
             this.tablo.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colVade, DevExpress.Data.ColumnSortOrder.Ascending)});
-            this.tablo.ViewCaption = "Gelir Dağılım Raporu";
+            this.tablo.ViewCaption = "Ödeme Belgeleri Raporu";
             // 
             // gridBand8
             // 
@@ -711,16 +721,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports
             this.colKalan.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Kalan", "{0:n2}")});
             this.colKalan.Visible = true;
-            // 
-            // colBelgeDurumu
-            // 
-            this.colBelgeDurumu.AppearanceHeader.Options.UseTextOptions = true;
-            this.colBelgeDurumu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colBelgeDurumu.Caption = "Durum";
-            this.colBelgeDurumu.FieldName = "BelgeDurumu";
-            this.colBelgeDurumu.Name = "colBelgeDurumu";
-            this.colBelgeDurumu.OptionsColumn.AllowEdit = false;
-            this.colBelgeDurumu.Visible = true;
             // 
             // gridBand3
             // 

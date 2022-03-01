@@ -20,6 +20,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public string OkulNo { get; set; }
 
 
+
         [Column(TypeName = "date")]
         public DateTime KayitTarihi { get; set; } = DateTime.Now.Date;
 

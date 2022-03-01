@@ -60,8 +60,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                         ? z.Makbuz.AvukatHesap.AdiSoyadi : z.Makbuz.BankaHesapId != null
                         ? z.Makbuz.BankaHesap.HesapAdi : z.Makbuz.CariHesapId != null
                         ? z.Makbuz.CariHesap.CariAdi : z.Makbuz.KasaHesapId != null
-                        ? z.Makbuz.KasaHesap.KasaAdi : z.Makbuz.SubeHesapId != null
-                        ? z.Makbuz.SubeHesap.SubeAdi : null).FirstOrDefault(),
+                        ? z.Makbuz.KasaHesap.KasaAdi :  z.Makbuz.SubeHesap.SubeAdi).FirstOrDefault(),
 
 
                 }).FirstOrDefault(),

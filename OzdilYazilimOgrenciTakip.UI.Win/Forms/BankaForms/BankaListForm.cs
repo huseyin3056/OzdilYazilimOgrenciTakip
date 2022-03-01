@@ -40,18 +40,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms
 
         }
 
-        // Güncellenecek
+      
 
         protected override void BagliKartAc()
         {
-
-
             var entity = tablo.GetRow<BankaL>();
             if (entity == null) return;
 
             ShowListForms<BankaSubeListForm>.ShowListForm(Common.Enums.KartTuru.BankaSube, entity.Id, entity.BankaAdi);
-
-
         }
     }
 }

@@ -38,7 +38,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.KardesTahakku
             ListeDisiTutulacakKayitlar.Add(OwnerForm.Id);
 
 
-            var entities = ShowListForms<TahakkukListForm>.ShowDialogListForm(Common.Enums.KartTuru.Tahakkuk, ListeDisiTutulacakKayitlar, true, false).EntityListConvert<TahakkukL>();
+            var entities = ShowListForms<TahakkukListForm>.ShowDialogListForm(KartTuru.Tahakkuk, ListeDisiTutulacakKayitlar, true, false).EntityListConvert<TahakkukL>();
 
             if (entities == null) return;
 

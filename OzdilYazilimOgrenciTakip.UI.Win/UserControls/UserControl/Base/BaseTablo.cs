@@ -83,7 +83,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         }
 
-        protected virtual  void Tablo_RowCountChanged(object sender, EventArgs e) { }
+        protected virtual void Tablo_RowCountChanged(object sender, EventArgs e) { }
 
         private void Tablo_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
         {
@@ -167,10 +167,21 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
             }
 
-            else if(e.Item==btnBelgeHareketleri)
+            else if (e.Item == btnBelgeHareketleri)
             {
                 BelgeHareketleri();
             }
+
+            else if (e.Item == btnTumunuSec)
+            {
+                TumunuSec();
+            }
+
+            else if (e.Item == btnTumSecimleriKaldir)
+            {
+                TumSecimleriKaldir();
+            }
+
 
             Cursor.Current = DefaultCursor;
 
@@ -219,6 +230,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
 
         protected virtual void IptalGeriAl() { }
 
+       protected virtual void TumSecimleriKaldir() { }
+        protected virtual void TumunuSec() { }
 
         protected internal bool Kaydet()
         {

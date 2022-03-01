@@ -28,7 +28,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms
         }
    
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             TabloYukle();
 

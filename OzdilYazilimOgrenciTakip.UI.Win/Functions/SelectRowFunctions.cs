@@ -122,6 +122,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             _column.OptionsColumn.ShowCaption = false;
             _column.OptionsColumn.AllowEdit = false;
             _column.OptionsColumn.AllowSize = false;
+            _column.OptionsColumn.FixedWidth = true;
             _column.UnboundType = UnboundColumnType.Boolean;
             _column.Width = 35;
             _column.ColumnEdit = _checkEdit;

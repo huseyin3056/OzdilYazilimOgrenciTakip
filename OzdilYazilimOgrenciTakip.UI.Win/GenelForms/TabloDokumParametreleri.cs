@@ -29,7 +29,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             _raporBaslik = prm[0].ToString();
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             txtRaporBasligi.Text = _raporBaslik;
             txtBaslikEkle.Properties.Items.AddRange(EnumFunctions.GetEnumDescriptionList<EvetHayir>());     

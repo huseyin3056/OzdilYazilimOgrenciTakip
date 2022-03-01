@@ -44,6 +44,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTumunuSec = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTumSecimleriKaldir = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager)).BeginInit();
             this.SuspendLayout();
@@ -64,7 +66,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             new DevExpress.XtraBars.LinkPersistInfo(this.btnKartDuzenle),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIptalEt),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnIptalGeriAl),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnBelgeHareketleri)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnBelgeHareketleri),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnTumunuSec),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnTumSecimleriKaldir)});
             this.popupMenu.Manager = this.barManager;
             this.popupMenu.Name = "popupMenu";
             // 
@@ -137,8 +141,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             this.btnKartDuzenle,
             this.btnIptalEt,
             this.btnIptalGeriAl,
-            this.btnBelgeHareketleri});
-            this.barManager.MaxItemId = 8;
+            this.btnBelgeHareketleri,
+            this.btnTumunuSec,
+            this.btnTumSecimleriKaldir});
+            this.barManager.MaxItemId = 10;
             // 
             // barDockControlTop
             // 
@@ -178,6 +184,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
             this.barButtonItem1.Id = 2;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // btnTumunuSec
+            // 
+            this.btnTumunuSec.Caption = "Tümünü Seç";
+            this.btnTumunuSec.Id = 8;
+            this.btnTumunuSec.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.task_16x16;
+            this.btnTumunuSec.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.task_32x32;
+            this.btnTumunuSec.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A));
+            this.btnTumunuSec.Name = "btnTumunuSec";
+            this.btnTumunuSec.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
+            // btnTumSecimleriKaldir
+            // 
+            this.btnTumSecimleriKaldir.Caption = "Tüm Seçimleri Kaldır";
+            this.btnTumSecimleriKaldir.Id = 9;
+            this.btnTumSecimleriKaldir.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.highlightactiveelements_16x16;
+            this.btnTumSecimleriKaldir.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.highlightactiveelements_32x32;
+            this.btnTumSecimleriKaldir.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.K));
+            this.btnTumSecimleriKaldir.Name = "btnTumSecimleriKaldir";
+            this.btnTumSecimleriKaldir.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
             // BaseTablo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,5 +237,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base
         protected DevExpress.XtraBars.BarButtonItem btnHareketEkle;
         protected DevExpress.XtraBars.BarButtonItem btnHareketSil;
         protected internal DevExpress.XtraBars.BarButtonItem btnBelgeHareketleri;
+        protected internal DevExpress.XtraBars.BarButtonItem btnTumunuSec;
+        protected internal DevExpress.XtraBars.BarButtonItem btnTumSecimleriKaldir;
     }
 }

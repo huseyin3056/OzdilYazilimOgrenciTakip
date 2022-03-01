@@ -46,7 +46,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                     Pos = y.Where(z => z.OdemeTipi == Common.Enums.OdemeTipi.Pos).Select(z => z.Tutar).DefaultIfEmpty(0).Sum(),
                     Senet = y.Where(z => z.OdemeTipi == Common.Enums.OdemeTipi.Senet).Select(z => z.Tutar).DefaultIfEmpty(0).Sum(),
                     ToplamOdeme = y.Select(z => z.Tutar).DefaultIfEmpty(0).Sum(),
-                   
+
                     Tahsil = y.Select(z => z.MakbuzHareketleri.Where(c =>
                     c.BelgeDurumu == Common.Enums.BelgeDurumu.AvukatYoluylaTahsilEtme ||
                         c.BelgeDurumu == Common.Enums.BelgeDurumu.BankaYoluylaTahsilEtme ||
@@ -87,7 +87,8 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             {
                 TahakkukId = x.Tahakkuk.Id,
                 OgrenciId = x.Tahakkuk.OgrenciId,
-                OgrenciNo = x.Tahakkuk.Kod,
+                OgrenciNo = x.Tahakkuk.Ogrenci.Kod,
+                TahakkukNo = x.Tahakkuk.Kod,
                 OkulNo = x.Tahakkuk.OkulNo,
                 TcKimlikNo = x.Tahakkuk.Ogrenci.TcKimlikNo,
                 Adi = x.Tahakkuk.Ogrenci.Adi,
@@ -125,7 +126,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 TesvikAdi = x.Tahakkuk.Tesvik.TesvikAdi,
                 SubeId = x.Tahakkuk.SubeId,
                 SubeAdi = x.Tahakkuk.Sube.SubeAdi,
-                DonemId=x.Tahakkuk.DonemId,
+                DonemId = x.Tahakkuk.DonemId,
                 OzelKod1 = x.Tahakkuk.OzelKod1.OzelKodAdi,
                 OzelKod2 = x.Tahakkuk.OzelKod2.OzelKodAdi,
                 OzelKod3 = x.Tahakkuk.OzelKod3.OzelKodAdi,

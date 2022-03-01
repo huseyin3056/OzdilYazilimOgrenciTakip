@@ -29,7 +29,6 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
             modelBuilder.Entity<Indirim>().HasMany(x => x.IndiriminUygulanacagiHizmetBilgileri).WithRequired().WillCascadeOnDelete(true);
 
 
-
         }
 
         public DbSet<Okul> Okul { get; set; }
@@ -86,7 +85,14 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<Rapor> Rapor { get; set; }
         public DbSet<Fatura> Fatura { get; set; }
         public DbSet<Urun> Urun { get; set; }
-
+        public DbSet<GecikmeAciklamalari> GecikmeAciklamalari { get; set; }
+        public DbSet<DonemParametre> DonemParametre { get; set; }
+        public DbSet<KullaniciParametre> KullaniciParametre { get; set; }
+        public DbSet<MailParametre> MailParametre { get; set; }
+        public DbSet<KurumBilgileri> KurumBilgileri { get; set; }
+        public DbSet<Rol> Rol { get; set; }
+        public DbSet<RolYetkileri> RolYetkileri { get; set; }
+        public DbSet<Kullanici> Kullanici { get; set; }
 
 
 

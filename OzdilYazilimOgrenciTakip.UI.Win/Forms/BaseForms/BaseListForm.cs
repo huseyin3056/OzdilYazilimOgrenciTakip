@@ -15,6 +15,8 @@ using OzdilYazilimOgrenciTakip.UI.Win.Forms.FiltreForms;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using System.Collections.Generic;
 using OzdilYazilimOgrenciTakip.Common.Message;
+using System.Drawing;
+using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 {
@@ -147,16 +149,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         private void IslemTuruSec()
         {
             if (!IsMdiChild)
-            {
+        
+                if (btnSec.Visibility == BarItemVisibility.Never)
+                    btnDuzelt.PerformClick();
+                else
 
                 SelectEntity();
-            }
+         
 
             else
-            {
+      
                 btnDuzelt.PerformClick();
-            }
-            Listele();
+       
+           // Listele();
 
         }
 
@@ -320,7 +325,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             Listele();
             Cursor.Current = DefaultCursor;
 
-            // Güncellenecek
+            Tablo.Appearance.ViewCaption.ForeColor = Color.FromArgb(AnaForm.KullaniciParametreleri.TableViewCaptionForeColor);
+            Tablo.Appearance.HeaderPanel.ForeColor = Color.FromArgb(AnaForm.KullaniciParametreleri.TableColumnHeaderForeColor);
+            if (Tablo is MyBandedGridView bandedGrid)
+                bandedGrid.Appearance.BandPanel.ForeColor = Color.FromArgb(AnaForm.KullaniciParametreleri.TableBandPanelForeColor);
+
 
         }
 
@@ -469,6 +478,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                 BaskiOnIzleme();
             }
 
+            else if(e.Item==btnParametreler)
+            {
+                BagliKartAc();
+            }
 
             Cursor.Current = DefaultCursor;
         }

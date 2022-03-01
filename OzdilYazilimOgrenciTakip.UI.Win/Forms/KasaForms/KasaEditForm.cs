@@ -22,7 +22,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new KasaS() : ((KasaBll)Bll).Single(FilterFunctions.Filter<Kasa>(Id));
             NesneyiKontrollereBagla();

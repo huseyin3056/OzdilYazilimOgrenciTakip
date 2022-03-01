@@ -21,7 +21,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.SubeForms
             EventsLoad();
         }
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new SubeS() : ((SubeBll)Bll).Single(FilterFunctions.Filter<Sube>(Id));
             NesneyiKontrollereBagla();

@@ -42,7 +42,9 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             {
                 TahakkukId = x.Tahakkuk.Id,
                 OgrenciId = x.Tahakkuk.OgrenciId,
-                OgrenciNo = x.Tahakkuk.Kod,
+                TahakkukNo= x.Tahakkuk.Kod,
+
+                OgrenciNo = x.Tahakkuk.Ogrenci.Kod, // Ben Ekledim. 22.02.2022
                 OkulNo = x.Tahakkuk.OkulNo,
                 TcKimlikNo = x.Tahakkuk.Ogrenci.TcKimlikNo,
                 Adi = x.Tahakkuk.Ogrenci.Adi,

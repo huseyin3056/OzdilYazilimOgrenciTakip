@@ -276,7 +276,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             else if(e.FocusedColumn==colVade)
             {
                 repositoryVade.MinValue = ((TahakkukEditForm)OwnerForm).txtKayitTarihi.DateTime.Date;
-                repositoryVade.MaxValue = AnaForm.MaksimumTaksitTarihi;
+                repositoryVade.MaxValue = AnaForm.DonemParametreleri.MaksimumTaksitTarihi;
 
             }
 

@@ -52,11 +52,9 @@
   <ItemGroup>
     <Compile Include="Contexts\BaseDbContext.cs" />
     <Compile Include="Contexts\OgrenciTakipContext.cs" />
-    <Compile Include="Migrations\202201310838311_mig6.cs" />
-    <Compile Include="Migrations\202201310838311_mig6.Designer.cs">
-      <DependentUpon>202201310838311_mig6.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Contexts\OgrenciTakipYonetimContext.cs" />
     <Compile Include="OgrenciTakipMigration\Configuration.cs" />
+    <Compile Include="OgrenciTakipYonetimMigration\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,10 +67,5 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202201310838311_mig6.resx">
-      <DependentUpon>202201310838311_mig6.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

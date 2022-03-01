@@ -29,7 +29,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new OgrenciS() : ((OgrenciBll)Bll).Single(FilterFunctions.Filter<Ogrenci>(Id));
             NesneyiKontrollereBagla();
@@ -159,7 +159,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
 
                 else if (sender == txtOzelKod5)
                     sec.Sec(txtOzelKod5, KartTuru.Ogrenci);
-
              
         }
 

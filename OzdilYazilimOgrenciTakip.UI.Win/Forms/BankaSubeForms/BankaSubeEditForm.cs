@@ -24,7 +24,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaSubeForms
 
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new BankaSube() : ((BankaSubeBll)Bll).Single(FilterFunctions.Filter<BankaSube>(Id));
             NesneyiKontrollereBagla();
@@ -75,6 +75,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaSubeForms
             return ((BankaSubeBll)Bll).Update(OldEntity, CurrentEntity, x => x.Kod == CurrentEntity.Kod && x.BankaId == _bankaId);
 
         }
+
+
 
     }
 }

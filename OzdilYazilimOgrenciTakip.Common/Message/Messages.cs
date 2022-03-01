@@ -139,5 +139,13 @@ namespace OzdilYazilimOgrenciTakip.Common.Message
             return HayirSeciliEvetHayir("Rapor Kapatılacaktır. Onaylıyormusunuz?", "Onay");
 
         }
+
+        public static DialogResult EmailGonderimOnayi()
+        {
+            return HayirSeciliEvetHayir("Kullanıcı Şifresi Sıfırlanarak Kullanıcı Bilgilerini İçeren Yeni Bir Email Gönderilecektir. Onaylıyormusunuz?", "Onay");
+
+        }
+
+
     }
 }

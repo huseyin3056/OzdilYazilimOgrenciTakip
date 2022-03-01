@@ -25,7 +25,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new IletisimS() : ((IletisimBll)Bll).Single(FilterFunctions.Filter<Iletisim>(Id));
             NesneyiKontrollereBagla();

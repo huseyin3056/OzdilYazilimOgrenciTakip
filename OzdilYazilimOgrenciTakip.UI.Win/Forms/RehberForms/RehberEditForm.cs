@@ -21,7 +21,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RehberForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new Rehber() : ((RehberBll)Bll).Single(FilterFunctions.Filter<Rehber>(Id));
             NesneyiKontrollereBagla();

@@ -82,6 +82,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.tabUst = new DevExpress.XtraBars.Navigation.TabPane();
             this.pageGenelBilgiler = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.DataLayoutControlGenelBilgiler = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
+            this.txtOgrenciNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyTextEdit();
             this.txtOzelKod5 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyButtonEdit();
             this.txtOzelKod4 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyButtonEdit();
             this.txtOzelKod3 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyButtonEdit();
@@ -132,6 +133,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem33 = new DevExpress.XtraLayout.LayoutControlItem();
             this.pageKardesBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.pageAileSinavBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.myDataLayoutControl = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
@@ -173,6 +175,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageGenelBilgiler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataLayoutControlGenelBilgiler)).BeginInit();
             this.DataLayoutControlGenelBilgiler.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOgrenciNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod3.Properties)).BeginInit();
@@ -224,6 +227,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).BeginInit();
             this.pageAileSinavBilgileri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlAileSinavBilgileri)).BeginInit();
@@ -559,6 +563,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             // 
             // DataLayoutControlGenelBilgiler
             // 
+            this.DataLayoutControlGenelBilgiler.Controls.Add(this.txtOgrenciNo);
             this.DataLayoutControlGenelBilgiler.Controls.Add(this.txtOzelKod5);
             this.DataLayoutControlGenelBilgiler.Controls.Add(this.txtOzelKod4);
             this.DataLayoutControlGenelBilgiler.Controls.Add(this.txtOzelKod3);
@@ -591,6 +596,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.DataLayoutControlGenelBilgiler.Size = new System.Drawing.Size(974, 208);
             this.DataLayoutControlGenelBilgiler.TabIndex = 0;
             this.DataLayoutControlGenelBilgiler.Text = "myDataLayoutControl1";
+            // 
+            // txtOgrenciNo
+            // 
+            this.txtOgrenciNo.EnterMoveNextControl = true;
+            this.txtOgrenciNo.Location = new System.Drawing.Point(74, 124);
+            this.txtOgrenciNo.MenuManager = this.ribbonControl;
+            this.txtOgrenciNo.Name = "txtOgrenciNo";
+            this.txtOgrenciNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtOgrenciNo.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtOgrenciNo.Properties.MaxLength = 50;
+            this.txtOgrenciNo.Size = new System.Drawing.Size(102, 20);
+            this.txtOgrenciNo.StatusBarAciklama = null;
+            this.txtOgrenciNo.StyleController = this.DataLayoutControlGenelBilgiler;
+            this.txtOgrenciNo.TabIndex = 18;
             // 
             // txtOzelKod5
             // 
@@ -1040,7 +1059,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem23,
             this.layoutControlItem24,
             this.layoutControlItem25,
-            this.layoutControlItem26});
+            this.layoutControlItem26,
+            this.layoutControlItem33});
             this.layoutControlGroup1.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
@@ -1481,6 +1501,21 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem26.TextSize = new System.Drawing.Size(70, 13);
             this.layoutControlItem26.TextToControlDistance = 5;
             // 
+            // layoutControlItem33
+            // 
+            this.layoutControlItem33.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem33.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem33.Control = this.txtOgrenciNo;
+            this.layoutControlItem33.Enabled = false;
+            this.layoutControlItem33.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem33.Name = "layoutControlItem33";
+            this.layoutControlItem33.OptionsTableLayoutItem.RowIndex = 5;
+            this.layoutControlItem33.Size = new System.Drawing.Size(176, 24);
+            this.layoutControlItem33.Text = "Öğrenci No";
+            this.layoutControlItem33.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItem33.TextSize = new System.Drawing.Size(65, 13);
+            this.layoutControlItem33.TextToControlDistance = 5;
+            // 
             // pageKardesBilgileri
             // 
             this.pageKardesBilgileri.Caption = "Kardeş Bilgileri";
@@ -1792,6 +1827,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageGenelBilgiler.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataLayoutControlGenelBilgiler)).EndInit();
             this.DataLayoutControlGenelBilgiler.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtOgrenciNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod3.Properties)).EndInit();
@@ -1843,6 +1879,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).EndInit();
             this.pageAileSinavBilgileri.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlAileSinavBilgileri)).EndInit();
@@ -1955,5 +1992,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem32;
         protected internal UserControls.Controls.MyCalcEdit txtFark;
+        private UserControls.Controls.MyTextEdit txtOgrenciNo;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem33;
     }
 }

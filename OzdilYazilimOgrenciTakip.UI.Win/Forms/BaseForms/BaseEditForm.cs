@@ -13,6 +13,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid;
+using DevExpress.XtraVerticalGrid;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 {
@@ -94,6 +95,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                         tab.SelectedPageChanged += Control_SelectedPageChanged;
                         break;
 
+                    case PropertyGridControl pGrd:
+                        pGrd.CellValueChanged += Control_CellValueChanged;
+                        pGrd.FocusedRowChanged += Control_FocusedRowChanged;
+                        break;
 
                 }
             }
@@ -112,6 +117,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                         ControlEvents(ctrl);
 
         }
+
+     
 
         protected virtual void Control_Enter(object sender, EventArgs e) { }
 
@@ -150,7 +157,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         private void Control_GotFocus(object sender, EventArgs e)
         {
             var type = sender.GetType();
-            if (type == typeof(MyButtonEdit) || type == typeof(MyGridView) || type == typeof(MyPictureEdit) || type == typeof(MyComboBoxEdit) || type == typeof(MyDateEdit) || type == typeof(MyCalcEdit))
+            if (type == typeof(MyButtonEdit) || type == typeof(MyGridView) || type == typeof(MyPictureEdit) || type == typeof(MyComboBoxEdit) || type == typeof(MyDateEdit) || type == typeof(MyCalcEdit) || type == typeof(MyColorPickEdit))
             {
                 statusBarKisayol.Visibility = BarItemVisibility.Always;
                 statusBarKisayolAciklama.Visibility = BarItemVisibility.Always;
@@ -321,10 +328,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
             }
 
+            else if(e.Item==btnSifreSifirla)
+            {
+                SifreSifirla();
+            }
+
             else if (e.Item == btnCikis)
             {
                 Close();
             }
+
 
             Cursor.Current = DefaultCursor;
         }
@@ -354,6 +367,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             Close();
 
         }
+
+        protected virtual void SifreSifirla() { }
 
         private void GeriAl()
         {
@@ -436,7 +451,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             return ((IBaseGenelBll)Bll).Update(OldEntity, CurrentEntity);
         }
 
-        protected virtual internal void Yukle() { }
+        public virtual  void Yukle() { }
 
         protected internal virtual IBaseEntity ReturnEntity()
         {
@@ -462,6 +477,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected virtual bool BagliTabloKaydet() { return false; }
 
         protected virtual bool BagliTabloHataliGirisKontrol() { return false; }
+
+
+        protected virtual void Control_CellValueChanged(object sender, DevExpress.XtraVerticalGrid.Events.CellValueChangedEventArgs e) { }
+
+        protected virtual void Control_FocusedRowChanged(object sender, DevExpress.XtraVerticalGrid.Events.FocusedRowChangedEventArgs e) { }
 
     }
 }

@@ -1,27 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Drawing.Printing;
-using System.IO;
-using System.Linq;
-using System.Windows.Forms;
+﻿using DevExpress.Utils.Extensions;
 using DevExpress.XtraBars;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraLayout;
+using DevExpress.XtraPrinting.Native;
+using DevExpress.XtraReports.UI;
+using DevExpress.XtraVerticalGrid;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Message;
+using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Properties;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
-using DevExpress.XtraPrinting.Native;
-using DevExpress.Utils.Extensions;
-using DevExpress.XtraReports.UI;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Configuration;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Mail;
+using System.Runtime.InteropServices;
+using System.Security;
+using System.Security.Cryptography;
+using System.Text;
+using System.Windows.Forms;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 {
@@ -95,7 +108,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
                 }
 
-                else if (!currentValue.Equals(oldValue))             
+                else if (!currentValue.Equals(oldValue))
                     return VeriDegisimYeri.Alan;
 
             }
@@ -221,6 +234,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                     edt.Enabled = baseEdit.Id.HasValue && baseEdit.Id > 0;
                     edt.Id = null;
                     edt.EditValue = null;
+                    break;
+
+                case PropertyGridControl pGrd:
+                    pGrd.Enabled = baseEdit.Id.HasValue && baseEdit.Id > 0;
+                    if (!pGrd.Enabled)
+                        pGrd.SelectedObject = null;
                     break;
             }
         }
@@ -395,11 +414,217 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
             return stream;
         }
 
-        public static IEnumerable<T> CheckedComboBoxList<T> (this MyChechedComboBoxEdit comboBox)
+        public static IEnumerable<T> CheckedComboBoxList<T>(this MyChechedComboBoxEdit comboBox)
         {
-            var results= comboBox.Properties.Items.Where(x => x.CheckState == CheckState.Checked).Select(x => (T)x.Value);
+            var results = comboBox.Properties.Items.Where(x => x.CheckState == CheckState.Checked).Select(x => (T)x.Value);
 
             return results;
         }
+
+        public static void AppSettingsWrite(string key, string value)
+        {
+            var configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            configuration.AppSettings.Settings[key].Value = value;
+            configuration.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("appSettings");
+        }
+
+
+        public static void CreateConnectionString(string initialCatalog, string server, SecureString kullaniciAdi, SecureString sifre, YetkilendirmeTuru yetkilendirmeTuru)
+        {
+            SqlConnectionStringBuilder builder = null;
+
+            switch (yetkilendirmeTuru)
+            {
+                case YetkilendirmeTuru.SqlServer:
+
+                    builder = new SqlConnectionStringBuilder
+                    {
+                        DataSource = server,
+                        InitialCatalog = initialCatalog,
+                        UserID = kullaniciAdi.ConvertToUnsecureString(),
+                        Password = sifre.ConvertToUnsecureString(),
+                        MultipleActiveResultSets = true
+
+
+                    };
+
+                    break;
+                case YetkilendirmeTuru.Windows:
+                    {
+                        builder = new SqlConnectionStringBuilder
+                        {
+                            DataSource = server,
+                            InitialCatalog = initialCatalog,
+                            UserID = kullaniciAdi.ConvertToUnsecureString(),
+                            IntegratedSecurity = true,
+                            MultipleActiveResultSets = true
+
+                        };
+                    };
+                    break;
+
+            }
+
+            var configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            configuration.ConnectionStrings.ConnectionStrings["OgrenciTakipContext"].ConnectionString = builder?.ConnectionString;
+            configuration.Save(ConfigurationSaveMode.Modified);
+            ConfigurationManager.RefreshSection("connectionStrings");
+            // ConfigurationManager.RefreshSection("appSettings"); Yukarıdaki şekilde düzelttim.
+            Settings.Default.Reset();
+            Settings.Default.Save();
+
+
+
+        }
+
+        public static SecureString ConvertToSecureString(this string value)
+        {
+            var secureString = new SecureString();
+
+            if (value.Length > 0)
+                value.ToCharArray().ForEach(x => secureString.AppendChar(x));
+
+            secureString.MakeReadOnly();
+            return secureString;
+
+        }
+
+        public static string ConvertToUnsecureString(this SecureString value)
+        {
+            var result = Marshal.SecureStringToBSTR(value);
+            return Marshal.PtrToStringAuto(result);
+
+        }
+
+        public static bool BaglantiKontrolu(string server, SecureString kullaniciAdi, SecureString sifre, YetkilendirmeTuru yetkilendirmeTuru, bool genelMesajVer = false)
+        {
+            CreateConnectionString("", server, kullaniciAdi, sifre, yetkilendirmeTuru);
+
+            using (var con = new SqlConnection(BusinessLogiclayer.Functions.GeneralFunctions.GetConnectionString()))
+            {
+                try
+                {
+                    if (con.ConnectionString == "") return false;
+                    con.Open();
+                    return true;
+
+
+                }
+                catch (SqlException ex)
+                {
+                    if (genelMesajVer)
+                    {
+                        Messages.HataMesaji("Server Bağlantı Ayarlarınız hatalıdır. Lütfen Kontrol Ediniz");
+                        return false;
+                    }
+
+                    switch (ex.Number)
+                    {
+                        case 18456:
+                            Messages.HataMesaji("Server Kullanıcı Adı veya Şifresi Hatalıdır");
+                            break;
+
+                        default:
+                            Messages.HataMesaji(ex.Message);
+                            break;
+                    }
+                }
+
+                return false;
+            }
+        }
+
+
+        public static (SecureString secureSifre, SecureString secureGizliKelime, string Sifre, string gizliKelime) SifreUret()
+        {
+            string RandomDegerUret(int minValue, int count)
+            {
+                var random = new Random();
+                const string karakterTablosu = "0123456789abcdefghijklmnopqrstuvxywzABCDEFGHIJKLMNOPQRSTUVXYWZ";
+                string sonuc = null;
+
+                for (int i = 0; i < count; i++)
+                    sonuc += karakterTablosu[random.Next(minValue, karakterTablosu.Length - 1)].ToString();
+                return sonuc;
+
+            }
+
+            var secureSifre = RandomDegerUret(0, 8).ConvertToSecureString();
+            var secureGizliKelime = RandomDegerUret(9, 10).ConvertToSecureString();
+            var sifre = secureSifre.ConvertToUnsecureString().Md5Sifrele();
+            var gizliKelime = secureGizliKelime.ConvertToUnsecureString().Md5Sifrele();
+
+            return (secureSifre, secureGizliKelime, sifre, gizliKelime);
+
+        }
+
+        public static string Md5Sifrele(this string value)
+        {
+            var md5 = new MD5CryptoServiceProvider();
+            var baytt = Encoding.UTF8.GetBytes(value);
+            baytt = md5.ComputeHash(baytt);
+
+            var md5Sifre = BitConverter.ToString(baytt).Replace("-", "");
+            return md5Sifre;
+
+        }
+
+        public static bool SifreMailiGonder(this string KullaniciAdi, string rol, string email, SecureString secureSifre, SecureString secureGizliKelime)
+        {
+            using (var bll = new MailParametreBll())
+            {
+                var entity = (MailParametre)bll.Single(null);
+                if (entity == null)
+                {
+                    Messages.HataMesaji("EMail Gönderilemedi. Kurumun email parametreleri girilmemiş. Lütfen kontrol edip tekrar deneyiniz");
+                    return false;
+                }
+
+
+                var client = new SmtpClient
+                {
+                    Port = entity.PortNo,
+                    Host = entity.Host,
+                    EnableSsl = entity.SslKullan == EvetHayir.Evet,
+                    UseDefaultCredentials = true,
+                    Credentials = new NetworkCredential(entity.EmailAdi, entity.Sifre.Decrypt(entity.Id + entity.Kod).ConvertToSecureString())
+
+                };
+
+                var message = new MailMessage
+                {
+                    From = new MailAddress(entity.EmailAdi, "XYZ Yazılım Öğrenci Takip Programı"),
+                    To = { email },
+                    Subject = "XYZ Yazılım Öğrenci Takip Programı Kullanıcı Bilgileri",
+                    IsBodyHtml = true,
+                    Body = "XYZ Yazılım Öğrenci Takip Programına Giriş İçin Gereken Kullanıcı Adı , Şifre ve Gizli Kelime  Bilgileri Aşağıdadır. <br/>. Lütfen programa Giriş yaptıktan Sonra Bu Bilgileri Değiştiriniz. <br/> <br/> <br/>" +
+                    $"<b>Kullanıcı Adı :</b> {KullaniciAdi}  <br/>" +
+                    $"<b>Yetki Türü :</b> {rol}  <br/>" +
+                     $"<b>Şifre :</b> {secureSifre.ConvertToUnsecureString()}  <br/>" +
+                      $"<b>Gizli Kelime :</b> {secureGizliKelime.ConvertToUnsecureString()}  "
+
+                };
+
+                try
+                {
+                    Cursor.Current = Cursors.WaitCursor;
+                    client.Send(message);
+                    Cursor.Current = Cursors.Default;
+                    return true;
+                }
+                catch (Exception ex)
+                {
+
+                    Messages.HataMesaji(ex.Message);
+                    return false;
+                }
+            }
+
+        }
+
+
+
+
     }
 }

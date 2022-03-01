@@ -20,7 +20,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.YabanciDilForms
         }
 
 
-        protected internal override void Yukle()
+        public override void Yukle()
         {
             OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new YabanciDil() : ((YabanciDilBll)Bll).Single(FilterFunctions.Filter<YabanciDil>(Id));
             NesneyiKontrollereBagla();

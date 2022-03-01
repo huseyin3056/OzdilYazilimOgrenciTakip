@@ -38,6 +38,14 @@ using OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms;
 using System.Collections.Generic;
 using OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil;
+using OzdilYazilimOgrenciTakip.Model.Entities;
+using DevExpress.XtraBars.Ribbon.Gallery;
+using OzdilYazilimOgrenciTakip.UI.Win.Functions;
+using OzdilYazilimOgrenciTakip.Model.Dto;
+using DevExpress.XtraTabbedMdi;
+using OzdilYazilimOgrenciTakip.Common.Message;
+using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 {
@@ -46,58 +54,125 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         public static string DonemAdi = "Dönem Bilgisi Bekleniyor";
         public static string SubeAdi = "Şube  Bilgisi Bekleniyor";
 
-        public static long DonemId=1;
-        public static long SubeId= 1;
+        public static long DonemId = 1;
+        public static long SubeId = 1;
 
-        public static DateTime EgitimBaslamaTarihi = new DateTime(2021, 01, 01);
-        public static DateTime DonemBaslamaTarihi = new DateTime(2021, 01, 01);
-        public static DateTime DonemBitisTarihi = new DateTime(2023, 01, 01);
+        //public static DateTime EgitimBaslamaTarihi = new DateTime(2020, 01, 01);
+        //public static DateTime DonemBaslamaTarihi = new DateTime(2020, 01, 01);
+        //public static DateTime DonemBitisTarihi = new DateTime(2023, 01, 01);
 
-        public static bool GunTarihininOncesineHizmetBaslamaTarihiGirilebilir = true;
-        public static bool GunTarihininSonrasinaHizmetBaslamaTarihiGirilebilir = true;
+        //public static bool GunTarihininOncesineHizmetBaslamaTarihiGirilebilir = true;
+        //public static bool GunTarihininSonrasinaHizmetBaslamaTarihiGirilebilir = true;
 
-        public static bool GunTarihininOncesineHizmetIptalTarihiGirilebilir = true;
-        public static bool GunTarihininSonrasinaHizmetIptalTarihiGirilebilir = true;
+        //public static bool GunTarihininOncesineIptalTarihiGirilebilir = true;
+        //public static bool GunTarihininSonrasinaIptalTarihiGirilebilir = true;
 
-        public static bool GunTarihininOncesineMakbuzTarihiGirilebilir = true;
-        public static bool GunTarihininSonrasinaMakbuzTarihiGirilebilir = true;
+        //public static bool GunTarihininOncesineMakbuzTarihiGirilebilir = true;
+        //public static bool GunTarihininSonrasinaMakbuzTarihiGirilebilir = true;
 
 
-        public static bool HizmetTahakkukKurusKullan = false;
-        public static bool IndirimTahakkukKurusKullan = false;
-        public static bool OdemePlaniKurusKullan = false;
-        public static bool FaturaTahakkukKurusKullan = false;
-        public static bool GittigiOkulZorunlu = true;
-        public static DateTime MaksimumTaksitTarihi= new DateTime(2023, 01, 01);
-        public static byte MaksimumTaksitSayisi = 12;
-        public static long? DefaultKasaHesapId;
-        public static string DefaultKasaHesapAdi;
-        public static long? DefaultBankaHesapId;
-        public static string DefaultBankaHesapAdi;
-        public static long? DefaultAvukatHesapId;
-        public static string DefaultAvukatHesapAdi;
+        //public static bool HizmetTahakkukKurusKullan = false;
+        //public static bool IndirimTahakkukKurusKullan = false;
+        //public static bool OdemePlaniKurusKullan = false;
+        //public static bool FaturaTahakkukKurusKullan = false;
+        //public static bool GittigiOkulZorunlu = true;
+        //public static DateTime MaksimumTaksitTarihi= new DateTime(2023, 01, 01);
+        //public static byte MaksimumTaksitSayisi = 12;
+
+        //public static long? DefaultKasaHesapId;
+        //public static string DefaultKasaHesapAdi;
+        //public static long? DefaultBankaHesapId;
+        //public static string DefaultBankaHesapAdi;
+        //public static long? DefaultAvukatHesapId;
+        //public static string DefaultAvukatHesapAdi;
+
         public static long KullaniciId = 1;
-        public static bool RaporlariOnayAlmadanKapat = false;
-        public static List<long> YetkiliOlunanSubeler=new List<long> { 1, 2, 2022021115380466596 };
+        public static string KullaniciAdi { get; set; } = "Hasan";
+       // public static bool RaporlariOnayAlmadanKapat = false;
+        public static List<long> YetkiliOlunanSubeler = new List<long> { 1, 2, 2022021115380466596 };
 
+        public static DonemParametre DonemParametreleri;
+        public static KullaniciParametreS KullaniciParametreleri=new KullaniciParametreS();
 
         public AnaForm()
         {
             InitializeComponent();
             EventsLoad();
+
+            imgArkaPlanResim.EditValue = KullaniciParametreleri.ArkaPlanResim;
         }
 
         private void EventsLoad()
         {
+            Load += AnaForm_Load;
+            FormClosing += AnaForm_FormClosing;
+            KeyDown += Control_KeyDown;
+
+
             foreach (var item in ribbonControl1.Items)
             {
                 switch (item)
                 {
+                    case SkinRibbonGalleryBarItem btn:
+                        btn.GalleryItemClick += Gallery_GalleryItemClick;
+                        break;
+
+                    case SkinPaletteRibbonGalleryBarItem btn:
+                        btn.GalleryItemClick += Gallery_GalleryItemClick;
+                        break;
+
                     case BarButtonItem btn:
                         btn.ItemClick += Butonlar_ItemClick;
                         break;
+
+
                 }
             }
+
+            foreach (Control control in Controls)
+                control.KeyDown += Control_KeyDown;
+
+            xtraTabbedMdiManager.PageAdded += XtraTabbedMdiManager_PageAdded;
+            xtraTabbedMdiManager.PageRemoved += XtraTabbedMdiManager_PageRemoved;
+          
+
+        }
+
+       
+
+        private void Control_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Close();
+        }
+
+        private void AnaForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Messages.HayirSeciliEvetHayir("Programdan Çıkmak İstiyor Musunuz?", "Çıkış Onay") == DialogResult.Yes)
+                Application.ExitThread();
+            else
+                e.Cancel = true;
+
+        }
+
+        private void AnaForm_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Gallery_GalleryItemClick(object sender, DevExpress.XtraBars.Ribbon.GalleryItemClickEventArgs e)
+        {
+            var gallery = sender as InRibbonGallery;
+            var key = "";
+
+            if (gallery.OwnerItem.GetType() == typeof(SkinRibbonGalleryBarItem))
+                key = "Skin";
+
+            else if (gallery.OwnerItem.GetType() == typeof(SkinPaletteRibbonGalleryBarItem))
+                key = "Palette";
+
+            GeneralFunctions.AppSettingsWrite(key, e.Item.Caption);
+
         }
 
         private void Butonlar_ItemClick(object sender, ItemClickEventArgs e)
@@ -154,7 +229,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 ShowListForms<SinifGrupListForm>.ShowListForm(KartTuru.SinifGrup);
             }
 
-            else if (e.Item ==btnMeslekKartlari)
+            else if (e.Item == btnMeslekKartlari)
             {
                 ShowListForms<MeslekListForm>.ShowListForm(KartTuru.Meslek);
             }
@@ -272,11 +347,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
 
 
-            else if (e.Item == btnSubeKartlari)
-            {
-                ShowListForms<SubeListForm>.ShowListForm(KartTuru.Sube);
-            }
-
             else if (e.Item == btnFaturaTahakkukKartlari)
             {
                 ShowEditForms<FaturaTahakkukEditForm>.ShowDialogEditForm(KartTuru.Fatura);
@@ -284,7 +354,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
             else if (e.Item == btnGenelAmacliRapor)
             {
-            
+
                 ShowEditReports<GenelAmacliRapor>.ShowEditReport(KartTuru.GenelAmacliRapor);
             }
 
@@ -350,9 +420,62 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 ShowEditReports<OdemeBelgeleriRaporu>.ShowEditReport(KartTuru.OdemeBelgeleriRaporu);
             }
 
-          
+            else if (e.Item == btnTahsilatRaporu)
+            {
+
+                ShowEditReports<TahsilatRaporu>.ShowEditReport(KartTuru.TahsilatRaporu);
+            }
+
+
+            else if (e.Item == btnOdemesiGecikenAlacaklarRaporu)
+            {
+
+                ShowEditReports<OdemesiGecikenAlacaklarRaporu>.ShowEditReport(KartTuru.OdemesiGecikenAlacaklarRaporu);
+            }
+
+            else if (e.Item == btnKullaniciParametreleri)
+            {
+
+                var entity = ShowEditForms<KullaniciParametreEditForm>.ShowDialogEditForm<KullaniciParametreS>(KullaniciId);
+                if (entity == null) return;
+                KullaniciParametreleri = entity;
+                imgArkaPlanResim.EditValue = entity.ArkaPlanResim;
+
+            }
+
+            else if (e.Item == btnHesapMakinesi)
+            {
+
+                try
+                {
+                    Process.Start("calc.exe");
+
+                }
+                catch 
+                {
+
+                    Messages.HataMesaji("Hara Makinesi Bulunamadı");
+                }
+            }
+
 
         }
+
+        private void XtraTabbedMdiManager_PageAdded(object sender, MdiTabPageEventArgs e)
+        {
+            imgArkaPlanResim.SendToBack();
+        }
+
+        private void XtraTabbedMdiManager_PageRemoved(object sender, MdiTabPageEventArgs e)
+        {
+            if(((XtraTabbedMdiManager)sender).Pages.Count==0 )
+            imgArkaPlanResim.BringToFront();
+        }
+
+       
+
+
+
     }
 
 
