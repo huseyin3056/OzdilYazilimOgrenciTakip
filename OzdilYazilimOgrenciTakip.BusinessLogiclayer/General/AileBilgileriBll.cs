@@ -15,17 +15,21 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
     {
         public IEnumerable<BaseHareketEntity> List(Expression<Func<AileBilgileri, bool>> filter)
         {
-            return List(filter, x => new AileBilgileriL
+
+            var sonuc = List(filter, x => new AileBilgileriL
             {
-                Id=x.Id,
-                TahakkukId=x.TahakkukId,
-                AileBilgiId=x.AileBilgiId,
-                BilgiAdi=x.AileBilgi.BilgiAdi,
-                Aciklama=x.Aciklama
+                Id = x.Id,
+                TahakkukId = x.TahakkukId,
+                AileBilgiId = x.AileBilgiId,
+                BilgiAdi = x.AileBilgi.BilgiAdi,
+                Aciklama = x.Aciklama
+
 
 
             }).ToList();
-                
+
+            return sonuc.ToList();
+
         }
     }
 }

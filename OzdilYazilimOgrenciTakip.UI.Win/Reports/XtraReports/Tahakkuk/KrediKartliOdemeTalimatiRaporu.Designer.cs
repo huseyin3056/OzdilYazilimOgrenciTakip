@@ -84,6 +84,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Tahakkuk
             this.xrTableCell30 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell31 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell32 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell33 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell34 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow11 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell35 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -150,7 +151,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Tahakkuk
             this.Odeme_Bilgileri = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource(this.components);
             this.ReportFooter1 = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.xrRichText1 = new DevExpress.XtraReports.UI.XRRichText();
-            this.xrTableCell33 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable5)).BeginInit();
@@ -663,6 +663,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Tahakkuk
             this.xrTableCell32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell32.Weight = 0.15499604072072504D;
             // 
+            // xrTableCell33
+            // 
+            this.xrTableCell33.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KayitTarihi]")});
+            this.xrTableCell33.Font = new System.Drawing.Font("Arial", 7F);
+            this.xrTableCell33.Multiline = true;
+            this.xrTableCell33.Name = "xrTableCell33";
+            this.xrTableCell33.StylePriority.UseFont = false;
+            this.xrTableCell33.TextFormatString = "{0:dd.MM.yyyy}";
+            this.xrTableCell33.Weight = 2.4956212492545555D;
+            // 
             // xrTableCell34
             // 
             this.xrTableCell34.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
@@ -816,7 +827,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Tahakkuk
             // 
             // Detail
             // 
-            this.Detail.Expanded = false;
             this.Detail.HeightF = 3.125F;
             this.Detail.Name = "Detail";
             // 
@@ -825,7 +835,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Tahakkuk
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrLabel1,
             this.xrLabel2});
-            this.ReportHeader.Expanded = false;
             this.ReportHeader.HeightF = 61.45833F;
             this.ReportHeader.Name = "ReportHeader";
             // 
@@ -1072,7 +1081,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Tahakkuk
             this.ReportHeader2,
             this.ReportFooter});
             this.DetailReportOdemeBilgileri.DataSource = this.Odeme_Bilgileri;
-            this.DetailReportOdemeBilgileri.Expanded = false;
             this.DetailReportOdemeBilgileri.Level = 1;
             this.DetailReportOdemeBilgileri.Name = "DetailReportOdemeBilgileri";
             // 
@@ -1336,17 +1344,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.XtraReports.Tahakkuk
             this.xrRichText1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
             this.xrRichText1.SizeF = new System.Drawing.SizeF(630F, 53.20832F);
-            // 
-            // xrTableCell33
-            // 
-            this.xrTableCell33.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[KayitTarihi]")});
-            this.xrTableCell33.Font = new System.Drawing.Font("Arial", 7F);
-            this.xrTableCell33.Multiline = true;
-            this.xrTableCell33.Name = "xrTableCell33";
-            this.xrTableCell33.StylePriority.UseFont = false;
-            this.xrTableCell33.TextFormatString = "{0:dd.MM.yyyy}";
-            this.xrTableCell33.Weight = 2.4956212492545555D;
             // 
             // KrediKartliOdemeTalimatiRaporu
             // 

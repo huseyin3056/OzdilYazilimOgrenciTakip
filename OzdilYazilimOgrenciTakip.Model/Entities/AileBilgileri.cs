@@ -6,7 +6,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
     public  class AileBilgileri: BaseHareketEntity
     {
         public long TahakkukId { get; set; }
-        public long AileBilgiId { get; set; }
+       
 
 
         [StringLength(500)]
@@ -14,6 +14,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
 
 
         // İlişki
+        public long AileBilgiId { get; set; }
         public AileBilgi AileBilgi { get; set; }
        
     }

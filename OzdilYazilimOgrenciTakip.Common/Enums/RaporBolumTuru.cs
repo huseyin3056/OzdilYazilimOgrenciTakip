@@ -6,6 +6,7 @@
         TahakkukRaporlari=2,
         FaturaDonemRaporlari=3,
         FaturaGenelRaporlar=4,
-        MakbuzRaporlari=5
+        MakbuzRaporlari=5,
+        SiparisRaporlari=6
     }
 }

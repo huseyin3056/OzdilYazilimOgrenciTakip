@@ -1,10 +1,13 @@
-﻿using OzdilYazilimOgrenciTakip.Dal.Base;
+﻿using DevExpress.Utils.Extensions;
+using OzdilYazilimOgrenciTakip.Dal.Base;
 using OzdilYazilimOgrenciTakip.Dal.Interfaces;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.Entity;
+using System.Runtime.InteropServices;
+using System.Security;
 
 namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions
 {
@@ -36,14 +39,22 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions
                     {
                         alanlar.Add(prop.Name);
                     }
-                   
+
+
+                }
+
+                else if (prop.PropertyType == typeof(SecureString))
+                {
+                    var oldStr = ((SecureString)oldValue).ConvertToUnsecureString();
+                    var curStr = ((SecureString)currentValue).ConvertToUnsecureString();
+                    if (!oldStr.Equals(curStr))
+                        alanlar.Add(prop.Name);
 
                 }
 
                 else if (!currentValue.Equals(oldValue))
-                {
                     alanlar.Add(prop.Name);
-                }
+
 
             }
 
@@ -59,8 +70,8 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions
 
         private static TContext CreateContext<TContext>() where TContext : DbContext
         {
-           // return (TContext)Activator.CreateInstance(typeof(TContext), GetConnectionString());
-            TContext createdContext= (TContext)Activator.CreateInstance(typeof(TContext), GetConnectionString());
+            // return (TContext)Activator.CreateInstance(typeof(TContext), GetConnectionString());
+            TContext createdContext = (TContext)Activator.CreateInstance(typeof(TContext), GetConnectionString());
             return createdContext;
 
         }
@@ -70,6 +81,25 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions
             uow?.Dispose();
             uow = new UnitOfWork<T>(CreateContext<TContext>());
 
+
+        }
+
+        public static SecureString ConvertToSecureString(this string value)
+        {
+            var secureString = new SecureString();
+
+            if (value.Length > 0)
+                value.ToCharArray().ForEach(x => secureString.AppendChar(x));
+
+            secureString.MakeReadOnly();
+            return secureString;
+
+        }
+
+        public static string ConvertToUnsecureString(this SecureString value)
+        {
+            var result = Marshal.SecureStringToBSTR(value);
+            return Marshal.PtrToStringAuto(result);
 
         }
     }

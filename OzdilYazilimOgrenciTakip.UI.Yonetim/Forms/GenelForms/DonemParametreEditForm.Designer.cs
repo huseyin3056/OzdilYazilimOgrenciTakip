@@ -130,7 +130,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             // 
             // propertyGridControl
             // 
-            this.propertyGridControl.Cursor = System.Windows.Forms.Cursors.SizeNS;
+            this.propertyGridControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.propertyGridControl.Enabled = false;
             this.propertyGridControl.Location = new System.Drawing.Point(12, 36);
             this.propertyGridControl.MenuManager = this.ribbonControl;

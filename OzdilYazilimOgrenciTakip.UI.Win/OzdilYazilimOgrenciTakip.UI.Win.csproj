@@ -7,7 +7,7 @@
     <ProjectGuid>{BC0C9741-8992-407D-8771-2998B7C4BA19}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>OzdilYazilimOgrenciTakip.UI.Win</RootNamespace>
-    <AssemblyName>OzdilYazilimOgrenciTakip.UI.Win</AssemblyName>
+    <AssemblyName>Öğrenci Takip</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icons8_classroom_1.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
@@ -193,6 +196,24 @@
     <Compile Include="Forms\CariForms\CariListForm.Designer.cs">
       <DependentUpon>CariListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DonemForms\DonemEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DonemForms\DonemEditForm.Designer.cs">
+      <DependentUpon>DonemEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DonemForms\DonemListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DonemForms\DonemListForm.Designer.cs">
+      <DependentUpon>DonemListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DonemForms\DonemParametreEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DonemForms\DonemParametreEditForm.Designer.cs">
+      <DependentUpon>DonemParametreEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EvrakForms\EvrakEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,18 +273,6 @@
     </Compile>
     <Compile Include="Forms\GecikmeAciklamalariForms\GecikmeAciklamalariListForm.Designer.cs">
       <DependentUpon>GecikmeAciklamalariListForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\GorevForms\GorevEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\GorevForms\GorevEditForm.Designer.cs">
-      <DependentUpon>GorevEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\GorevForms\GorevListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\GorevForms\GorevListForm.Designer.cs">
-      <DependentUpon>GorevListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\HizmetForms\HizmetEditForm.cs">
       <SubType>Form</SubType>
@@ -397,6 +406,12 @@
     <Compile Include="Forms\KontenjanForms\KontenjanListForm.Designer.cs">
       <DependentUpon>KontenjanListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\KullaniciForms\KullaniciBirimYetkileriEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\KullaniciBirimYetkileriEditForm.Designer.cs">
+      <DependentUpon>KullaniciBirimYetkileriEditForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\KullaniciForms\KullaniciEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -426,6 +441,18 @@
     </Compile>
     <Compile Include="Forms\KullaniciForms\RolYetkiKartlariListForm.Designer.cs">
       <DependentUpon>RolYetkiKartlariListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\SifreDegistirEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\SifreDegistirEditForm.Designer.cs">
+      <DependentUpon>SifreDegistirEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\SifremiUnuttumEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\KullaniciForms\SifremiUnuttumEditForm.Designer.cs">
+      <DependentUpon>SifremiUnuttumEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MakbuzForms\BelgeHareketleriListForm.cs">
       <SubType>Form</SubType>
@@ -499,6 +526,144 @@
     <Compile Include="Forms\OkulForms\OkulListForm.Designer.cs">
       <DependentUpon>OkulListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Ozdil\BedenEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\BedenEditForm.Designer.cs">
+      <DependentUpon>BedenEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\BedenListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\BedenListForm.Designer.cs">
+      <DependentUpon>BedenListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\BolumEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\BolumEditForm.Designer.cs">
+      <DependentUpon>BolumEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\BolumListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\BolumListForm.Designer.cs">
+      <DependentUpon>BolumListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\GorevEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\GorevEditForm.Designer.cs">
+      <DependentUpon>GorevEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\GorevListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\GorevListForm.Designer.cs">
+      <DependentUpon>GorevListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\IslemEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\IslemEditForm.Designer.cs">
+      <DependentUpon>IslemEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\IslemListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\IslemListForm.Designer.cs">
+      <DependentUpon>IslemListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\KategoriEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\KategoriEditForm.Designer.cs">
+      <DependentUpon>KategoriEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\KategoriListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\KategoriListForm.Designer.cs">
+      <DependentUpon>KategoriListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MakineEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MakineEditForm.Designer.cs">
+      <DependentUpon>MakineEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MakineListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MakineListForm.Designer.cs">
+      <DependentUpon>MakineListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MalzemeTuruEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MalzemeTuruEditForm.Designer.cs">
+      <DependentUpon>MalzemeTuruEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MalzemeTuruListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MalzemeTuruListForm.Designer.cs">
+      <DependentUpon>MalzemeTuruListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MusteriEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MusteriEditForm.Designer.cs">
+      <DependentUpon>MusteriEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MusteriListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\MusteriListForm.Designer.cs">
+      <DependentUpon>MusteriListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\PersonelEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\PersonelEditForm.Designer.cs">
+      <DependentUpon>PersonelEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\PersonelListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\PersonelListForm.Designer.cs">
+      <DependentUpon>PersonelListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkBedenSiparis\RenkBedenSiparisBilgileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkBedenSiparis\RenkBedenSiparisBilgileriTable.Designer.cs">
+      <DependentUpon>RenkBedenSiparisBilgileriTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkBedenSiparis\RenkBedenSiparisEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkBedenSiparis\RenkBedenSiparisEditForm.Designer.cs">
+      <DependentUpon>RenkBedenSiparisEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkBedenSiparis\RenkBedenSiparisListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkBedenSiparis\RenkBedenSiparisListForm.Designer.cs">
+      <DependentUpon>RenkBedenSiparisListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkEditForm.Designer.cs">
+      <DependentUpon>RenkEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\RenkListForm.Designer.cs">
+      <DependentUpon>RenkListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Ozdil\UrunEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -510,6 +675,36 @@
     </Compile>
     <Compile Include="Forms\Ozdil\UrunListForm.Designer.cs">
       <DependentUpon>UrunListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FormReports\Ozdil\GenelSiparisRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FormReports\Ozdil\GenelSiparisRaporu.Designer.cs">
+      <DependentUpon>GenelSiparisRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\Ozdil\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\Ozdil\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\Ozdil\ZamanEtutBilgileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\Ozdil\ZamanEtutBilgileriTable.Designer.cs">
+      <DependentUpon>ZamanEtutBilgileriTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\ZamanEtutEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\ZamanEtutEditForm.Designer.cs">
+      <DependentUpon>ZamanEtutEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ozdil\ZamanEtutListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ozdil\ZamanEtutListForm.Designer.cs">
+      <DependentUpon>ZamanEtutListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\OzelKodForms\OzelKodEditForm.cs">
       <SubType>Form</SubType>
@@ -676,11 +871,29 @@
     <Compile Include="GenelForms\AnaForm.Designer.cs">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GenelForms\BaglantiAyarlariEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenelForms\BaglantiAyarlariEditForm.Designer.cs">
+      <DependentUpon>BaglantiAyarlariEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenelForms\Baslatiliyor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenelForms\Baslatiliyor.Designer.cs">
+      <DependentUpon>Baslatiliyor.cs</DependentUpon>
+    </Compile>
     <Compile Include="GenelForms\EmailParametreEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenelForms\EmailParametreEditForm.Designer.cs">
       <DependentUpon>EmailParametreEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenelForms\GirisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenelForms\GirisForm.Designer.cs">
+      <DependentUpon>GirisForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GenelForms\KullaniciParametreEditForm.cs">
       <SubType>Form</SubType>
@@ -711,6 +924,12 @@
     </Compile>
     <Compile Include="GenelForms\RaporTasarim.Designer.cs">
       <DependentUpon>RaporTasarim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenelForms\SubeDonemSecimiEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenelForms\SubeDonemSecimiEditForm.Designer.cs">
+      <DependentUpon>SubeDonemSecimiEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GenelForms\TabloDokumParametreleri.cs">
       <SubType>Form</SubType>
@@ -805,6 +1024,12 @@
     </Compile>
     <Compile Include="Reports\FormReports\MesleklereGoreKayitRaporu.Designer.cs">
       <DependentUpon>MesleklereGoreKayitRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Ozdil\GenelSiparisRaporu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Ozdil\GenelSiparisRaporu.Designer.cs">
+      <DependentUpon>GenelSiparisRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraReports\Fatura\FaturaDonemIcmalRaporu.cs">
       <SubType>Component</SubType>
@@ -934,10 +1159,16 @@
     <Compile Include="UserControls\Controls\MyFilterControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UserControls\Controls\MyHyperLinkLabelControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\Controls\MyIbanTextEdit.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControls\Controls\MyKodText.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\Controls\MyLookUpEdit.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserControls\Controls\MyMemoEdit.cs">
@@ -1027,6 +1258,30 @@
     <Compile Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.Designer.cs">
       <DependentUpon>IndiriminUygulanacagiHizmetlerTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControl\KullaniciBirimYetkileriEditFormTable\DonemTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\KullaniciBirimYetkileriEditFormTable\DonemTable.Designer.cs">
+      <DependentUpon>DonemTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\KullaniciBirimYetkileriEditFormTable\KullaniciTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\KullaniciBirimYetkileriEditFormTable\KullaniciTable.Designer.cs">
+      <DependentUpon>KullaniciTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\KullaniciBirimYetkileriEditFormTable\SubeTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\KullaniciBirimYetkileriEditFormTable\SubeTable.Designer.cs">
+      <DependentUpon>SubeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserControl\Ozdil\UrunBilgileriTablo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\Ozdil\UrunBilgileriTablo.Designer.cs">
+      <DependentUpon>UrunBilgileriTablo.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControl\TahakkukEditFormTable\AileBilgileriTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1099,6 +1354,12 @@
     <Compile Include="UserControls\UserControl\TahakkukEditFormTable\SinavBilgileriTable.Designer.cs">
       <DependentUpon>SinavBilgileriTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\SiparisBilgileriTable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserControl\TahakkukEditFormTable\SiparisBilgileriTable.Designer.cs">
+      <DependentUpon>SiparisBilgileriTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UserControl\TahakkukEditFormTable\TahakkukBilgileriTable.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1147,6 +1408,15 @@
     <EmbeddedResource Include="Forms\CariForms\CariListForm.resx">
       <DependentUpon>CariListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DonemForms\DonemEditForm.resx">
+      <DependentUpon>DonemEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DonemForms\DonemListForm.resx">
+      <DependentUpon>DonemListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DonemForms\DonemParametreEditForm.resx">
+      <DependentUpon>DonemParametreEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EvrakForms\EvrakEditForm.resx">
       <DependentUpon>EvrakEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1176,12 +1446,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\GecikmeAciklamalariForms\GecikmeAciklamalariListForm.resx">
       <DependentUpon>GecikmeAciklamalariListForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GorevForms\GorevEditForm.resx">
-      <DependentUpon>GorevEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\GorevForms\GorevListForm.resx">
-      <DependentUpon>GorevListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HizmetForms\HizmetEditForm.resx">
       <DependentUpon>HizmetEditForm.cs</DependentUpon>
@@ -1249,6 +1513,9 @@
     <EmbeddedResource Include="Forms\KontenjanForms\KontenjanListForm.resx">
       <DependentUpon>KontenjanListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullaniciForms\KullaniciBirimYetkileriEditForm.resx">
+      <DependentUpon>KullaniciBirimYetkileriEditForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\KullaniciForms\KullaniciEditForm.resx">
       <DependentUpon>KullaniciEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1263,6 +1530,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\KullaniciForms\RolYetkiKartlariListForm.resx">
       <DependentUpon>RolYetkiKartlariListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullaniciForms\SifreDegistirEditForm.resx">
+      <DependentUpon>SifreDegistirEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\KullaniciForms\SifremiUnuttumEditForm.resx">
+      <DependentUpon>SifremiUnuttumEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MakbuzForms\BelgeHareketleriListForm.resx">
       <DependentUpon>BelgeHareketleriListForm.cs</DependentUpon>
@@ -1300,11 +1573,92 @@
     <EmbeddedResource Include="Forms\OkulForms\OkulListForm.resx">
       <DependentUpon>OkulListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\BedenEditForm.resx">
+      <DependentUpon>BedenEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\BedenListForm.resx">
+      <DependentUpon>BedenListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\BolumEditForm.resx">
+      <DependentUpon>BolumEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\BolumListForm.resx">
+      <DependentUpon>BolumListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\GorevEditForm.resx">
+      <DependentUpon>GorevEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\GorevListForm.resx">
+      <DependentUpon>GorevListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\IslemEditForm.resx">
+      <DependentUpon>IslemEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\IslemListForm.resx">
+      <DependentUpon>IslemListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\KategoriEditForm.resx">
+      <DependentUpon>KategoriEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\KategoriListForm.resx">
+      <DependentUpon>KategoriListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\MakineEditForm.resx">
+      <DependentUpon>MakineEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\MakineListForm.resx">
+      <DependentUpon>MakineListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\MalzemeTuruEditForm.resx">
+      <DependentUpon>MalzemeTuruEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\MalzemeTuruListForm.resx">
+      <DependentUpon>MalzemeTuruListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\MusteriEditForm.resx">
+      <DependentUpon>MusteriEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\MusteriListForm.resx">
+      <DependentUpon>MusteriListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\PersonelEditForm.resx">
+      <DependentUpon>PersonelEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\PersonelListForm.resx">
+      <DependentUpon>PersonelListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\RenkBedenSiparis\RenkBedenSiparisBilgileriTable.resx">
+      <DependentUpon>RenkBedenSiparisBilgileriTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\RenkBedenSiparis\RenkBedenSiparisEditForm.resx">
+      <DependentUpon>RenkBedenSiparisEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\RenkBedenSiparis\RenkBedenSiparisListForm.resx">
+      <DependentUpon>RenkBedenSiparisListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\RenkEditForm.resx">
+      <DependentUpon>RenkEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\RenkListForm.resx">
+      <DependentUpon>RenkListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ozdil\UrunEditForm.resx">
       <DependentUpon>UrunEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Ozdil\UrunListForm.resx">
       <DependentUpon>UrunListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FormReports\Ozdil\GenelSiparisRaporu.resx">
+      <DependentUpon>GenelSiparisRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\Ozdil\ZamanEtutBilgileriTable.resx">
+      <DependentUpon>ZamanEtutBilgileriTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\ZamanEtutEditForm.resx">
+      <DependentUpon>ZamanEtutEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ozdil\ZamanEtutListForm.resx">
+      <DependentUpon>ZamanEtutListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\OzelKodForms\OzelKodEditForm.resx">
       <DependentUpon>OzelKodEditForm.cs</DependentUpon>
@@ -1384,8 +1738,17 @@
     <EmbeddedResource Include="GenelForms\AnaForm.resx">
       <DependentUpon>AnaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenelForms\BaglantiAyarlariEditForm.resx">
+      <DependentUpon>BaglantiAyarlariEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenelForms\Baslatiliyor.resx">
+      <DependentUpon>Baslatiliyor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenelForms\EmailParametreEditForm.resx">
       <DependentUpon>EmailParametreEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenelForms\GirisForm.resx">
+      <DependentUpon>GirisForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenelForms\KullaniciParametreEditForm.resx">
       <DependentUpon>KullaniciParametreEditForm.cs</DependentUpon>
@@ -1401,6 +1764,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenelForms\RaporTasarim.resx">
       <DependentUpon>RaporTasarim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenelForms\SubeDonemSecimiEditForm.resx">
+      <DependentUpon>SubeDonemSecimiEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenelForms\TabloDokumParametreleri.resx">
       <DependentUpon>TabloDokumParametreleri.cs</DependentUpon>
@@ -1457,6 +1823,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\FormReports\MesleklereGoreKayitRaporu.resx">
       <DependentUpon>MesleklereGoreKayitRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Ozdil\GenelSiparisRaporu.resx">
+      <DependentUpon>GenelSiparisRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraReports\Fatura\FaturaDonemIcmalRaporu.resx">
       <DependentUpon>FaturaDonemIcmalRaporu.cs</DependentUpon>
@@ -1533,6 +1902,18 @@
     <EmbeddedResource Include="UserControls\UserControl\IndirimEditFormTable\IndiriminUygulanacagiHizmetlerTable.resx">
       <DependentUpon>IndiriminUygulanacagiHizmetlerTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\KullaniciBirimYetkileriEditFormTable\DonemTable.resx">
+      <DependentUpon>DonemTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\KullaniciBirimYetkileriEditFormTable\KullaniciTable.resx">
+      <DependentUpon>KullaniciTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\KullaniciBirimYetkileriEditFormTable\SubeTable.resx">
+      <DependentUpon>SubeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\Ozdil\UrunBilgileriTablo.resx">
+      <DependentUpon>UrunBilgileriTablo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\AileBilgileriTable.resx">
       <DependentUpon>AileBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -1568,6 +1949,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\SinavBilgileriTable.resx">
       <DependentUpon>SinavBilgileriTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\SiparisBilgileriTable.resx">
+      <DependentUpon>SiparisBilgileriTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\TahakkukEditFormTable\TahakkukBilgileriTable.resx">
       <DependentUpon>TahakkukBilgileriTable.cs</DependentUpon>
@@ -2289,6 +2673,264 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\assigntome_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apply_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animatedna_k9iwodor.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CompanyLogo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CompanyLogo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CompanyLogo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_filing_cabinet.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cheap_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_support_16px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Family_Two_Man_Skin_Type_11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_school_director1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_paper.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_chart_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_account_16px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_pay_date_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_museum.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_paycheque.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_read_online.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_student_male_16px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_transaction_list_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_key.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_calculator_16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_treatment.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_books.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bill_16px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_judge.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_manufacturing1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_request_money1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_request_money_11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_filing_cabinet_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bank_building_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bank_building.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Cheque.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_account_16px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_account_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_bill_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_judge_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_invoice_16px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_invoice.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_paper1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_paper_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_investment_portfolio.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_investment_portfolio_3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cash_in_hand_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_cash_in_hand_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_stack_of_money.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_stack_of_money_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_key_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_calculator_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_factory_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_folder1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watermark_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\technology_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\technology_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\palette_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\palette_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gettingstarted_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gettingstarted_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contact_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factory-machine %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factory-machine %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factory-machine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_clothes_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_clothes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_clothes1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_online_support.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_online_support_1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_online_support_11.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\properties_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\properties_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switchtimescalesto_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\switchtimescalesto_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy_16x161.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy_32x321.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -38,6 +38,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.colSoyadi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colBabaAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colAnaAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
+            this.colHobisi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colKod = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
             this.colOgrenciNo = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colOkulNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyBandedGridColumn();
@@ -173,7 +174,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.colOzelKod3,
             this.colOzelKod4,
             this.colOzelKod5,
-            this.colSubeAdi});
+            this.colSubeAdi,
+            this.colHobisi});
             this.tablo.GridControl = this.grid;
             this.tablo.Name = "tablo";
             this.tablo.OptionsMenu.EnableColumnMenu = false;
@@ -255,6 +257,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.colAnaAdi.StatusBarKisaYolAciklama = null;
             this.colAnaAdi.Visible = true;
             this.colAnaAdi.Width = 83;
+            // 
+            // colHobisi
+            // 
+            this.colHobisi.Caption = "Hobisi";
+            this.colHobisi.FieldName = "Hobisi";
+            this.colHobisi.Name = "colHobisi";
+            this.colHobisi.OptionsColumn.AllowEdit = false;
+            this.colHobisi.StatusBarAciklama = null;
+            this.colHobisi.StatusBarKisaYol = "F4";
+            this.colHobisi.StatusBarKisaYolAciklama = null;
+            this.colHobisi.Visible = true;
             // 
             // colKod
             // 
@@ -525,9 +538,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.gridBand1.Columns.Add(this.colSoyadi);
             this.gridBand1.Columns.Add(this.colBabaAdi);
             this.gridBand1.Columns.Add(this.colAnaAdi);
+            this.gridBand1.Columns.Add(this.colHobisi);
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 588;
+            this.gridBand1.Width = 663;
             // 
             // gridBand2
             // 
@@ -622,6 +636,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         private UserControls.Grid.MyBandedGridColumn colOzelKod5;
         private UserControls.Grid.MyBandedGridColumn colSubeAdi;
         private UserControls.Grid.MyBandedGridColumn colKod;
+        private UserControls.Grid.MyBandedGridColumn colHobisi;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bndSecim;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;

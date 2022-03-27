@@ -37,6 +37,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
                 var row = new EposBilgileriL
                 {
                     TahakkukId = OwnerForm.Id,
+                    
                     Insert = true,
 
                 };

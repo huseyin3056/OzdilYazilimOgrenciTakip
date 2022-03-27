@@ -54,6 +54,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
+            this.btnGebelSiparisRaporu = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
@@ -75,6 +77,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             // ribbonControl
             // 
             this.ribbonControl.ExpandCollapseItem.Id = 0;
+            this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barSubItem1,
+            this.btnGebelSiparisRaporu});
             // 
             // 
             // 
@@ -401,6 +406,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Ozdil";
+            this.barSubItem1.Id = 99;
+            this.barSubItem1.Name = "barSubItem1";
+            // 
+            // btnGebelSiparisRaporu
+            // 
+            this.btnGebelSiparisRaporu.Caption = "Genel Sipariş Raporu";
+            this.btnGebelSiparisRaporu.Id = 100;
+            this.btnGebelSiparisRaporu.Name = "btnGebelSiparisRaporu";
+            // 
             // RaporSecim
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,5 +471,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private UserControls.Controls.MyPictureEdit myPictureEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraBars.BarSubItem barSubItem1;
+        private DevExpress.XtraBars.BarButtonItem btnGebelSiparisRaporu;
     }
 }

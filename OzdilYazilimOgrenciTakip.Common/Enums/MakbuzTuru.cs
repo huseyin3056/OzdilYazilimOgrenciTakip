@@ -10,7 +10,7 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         AvukatYoluylaTahsilEtme =2,
         [Description("Bankaya Tahsile Gönderme")]
         BankayaTahsileGonderme =3,
-        [Description("Bankaya Tahsil Etme")]
+        [Description("Banka Yoluyla Tahsil Etme")]
         BankaYoluylaTahsilEtme =4,
         [Description("Banka Şubeye Gönderme")]
         BaskaSubeyeGonderme =5,

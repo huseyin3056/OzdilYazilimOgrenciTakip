@@ -82,8 +82,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.Navigators
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.ControlNavigator Navigator;
         private DevExpress.Utils.ImageCollection imageCollection;
+        public DevExpress.XtraEditors.ControlNavigator Navigator;
     }
 }

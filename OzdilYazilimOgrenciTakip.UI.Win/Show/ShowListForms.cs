@@ -5,6 +5,7 @@ using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 {
@@ -12,7 +13,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
     {
         public static void ShowListForm(KartTuru kartTuru)
         {
-            // Yetki Kontrolü Yapılacak
+            if (!kartTuru.YetkiKontrolu(YetkiTuru.Gorebilir)) return ;
 
             var frm = (TForm)Activator.CreateInstance(typeof(TForm));
             frm.MdiParent = Form.ActiveForm;
@@ -25,7 +26,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
         public static void ShowListForm(KartTuru kartTuru, params object[] prm)
         {
-            // Yetki Kontrolü Yapılacak
+            if (!kartTuru.YetkiKontrolu(YetkiTuru.Gorebilir)) return;
 
             var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm);
             frm.MdiParent = Form.ActiveForm;
@@ -37,7 +38,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
         }
         public static BaseEntity ShowDialogListForm(KartTuru kartTuru, long? seciliGelecekId, params object[] prm)
         {
-            // Yetki Kontrolü
+            if (!kartTuru.YetkiKontrolu(YetkiTuru.Gorebilir)) return null;
+
             using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
             {
                 frm.SeciliGelecekId = seciliGelecekId;
@@ -67,7 +69,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
         public static IEnumerable<IBaseEntity> ShowDialogListForm(KartTuru kartTuru, IList<long> listeDisiTutulacakKayitlar, bool multiSelect, params object[] prm)
         {
-            // Yetki Kontrolü
+            if (!kartTuru.YetkiKontrolu(YetkiTuru.Gorebilir)) return null;
 
             using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
             {
@@ -106,7 +108,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Show
 
         public static IEnumerable<IBaseEntity> ShowDialogListForm(KartTuru kartTuru, bool multiSelect, params object[] prm)
         {
-            // Yetki Kontrolü
+            if (!kartTuru.YetkiKontrolu(YetkiTuru.Gorebilir)) return null;
 
             using (var frm = (TForm)Activator.CreateInstance(typeof(TForm), prm))
             {

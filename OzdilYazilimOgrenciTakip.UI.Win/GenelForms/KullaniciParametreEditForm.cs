@@ -71,7 +71,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 Id = Id,
                 Kod = "Param-001",
                 KullaniciId = AnaForm.KullaniciId,
-
                 DefaultAvukatHesapId = txtDefaultAvukatHesap.Id,
                 DefaultBankaHesapId = txtDefaultBankaHesap.Id,
                 DefaultKasaHesapId = txtDefaultKasaHesap.Id,
@@ -93,14 +92,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             {
                 DefaultAvukatHesapId = txtDefaultAvukatHesap.Id,
                 DefaultAvukatHesapAdi = txtDefaultAvukatHesap.Text,
+
                 DefaultBankaHesapId = txtDefaultBankaHesap.Id,
                 DefaultBankaHesapAdi = txtDefaultBankaHesap.Text,
+
                 DefaultKasaHesapId = txtDefaultKasaHesap.Id,
                 DefaultKasaHesapAdi = txtDefaultKasaHesap.Text,
+
                 RaporlariOnayAlmadanKapat = txtRaporlariOnayAlmadanKapat.Checked,
+
                 TableViewCaptionForeColor = txtTableViewCaptionForeColor.Color.ToArgb(),
                 TableColumnHeaderForeColor = txtTableColumnHeaderForeColor.Color.ToArgb(),
                 TableBandPanelForeColor = txtBandPanelForeColor.Color.ToArgb(),
+
                 ArkaPlanResim = (byte[])imgArkaPlanResmi.EditValue
 
             };

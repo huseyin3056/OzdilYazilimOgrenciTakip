@@ -107,7 +107,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             bool IndirimToplamiHzimetToplamindanBuyuk(long hizmetId)
             {
                 var hizmetToplami = tablo.DataController.ListSource.Cast<HizmetBilgileriL>().Where(x => x.HizmetId == hizmetId && !x.Delete).Sum(x => x.BrutUcret - x.KistDonemDusulenUcret);
-                var indirimToplami = ((TahakkukEditForm)OwnerForm).indirimBilgileriTable.Tablo.DataController.ListSource.Cast<IndirimBilgileriL>().Where(x => x.HizmetId == hizmetId && !x.Delete).Sum(x => x.BrutIndirim * x.KistDonemDusulenIndirim);
+                var indirimToplami = ((TahakkukEditForm)OwnerForm).indirimBilgileriTable.Tablo.DataController.ListSource.Cast<IndirimBilgileriL>().Where(x => x.HizmetId == hizmetId && !x.Delete).Sum(x => x.BrutIndirim - x.KistDonemDusulenIndirim);
                 return indirimToplami > hizmetToplami;
             }
 

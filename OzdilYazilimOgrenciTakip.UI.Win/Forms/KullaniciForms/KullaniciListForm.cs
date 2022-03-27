@@ -28,7 +28,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KullaniciForms
 
         protected override void Listele()
         {
-            tablo.GridControl.DataSource = ((KullaniciBll)Bll).List(FilterFunctions.Filter<Kullanici>(AktifKartlariGoster));
+            Tablo.GridControl.DataSource = ((KullaniciBll)Bll).List(FilterFunctions.Filter<Kullanici>(AktifKartlariGoster));
 
         }
     }

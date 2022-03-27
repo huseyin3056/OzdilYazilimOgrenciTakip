@@ -67,9 +67,14 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 DonemId = x.DonemId,
                 Durum = x.Durum,
 
+                Hobisi = x.Ogrenci.Hobisi,
+
+                BedenId=x.BedenId,
+                BedenAdi = x.Beden.BedenAdi
 
 
-            });
+
+            }) ;
         }
 
 
@@ -123,6 +128,10 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 SubeFax = x.Sube.Faks,
                 SubeIbanNo = x.Sube.IbanNo,
                 SubeLogo = x.Sube.Logo,
+
+                Hobisi=x.Ogrenci.Hobisi,
+                
+                
 
 
                 VeliBilgileri = x.IletisimBilgileri.Where(y => y.Veli).Select(y => new IletisimBilgileriR
@@ -245,7 +254,11 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 OzelKod4Adi = x.OzelKod4.OzelKodAdi,
                 OzelKod5Adi = x.OzelKod5.OzelKodAdi,
                 SubeAdi = x.Sube.SubeAdi,
-                Durum = x.Durum
+                Durum = x.Durum,
+
+               Hobisi=x.Ogrenci.Hobisi,
+               BedenAdi=x.Beden.BedenAdi
+                
 
 
             }).OrderBy(x => x.Kod).ToList();
@@ -318,7 +331,10 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 OzelKod2 = x.Tahakkuk.OzelKod2.OzelKodAdi,
                 OzelKod3 = x.Tahakkuk.OzelKod3.OzelKodAdi,
                 OzelKod4 = x.Tahakkuk.OzelKod4.OzelKodAdi,
-                OzelKod5 = x.Tahakkuk.OzelKod5.OzelKodAdi
+                OzelKod5 = x.Tahakkuk.OzelKod5.OzelKodAdi,
+                
+
+               
 
 
 

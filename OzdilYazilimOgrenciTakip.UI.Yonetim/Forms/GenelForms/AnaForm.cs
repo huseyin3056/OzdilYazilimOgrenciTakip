@@ -74,8 +74,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
 
         private void AnaForm_Load(object sender, System.EventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
             Listele();
             tablo.Focus();
+
+            Cursor.Current = Cursors.Default;
         }
 
 
@@ -154,6 +158,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
                 else if (e.Item == btnKullaniciKartlari)
                     ShowListForms<KullaniciListForm>.ShowDialogListForm();
 
+                else if(e.Item==btnKullaniciBirimYetkileri)
+                    ShowEditForms<KullaniciBirimYetkileriEditForm>.ShowDialogEditForm();
 
 
 

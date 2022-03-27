@@ -48,6 +48,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KullaniciForms
         {
             var entity = (KullaniciS)OldEntity;
 
+           
+
             txtKullaniciAdi.Text = entity.Kod;
             txtEmail.Text = entity.Email;
             txtAdi.Text = entity.Adi;

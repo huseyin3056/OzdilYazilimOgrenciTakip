@@ -58,8 +58,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.GenelEditForm
                     kartTuru == KartTuru.OgrenciKartiRaporu ||
                     kartTuru == KartTuru.BelgeSecim ||
                     kartTuru == KartTuru.RaporTasarim ||
-                    kartTuru == KartTuru.BelgeHareketleri ||
-                    kartTuru == KartTuru.UrunTanimi ||
+                    kartTuru == KartTuru.BelgeHareketleri ||                
                     kartTuru == KartTuru.FaturaDonemIcmalRaporu ||
                     kartTuru == KartTuru.FaturaOgrenciIcmalRaporu ||
                     kartTuru == KartTuru.FaturaRaporu)

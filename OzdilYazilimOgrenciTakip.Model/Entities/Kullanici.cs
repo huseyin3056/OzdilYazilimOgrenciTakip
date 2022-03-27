@@ -11,15 +11,15 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public override string Kod { get; set; }
 
 
-        [Required, StringLength(50), ZorunluAlan("Adı", "txtAdi")]
+        [ StringLength(50), ZorunluAlan("Adı", "txtAdi")]
         public string Adi { get; set; }
 
 
-        [Required, StringLength(50), ZorunluAlan("SoyAdı", "txtSoyAdi")]
+        [ StringLength(50), ZorunluAlan("SoyAdı", "txtSoyAdi")]
         public string SoyAdi { get; set; }
 
 
-        [Required, StringLength(50), ZorunluAlan("Email", "txtEmail")]
+        [ StringLength(50), ZorunluAlan("Email", "txtEmail")]
         public string Email { get; set; }
 
 
@@ -31,7 +31,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public string GizliKelime { get; set; }
 
 
-        [Required, StringLength(50), ZorunluAlan("Rol", "txtRol")]
+     //   [ StringLength(50), ZorunluAlan("Rol", "txtRol")]
         public long RolId { get; set; }
 
 

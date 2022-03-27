@@ -33,6 +33,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridView();
             this.colKod = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colEvrakAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.colEvrakCinsi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +69,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.tablo.Appearance.ViewCaption.Options.UseForeColor = true;
             this.tablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colKod,
-            this.colEvrakAdi});
+            this.colEvrakAdi,
+            this.colEvrakCinsi});
             this.tablo.GridControl = this.grid;
             this.tablo.Name = "tablo";
             this.tablo.OptionsMenu.EnableColumnMenu = false;
@@ -115,6 +118,19 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.colEvrakAdi.VisibleIndex = 1;
             this.colEvrakAdi.Width = 287;
             // 
+            // colEvrakCinsi
+            // 
+            this.colEvrakCinsi.Caption = "Evrak Cinsi";
+            this.colEvrakCinsi.FieldName = "EvrakCinsi";
+            this.colEvrakCinsi.Name = "colEvrakCinsi";
+            this.colEvrakCinsi.OptionsColumn.AllowEdit = false;
+            this.colEvrakCinsi.StatusBarAciklama = null;
+            this.colEvrakCinsi.StatusBarKisaYol = null;
+            this.colEvrakCinsi.StatusBarKisaYolAciklama = null;
+            this.colEvrakCinsi.Visible = true;
+            this.colEvrakCinsi.VisibleIndex = 2;
+            this.colEvrakCinsi.Width = 177;
+            // 
             // EvrakBilgileriTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -124,6 +140,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
             this.Size = new System.Drawing.Size(640, 298);
             this.Controls.SetChildIndex(this.insUpNavigator, 0);
             this.Controls.SetChildIndex(this.grid, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).EndInit();
             this.ResumeLayout(false);
@@ -137,5 +154,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
         private Grid.MyGridView tablo;
         private Grid.MyGridColumn colEvrakAdi;
         private Grid.MyGridColumn colKod;
+        private Grid.MyGridColumn colEvrakCinsi;
     }
 }

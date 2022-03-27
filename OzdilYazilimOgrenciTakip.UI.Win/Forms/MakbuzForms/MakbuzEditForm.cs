@@ -108,7 +108,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
         protected override void GuncelNesneOlustur()
         {
-            var hesapTuru = txtHesapTuru.Text.GetEnum<MakbuzHesapTuru>();
+            var hesapTuru = txtHesapTuru.Text.GetEnum<MakbuzHesapTuru>(); // Texti Enum'a çeviriyor.
 
             CurrentEntity = new Makbuz
             {

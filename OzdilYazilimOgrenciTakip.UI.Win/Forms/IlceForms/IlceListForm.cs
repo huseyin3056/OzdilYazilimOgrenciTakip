@@ -38,7 +38,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IlceForms
         protected override void ShowEditForm(long id)
         {
             var result = ShowEditForms<IlceEditForm>.ShowDialogEditForm(Common.Enums.KartTuru.Ilce, id, _ilId, _ilAdi);
-            //  işlem yapılacak
 
             ShowEditFormDefault(result);
 

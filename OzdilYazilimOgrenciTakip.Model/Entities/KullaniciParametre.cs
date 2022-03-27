@@ -11,9 +11,9 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public override string Kod { get; set; }
 
         public long KullaniciId { get; set; }
+
         public long? DefaultAvukatHesapId { get; set; }
         public long? DefaultBankaHesapId { get; set; }
-
         public long? DefaultKasaHesapId{ get; set; }
 
 
@@ -31,7 +31,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         //İlişki
         public Kullanici Kullanici { get; set; }
         public Avukat DefaultAvukatHesap { get; set; }
-        public Banka DefaultBankaHesap { get; set; }
+        public BankaHesap DefaultBankaHesap { get; set; }
         public Kasa DefaultKasaHesap { get; set; }
 
 

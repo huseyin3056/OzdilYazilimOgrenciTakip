@@ -18,6 +18,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string OzelKod3Adi { get; set; }
         public string OzelKod4Adi { get; set; }
         public string OzelKod5Adi { get; set; }
+  
 
     }
 
@@ -54,6 +55,8 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string OzelKod4Adi { get; set; }
         public string OzelKod5Adi { get; set; }
 
+        public string Hobisi { get; set; }
+    
 
     }
 
@@ -108,6 +111,8 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public IletisimBilgileriR VeliBilgileri { get; set; }
         public IletisimBilgileriR AnneBilgileri { get; set; }
         public IletisimBilgileriR BabaBilgileri { get; set; }
+
+        public string Hobisi { get; set; }
 
     }
 

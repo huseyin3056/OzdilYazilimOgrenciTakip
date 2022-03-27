@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OzdilYazilimOgrenciTakip.Model.Entities;
+﻿using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OzdilYazilimOgrenciTakip.Model.Dto
 {

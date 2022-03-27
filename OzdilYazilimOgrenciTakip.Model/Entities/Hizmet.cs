@@ -28,6 +28,9 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [StringLength(500)]
         public string Aciklama { get; set; }
 
+
+        // İlişkiler
+
         public long SubeId { get; set; }
         public  Sube Sube { get; set; }
 

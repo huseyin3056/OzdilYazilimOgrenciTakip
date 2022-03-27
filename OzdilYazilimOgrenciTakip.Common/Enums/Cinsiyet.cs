@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace OzdilYazilimOgrenciTakip.Common.Enums
 {
-   public enum Cinsiyet: byte
+    public enum Cinsiyet: byte
     {
         [Description("Erkek")]
         Erkek=1,

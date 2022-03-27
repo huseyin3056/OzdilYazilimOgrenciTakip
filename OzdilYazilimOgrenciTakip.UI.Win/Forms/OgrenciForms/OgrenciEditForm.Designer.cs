@@ -50,6 +50,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             DevExpress.XtraLayout.RowDefinition rowDefinition9 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition10 = new DevExpress.XtraLayout.RowDefinition();
             this.myDataLayoutControl = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
+            this.txtHobisi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyTextEdit();
+            this.tahakkukBilgileriTable = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditFormTable.TahakkukBilgileriTable();
             this.txtKod = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyKodText();
             this.imgResim = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyPictureEdit();
             this.tglDurum = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyToggleSwitch();
@@ -111,12 +113,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.tahakkukBilgileriTable = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditFormTable.TahakkukBilgileriTable();
             this.layoutControlItem30 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHobisi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgResim.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tglDurum.Properties)).BeginInit();
@@ -181,6 +184,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -194,11 +198,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(898, 109);
+            this.ribbonControl.Size = new System.Drawing.Size(848, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // myDataLayoutControl
             // 
+            this.myDataLayoutControl.Controls.Add(this.txtHobisi);
             this.myDataLayoutControl.Controls.Add(this.tahakkukBilgileriTable);
             this.myDataLayoutControl.Controls.Add(this.txtKod);
             this.myDataLayoutControl.Controls.Add(this.imgResim);
@@ -235,9 +240,30 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.myDataLayoutControl.Name = "myDataLayoutControl";
             this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl.Root = this.Root;
-            this.myDataLayoutControl.Size = new System.Drawing.Size(898, 416);
+            this.myDataLayoutControl.Size = new System.Drawing.Size(848, 416);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
+            // 
+            // txtHobisi
+            // 
+            this.txtHobisi.EnterMoveNextControl = true;
+            this.txtHobisi.Location = new System.Drawing.Point(493, 84);
+            this.txtHobisi.MenuManager = this.ribbonControl;
+            this.txtHobisi.Name = "txtHobisi";
+            this.txtHobisi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtHobisi.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtHobisi.Properties.MaxLength = 50;
+            this.txtHobisi.Size = new System.Drawing.Size(110, 20);
+            this.txtHobisi.StatusBarAciklama = null;
+            this.txtHobisi.StyleController = this.myDataLayoutControl;
+            this.txtHobisi.TabIndex = 31;
+            // 
+            // tahakkukBilgileriTable
+            // 
+            this.tahakkukBilgileriTable.Location = new System.Drawing.Point(12, 228);
+            this.tahakkukBilgileriTable.Name = "tahakkukBilgileriTable";
+            this.tahakkukBilgileriTable.Size = new System.Drawing.Size(756, 176);
+            this.tahakkukBilgileriTable.TabIndex = 30;
             // 
             // txtKod
             // 
@@ -252,7 +278,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtKod.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtKod.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtKod.Properties.MaxLength = 20;
-            this.txtKod.Size = new System.Drawing.Size(111, 20);
+            this.txtKod.Size = new System.Drawing.Size(91, 20);
             this.txtKod.StatusBarAciklama = "Kod Giriniz";
             this.txtKod.StyleController = this.myDataLayoutControl;
             this.txtKod.TabIndex = 29;
@@ -261,7 +287,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.imgResim.Cursor = System.Windows.Forms.Cursors.Default;
             this.imgResim.EnterMoveNextControl = true;
-            this.imgResim.Location = new System.Drawing.Point(668, 60);
+            this.imgResim.Location = new System.Drawing.Point(622, 60);
             this.imgResim.MenuManager = this.ribbonControl;
             this.imgResim.Name = "imgResim";
             this.imgResim.Properties.Appearance.ForeColor = System.Drawing.Color.Maroon;
@@ -282,7 +308,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // tglDurum
             // 
             this.tglDurum.EnterMoveNextControl = true;
-            this.tglDurum.Location = new System.Drawing.Point(726, 12);
+            this.tglDurum.Location = new System.Drawing.Point(680, 12);
             this.tglDurum.Margin = new System.Windows.Forms.Padding(50, 3, 3, 3);
             this.tglDurum.MenuManager = this.ribbonControl;
             this.tglDurum.Name = "tglDurum";
@@ -301,7 +327,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.txtOzelKod3.EnterMoveNextControl = true;
             this.txtOzelKod3.Id = null;
-            this.txtOzelKod3.Location = new System.Drawing.Point(534, 156);
+            this.txtOzelKod3.Location = new System.Drawing.Point(493, 156);
             this.txtOzelKod3.MenuManager = this.ribbonControl;
             this.txtOzelKod3.Name = "txtOzelKod3";
             this.txtOzelKod3.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -320,7 +346,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.txtOzelKod4.EnterMoveNextControl = true;
             this.txtOzelKod4.Id = null;
-            this.txtOzelKod4.Location = new System.Drawing.Point(534, 180);
+            this.txtOzelKod4.Location = new System.Drawing.Point(493, 180);
             this.txtOzelKod4.MenuManager = this.ribbonControl;
             this.txtOzelKod4.Name = "txtOzelKod4";
             this.txtOzelKod4.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -339,7 +365,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.txtOzelKod2.EnterMoveNextControl = true;
             this.txtOzelKod2.Id = null;
-            this.txtOzelKod2.Location = new System.Drawing.Point(534, 132);
+            this.txtOzelKod2.Location = new System.Drawing.Point(493, 132);
             this.txtOzelKod2.MenuManager = this.ribbonControl;
             this.txtOzelKod2.Name = "txtOzelKod2";
             this.txtOzelKod2.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -358,7 +384,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.txtOzelKod1.EnterMoveNextControl = true;
             this.txtOzelKod1.Id = null;
-            this.txtOzelKod1.Location = new System.Drawing.Point(534, 108);
+            this.txtOzelKod1.Location = new System.Drawing.Point(493, 108);
             this.txtOzelKod1.MenuManager = this.ribbonControl;
             this.txtOzelKod1.Name = "txtOzelKod1";
             this.txtOzelKod1.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -377,7 +403,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.txtKimlikVerilisTarihi.EditValue = null;
             this.txtKimlikVerilisTarihi.EnterMoveNextControl = true;
-            this.txtKimlikVerilisTarihi.Location = new System.Drawing.Point(534, 60);
+            this.txtKimlikVerilisTarihi.Location = new System.Drawing.Point(493, 60);
             this.txtKimlikVerilisTarihi.MenuManager = this.ribbonControl;
             this.txtKimlikVerilisTarihi.Name = "txtKimlikVerilisTarihi";
             this.txtKimlikVerilisTarihi.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -401,7 +427,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKimlikKayitNo
             // 
             this.txtKimlikKayitNo.EnterMoveNextControl = true;
-            this.txtKimlikKayitNo.Location = new System.Drawing.Point(534, 36);
+            this.txtKimlikKayitNo.Location = new System.Drawing.Point(493, 36);
             this.txtKimlikKayitNo.MenuManager = this.ribbonControl;
             this.txtKimlikKayitNo.Name = "txtKimlikKayitNo";
             this.txtKimlikKayitNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -415,7 +441,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKimlikVerilisNedeni
             // 
             this.txtKimlikVerilisNedeni.EnterMoveNextControl = true;
-            this.txtKimlikVerilisNedeni.Location = new System.Drawing.Point(534, 12);
+            this.txtKimlikVerilisNedeni.Location = new System.Drawing.Point(493, 12);
             this.txtKimlikVerilisNedeni.MenuManager = this.ribbonControl;
             this.txtKimlikVerilisNedeni.Name = "txtKimlikVerilisNedeni";
             this.txtKimlikVerilisNedeni.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -429,13 +455,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKimlikVerildigiYer
             // 
             this.txtKimlikVerildigiYer.EnterMoveNextControl = true;
-            this.txtKimlikVerildigiYer.Location = new System.Drawing.Point(313, 204);
+            this.txtKimlikVerildigiYer.Location = new System.Drawing.Point(288, 204);
             this.txtKimlikVerildigiYer.MenuManager = this.ribbonControl;
             this.txtKimlikVerildigiYer.Name = "txtKimlikVerildigiYer";
             this.txtKimlikVerildigiYer.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtKimlikVerildigiYer.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtKimlikVerildigiYer.Properties.MaxLength = 50;
-            this.txtKimlikVerildigiYer.Size = new System.Drawing.Size(114, 20);
+            this.txtKimlikVerildigiYer.Size = new System.Drawing.Size(103, 20);
             this.txtKimlikVerildigiYer.StatusBarAciklama = "Verildiği Yer Giriniz";
             this.txtKimlikVerildigiYer.StyleController = this.myDataLayoutControl;
             this.txtKimlikVerildigiYer.TabIndex = 18;
@@ -443,13 +469,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKimlikBireySiraNo
             // 
             this.txtKimlikBireySiraNo.EnterMoveNextControl = true;
-            this.txtKimlikBireySiraNo.Location = new System.Drawing.Point(313, 180);
+            this.txtKimlikBireySiraNo.Location = new System.Drawing.Point(288, 180);
             this.txtKimlikBireySiraNo.MenuManager = this.ribbonControl;
             this.txtKimlikBireySiraNo.Name = "txtKimlikBireySiraNo";
             this.txtKimlikBireySiraNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtKimlikBireySiraNo.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtKimlikBireySiraNo.Properties.MaxLength = 50;
-            this.txtKimlikBireySiraNo.Size = new System.Drawing.Size(54, 20);
+            this.txtKimlikBireySiraNo.Size = new System.Drawing.Size(43, 20);
             this.txtKimlikBireySiraNo.StatusBarAciklama = "Birey Sıra No Giriniz";
             this.txtKimlikBireySiraNo.StyleController = this.myDataLayoutControl;
             this.txtKimlikBireySiraNo.TabIndex = 17;
@@ -457,7 +483,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKimlikAileSiraNo
             // 
             this.txtKimlikAileSiraNo.EnterMoveNextControl = true;
-            this.txtKimlikAileSiraNo.Location = new System.Drawing.Point(371, 156);
+            this.txtKimlikAileSiraNo.Location = new System.Drawing.Point(335, 156);
             this.txtKimlikAileSiraNo.MenuManager = this.ribbonControl;
             this.txtKimlikAileSiraNo.Name = "txtKimlikAileSiraNo";
             this.txtKimlikAileSiraNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -471,13 +497,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKimlikCiltNo
             // 
             this.txtKimlikCiltNo.EnterMoveNextControl = true;
-            this.txtKimlikCiltNo.Location = new System.Drawing.Point(313, 156);
+            this.txtKimlikCiltNo.Location = new System.Drawing.Point(288, 156);
             this.txtKimlikCiltNo.MenuManager = this.ribbonControl;
             this.txtKimlikCiltNo.Name = "txtKimlikCiltNo";
             this.txtKimlikCiltNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtKimlikCiltNo.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtKimlikCiltNo.Properties.MaxLength = 50;
-            this.txtKimlikCiltNo.Size = new System.Drawing.Size(54, 20);
+            this.txtKimlikCiltNo.Size = new System.Drawing.Size(43, 20);
             this.txtKimlikCiltNo.StatusBarAciklama = "Cilt No Giriniz";
             this.txtKimlikCiltNo.StyleController = this.myDataLayoutControl;
             this.txtKimlikCiltNo.TabIndex = 15;
@@ -485,13 +511,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKimlikMahalleKoy
             // 
             this.txtKimlikMahalleKoy.EnterMoveNextControl = true;
-            this.txtKimlikMahalleKoy.Location = new System.Drawing.Point(313, 132);
+            this.txtKimlikMahalleKoy.Location = new System.Drawing.Point(288, 132);
             this.txtKimlikMahalleKoy.MenuManager = this.ribbonControl;
             this.txtKimlikMahalleKoy.Name = "txtKimlikMahalleKoy";
             this.txtKimlikMahalleKoy.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtKimlikMahalleKoy.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtKimlikMahalleKoy.Properties.MaxLength = 50;
-            this.txtKimlikMahalleKoy.Size = new System.Drawing.Size(114, 20);
+            this.txtKimlikMahalleKoy.Size = new System.Drawing.Size(103, 20);
             this.txtKimlikMahalleKoy.StatusBarAciklama = "Mahalle Köy Giriniz";
             this.txtKimlikMahalleKoy.StyleController = this.myDataLayoutControl;
             this.txtKimlikMahalleKoy.TabIndex = 14;
@@ -500,7 +526,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.txtKimlikIlce.EnterMoveNextControl = true;
             this.txtKimlikIlce.Id = null;
-            this.txtKimlikIlce.Location = new System.Drawing.Point(313, 108);
+            this.txtKimlikIlce.Location = new System.Drawing.Point(288, 108);
             this.txtKimlikIlce.MenuManager = this.ribbonControl;
             this.txtKimlikIlce.Name = "txtKimlikIlce";
             this.txtKimlikIlce.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -508,7 +534,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtKimlikIlce.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtKimlikIlce.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtKimlikIlce.Size = new System.Drawing.Size(114, 20);
+            this.txtKimlikIlce.Size = new System.Drawing.Size(103, 20);
             this.txtKimlikIlce.StatusBarAciklama = null;
             this.txtKimlikIlce.StatusBarKisaYol = "F4";
             this.txtKimlikIlce.StatusBarKisaYolAciklama = null;
@@ -519,7 +545,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.txtKimlikIl.EnterMoveNextControl = true;
             this.txtKimlikIl.Id = null;
-            this.txtKimlikIl.Location = new System.Drawing.Point(313, 84);
+            this.txtKimlikIl.Location = new System.Drawing.Point(288, 84);
             this.txtKimlikIl.MenuManager = this.ribbonControl;
             this.txtKimlikIl.Name = "txtKimlikIl";
             this.txtKimlikIl.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -527,7 +553,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtKimlikIl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtKimlikIl.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtKimlikIl.Size = new System.Drawing.Size(114, 20);
+            this.txtKimlikIl.Size = new System.Drawing.Size(103, 20);
             this.txtKimlikIl.StatusBarAciklama = null;
             this.txtKimlikIl.StatusBarKisaYol = "F4";
             this.txtKimlikIl.StatusBarKisaYolAciklama = null;
@@ -537,7 +563,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKimlikSiraNo
             // 
             this.txtKimlikSiraNo.EnterMoveNextControl = true;
-            this.txtKimlikSiraNo.Location = new System.Drawing.Point(371, 60);
+            this.txtKimlikSiraNo.Location = new System.Drawing.Point(335, 60);
             this.txtKimlikSiraNo.MenuManager = this.ribbonControl;
             this.txtKimlikSiraNo.Name = "txtKimlikSiraNo";
             this.txtKimlikSiraNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -551,13 +577,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKimlikSeri
             // 
             this.txtKimlikSeri.EnterMoveNextControl = true;
-            this.txtKimlikSeri.Location = new System.Drawing.Point(313, 60);
+            this.txtKimlikSeri.Location = new System.Drawing.Point(288, 60);
             this.txtKimlikSeri.MenuManager = this.ribbonControl;
             this.txtKimlikSeri.Name = "txtKimlikSeri";
             this.txtKimlikSeri.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtKimlikSeri.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtKimlikSeri.Properties.MaxLength = 50;
-            this.txtKimlikSeri.Size = new System.Drawing.Size(54, 20);
+            this.txtKimlikSeri.Size = new System.Drawing.Size(43, 20);
             this.txtKimlikSeri.StatusBarAciklama = "Seri No Giriniz";
             this.txtKimlikSeri.StyleController = this.myDataLayoutControl;
             this.txtKimlikSeri.TabIndex = 10;
@@ -566,7 +592,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.txtDogumTarihi.EditValue = null;
             this.txtDogumTarihi.EnterMoveNextControl = true;
-            this.txtDogumTarihi.Location = new System.Drawing.Point(313, 36);
+            this.txtDogumTarihi.Location = new System.Drawing.Point(288, 36);
             this.txtDogumTarihi.MenuManager = this.ribbonControl;
             this.txtDogumTarihi.Name = "txtDogumTarihi";
             this.txtDogumTarihi.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -580,7 +606,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDogumTarihi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtDogumTarihi.Properties.MaskSettings.Set("useAdvancingCaret", true);
-            this.txtDogumTarihi.Size = new System.Drawing.Size(114, 20);
+            this.txtDogumTarihi.Size = new System.Drawing.Size(103, 20);
             this.txtDogumTarihi.StatusBarAciklama = "Doğum Tarihi Giriniz";
             this.txtDogumTarihi.StatusBarKisaYol = "F4 :";
             this.txtDogumTarihi.StatusBarKisaYolAciklama = "Tarih Seç :";
@@ -590,13 +616,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtDogumYeri
             // 
             this.txtDogumYeri.EnterMoveNextControl = true;
-            this.txtDogumYeri.Location = new System.Drawing.Point(313, 12);
+            this.txtDogumYeri.Location = new System.Drawing.Point(288, 12);
             this.txtDogumYeri.MenuManager = this.ribbonControl;
             this.txtDogumYeri.Name = "txtDogumYeri";
             this.txtDogumYeri.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtDogumYeri.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtDogumYeri.Properties.MaxLength = 50;
-            this.txtDogumYeri.Size = new System.Drawing.Size(114, 20);
+            this.txtDogumYeri.Size = new System.Drawing.Size(103, 20);
             this.txtDogumYeri.StatusBarAciklama = "Doğum Yeri Giriniz";
             this.txtDogumYeri.StyleController = this.myDataLayoutControl;
             this.txtDogumYeri.TabIndex = 8;
@@ -610,7 +636,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtAnaAdi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtAnaAdi.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtAnaAdi.Properties.MaxLength = 50;
-            this.txtAnaAdi.Size = new System.Drawing.Size(111, 20);
+            this.txtAnaAdi.Size = new System.Drawing.Size(91, 20);
             this.txtAnaAdi.StatusBarAciklama = "Ana Adı Giriniz";
             this.txtAnaAdi.StyleController = this.myDataLayoutControl;
             this.txtAnaAdi.TabIndex = 7;
@@ -624,7 +650,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtBabaAdi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtBabaAdi.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtBabaAdi.Properties.MaxLength = 50;
-            this.txtBabaAdi.Size = new System.Drawing.Size(111, 20);
+            this.txtBabaAdi.Size = new System.Drawing.Size(91, 20);
             this.txtBabaAdi.StatusBarAciklama = "Baba Adı Giriniz";
             this.txtBabaAdi.StyleController = this.myDataLayoutControl;
             this.txtBabaAdi.TabIndex = 6;
@@ -632,7 +658,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtKanGrubu
             // 
             this.txtKanGrubu.EnterMoveNextControl = true;
-            this.txtKanGrubu.Location = new System.Drawing.Point(95, 156);
+            this.txtKanGrubu.Location = new System.Drawing.Point(94, 156);
             this.txtKanGrubu.MenuManager = this.ribbonControl;
             this.txtKanGrubu.Name = "txtKanGrubu";
             this.txtKanGrubu.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -640,7 +666,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtKanGrubu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtKanGrubu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtKanGrubu.Size = new System.Drawing.Size(53, 20);
+            this.txtKanGrubu.Size = new System.Drawing.Size(92, 20);
             this.txtKanGrubu.StatusBarAciklama = "Kan Grubu Giriniz";
             this.txtKanGrubu.StatusBarKisaYol = "F4 :";
             this.txtKanGrubu.StatusBarKisaYolAciklama = "Seçim Yap";
@@ -662,7 +688,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtTel.Properties.MaskSettings.Set("isAutoComplete", false);
             this.txtTel.Properties.MaskSettings.Set("isOptimistic", false);
             this.txtTel.Properties.MaxLength = 50;
-            this.txtTel.Size = new System.Drawing.Size(111, 20);
+            this.txtTel.Size = new System.Drawing.Size(91, 20);
             this.txtTel.StatusBarAciklama = "Telefon No Giriniz";
             this.txtTel.StyleController = this.myDataLayoutControl;
             this.txtTel.TabIndex = 4;
@@ -670,7 +696,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // txtCinsiyet
             // 
             this.txtCinsiyet.EnterMoveNextControl = true;
-            this.txtCinsiyet.Location = new System.Drawing.Point(95, 108);
+            this.txtCinsiyet.Location = new System.Drawing.Point(94, 108);
             this.txtCinsiyet.MenuManager = this.ribbonControl;
             this.txtCinsiyet.Name = "txtCinsiyet";
             this.txtCinsiyet.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
@@ -678,7 +704,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtCinsiyet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtCinsiyet.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.txtCinsiyet.Size = new System.Drawing.Size(53, 20);
+            this.txtCinsiyet.Size = new System.Drawing.Size(92, 20);
             this.txtCinsiyet.StatusBarAciklama = "Cinsiyet Seçiniz";
             this.txtCinsiyet.StatusBarKisaYol = null;
             this.txtCinsiyet.StatusBarKisaYolAciklama = null;
@@ -694,7 +720,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtSoyadi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtSoyadi.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtSoyadi.Properties.MaxLength = 50;
-            this.txtSoyadi.Size = new System.Drawing.Size(111, 20);
+            this.txtSoyadi.Size = new System.Drawing.Size(91, 20);
             this.txtSoyadi.StatusBarAciklama = "Soyad Giriniz";
             this.txtSoyadi.StyleController = this.myDataLayoutControl;
             this.txtSoyadi.TabIndex = 2;
@@ -708,7 +734,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtAdi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtAdi.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtAdi.Properties.MaxLength = 50;
-            this.txtAdi.Size = new System.Drawing.Size(111, 20);
+            this.txtAdi.Size = new System.Drawing.Size(91, 20);
             this.txtAdi.StatusBarAciklama = "Ad Giriniz";
             this.txtAdi.StyleController = this.myDataLayoutControl;
             this.txtAdi.TabIndex = 1;
@@ -728,7 +754,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.txtTCKimlikNo.Properties.MaskSettings.Set("isAutoComplete", false);
             this.txtTCKimlikNo.Properties.MaskSettings.Set("isOptimistic", false);
             this.txtTCKimlikNo.Properties.MaxLength = 50;
-            this.txtTCKimlikNo.Size = new System.Drawing.Size(111, 20);
+            this.txtTCKimlikNo.Size = new System.Drawing.Size(91, 20);
             this.txtTCKimlikNo.StatusBarAciklama = "TC No Giriniz";
             this.txtTCKimlikNo.StyleController = this.myDataLayoutControl;
             this.txtTCKimlikNo.TabIndex = 0;
@@ -737,7 +763,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             // 
             this.txtOzelKod5.EnterMoveNextControl = true;
             this.txtOzelKod5.Id = null;
-            this.txtOzelKod5.Location = new System.Drawing.Point(534, 204);
+            this.txtOzelKod5.Location = new System.Drawing.Point(493, 204);
             this.txtOzelKod5.Name = "txtOzelKod5";
             this.txtOzelKod5.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtOzelKod5.Properties.AppearanceFocused.Options.UseBackColor = true;
@@ -786,25 +812,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem13,
             this.layoutControlItem17,
             this.layoutControlItem16,
-            this.layoutControlItem30});
+            this.layoutControlItem30,
+            this.layoutControlItem31});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition1.Width = 140D;
+            columnDefinition1.Width = 120D;
             columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
             columnDefinition2.Width = 58D;
             columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition3.Width = 20D;
+            columnDefinition3.Width = 15D;
             columnDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition4.Width = 141D;
+            columnDefinition4.Width = 130D;
             columnDefinition5.SizeType = System.Windows.Forms.SizeType.Absolute;
             columnDefinition5.Width = 60D;
             columnDefinition6.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition6.Width = 20D;
+            columnDefinition6.Width = 15D;
             columnDefinition7.SizeType = System.Windows.Forms.SizeType.Absolute;
             columnDefinition7.Width = 197D;
             columnDefinition8.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition8.Width = 20D;
+            columnDefinition8.Width = 15D;
             columnDefinition9.SizeType = System.Windows.Forms.SizeType.Absolute;
             columnDefinition9.Width = 150D;
             columnDefinition10.SizeType = System.Windows.Forms.SizeType.Percent;
@@ -851,7 +878,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             rowDefinition8,
             rowDefinition9,
             rowDefinition10});
-            this.Root.Size = new System.Drawing.Size(898, 416);
+            this.Root.Size = new System.Drawing.Size(848, 416);
             this.Root.TextVisible = false;
             // 
             // tctKimlikNo
@@ -863,7 +890,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.tctKimlikNo.Name = "tctKimlikNo";
             this.tctKimlikNo.OptionsTableLayoutItem.ColumnSpan = 2;
             this.tctKimlikNo.OptionsTableLayoutItem.RowIndex = 1;
-            this.tctKimlikNo.Size = new System.Drawing.Size(198, 24);
+            this.tctKimlikNo.Size = new System.Drawing.Size(178, 24);
             this.tctKimlikNo.Text = "TC Kimlik No";
             this.tctKimlikNo.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -876,7 +903,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem1.OptionsTableLayoutItem.RowIndex = 2;
-            this.layoutControlItem1.Size = new System.Drawing.Size(198, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(178, 24);
             this.layoutControlItem1.Text = "Adı";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -889,7 +916,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 3;
-            this.layoutControlItem2.Size = new System.Drawing.Size(198, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(178, 24);
             this.layoutControlItem2.Text = "Soyadı";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -900,10 +927,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem3.Control = this.txtCinsiyet;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem3.OptionsTableLayoutItem.RowIndex = 4;
-            this.layoutControlItem3.Size = new System.Drawing.Size(140, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(178, 24);
             this.layoutControlItem3.Text = "Cinsiyet";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(71, 13);
+            this.layoutControlItem3.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem3.TextToControlDistance = 5;
             // 
             // layoutControlItem4
             // 
@@ -914,7 +944,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem4.OptionsTableLayoutItem.RowIndex = 5;
-            this.layoutControlItem4.Size = new System.Drawing.Size(198, 24);
+            this.layoutControlItem4.Size = new System.Drawing.Size(178, 24);
             this.layoutControlItem4.Text = "Telefon";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -925,10 +955,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem5.Control = this.txtKanGrubu;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 144);
             this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 6;
-            this.layoutControlItem5.Size = new System.Drawing.Size(140, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(178, 24);
             this.layoutControlItem5.Text = "Kan Grubu";
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(71, 13);
+            this.layoutControlItem5.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(77, 13);
+            this.layoutControlItem5.TextToControlDistance = 5;
             // 
             // layoutControlItem6
             // 
@@ -939,7 +972,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem6.OptionsTableLayoutItem.RowIndex = 7;
-            this.layoutControlItem6.Size = new System.Drawing.Size(198, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(178, 24);
             this.layoutControlItem6.Text = "Baba Adı";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -952,7 +985,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem7.OptionsTableLayoutItem.RowIndex = 8;
-            this.layoutControlItem7.Size = new System.Drawing.Size(198, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(178, 24);
             this.layoutControlItem7.Text = "Ana Adı";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -961,11 +994,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem9.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem9.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem9.Control = this.txtDogumYeri;
-            this.layoutControlItem9.Location = new System.Drawing.Point(218, 0);
+            this.layoutControlItem9.Location = new System.Drawing.Point(193, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem9.OptionsTableLayoutItem.ColumnSpan = 2;
-            this.layoutControlItem9.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(190, 24);
             this.layoutControlItem9.Text = "Doğum Yeri";
             this.layoutControlItem9.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -974,12 +1007,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem8.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem8.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem8.Control = this.txtDogumTarihi;
-            this.layoutControlItem8.Location = new System.Drawing.Point(218, 24);
+            this.layoutControlItem8.Location = new System.Drawing.Point(193, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
             this.layoutControlItem8.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem8.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem8.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem8.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem8.Size = new System.Drawing.Size(190, 24);
             this.layoutControlItem8.Text = "Doğum Tarihi";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -988,11 +1021,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem11.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem11.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem11.Control = this.txtKimlikSeri;
-            this.layoutControlItem11.Location = new System.Drawing.Point(218, 48);
+            this.layoutControlItem11.Location = new System.Drawing.Point(193, 48);
             this.layoutControlItem11.Name = "layoutControlItem11";
             this.layoutControlItem11.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem11.OptionsTableLayoutItem.RowIndex = 2;
-            this.layoutControlItem11.Size = new System.Drawing.Size(141, 24);
+            this.layoutControlItem11.Size = new System.Drawing.Size(130, 24);
             this.layoutControlItem11.Text = "Seri- Sıra No";
             this.layoutControlItem11.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -1001,7 +1034,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem10.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem10.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem10.Control = this.txtKimlikSiraNo;
-            this.layoutControlItem10.Location = new System.Drawing.Point(359, 48);
+            this.layoutControlItem10.Location = new System.Drawing.Point(323, 48);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.OptionsTableLayoutItem.ColumnIndex = 4;
             this.layoutControlItem10.OptionsTableLayoutItem.RowIndex = 2;
@@ -1014,12 +1047,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem14.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem14.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem14.Control = this.txtKimlikIl;
-            this.layoutControlItem14.Location = new System.Drawing.Point(218, 72);
+            this.layoutControlItem14.Location = new System.Drawing.Point(193, 72);
             this.layoutControlItem14.Name = "layoutControlItem14";
             this.layoutControlItem14.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem14.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem14.OptionsTableLayoutItem.RowIndex = 3;
-            this.layoutControlItem14.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem14.Size = new System.Drawing.Size(190, 24);
             this.layoutControlItem14.Text = "Nüfus İl";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -1028,7 +1061,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem21.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem21.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem21.Control = this.txtKimlikVerilisNedeni;
-            this.layoutControlItem21.Location = new System.Drawing.Point(439, 0);
+            this.layoutControlItem21.Location = new System.Drawing.Point(398, 0);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.OptionsTableLayoutItem.ColumnIndex = 6;
             this.layoutControlItem21.Size = new System.Drawing.Size(197, 24);
@@ -1040,7 +1073,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem20.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem20.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem20.Control = this.txtKimlikKayitNo;
-            this.layoutControlItem20.Location = new System.Drawing.Point(439, 24);
+            this.layoutControlItem20.Location = new System.Drawing.Point(398, 24);
             this.layoutControlItem20.Name = "layoutControlItem20";
             this.layoutControlItem20.OptionsTableLayoutItem.ColumnIndex = 6;
             this.layoutControlItem20.OptionsTableLayoutItem.RowIndex = 1;
@@ -1053,7 +1086,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem19.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem19.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem19.Control = this.txtKimlikVerilisTarihi;
-            this.layoutControlItem19.Location = new System.Drawing.Point(439, 48);
+            this.layoutControlItem19.Location = new System.Drawing.Point(398, 48);
             this.layoutControlItem19.Name = "layoutControlItem19";
             this.layoutControlItem19.OptionsTableLayoutItem.ColumnIndex = 6;
             this.layoutControlItem19.OptionsTableLayoutItem.RowIndex = 2;
@@ -1066,7 +1099,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem23.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem23.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem23.Control = this.txtOzelKod1;
-            this.layoutControlItem23.Location = new System.Drawing.Point(439, 96);
+            this.layoutControlItem23.Location = new System.Drawing.Point(398, 96);
             this.layoutControlItem23.Name = "layoutControlItem23";
             this.layoutControlItem23.OptionsTableLayoutItem.ColumnIndex = 6;
             this.layoutControlItem23.OptionsTableLayoutItem.RowIndex = 4;
@@ -1079,7 +1112,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem22.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem22.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem22.Control = this.txtOzelKod2;
-            this.layoutControlItem22.Location = new System.Drawing.Point(439, 120);
+            this.layoutControlItem22.Location = new System.Drawing.Point(398, 120);
             this.layoutControlItem22.Name = "layoutControlItem22";
             this.layoutControlItem22.OptionsTableLayoutItem.ColumnIndex = 6;
             this.layoutControlItem22.OptionsTableLayoutItem.RowIndex = 5;
@@ -1092,7 +1125,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem24.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem24.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem24.Control = this.txtOzelKod3;
-            this.layoutControlItem24.Location = new System.Drawing.Point(439, 144);
+            this.layoutControlItem24.Location = new System.Drawing.Point(398, 144);
             this.layoutControlItem24.Name = "layoutControlItem24";
             this.layoutControlItem24.OptionsTableLayoutItem.ColumnIndex = 6;
             this.layoutControlItem24.OptionsTableLayoutItem.RowIndex = 6;
@@ -1105,7 +1138,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem25.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem25.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem25.Control = this.txtOzelKod4;
-            this.layoutControlItem25.Location = new System.Drawing.Point(439, 168);
+            this.layoutControlItem25.Location = new System.Drawing.Point(398, 168);
             this.layoutControlItem25.Name = "layoutControlItem25";
             this.layoutControlItem25.OptionsTableLayoutItem.ColumnIndex = 6;
             this.layoutControlItem25.OptionsTableLayoutItem.RowIndex = 7;
@@ -1120,7 +1153,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem26.Control = this.txtOzelKod5;
             this.layoutControlItem26.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem26.CustomizationFormText = "layoutControlItem25";
-            this.layoutControlItem26.Location = new System.Drawing.Point(439, 192);
+            this.layoutControlItem26.Location = new System.Drawing.Point(398, 192);
             this.layoutControlItem26.Name = "layoutControlItem26";
             this.layoutControlItem26.OptionsTableLayoutItem.ColumnIndex = 6;
             this.layoutControlItem26.OptionsTableLayoutItem.RowIndex = 8;
@@ -1133,7 +1166,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem27.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem27.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem27.Control = this.tglDurum;
-            this.layoutControlItem27.Location = new System.Drawing.Point(656, 0);
+            this.layoutControlItem27.Location = new System.Drawing.Point(610, 0);
             this.layoutControlItem27.Name = "layoutControlItem27";
             this.layoutControlItem27.OptionsTableLayoutItem.ColumnIndex = 8;
             this.layoutControlItem27.Padding = new DevExpress.XtraLayout.Utils.Padding(60, 2, 2, 2);
@@ -1146,7 +1179,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem28.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem28.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem28.Control = this.imgResim;
-            this.layoutControlItem28.Location = new System.Drawing.Point(656, 48);
+            this.layoutControlItem28.Location = new System.Drawing.Point(610, 48);
             this.layoutControlItem28.Name = "layoutControlItem28";
             this.layoutControlItem28.OptionsTableLayoutItem.ColumnIndex = 8;
             this.layoutControlItem28.OptionsTableLayoutItem.RowIndex = 2;
@@ -1163,7 +1196,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem29.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem29.Name = "layoutControlItem29";
             this.layoutControlItem29.OptionsTableLayoutItem.ColumnSpan = 2;
-            this.layoutControlItem29.Size = new System.Drawing.Size(198, 24);
+            this.layoutControlItem29.Size = new System.Drawing.Size(178, 24);
             this.layoutControlItem29.Text = "Kod";
             this.layoutControlItem29.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -1172,12 +1205,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem15.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem15.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem15.Control = this.txtKimlikVerildigiYer;
-            this.layoutControlItem15.Location = new System.Drawing.Point(218, 192);
+            this.layoutControlItem15.Location = new System.Drawing.Point(193, 192);
             this.layoutControlItem15.Name = "layoutControlItem15";
             this.layoutControlItem15.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem15.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem15.OptionsTableLayoutItem.RowIndex = 8;
-            this.layoutControlItem15.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem15.Size = new System.Drawing.Size(190, 24);
             this.layoutControlItem15.Text = "Verildiği Yer";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -1186,11 +1219,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem18.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem18.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem18.Control = this.txtKimlikCiltNo;
-            this.layoutControlItem18.Location = new System.Drawing.Point(218, 144);
+            this.layoutControlItem18.Location = new System.Drawing.Point(193, 144);
             this.layoutControlItem18.Name = "layoutControlItem18";
             this.layoutControlItem18.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem18.OptionsTableLayoutItem.RowIndex = 6;
-            this.layoutControlItem18.Size = new System.Drawing.Size(141, 24);
+            this.layoutControlItem18.Size = new System.Drawing.Size(130, 24);
             this.layoutControlItem18.Text = "Cilt No- Aile No";
             this.layoutControlItem18.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -1199,12 +1232,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem12.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem12.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem12.Control = this.txtKimlikMahalleKoy;
-            this.layoutControlItem12.Location = new System.Drawing.Point(218, 120);
+            this.layoutControlItem12.Location = new System.Drawing.Point(193, 120);
             this.layoutControlItem12.Name = "layoutControlItem12";
             this.layoutControlItem12.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem12.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem12.OptionsTableLayoutItem.RowIndex = 5;
-            this.layoutControlItem12.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem12.Size = new System.Drawing.Size(190, 24);
             this.layoutControlItem12.Text = "Mahalle-Köy";
             this.layoutControlItem12.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -1213,12 +1246,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem13.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem13.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem13.Control = this.txtKimlikIlce;
-            this.layoutControlItem13.Location = new System.Drawing.Point(218, 96);
+            this.layoutControlItem13.Location = new System.Drawing.Point(193, 96);
             this.layoutControlItem13.Name = "layoutControlItem13";
             this.layoutControlItem13.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem13.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem13.OptionsTableLayoutItem.RowIndex = 4;
-            this.layoutControlItem13.Size = new System.Drawing.Size(201, 24);
+            this.layoutControlItem13.Size = new System.Drawing.Size(190, 24);
             this.layoutControlItem13.Text = "Nüfus İlçe";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(71, 13);
             // 
@@ -1227,7 +1260,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem17.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem17.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem17.Control = this.txtKimlikAileSiraNo;
-            this.layoutControlItem17.Location = new System.Drawing.Point(359, 144);
+            this.layoutControlItem17.Location = new System.Drawing.Point(323, 144);
             this.layoutControlItem17.Name = "layoutControlItem17";
             this.layoutControlItem17.OptionsTableLayoutItem.ColumnIndex = 4;
             this.layoutControlItem17.OptionsTableLayoutItem.RowIndex = 6;
@@ -1241,20 +1274,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem16.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem16.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem16.Control = this.txtKimlikBireySiraNo;
-            this.layoutControlItem16.Location = new System.Drawing.Point(218, 168);
+            this.layoutControlItem16.Location = new System.Drawing.Point(193, 168);
             this.layoutControlItem16.Name = "layoutControlItem16";
             this.layoutControlItem16.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem16.OptionsTableLayoutItem.RowIndex = 7;
-            this.layoutControlItem16.Size = new System.Drawing.Size(141, 24);
+            this.layoutControlItem16.Size = new System.Drawing.Size(130, 24);
             this.layoutControlItem16.Text = "Birey No";
             this.layoutControlItem16.TextSize = new System.Drawing.Size(71, 13);
-            // 
-            // tahakkukBilgileriTable
-            // 
-            this.tahakkukBilgileriTable.Location = new System.Drawing.Point(12, 228);
-            this.tahakkukBilgileriTable.Name = "tahakkukBilgileriTable";
-            this.tahakkukBilgileriTable.Size = new System.Drawing.Size(802, 176);
-            this.tahakkukBilgileriTable.TabIndex = 30;
             // 
             // layoutControlItem30
             // 
@@ -1265,18 +1291,31 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             this.layoutControlItem30.Name = "layoutControlItem30";
             this.layoutControlItem30.OptionsTableLayoutItem.ColumnSpan = 9;
             this.layoutControlItem30.OptionsTableLayoutItem.RowIndex = 9;
-            this.layoutControlItem30.Size = new System.Drawing.Size(806, 180);
+            this.layoutControlItem30.Size = new System.Drawing.Size(760, 180);
             this.layoutControlItem30.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem30.TextVisible = false;
+            // 
+            // layoutControlItem31
+            // 
+            this.layoutControlItem31.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem31.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem31.Control = this.txtHobisi;
+            this.layoutControlItem31.Location = new System.Drawing.Point(398, 72);
+            this.layoutControlItem31.Name = "layoutControlItem31";
+            this.layoutControlItem31.OptionsTableLayoutItem.ColumnIndex = 6;
+            this.layoutControlItem31.OptionsTableLayoutItem.RowIndex = 3;
+            this.layoutControlItem31.Size = new System.Drawing.Size(197, 24);
+            this.layoutControlItem31.Text = "Hobisi";
+            this.layoutControlItem31.TextSize = new System.Drawing.Size(71, 13);
             // 
             // OgrenciEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 549);
+            this.ClientSize = new System.Drawing.Size(848, 549);
             this.Controls.Add(this.myDataLayoutControl);
             this.IconOptions.ShowIcon = false;
-            this.MinimumSize = new System.Drawing.Size(900, 550);
+            this.MinimumSize = new System.Drawing.Size(850, 550);
             this.Name = "OgrenciEditForm";
             this.Text = "Öğrenci Kartı";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
@@ -1285,6 +1324,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtHobisi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKod.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgResim.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tglDurum.Properties)).EndInit();
@@ -1349,6 +1389,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem30)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1420,5 +1461,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private UserControls.UserControl.TahakkukEditFormTable.TahakkukBilgileriTable tahakkukBilgileriTable;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem30;
+        private UserControls.Controls.MyTextEdit txtHobisi;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
     }
 }

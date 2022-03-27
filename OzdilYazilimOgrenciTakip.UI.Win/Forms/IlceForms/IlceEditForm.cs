@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraDataLayout;
-using DevExpress.XtraEditors;
-using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
+﻿using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
-using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IlceForms
 {

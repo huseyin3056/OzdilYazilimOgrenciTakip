@@ -15,6 +15,7 @@ using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
+using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Properties;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Base;
@@ -30,7 +31,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Runtime.InteropServices;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
@@ -107,6 +107,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                     }
 
                 }
+
+              else  if (prop.PropertyType == typeof(SecureString))
+                {
+                    var oldStr = ((SecureString)oldValue).ConvertToUnsecureString();
+                    var curStr = ((SecureString)currentValue).ConvertToUnsecureString();
+                    if (!oldStr.Equals(curStr))
+                        return VeriDegisimYeri.Alan;
+
+                }
+
 
                 else if (!currentValue.Equals(oldValue))
                     return VeriDegisimYeri.Alan;
@@ -478,24 +488,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
-        public static SecureString ConvertToSecureString(this string value)
-        {
-            var secureString = new SecureString();
-
-            if (value.Length > 0)
-                value.ToCharArray().ForEach(x => secureString.AppendChar(x));
-
-            secureString.MakeReadOnly();
-            return secureString;
-
-        }
-
-        public static string ConvertToUnsecureString(this SecureString value)
-        {
-            var result = Marshal.SecureStringToBSTR(value);
-            return Marshal.PtrToStringAuto(result);
-
-        }
+     
 
         public static bool BaglantiKontrolu(string server, SecureString kullaniciAdi, SecureString sifre, YetkilendirmeTuru yetkilendirmeTuru, bool genelMesajVer = false)
         {
@@ -594,11 +587,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
                 var message = new MailMessage
                 {
-                    From = new MailAddress(entity.EmailAdi, "XYZ Yazılım Öğrenci Takip Programı"),
+                    From = new MailAddress(entity.EmailAdi, "Özdil Yazılım Öğrenci Takip Programı"),
                     To = { email },
-                    Subject = "XYZ Yazılım Öğrenci Takip Programı Kullanıcı Bilgileri",
+                    Subject = "Özdil Yazılım Öğrenci Takip Programı Kullanıcı Bilgileri",
                     IsBodyHtml = true,
-                    Body = "XYZ Yazılım Öğrenci Takip Programına Giriş İçin Gereken Kullanıcı Adı , Şifre ve Gizli Kelime  Bilgileri Aşağıdadır. <br/>. Lütfen programa Giriş yaptıktan Sonra Bu Bilgileri Değiştiriniz. <br/> <br/> <br/>" +
+                    Body = "Özdil Yazılım Öğrenci Takip Programına Giriş İçin Gereken Kullanıcı Adı , Şifre ve Gizli Kelime  Bilgileri Aşağıdadır. <br/>. Lütfen programa Giriş yaptıktan Sonra Bu Bilgileri Değiştiriniz. <br/> <br/> <br/>" +
                     $"<b>Kullanıcı Adı :</b> {KullaniciAdi}  <br/>" +
                     $"<b>Yetki Türü :</b> {rol}  <br/>" +
                      $"<b>Şifre :</b> {secureSifre.ConvertToUnsecureString()}  <br/>" +
@@ -623,7 +616,74 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         }
 
+        public static bool YetkiKontrolu(this KartTuru kartTuru, YetkiTuru yetkiTuru)
+        {
+            if (AnaForm.KullaniciId == 0) return true;
 
+            RolYetkileri yetkiler;
+            using (var bll=new RolYetkileriBll())
+                yetkiler = AnaForm.DonemParametreleri.YetkiKontroluAnlikYapilacak
+                    ? bll.Single(x => x.RolId == AnaForm.KullaniciRolId && x.KartTuru == kartTuru).EntityConvert<RolYetkileri>()
+                    : AnaForm.RolYetkileri.FirstOrDefault(x => x.KartTuru == kartTuru);
+
+            var result = false;
+
+            switch (yetkiTuru)
+            {
+                case YetkiTuru.Gorebilir:
+                    result = yetkiler?.Gorebilir == 1;
+                    break;
+                case YetkiTuru.Ekleyebilir:
+                    result = yetkiler?.Ekleyebilir == 1;
+                    break;
+                case YetkiTuru.Degistirebilir:
+                    result = yetkiler?.Degistirebilir == 1;
+                    break;
+                case YetkiTuru.Silebilir:
+                    result = yetkiler?.Silebilir == 1;
+                    break;
+      
+            }
+
+            if (!result)
+                Messages.UyariMesaji("Bu İşlem İçin Yetkiniz Bulunmamaktadır.");
+
+            return result;
+
+
+        }
+
+        public static bool EditFormYetkiKontrolu(long id, KartTuru kartTuru)
+        {
+            var islemTuru = id > 0 ? IslemTuru.EntityUpdate : IslemTuru.EntityInsert;
+
+            switch (islemTuru)
+            {
+                case IslemTuru.EntityInsert when !kartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir):
+                    return false;
+
+                case IslemTuru.EntityUpdate when !kartTuru.YetkiKontrolu(YetkiTuru.Degistirebilir):
+                    return false;
+                   
+            }
+            return true;
+        }
+
+        public static void EncryptConfigFile(string configFileName, params string[] sectionName)
+        {
+            var configuration = ConfigurationManager.OpenExeConfiguration(configFileName);
+            foreach (var x in sectionName)
+            {
+                var section = configuration.GetSection(x);
+                if (section.SectionInformation.IsProtected)
+                    return;
+                else
+                    section.SectionInformation.ProtectSection("DataProtectionConfigurationProvider");
+
+                section.SectionInformation.ForceSave = true;
+                configuration.Save();
+            }
+        }
 
 
     }

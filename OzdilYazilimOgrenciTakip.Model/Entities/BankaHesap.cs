@@ -56,7 +56,6 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
 
         public Banka Banka { get; set; }
         public BankaSube BankaSube { get; set; }
-
         public Sube Sube { get; set; }
         public long SubeId { get; set; }
 

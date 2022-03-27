@@ -100,6 +100,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                         pGrd.FocusedRowChanged += Control_FocusedRowChanged;
                         break;
 
+                    case MyGridControl grd:
+                        grd.MainView.GotFocus+= Control_GotFocus;
+                        break;
+
+
                 }
             }
 
@@ -204,12 +209,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             GuncelNesneOlustur();
         }
 
-        private void Control_DoubleClick(object sender, EventArgs e)
+        protected virtual void Control_DoubleClick(object sender, EventArgs e)
         {
             SecimYap(sender);
         }
 
-        private void Control_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        protected virtual void Control_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             SecimYap(sender);
         }
@@ -220,7 +225,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             GuncelNesneOlustur();
         }
 
-        private void Control_KeyDown(object sender, KeyEventArgs e)
+        public virtual void Giris() { }
+
+        protected virtual  void Control_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
             {
@@ -268,12 +275,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         }
 
-        private void Button_ItemClick(object sender, ItemClickEventArgs e)
+        protected virtual void Button_ItemClick(object sender, ItemClickEventArgs e)
         {
             Cursor.Current = Cursors.WaitCursor;
             if (e.Item == btnyeni)
             {
-                // Yetki Kontrolü
+                if (!BaseKartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir)) return ;
                 BaseIslemTuru = IslemTuru.EntityInsert;
                 Yukle();
 
@@ -286,7 +293,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
             else if (e.Item == btnFarkliKaydet)
             {
-                // Yetki Kontrolü
+                if (!BaseKartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir)) return;
                 FarkliKaydet();
             }
 
@@ -297,8 +304,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
             else if (e.Item == btnSil)
             {
-                // Yetki Kontrolü
-
+                if (!BaseKartTuru.YetkiKontrolu(YetkiTuru.Silebilir)) return;
                 EntityDelete();
             }
 
@@ -338,6 +344,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                 Close();
             }
 
+            else if(e.Item==btnGiris)
+            {
+                Giris();
+            }
 
             Cursor.Current = DefaultCursor;
         }

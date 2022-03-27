@@ -15,8 +15,11 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [Index("IX_Kod",IsUnique =true)]
         public override string Kod { get; set; }
 
+
         [Required,StringLength(50), ZorunluAlan("Okul Adı", "txtOkulAdi")]
         public string OkulAdi { get; set; }
+
+
 
         [ZorunluAlan("İl Adı", "txtIl")]
         public long IlId { get; set; }
@@ -25,9 +28,13 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [ZorunluAlan("İlçe Adı", "txtIlce")]
         public long IlceId { get; set; }
 
+
+
         [StringLength(500)]
         public string Aciklama { get; set; }
 
+
+        // İlişki
         public Il Il { get; set; }
         public Ilce Ilce { get; set; }
 

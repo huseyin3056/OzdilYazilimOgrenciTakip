@@ -14,6 +14,12 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
 {
     public class RolYetkileriBll : BaseHareketBll<RolYetkileri, OgrenciTakipContext>, IBaseHareketSelectBll<RolYetkileri>
     {
+        public BaseHareketEntity Single(Expression<Func<RolYetkileri, bool>> filter)
+        {
+            return Single(filter, x => x);
+
+        }
+
         public IEnumerable<BaseHareketEntity> List(Expression<Func<RolYetkileri, bool>> filter)
         {
             return List(filter, x => new RolYetkileriL
@@ -30,5 +36,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             }).AsEnumerable().OrderBy(x=>x.KartTuru.ToName()).ToList();
 
         }
+
+
     }
 }

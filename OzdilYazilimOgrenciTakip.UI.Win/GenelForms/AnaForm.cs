@@ -1,62 +1,78 @@
 ﻿using DevExpress.XtraBars;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.AileBilgiForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.IlForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Show;
+using DevExpress.XtraBars.Ribbon.Gallery;
+using DevExpress.XtraTabbedMdi;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Common.Enums;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.IptalNedeniForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.YabanciDilForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.TesvikForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.KontenjanForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.RehberForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.SinifGrupForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.MeslekForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.YakinlikForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.IsyeriForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.GorevForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimTuruForms;
+using OzdilYazilimOgrenciTakip.Common.Message;
+using OzdilYazilimOgrenciTakip.Model.Dto;
+using OzdilYazilimOgrenciTakip.Model.Entities;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.AileBilgiForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.AvukatForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.EvrakForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms;
+
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetTuruForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IlForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimTuruForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IptalNedeniForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.IsyeriForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.KontenjanForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.KullaniciForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.MeslekForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.OdemeTuruForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.PromosyonForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.RehberForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.RenkBedenSiparisForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.ServisForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.SinifForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetTuruForms;
-using System;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.AvukatForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.OdemeTuruForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.IndirimForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.SinifGrupForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.SubeForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms;
-using System.Collections.Generic;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.TesvikForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.YabanciDilForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.YakinlikForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports;
-using OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil;
-using OzdilYazilimOgrenciTakip.Model.Entities;
-using DevExpress.XtraBars.Ribbon.Gallery;
-using OzdilYazilimOgrenciTakip.UI.Win.Functions;
-using OzdilYazilimOgrenciTakip.Model.Dto;
-using DevExpress.XtraTabbedMdi;
-using OzdilYazilimOgrenciTakip.Common.Message;
-using System.Windows.Forms;
+using OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports.Ozdil;
+using OzdilYazilimOgrenciTakip.UI.Win.Show;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows.Forms;
+using GeneralFunctions = OzdilYazilimOgrenciTakip.UI.Win.Functions.GeneralFunctions;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 {
     public partial class AnaForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        public static string KurumAdi;
+        public static long KullaniciId;
+        public static string KullaniciAdi;
+        public static long KullaniciRolId;
+        public static string KullaniciRolAdi;
+
+        public static long DonemId;
         public static string DonemAdi = "Dönem Bilgisi Bekleniyor";
+        public static long SubeId;
         public static string SubeAdi = "Şube  Bilgisi Bekleniyor";
+        public static List<long> YetkiliOlunanSubeler;
+        public static DonemParametre DonemParametreleri;
+        public static KullaniciParametreS KullaniciParametreleri = new KullaniciParametreS();
+        public static IEnumerable<RolYetkileri> RolYetkileri;
 
-        public static long DonemId = 1;
-        public static long SubeId = 1;
 
+
+        #region eskiler
         //public static DateTime EgitimBaslamaTarihi = new DateTime(2020, 01, 01);
         //public static DateTime DonemBaslamaTarihi = new DateTime(2020, 01, 01);
         //public static DateTime DonemBitisTarihi = new DateTime(2023, 01, 01);
@@ -85,14 +101,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         //public static string DefaultBankaHesapAdi;
         //public static long? DefaultAvukatHesapId;
         //public static string DefaultAvukatHesapAdi;
+        // public static bool RaporlariOnayAlmadanKapat = false;
+        #endregion
 
-        public static long KullaniciId = 1;
-        public static string KullaniciAdi { get; set; } = "Hasan";
-       // public static bool RaporlariOnayAlmadanKapat = false;
-        public static List<long> YetkiliOlunanSubeler = new List<long> { 1, 2, 2022021115380466596 };
-
-        public static DonemParametre DonemParametreleri;
-        public static KullaniciParametreS KullaniciParametreleri=new KullaniciParametreS();
 
         public AnaForm()
         {
@@ -134,11 +145,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
             xtraTabbedMdiManager.PageAdded += XtraTabbedMdiManager_PageAdded;
             xtraTabbedMdiManager.PageRemoved += XtraTabbedMdiManager_PageRemoved;
-          
+
 
         }
 
-       
+        private void SubeDonemSecimi(bool subeSecimButonunaBasildi)
+        {
+            ShowEditForms<SubeDonemSecimiEditForm>.ShowDialogEditForm(null, KullaniciId, subeSecimButonunaBasildi, SubeId, DonemId);
+            barDonem.Caption = DonemAdi;
+            btnSube.Caption = SubeAdi;
+
+        }
 
         private void Control_KeyDown(object sender, KeyEventArgs e)
         {
@@ -157,7 +174,22 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
         private void AnaForm_Load(object sender, EventArgs e)
         {
-           
+            barKullanici.Caption = $"{KullaniciAdi} ({KullaniciRolAdi})";
+            barKurum.Caption = KurumAdi;
+
+            SubeDonemSecimi(false);
+
+            if (DonemParametreleri == null)
+            {
+                Messages.HataMesaji("Dönem Parametreleri Girilmemiş. Lütfen Sistem Yöneticinize Başvurunuz");
+                Application.ExitThread();
+                return;
+            }
+
+            if (!DonemParametreleri.YetkiKontroluAnlikYapilacak)
+                using (var bll = new RolYetkileriBll())
+                    RolYetkileri = bll.List(x => x.RolId == KullaniciRolId).EntityListConvert<RolYetkileriL>();
+
         }
 
         private void Gallery_GalleryItemClick(object sender, DevExpress.XtraBars.Ribbon.GalleryItemClickEventArgs e)
@@ -177,6 +209,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
         private void Butonlar_ItemClick(object sender, ItemClickEventArgs e)
         {
+            Cursor.Current = Cursors.WaitCursor;
+
+
             if (e.Item == btnOkulKartlari)
             {
                 ShowListForms<OkulListForm>.ShowListForm(KartTuru.Okul);
@@ -193,11 +228,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 ShowListForms<AileBilgiListForm>.ShowListForm(KartTuru.AileBilgi);
             }
 
-            else if (e.Item == btnUrunler)
-            {
-                ShowListForms<UrunListForm>.ShowListForm(KartTuru.UrunTanimi);
-            }
-
+          
 
             else if (e.Item == btnIptalNedeniKartlari)
             {
@@ -433,6 +464,85 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 ShowEditReports<OdemesiGecikenAlacaklarRaporu>.ShowEditReport(KartTuru.OdemesiGecikenAlacaklarRaporu);
             }
 
+            // Özdil
+
+            else if (e.Item == btnUrun)
+            {
+                ShowListForms<UrunListForm>.ShowListForm(KartTuru.Urun);
+            }
+
+            else if (e.Item == btnKategori)
+            {
+                ShowListForms<KategoriListForm>.ShowListForm(KartTuru.Kategori);
+            }
+
+            else if (e.Item == btnMalzemeTuru)
+            {
+                ShowListForms<MalzemeTuruListForm>.ShowListForm(KartTuru.MalzemeTuru);
+            }
+
+            else if (e.Item == btnBolum)
+            {
+                ShowListForms<BolumListForm>.ShowListForm(KartTuru.Bolum);
+            }
+
+            else if (e.Item == btnIslem)
+            {
+                ShowListForms<IslemListForm>.ShowListForm(KartTuru.Islem);
+            }
+
+            else if (e.Item == btnMakine)
+            {
+                ShowListForms<MakineListForm>.ShowListForm(KartTuru.Makine);
+            }
+
+            else if (e.Item == btnPersonel)
+            {
+                ShowListForms<PersonelListForm>.ShowListForm(KartTuru.Personel);
+            }
+
+            else if (e.Item == btnBeden)
+            {
+                ShowListForms<BedenListForm>.ShowListForm(KartTuru.Beden);
+            }
+
+            else if (e.Item == btnRenk)
+            {
+                ShowListForms<RenkListForm>.ShowListForm(KartTuru.Renk);
+            }
+
+            else if (e.Item == btnSiparis)
+            {
+                ShowListForms<RenkBedenSiparisListForm>.ShowListForm(KartTuru.Siparis);
+            }
+
+
+            else if (e.Item == btnMusteri)
+            {
+                ShowListForms<MusteriListForm>.ShowListForm(KartTuru.Musteri);
+            }
+
+            else if (e.Item == btnGorev)
+            {
+                ShowListForms<GorevListForm>.ShowListForm(KartTuru.Gorev);
+            }
+
+            else if (e.Item == btnZamanEtut)
+            {
+                ShowListForms<ZamanEtutListForm>.ShowListForm(KartTuru.ZamanEtut);
+            }
+
+
+
+            else if (e.Item == btnGenelFormSiparisRaporu)
+            {
+
+                ShowEditReports<GenelSiparisRaporu>.ShowEditReport(KartTuru.GenelFormSiparisRaporu);
+            }
+
+
+            //
+
             else if (e.Item == btnKullaniciParametreleri)
             {
 
@@ -451,12 +561,35 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                     Process.Start("calc.exe");
 
                 }
-                catch 
+                catch
                 {
 
-                    Messages.HataMesaji("Hara Makinesi Bulunamadı");
+                    Messages.HataMesaji("Hesap Makinesi Bulunamadı");
                 }
             }
+
+            else if (e.Item == btnSube)
+            {
+                for (int i = 0; i < Application.OpenForms.Count; i++)
+                {
+                    if (Application.OpenForms[i] is GirisForm || Application.OpenForms[i] is AnaForm) continue;
+                    Application.OpenForms[i].Close();
+                    i--;
+                }
+
+                SubeDonemSecimi(true);
+            }
+
+            else if (e.Item == btnSifreDegistir)
+            {
+                ShowEditForms<SifreDegistirEditForm>.ShowDialogEditForm(IslemTuru.EntityUpdate);
+
+            }
+
+
+
+
+            Cursor.Current = Cursors.Default;
 
 
         }
@@ -468,11 +601,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
         private void XtraTabbedMdiManager_PageRemoved(object sender, MdiTabPageEventArgs e)
         {
-            if(((XtraTabbedMdiManager)sender).Pages.Count==0 )
-            imgArkaPlanResim.BringToFront();
+            if (((XtraTabbedMdiManager)sender).Pages.Count == 0)
+                imgArkaPlanResim.BringToFront();
         }
 
-       
+
 
 
 

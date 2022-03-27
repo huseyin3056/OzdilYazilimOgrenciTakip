@@ -21,7 +21,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             Bll = new OgrenciBll(myDataLayoutControl);
             txtCinsiyet.Properties.Items.AddRange(EnumFunctions.GetEnumDescriptionList<Cinsiyet>());
             txtKanGrubu.Properties.Items.AddRange(EnumFunctions.GetEnumDescriptionList<KanGrubu>());
-            BaseKartTuru = KartTuru.Iletisim;
+            BaseKartTuru = KartTuru.Ogrenci;
 
             EventsLoad();
 
@@ -69,6 +69,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             txtKimlikKayitNo.Text = entity.KimlikKayitNo;
             txtKimlikVerilisTarihi.EditValue = entity.KimlikVerilisTarihi;
             imgResim.EditValue = entity.Resim;
+
             txtOzelKod1.Id = entity.OzelKod1Id;
             txtOzelKod1.Text = entity.OzelKod1Adi;
             txtOzelKod2.Id = entity.OzelKod2Id;
@@ -79,7 +80,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             txtOzelKod4.Text = entity.OzelKod4Adi;
             txtOzelKod5.Id = entity.OzelKod5Id;
             txtOzelKod5.Text = entity.OzelKod5Adi;
+
             tglDurum.IsOn = entity.Durum;
+
+            txtHobisi.Text = entity.Hobisi;
+          
+          
         }
         protected override void GuncelNesneOlustur()
         {
@@ -112,12 +118,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
                 KimlikKayitNo = txtKimlikKayitNo.Text,
                 KimlikVerilisTarihi = (DateTime?)txtKimlikVerilisTarihi.EditValue,
                 Resim=(byte[])imgResim.EditValue,
+
                 OzelKod1Id = txtOzelKod1.Id,
                 OzelKod2Id = txtOzelKod2.Id,
                 OzelKod3Id = txtOzelKod3.Id,
                 OzelKod4Id = txtOzelKod4.Id,
                 OzelKod5Id = txtOzelKod5.Id,
                 Durum = tglDurum.IsOn,
+
+                Hobisi=txtHobisi.Text,
+            
                 
 
             };
@@ -142,8 +152,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
             using (var sec = new SelectFunctions())
                 if (sender == txtKimlikIl)
                     sec.Sec(txtKimlikIl);
+
                 else if (sender == txtKimlikIlce)
                     sec.Sec(txtKimlikIlce, txtKimlikIl);
+
 
                 else if (sender == txtOzelKod1)
                     sec.Sec(txtOzelKod1, KartTuru.Ogrenci);
@@ -159,7 +171,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OgrenciForms
 
                 else if (sender == txtOzelKod5)
                     sec.Sec(txtOzelKod5, KartTuru.Ogrenci);
-             
+
+              
         }
 
 

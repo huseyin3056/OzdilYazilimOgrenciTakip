@@ -121,9 +121,6 @@
   <data name="documentmap_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\documentmap_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FreeVector-School-Girl-Vector2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FreeVector-School-Girl-Vector2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Logo12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,8 +148,8 @@
   <data name="addfile_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addfile_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mail_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mail_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FreeVector-School-Girl-Vector2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FreeVector-School-Girl-Vector2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="deletelist_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deletelist_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,11 +172,17 @@
   <data name="mail_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mail_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FreeVector-School-Girl-Vector4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FreeVector-School-Girl-Vector4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="home_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="newgroup_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\newgroup_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mail_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mail_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,6 +205,9 @@
   <data name="newitem_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\newitem_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="FreeVector-School-Girl-Vector3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FreeVector-School-Girl-Vector3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Logo13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,7 +217,7 @@
   <data name="addfile_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addfile_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FreeVector-School-Girl-Vector3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FreeVector-School-Girl-Vector3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FreeVector-School-Girl-Vector5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FreeVector-School-Girl-Vector5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

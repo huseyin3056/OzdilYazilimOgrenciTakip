@@ -51,6 +51,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 KimlikKayitNo = x.KimlikKayitNo,
                 KimlikVerilisTarihi = x.KimlikVerilisTarihi,    
                 Resim=x.Resim,
+
                 OzelKod1Id = x.OzelKod1Id,
                 OzelKod1Adi = x.OzelKod1.OzelKodAdi,
                 OzelKod2Id = x.OzelKod2Id,
@@ -61,7 +62,10 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 OzelKod4Adi = x.OzelKod4.OzelKodAdi,
                 OzelKod5Id = x.OzelKod5Id,
                 OzelKod5Adi = x.OzelKod5.OzelKodAdi,
-                Durum = x.Durum
+                Durum = x.Durum,
+
+                Hobisi=x.Hobisi,
+             
 
 
             });
@@ -98,7 +102,10 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 KimlikVerildigiYer = x.KimlikVerildigiYer,
                 KimlikVerilisNedeni = x.KimlikVerilisNedeni,
                 KimlikKayitNo = x.KimlikKayitNo,
-                KimlikVerilisTarihi = x.KimlikVerilisTarihi,            
+                KimlikVerilisTarihi = x.KimlikVerilisTarihi,      
+                
+                Hobisi=x.Hobisi,
+              
 
             }).OrderBy(x => x.Kod).ToList();
         }

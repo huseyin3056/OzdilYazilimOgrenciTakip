@@ -95,7 +95,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.myDataLayoutControl.Name = "myDataLayoutControl";
             this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl.Root = this.Root;
-            this.myDataLayoutControl.Size = new System.Drawing.Size(562, 202);
+            this.myDataLayoutControl.Size = new System.Drawing.Size(571, 218);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
             // 
@@ -105,9 +105,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.btnVazgec.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.btnVazgec.Appearance.Options.UseFont = true;
             this.btnVazgec.Appearance.Options.UseForeColor = true;
-            this.btnVazgec.Location = new System.Drawing.Point(378, 170);
+            this.btnVazgec.Location = new System.Drawing.Point(378, 176);
             this.btnVazgec.Name = "btnVazgec";
-            this.btnVazgec.Size = new System.Drawing.Size(86, 20);
+            this.btnVazgec.Size = new System.Drawing.Size(86, 22);
             this.btnVazgec.StatusBarAciklama = null;
             this.btnVazgec.StyleController = this.myDataLayoutControl;
             this.btnVazgec.TabIndex = 9;
@@ -119,9 +119,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.btnGiris.Appearance.ForeColor = System.Drawing.Color.Maroon;
             this.btnGiris.Appearance.Options.UseFont = true;
             this.btnGiris.Appearance.Options.UseForeColor = true;
-            this.btnGiris.Location = new System.Drawing.Point(271, 170);
+            this.btnGiris.Location = new System.Drawing.Point(271, 176);
             this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(83, 20);
+            this.btnGiris.Size = new System.Drawing.Size(83, 22);
             this.btnGiris.StatusBarAciklama = null;
             this.btnGiris.StyleController = this.myDataLayoutControl;
             this.btnGiris.TabIndex = 8;
@@ -130,7 +130,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             // txtSifre
             // 
             this.txtSifre.EnterMoveNextControl = true;
-            this.txtSifre.Location = new System.Drawing.Point(272, 136);
+            this.txtSifre.Location = new System.Drawing.Point(272, 142);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtSifre.Properties.AppearanceFocused.Options.UseBackColor = true;
@@ -145,7 +145,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             // txtKullaniciAdi
             // 
             this.txtKullaniciAdi.EnterMoveNextControl = true;
-            this.txtKullaniciAdi.Location = new System.Drawing.Point(272, 112);
+            this.txtKullaniciAdi.Location = new System.Drawing.Point(272, 118);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
             this.txtKullaniciAdi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtKullaniciAdi.Properties.AppearanceFocused.Options.UseBackColor = true;
@@ -158,7 +158,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             // txtYetkilendirme
             // 
             this.txtYetkilendirme.EnterMoveNextControl = true;
-            this.txtYetkilendirme.Location = new System.Drawing.Point(272, 88);
+            this.txtYetkilendirme.Location = new System.Drawing.Point(272, 94);
             this.txtYetkilendirme.Name = "txtYetkilendirme";
             this.txtYetkilendirme.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtYetkilendirme.Properties.AppearanceFocused.Options.UseBackColor = true;
@@ -175,7 +175,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             // txtServer
             // 
             this.txtServer.EnterMoveNextControl = true;
-            this.txtServer.Location = new System.Drawing.Point(272, 64);
+            this.txtServer.Location = new System.Drawing.Point(272, 70);
             this.txtServer.Name = "txtServer";
             this.txtServer.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtServer.Properties.AppearanceFocused.Options.UseBackColor = true;
@@ -221,9 +221,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             columnDefinition4,
             columnDefinition5,
             columnDefinition6});
-            rowDefinition1.Height = 21D;
+            rowDefinition1.Height = 25D;
             rowDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
-            rowDefinition2.Height = 21D;
+            rowDefinition2.Height = 23D;
             rowDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
             rowDefinition3.Height = 10D;
             rowDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
@@ -249,7 +249,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             rowDefinition7,
             rowDefinition8,
             rowDefinition9});
-            this.Root.Size = new System.Drawing.Size(562, 202);
+            this.Root.Size = new System.Drawing.Size(571, 218);
             this.Root.TextVisible = false;
             // 
             // simpleLabelItem1
@@ -265,8 +265,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.simpleLabelItem1.Name = "simpleLabelItem1";
             this.simpleLabelItem1.OptionsTableLayoutItem.ColumnIndex = 1;
             this.simpleLabelItem1.OptionsTableLayoutItem.ColumnSpan = 2;
-            this.simpleLabelItem1.Size = new System.Drawing.Size(176, 21);
-            this.simpleLabelItem1.Text = "XYZ Yazılım";
+            this.simpleLabelItem1.Size = new System.Drawing.Size(176, 25);
+            this.simpleLabelItem1.Text = "Okul";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(177, 25);
             // 
             // simpleLabelItem3
@@ -280,7 +280,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.simpleLabelItem3.Name = "simpleLabelItem3";
             this.simpleLabelItem3.OptionsTableLayoutItem.ColumnIndex = 4;
             this.simpleLabelItem3.OptionsTableLayoutItem.ColumnSpan = 2;
-            this.simpleLabelItem3.Size = new System.Drawing.Size(176, 21);
+            this.simpleLabelItem3.Size = new System.Drawing.Size(185, 25);
             this.simpleLabelItem3.Text = "Yönetim Modülü Giriş";
             this.simpleLabelItem3.TextSize = new System.Drawing.Size(177, 18);
             // 
@@ -291,11 +291,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.txtVersion.AppearanceItemCaption.ForeColor = System.Drawing.Color.White;
             this.txtVersion.AppearanceItemCaption.Options.UseFont = true;
             this.txtVersion.AppearanceItemCaption.Options.UseForeColor = true;
-            this.txtVersion.Location = new System.Drawing.Point(366, 21);
+            this.txtVersion.Location = new System.Drawing.Point(366, 25);
             this.txtVersion.Name = "txtVersion";
             this.txtVersion.OptionsTableLayoutItem.ColumnIndex = 4;
             this.txtVersion.OptionsTableLayoutItem.RowIndex = 1;
-            this.txtVersion.Size = new System.Drawing.Size(90, 21);
+            this.txtVersion.Size = new System.Drawing.Size(90, 23);
             this.txtVersion.Text = "Version";
             this.txtVersion.TextSize = new System.Drawing.Size(177, 16);
             // 
@@ -306,7 +306,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem2.Control = this.txtYetkilendirme;
-            this.layoutControlItem2.Location = new System.Drawing.Point(170, 76);
+            this.layoutControlItem2.Location = new System.Drawing.Point(170, 82);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem2.OptionsTableLayoutItem.ColumnSpan = 4;
@@ -324,7 +324,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem3.Control = this.txtKullaniciAdi;
-            this.layoutControlItem3.Location = new System.Drawing.Point(170, 100);
+            this.layoutControlItem3.Location = new System.Drawing.Point(170, 106);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem3.OptionsTableLayoutItem.ColumnSpan = 4;
@@ -342,7 +342,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem4.Control = this.txtSifre;
-            this.layoutControlItem4.Location = new System.Drawing.Point(170, 124);
+            this.layoutControlItem4.Location = new System.Drawing.Point(170, 130);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem4.OptionsTableLayoutItem.ColumnSpan = 4;
@@ -360,7 +360,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem1.Control = this.txtServer;
-            this.layoutControlItem1.Location = new System.Drawing.Point(170, 52);
+            this.layoutControlItem1.Location = new System.Drawing.Point(170, 58);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlItem1.OptionsTableLayoutItem.ColumnSpan = 4;
@@ -376,12 +376,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.layoutControlItem5.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem5.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem5.Control = this.btnGiris;
-            this.layoutControlItem5.Location = new System.Drawing.Point(236, 158);
+            this.layoutControlItem5.Location = new System.Drawing.Point(236, 164);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.OptionsTableLayoutItem.ColumnIndex = 2;
             this.layoutControlItem5.OptionsTableLayoutItem.RowIndex = 8;
             this.layoutControlItem5.Padding = new DevExpress.XtraLayout.Utils.Padding(25, 2, 2, 2);
-            this.layoutControlItem5.Size = new System.Drawing.Size(110, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(110, 34);
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
@@ -390,11 +390,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.layoutControlItem6.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
             this.layoutControlItem6.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem6.Control = this.btnVazgec;
-            this.layoutControlItem6.Location = new System.Drawing.Point(366, 158);
+            this.layoutControlItem6.Location = new System.Drawing.Point(366, 164);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.OptionsTableLayoutItem.ColumnIndex = 4;
             this.layoutControlItem6.OptionsTableLayoutItem.RowIndex = 8;
-            this.layoutControlItem6.Size = new System.Drawing.Size(90, 24);
+            this.layoutControlItem6.Size = new System.Drawing.Size(90, 34);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
@@ -407,14 +407,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.simpleLabelItem2.AppearanceItemCaption.Options.UseForeColor = true;
             this.simpleLabelItem2.AppearanceItemCaptionDisabled.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.simpleLabelItem2.AppearanceItemCaptionDisabled.Options.UseFont = true;
-            this.simpleLabelItem2.Location = new System.Drawing.Point(0, 21);
+            this.simpleLabelItem2.Location = new System.Drawing.Point(0, 25);
             this.simpleLabelItem2.Name = "simpleLabelItem2";
             this.simpleLabelItem2.OptionsPrint.AppearanceItem.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.simpleLabelItem2.OptionsPrint.AppearanceItem.Options.UseFont = true;
             this.simpleLabelItem2.OptionsTableLayoutItem.ColumnSpan = 4;
             this.simpleLabelItem2.OptionsTableLayoutItem.RowIndex = 1;
             this.simpleLabelItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(170, 2, 2, 2);
-            this.simpleLabelItem2.Size = new System.Drawing.Size(366, 21);
+            this.simpleLabelItem2.Size = new System.Drawing.Size(366, 23);
             this.simpleLabelItem2.Text = "Öğrenci Takip Programı";
             this.simpleLabelItem2.TextSize = new System.Drawing.Size(177, 18);
             // 
@@ -425,8 +425,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.None;
-            this.BackgroundImageStore = global::OzdilYazilimOgrenciTakip.UI.Yonetim.Properties.Resources.FreeVector_School_Girl_Vector3;
-            this.ClientSize = new System.Drawing.Size(562, 202);
+            this.BackgroundImageStore = global::OzdilYazilimOgrenciTakip.UI.Yonetim.Properties.Resources.FreeVector_School_Girl_Vector5;
+            this.ClientSize = new System.Drawing.Size(571, 218);
             this.ControlBox = false;
             this.Controls.Add(this.myDataLayoutControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

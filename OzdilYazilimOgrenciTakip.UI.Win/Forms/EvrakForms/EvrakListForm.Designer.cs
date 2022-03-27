@@ -37,6 +37,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.EvrakForms
             this.colKod = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colEvrakAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.colEvrakCinsi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
@@ -60,6 +61,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.EvrakForms
             // 
             this.btnGonder.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.Image")));
             this.btnGonder.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGonder.ImageOptions.LargeImage")));
+            // 
+            // btnYeniMakbuz
+            // 
+            this.btnYeniMakbuz.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYeniMakbuz.ImageOptions.Image")));
+            this.btnYeniMakbuz.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnYeniMakbuz.ImageOptions.LargeImage")));
+            // 
+            // btnYeniRapor
+            // 
+            this.btnYeniRapor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnYeniRapor.ImageOptions.Image")));
+            this.btnYeniRapor.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnYeniRapor.ImageOptions.LargeImage")));
+            // 
+            // btnOnTanimliRaporlar
+            // 
+            this.btnOnTanimliRaporlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOnTanimliRaporlar.ImageOptions.Image")));
             // 
             // longNavigator
             // 
@@ -97,6 +112,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.EvrakForms
             this.colId,
             this.colKod,
             this.colEvrakAdi,
+            this.colEvrakCinsi,
             this.colAciklama});
             this.tablo.GridControl = this.grid;
             this.tablo.Name = "tablo";
@@ -167,8 +183,21 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.EvrakForms
             this.colAciklama.StatusBarKisaYol = null;
             this.colAciklama.StatusBarKisaYolAciklama = null;
             this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 2;
+            this.colAciklama.VisibleIndex = 3;
             this.colAciklama.Width = 450;
+            // 
+            // colEvrakCinsi
+            // 
+            this.colEvrakCinsi.Caption = "Evrak Cinsi";
+            this.colEvrakCinsi.FieldName = "EvrakCinsi";
+            this.colEvrakCinsi.Name = "colEvrakCinsi";
+            this.colEvrakCinsi.OptionsColumn.AllowEdit = false;
+            this.colEvrakCinsi.StatusBarAciklama = null;
+            this.colEvrakCinsi.StatusBarKisaYol = null;
+            this.colEvrakCinsi.StatusBarKisaYolAciklama = null;
+            this.colEvrakCinsi.Visible = true;
+            this.colEvrakCinsi.VisibleIndex = 2;
+            this.colEvrakCinsi.Width = 255;
             // 
             // EvrakListForm
             // 
@@ -201,5 +230,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.EvrakForms
         private UserControls.Grid.MyGridColumn colKod;
         private UserControls.Grid.MyGridColumn colEvrakAdi;
         private UserControls.Grid.MyGridColumn colAciklama;
+        private UserControls.Grid.MyGridColumn colEvrakCinsi;
     }
 }

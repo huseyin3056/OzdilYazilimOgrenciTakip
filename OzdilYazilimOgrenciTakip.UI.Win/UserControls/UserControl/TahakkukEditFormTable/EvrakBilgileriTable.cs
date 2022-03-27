@@ -50,6 +50,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.TahakkukEditF
                     EvrakId = entity.Id,
                     Kod = entity.Kod,
                     EvrakAdi = entity.EvrakAdi,
+                    EvrakCinsi=entity.EvrakCinsi,
                     Insert = true,
 
                 };

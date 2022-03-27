@@ -82,6 +82,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.tabUst = new DevExpress.XtraBars.Navigation.TabPane();
             this.pageGenelBilgiler = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.DataLayoutControlGenelBilgiler = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
+            this.txtBeden = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyButtonEdit();
+            this.txtHobisi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyTextEdit();
             this.txtOgrenciNo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyTextEdit();
             this.txtOzelKod5 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyButtonEdit();
             this.txtOzelKod4 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyButtonEdit();
@@ -134,6 +136,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem33 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem34 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.labelBeden = new DevExpress.XtraLayout.LayoutControlItem();
             this.pageKardesBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.pageAileSinavBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.myDataLayoutControl = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
@@ -141,9 +145,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageEvrakPromosyonBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.myDataLayoutControl1 = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyDataLayoutControl();
             this.layoutControlEvrakPromosyonBilgileri = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.pageNotlar = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.pageIletisimBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.pageEposBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.pageNotlar = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.pageUrunler = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.pageSiparisBilgileri = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -175,6 +181,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageGenelBilgiler.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataLayoutControlGenelBilgiler)).BeginInit();
             this.DataLayoutControlGenelBilgiler.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBeden.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHobisi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOgrenciNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod4.Properties)).BeginInit();
@@ -228,6 +236,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem34)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelBeden)).BeginInit();
             this.pageAileSinavBilgileri.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlAileSinavBilgileri)).BeginInit();
@@ -275,7 +285,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.DataLayoutGenel.Name = "DataLayoutGenel";
             this.DataLayoutGenel.OptionsFocus.EnableAutoTabOrder = false;
             this.DataLayoutGenel.Root = this.Root;
-            this.DataLayoutGenel.Size = new System.Drawing.Size(998, 516);
+            this.DataLayoutGenel.Size = new System.Drawing.Size(998, 566);
             this.DataLayoutGenel.TabIndex = 0;
             this.DataLayoutGenel.Text = "myDataLayoutControl1";
             // 
@@ -442,9 +452,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageIndirimBilgileri,
             this.pageOdemeBilgileri,
             this.pageGeriOdemeBilgileri});
-            this.tabAlt.RegularSize = new System.Drawing.Size(764, 257);
+            this.tabAlt.RegularSize = new System.Drawing.Size(764, 307);
             this.tabAlt.SelectedPage = this.pageHizmetBilgileri;
-            this.tabAlt.Size = new System.Drawing.Size(764, 257);
+            this.tabAlt.Size = new System.Drawing.Size(764, 307);
             this.tabAlt.TabIndex = 5;
             this.tabAlt.Text = "tabPane2";
             // 
@@ -456,14 +466,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageHizmetBilgileri.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.pageHizmetBilgileri.Name = "pageHizmetBilgileri";
             this.pageHizmetBilgileri.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.pageHizmetBilgileri.Size = new System.Drawing.Size(764, 224);
+            this.pageHizmetBilgileri.Size = new System.Drawing.Size(764, 274);
             // 
             // hizmetBilgileriTable
             // 
             this.hizmetBilgileriTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.hizmetBilgileriTable.Location = new System.Drawing.Point(0, 0);
             this.hizmetBilgileriTable.Name = "hizmetBilgileriTable";
-            this.hizmetBilgileriTable.Size = new System.Drawing.Size(764, 224);
+            this.hizmetBilgileriTable.Size = new System.Drawing.Size(764, 274);
             this.hizmetBilgileriTable.TabIndex = 0;
             // 
             // pageIndirimBilgileri
@@ -474,14 +484,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageIndirimBilgileri.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.pageIndirimBilgileri.Name = "pageIndirimBilgileri";
             this.pageIndirimBilgileri.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.pageIndirimBilgileri.Size = new System.Drawing.Size(764, 257);
+            this.pageIndirimBilgileri.Size = new System.Drawing.Size(764, 274);
             // 
             // indirimBilgileriTable
             // 
             this.indirimBilgileriTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.indirimBilgileriTable.Location = new System.Drawing.Point(0, 0);
             this.indirimBilgileriTable.Name = "indirimBilgileriTable";
-            this.indirimBilgileriTable.Size = new System.Drawing.Size(764, 257);
+            this.indirimBilgileriTable.Size = new System.Drawing.Size(764, 274);
             this.indirimBilgileriTable.TabIndex = 0;
             // 
             // pageOdemeBilgileri
@@ -492,14 +502,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageOdemeBilgileri.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.pageOdemeBilgileri.Name = "pageOdemeBilgileri";
             this.pageOdemeBilgileri.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.pageOdemeBilgileri.Size = new System.Drawing.Size(764, 257);
+            this.pageOdemeBilgileri.Size = new System.Drawing.Size(764, 274);
             // 
             // odemeBilgileriTable
             // 
             this.odemeBilgileriTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.odemeBilgileriTable.Location = new System.Drawing.Point(0, 0);
             this.odemeBilgileriTable.Name = "odemeBilgileriTable";
-            this.odemeBilgileriTable.Size = new System.Drawing.Size(764, 257);
+            this.odemeBilgileriTable.Size = new System.Drawing.Size(764, 274);
             this.odemeBilgileriTable.TabIndex = 0;
             // 
             // pageGeriOdemeBilgileri
@@ -510,14 +520,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageGeriOdemeBilgileri.ItemShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
             this.pageGeriOdemeBilgileri.Name = "pageGeriOdemeBilgileri";
             this.pageGeriOdemeBilgileri.Properties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
-            this.pageGeriOdemeBilgileri.Size = new System.Drawing.Size(764, 257);
+            this.pageGeriOdemeBilgileri.Size = new System.Drawing.Size(764, 274);
             // 
             // geriOdemeBilgileriTable
             // 
             this.geriOdemeBilgileriTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.geriOdemeBilgileriTable.Location = new System.Drawing.Point(0, 0);
             this.geriOdemeBilgileriTable.Name = "geriOdemeBilgileriTable";
-            this.geriOdemeBilgileriTable.Size = new System.Drawing.Size(764, 257);
+            this.geriOdemeBilgileriTable.Size = new System.Drawing.Size(764, 274);
             this.geriOdemeBilgileriTable.TabIndex = 0;
             // 
             // tabUst
@@ -532,9 +542,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.tabUst.Controls.Add(this.pageKardesBilgileri);
             this.tabUst.Controls.Add(this.pageAileSinavBilgileri);
             this.tabUst.Controls.Add(this.pageEvrakPromosyonBilgileri);
+            this.tabUst.Controls.Add(this.pageNotlar);
             this.tabUst.Controls.Add(this.pageIletisimBilgileri);
             this.tabUst.Controls.Add(this.pageEposBilgileri);
-            this.tabUst.Controls.Add(this.pageNotlar);
+            this.tabUst.Controls.Add(this.pageUrunler);
+            this.tabUst.Controls.Add(this.pageSiparisBilgileri);
             this.tabUst.Location = new System.Drawing.Point(12, 7);
             this.tabUst.Name = "tabUst";
             this.tabUst.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.ImageAndText;
@@ -545,7 +557,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageEvrakPromosyonBilgileri,
             this.pageIletisimBilgileri,
             this.pageEposBilgileri,
-            this.pageNotlar});
+            this.pageNotlar,
+            this.pageUrunler,
+            this.pageSiparisBilgileri});
             this.tabUst.RegularSize = new System.Drawing.Size(974, 241);
             this.tabUst.SelectedPage = this.pageGenelBilgiler;
             this.tabUst.Size = new System.Drawing.Size(974, 241);
@@ -563,6 +577,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             // 
             // DataLayoutControlGenelBilgiler
             // 
+            this.DataLayoutControlGenelBilgiler.Controls.Add(this.txtBeden);
+            this.DataLayoutControlGenelBilgiler.Controls.Add(this.txtHobisi);
             this.DataLayoutControlGenelBilgiler.Controls.Add(this.txtOgrenciNo);
             this.DataLayoutControlGenelBilgiler.Controls.Add(this.txtOzelKod5);
             this.DataLayoutControlGenelBilgiler.Controls.Add(this.txtOzelKod4);
@@ -591,11 +607,45 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.DataLayoutControlGenelBilgiler.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DataLayoutControlGenelBilgiler.Location = new System.Drawing.Point(0, 0);
             this.DataLayoutControlGenelBilgiler.Name = "DataLayoutControlGenelBilgiler";
+            this.DataLayoutControlGenelBilgiler.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(716, 0, 650, 400);
             this.DataLayoutControlGenelBilgiler.OptionsFocus.EnableAutoTabOrder = false;
             this.DataLayoutControlGenelBilgiler.Root = this.layoutControlGroup1;
             this.DataLayoutControlGenelBilgiler.Size = new System.Drawing.Size(974, 208);
             this.DataLayoutControlGenelBilgiler.TabIndex = 0;
             this.DataLayoutControlGenelBilgiler.Text = "myDataLayoutControl1";
+            // 
+            // txtBeden
+            // 
+            this.txtBeden.EnterMoveNextControl = true;
+            this.txtBeden.Id = null;
+            this.txtBeden.Location = new System.Drawing.Point(773, 148);
+            this.txtBeden.MenuManager = this.ribbonControl;
+            this.txtBeden.Name = "txtBeden";
+            this.txtBeden.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtBeden.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtBeden.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.txtBeden.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtBeden.Size = new System.Drawing.Size(175, 20);
+            this.txtBeden.StatusBarAciklama = null;
+            this.txtBeden.StatusBarKisaYol = "F4";
+            this.txtBeden.StatusBarKisaYolAciklama = null;
+            this.txtBeden.StyleController = this.DataLayoutControlGenelBilgiler;
+            this.txtBeden.TabIndex = 20;
+            // 
+            // txtHobisi
+            // 
+            this.txtHobisi.EnterMoveNextControl = true;
+            this.txtHobisi.Location = new System.Drawing.Point(74, 172);
+            this.txtHobisi.MenuManager = this.ribbonControl;
+            this.txtHobisi.Name = "txtHobisi";
+            this.txtHobisi.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtHobisi.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtHobisi.Properties.MaxLength = 50;
+            this.txtHobisi.Size = new System.Drawing.Size(102, 20);
+            this.txtHobisi.StatusBarAciklama = null;
+            this.txtHobisi.StyleController = this.DataLayoutControlGenelBilgiler;
+            this.txtHobisi.TabIndex = 19;
             // 
             // txtOgrenciNo
             // 
@@ -715,7 +765,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.txtSonrakiDonemKayitDurumuAciklama.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtSonrakiDonemKayitDurumuAciklama.Properties.AppearanceFocused.Options.UseBackColor = true;
             this.txtSonrakiDonemKayitDurumuAciklama.Properties.MaxLength = 500;
-            this.txtSonrakiDonemKayitDurumuAciklama.Size = new System.Drawing.Size(399, 56);
+            this.txtSonrakiDonemKayitDurumuAciklama.Size = new System.Drawing.Size(185, 56);
             this.txtSonrakiDonemKayitDurumuAciklama.StatusBarAciklama = "Açıklama Giriniz";
             this.txtSonrakiDonemKayitDurumuAciklama.StyleController = this.DataLayoutControlGenelBilgiler;
             this.txtSonrakiDonemKayitDurumuAciklama.TabIndex = 11;
@@ -1060,9 +1110,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem24,
             this.layoutControlItem25,
             this.layoutControlItem26,
-            this.layoutControlItem33});
+            this.layoutControlItem33,
+            this.layoutControlItem34,
+            this.labelBeden});
             this.layoutControlGroup1.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
             columnDefinition1.Width = 176D;
             columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
@@ -1418,10 +1470,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem21.Location = new System.Drawing.Point(460, 144);
             this.layoutControlItem21.Name = "layoutControlItem21";
             this.layoutControlItem21.OptionsTableLayoutItem.ColumnIndex = 5;
-            this.layoutControlItem21.OptionsTableLayoutItem.ColumnSpan = 3;
+            this.layoutControlItem21.OptionsTableLayoutItem.ColumnSpan = 2;
             this.layoutControlItem21.OptionsTableLayoutItem.RowIndex = 6;
             this.layoutControlItem21.OptionsTableLayoutItem.RowSpan = 2;
-            this.layoutControlItem21.Size = new System.Drawing.Size(488, 60);
+            this.layoutControlItem21.Size = new System.Drawing.Size(274, 60);
             this.layoutControlItem21.Text = "Açıklama";
             this.layoutControlItem21.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem21.TextSize = new System.Drawing.Size(80, 13);
@@ -1516,12 +1568,43 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem33.TextSize = new System.Drawing.Size(65, 13);
             this.layoutControlItem33.TextToControlDistance = 5;
             // 
+            // layoutControlItem34
+            // 
+            this.layoutControlItem34.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem34.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem34.Control = this.txtHobisi;
+            this.layoutControlItem34.Enabled = false;
+            this.layoutControlItem34.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem34.Name = "layoutControlItem34";
+            this.layoutControlItem34.OptionsTableLayoutItem.RowIndex = 7;
+            this.layoutControlItem34.Size = new System.Drawing.Size(176, 36);
+            this.layoutControlItem34.Text = "Hobisi";
+            this.layoutControlItem34.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItem34.TextSize = new System.Drawing.Size(65, 13);
+            this.layoutControlItem34.TextToControlDistance = 5;
+            // 
+            // labelBeden
+            // 
+            this.labelBeden.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.labelBeden.AppearanceItemCaption.Options.UseForeColor = true;
+            this.labelBeden.Control = this.txtBeden;
+            this.labelBeden.Location = new System.Drawing.Point(734, 144);
+            this.labelBeden.Name = "labelBeden";
+            this.labelBeden.OptionsTableLayoutItem.ColumnIndex = 7;
+            this.labelBeden.OptionsTableLayoutItem.RowIndex = 6;
+            this.labelBeden.Size = new System.Drawing.Size(214, 24);
+            this.labelBeden.Text = "Beden";
+            this.labelBeden.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.labelBeden.TextSize = new System.Drawing.Size(30, 20);
+            this.labelBeden.TextToControlDistance = 5;
+            this.labelBeden.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            // 
             // pageKardesBilgileri
             // 
             this.pageKardesBilgileri.Caption = "Kardeş Bilgileri";
             this.pageKardesBilgileri.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.people_16x16;
             this.pageKardesBilgileri.Name = "pageKardesBilgileri";
-            this.pageKardesBilgileri.Size = new System.Drawing.Size(974, 208);
+            this.pageKardesBilgileri.Size = new System.Drawing.Size(974, 241);
             // 
             // pageAileSinavBilgileri
             // 
@@ -1529,7 +1612,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageAileSinavBilgileri.Controls.Add(this.myDataLayoutControl);
             this.pageAileSinavBilgileri.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.team_16x16;
             this.pageAileSinavBilgileri.Name = "pageAileSinavBilgileri";
-            this.pageAileSinavBilgileri.Size = new System.Drawing.Size(974, 208);
+            this.pageAileSinavBilgileri.Size = new System.Drawing.Size(974, 241);
             // 
             // myDataLayoutControl
             // 
@@ -1538,7 +1621,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.myDataLayoutControl.Name = "myDataLayoutControl";
             this.myDataLayoutControl.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl.Root = this.layoutControlAileSinavBilgileri;
-            this.myDataLayoutControl.Size = new System.Drawing.Size(974, 208);
+            this.myDataLayoutControl.Size = new System.Drawing.Size(974, 241);
             this.myDataLayoutControl.TabIndex = 0;
             this.myDataLayoutControl.Text = "myDataLayoutControl1";
             // 
@@ -1560,7 +1643,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlAileSinavBilgileri.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition9});
             this.layoutControlAileSinavBilgileri.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutControlAileSinavBilgileri.Size = new System.Drawing.Size(974, 208);
+            this.layoutControlAileSinavBilgileri.Size = new System.Drawing.Size(974, 241);
             this.layoutControlAileSinavBilgileri.TextVisible = false;
             // 
             // pageEvrakPromosyonBilgileri
@@ -1569,7 +1652,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageEvrakPromosyonBilgileri.Controls.Add(this.myDataLayoutControl1);
             this.pageEvrakPromosyonBilgileri.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.employeeexcellence_16x16;
             this.pageEvrakPromosyonBilgileri.Name = "pageEvrakPromosyonBilgileri";
-            this.pageEvrakPromosyonBilgileri.Size = new System.Drawing.Size(974, 208);
+            this.pageEvrakPromosyonBilgileri.Size = new System.Drawing.Size(974, 241);
             // 
             // myDataLayoutControl1
             // 
@@ -1578,7 +1661,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.myDataLayoutControl1.Name = "myDataLayoutControl1";
             this.myDataLayoutControl1.OptionsFocus.EnableAutoTabOrder = false;
             this.myDataLayoutControl1.Root = this.layoutControlEvrakPromosyonBilgileri;
-            this.myDataLayoutControl1.Size = new System.Drawing.Size(974, 208);
+            this.myDataLayoutControl1.Size = new System.Drawing.Size(974, 241);
             this.myDataLayoutControl1.TabIndex = 0;
             this.myDataLayoutControl1.Text = "myDataLayoutControl1";
             // 
@@ -1600,8 +1683,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlEvrakPromosyonBilgileri.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
             rowDefinition10});
             this.layoutControlEvrakPromosyonBilgileri.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.layoutControlEvrakPromosyonBilgileri.Size = new System.Drawing.Size(974, 208);
+            this.layoutControlEvrakPromosyonBilgileri.Size = new System.Drawing.Size(974, 241);
             this.layoutControlEvrakPromosyonBilgileri.TextVisible = false;
+            // 
+            // pageNotlar
+            // 
+            this.pageNotlar.Caption = "Notlar";
+            this.pageNotlar.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.withtextwrapping_topleft_16x16;
+            this.pageNotlar.Name = "pageNotlar";
+            this.pageNotlar.Size = new System.Drawing.Size(974, 241);
             // 
             // pageIletisimBilgileri
             // 
@@ -1617,12 +1707,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageEposBilgileri.Name = "pageEposBilgileri";
             this.pageEposBilgileri.Size = new System.Drawing.Size(974, 241);
             // 
-            // pageNotlar
+            // pageUrunler
             // 
-            this.pageNotlar.Caption = "Notlar";
-            this.pageNotlar.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.withtextwrapping_topleft_16x16;
-            this.pageNotlar.Name = "pageNotlar";
-            this.pageNotlar.Size = new System.Drawing.Size(974, 241);
+            this.pageUrunler.Caption = "Ürünler";
+            this.pageUrunler.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.watermark_16x16;
+            this.pageUrunler.Name = "pageUrunler";
+            this.pageUrunler.PageVisible = false;
+            this.pageUrunler.Size = new System.Drawing.Size(974, 241);
+            // 
+            // pageSiparisBilgileri
+            // 
+            this.pageSiparisBilgileri.Caption = "Sipariş Bilgileri";
+            this.pageSiparisBilgileri.Name = "pageSiparisBilgileri";
+            this.pageSiparisBilgileri.PageVisible = false;
+            this.pageSiparisBilgileri.Size = new System.Drawing.Size(974, 241);
             // 
             // Root
             // 
@@ -1649,7 +1747,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             rowDefinition17,
             rowDefinition18});
             this.Root.Padding = new DevExpress.XtraLayout.Utils.Padding(10, 10, 5, 5);
-            this.Root.Size = new System.Drawing.Size(998, 516);
+            this.Root.Size = new System.Drawing.Size(998, 566);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -1672,7 +1770,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 245);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem2.Size = new System.Drawing.Size(768, 261);
+            this.layoutControlItem2.Size = new System.Drawing.Size(768, 311);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
@@ -1720,7 +1818,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlGroup2.OptionsTableLayoutItem.ColumnIndex = 1;
             this.layoutControlGroup2.OptionsTableLayoutItem.RowIndex = 1;
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(210, 261);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(210, 311);
             this.layoutControlGroup2.Text = "Toplamlar";
             // 
             // layoutControlItem27
@@ -1790,7 +1888,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.layoutControlItem32.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem32.Name = "layoutControlItem32";
             this.layoutControlItem32.OptionsTableLayoutItem.RowIndex = 5;
-            this.layoutControlItem32.Size = new System.Drawing.Size(202, 112);
+            this.layoutControlItem32.Size = new System.Drawing.Size(202, 162);
             this.layoutControlItem32.Text = "Fark";
             this.layoutControlItem32.TextSize = new System.Drawing.Size(69, 13);
             // 
@@ -1798,10 +1896,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 649);
+            this.ClientSize = new System.Drawing.Size(998, 699);
             this.Controls.Add(this.DataLayoutGenel);
             this.IconOptions.ShowIcon = false;
-            this.MinimumSize = new System.Drawing.Size(1000, 650);
+            this.MinimumSize = new System.Drawing.Size(1000, 700);
             this.Name = "TahakkukEditForm";
             this.Text = "Tahakkuk Kartı";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
@@ -1827,6 +1925,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             this.pageGenelBilgiler.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DataLayoutControlGenelBilgiler)).EndInit();
             this.DataLayoutControlGenelBilgiler.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtBeden.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHobisi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOgrenciNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOzelKod4.Properties)).EndInit();
@@ -1880,6 +1980,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem34)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.labelBeden)).EndInit();
             this.pageAileSinavBilgileri.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlAileSinavBilgileri)).EndInit();
@@ -1994,5 +2096,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
         protected internal UserControls.Controls.MyCalcEdit txtFark;
         private UserControls.Controls.MyTextEdit txtOgrenciNo;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem33;
+        private UserControls.Controls.MyTextEdit txtHobisi;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem34;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage pageUrunler;
+        private DevExpress.XtraBars.Navigation.TabNavigationPage pageSiparisBilgileri;
+        private DevExpress.XtraLayout.LayoutControlItem labelBeden;
+        protected internal UserControls.Controls.MyButtonEdit txtBeden;
     }
 }

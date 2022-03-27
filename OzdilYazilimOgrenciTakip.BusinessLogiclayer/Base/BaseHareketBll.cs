@@ -16,6 +16,13 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Base
         
         private IUnitOfWork<T> _uow;
 
+        public TResult Single<TResult>(Expression<Func<T, bool>> filter, Expression<Func<T, TResult>> selector)
+        {
+            GeneralFunctions.CreateUnitOfWork<T, TContext>(ref _uow);
+            return _uow.Rep.Find(filter, selector);
+
+        }
+
 
         public IQueryable<TResult> List<TResult>(Expression<Func<T, bool>> filter, Expression<Func<T, TResult>> selector)
         {

@@ -26,6 +26,9 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string OzelKod3Adi { get; set; }
         public string OzelKod4Adi { get; set; }
         public string OzelKod5Adi { get; set; }
+        public string Hobisi { get; set; }
+        public string BedenAdi { get; set; }
+
 
     }
 
@@ -58,6 +61,8 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string OzelKod5Adi { get; set; }
         public string SubeAdi { get; set; }
         public bool Durum { get; set; }
+        public string Hobisi { get; set; }
+        public string BedenAdi { get; set; }
 
 
 

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.32002.261
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzdilYazilimOgrenciTakip.Data", "OzdilYazilimOgrenciTakip.Data\OzdilYazilimOgrenciTakip.Data.csproj", "{5F3D319E-E820-4D4B-9881-D9BE0C7C27BC}"
 EndProject
@@ -14,8 +14,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzdilYazilimOgrenciTakip.UI.Win", "OzdilYazilimOgrenciTakip.UI.Win\OzdilYazilimOgrenciTakip.UI.Win.csproj", "{BC0C9741-8992-407D-8771-2998B7C4BA19}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzdilYazilimOgrenciTakip.Dal", "OzdilYazilimOgrenciTakip.Dal\OzdilYazilimOgrenciTakip.Dal.csproj", "{BD9CF4F3-1189-455C-9DBC-1E1D9417D707}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDenemeler", "ConsoleDenemeler\ConsoleDenemeler.csproj", "{FDD78155-FB1E-459C-8881-25CA9002B937}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OzdilYazilimOgrenciTakip.UI.Yonetim", "OzdilYazilimOgrenciTakip.UI.Yonetim\OzdilYazilimOgrenciTakip.UI.Yonetim.csproj", "{B3C444FE-DDB6-4401-A67C-5BB060734E5C}"
 EndProject
@@ -49,10 +47,6 @@ Global
 		{BD9CF4F3-1189-455C-9DBC-1E1D9417D707}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD9CF4F3-1189-455C-9DBC-1E1D9417D707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD9CF4F3-1189-455C-9DBC-1E1D9417D707}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FDD78155-FB1E-459C-8881-25CA9002B937}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FDD78155-FB1E-459C-8881-25CA9002B937}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FDD78155-FB1E-459C-8881-25CA9002B937}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FDD78155-FB1E-459C-8881-25CA9002B937}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B3C444FE-DDB6-4401-A67C-5BB060734E5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B3C444FE-DDB6-4401-A67C-5BB060734E5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3C444FE-DDB6-4401-A67C-5BB060734E5C}.Release|Any CPU.ActiveCfg = Release|Any CPU

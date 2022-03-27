@@ -9,6 +9,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
      {
         public string Kod { get; set; }
         public string EvrakAdi { get; set; }
+        public string EvrakCinsi { get; set; }
 
         public bool Insert { get ; set ; }
         public bool Update { get; set; }

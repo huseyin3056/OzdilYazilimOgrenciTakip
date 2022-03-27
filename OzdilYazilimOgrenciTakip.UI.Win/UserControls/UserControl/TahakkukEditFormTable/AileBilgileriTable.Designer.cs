@@ -33,6 +33,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukE
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridView();
             this.colBilgiAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
             this.SuspendLayout();
@@ -121,6 +122,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.AileTahakkukE
             this.Size = new System.Drawing.Size(620, 340);
             this.Controls.SetChildIndex(this.insUpNavigator, 0);
             this.Controls.SetChildIndex(this.grid, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).EndInit();
             this.ResumeLayout(false);

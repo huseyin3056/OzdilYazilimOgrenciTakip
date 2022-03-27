@@ -1,12 +1,9 @@
-﻿using System;
-using DevExpress.XtraDataLayout;
-using DevExpress.XtraEditors;
+﻿using DevExpress.XtraEditors;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
-using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms
 {

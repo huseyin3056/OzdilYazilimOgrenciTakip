@@ -2,7 +2,7 @@
 
 namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.Interfaces
 {
-    public interface IBaseGenelBll
+    public interface IBaseGenelBll // Dto kullanılmadığında kullanılıyor
     {
         bool Insert(BaseEntity entity);
         bool Update(BaseEntity oldEntity, BaseEntity currentEntity);

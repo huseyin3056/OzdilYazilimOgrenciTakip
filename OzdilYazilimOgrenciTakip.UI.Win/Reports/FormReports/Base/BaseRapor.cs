@@ -50,6 +50,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports.Base
         protected MyDataLayoutControl DataLayoutControl;
         protected DateEdit IlkTarih, SonTarih;
 
+        protected MyChechedComboBoxEdit SiparisTurleri;
+
 
         public BaseRapor()
         {
@@ -281,6 +283,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports.Base
                         TablePrintingFunctions.Yazdir(Tablo, Tablo.ViewCaption, Subeler.Text, KayitSekilleri.Text, KayitDurumlari.Text, IptalDurumlari.Text);
                         break;
 
+                    case KartTuru.GenelFormSiparisRaporu:
+                        TablePrintingFunctions.Yazdir(Tablo, Tablo.ViewCaption,SiparisTurleri.Text);
+                        break;
+
                     case KartTuru.HizmetAlimRaporu:
 
                         TablePrintingFunctions.Yazdir(Tablo, Tablo.ViewCaption, Subeler.Text, KayitSekilleri.Text, KayitDurumlari.Text, null, "Hizmet Türü", Hizmetler.Text, "Hizmet Alım Türü", HizmetAlimTuru.Text);
@@ -437,6 +443,23 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports.Base
                 };
 
                 KayitSekilleri.Properties.Items.Add(item);
+            }
+        }
+
+        protected void SiparisTurleriYukle()
+        {
+            var enums = Enum.GetValues(typeof(SiparisTuru));
+
+            foreach (SiparisTuru entity in enums)
+            {
+                var item = new CheckedListBoxItem
+                {
+                    CheckState = CheckState.Checked,
+                    Description = entity.ToName(),
+                    Value = entity
+                };
+
+                SiparisTurleri.Properties.Items.Add(item);
             }
         }
 

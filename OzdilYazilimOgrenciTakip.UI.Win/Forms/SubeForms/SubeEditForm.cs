@@ -7,6 +7,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
 using System;
 
+
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.SubeForms
 {
     public partial class SubeEditForm : BaseEditForm
@@ -19,6 +20,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.SubeForms
             Bll = new SubeBll(myDataLayoutControl);
             BaseKartTuru = Common.Enums.KartTuru.Sube;
             EventsLoad();
+
+           
+           
         }
 
         public override void Yukle()

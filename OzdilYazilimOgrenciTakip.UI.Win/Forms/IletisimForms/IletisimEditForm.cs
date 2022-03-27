@@ -162,27 +162,34 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             using (var sec = new SelectFunctions())
                 if (sender == txtEvAdresIl)
                     sec.Sec(txtEvAdresIl);
+
                 else if (sender == txtEvAdresIlce)
                     sec.Sec(txtEvAdresIlce, txtEvAdresIl);
+
                 else if (sender == txtIsAdresIl)
                     sec.Sec(txtIsAdresIl);
+
                 else if (sender == txtIsAdresIlce)
                     sec.Sec(txtIsAdresIlce, txtIsAdresIl);
+
                 else if (sender == txtMeslek)
                     sec.Sec(txtMeslek);
+
                 else if (sender == txtIsyeri)
                     sec.Sec(txtIsyeri);
+
                 else if (sender == txtGorev)
                     sec.Sec(txtGorev);
 
                 else if (sender == txtKimlikIl)
                     sec.Sec(txtKimlikIl);
+
                 else if (sender == txtKimlikIlce)
                     sec.Sec(txtKimlikIlce, txtKimlikIl);
 
-
                 else if (sender == txtOzelKod1)
                     sec.Sec(txtOzelKod1, KartTuru.Iletisim);
+
                 else if (sender == txtOzelKod2)
                     sec.Sec(txtOzelKod2, KartTuru.Iletisim);
 

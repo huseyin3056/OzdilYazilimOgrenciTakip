@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DevExpress.Utils;
 using DevExpress.XtraEditors;
-using DevExpress.Utils;
 using OzdilYazilimOgrenciTakip.UI.Win.Interfaces;
 using System.ComponentModel;
+using System.Drawing;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls
 {

@@ -604,4 +604,28 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
 
     }
 
+    // Ozdil
+
+    public class GenelFormSiparisRaporuL
+    {
+        public long SiparisId { get; set; }
+        public string Kod { get; set; }
+        public string MusteriSiparisNo { get; set; }
+        public SiparisTuru SiparisTuru { get; set; } = SiparisTuru.Ihracat;
+        public Kur Kur { get; set; } = Kur.TL;
+
+        public DateTime SiparisTarihi { get; set; }
+
+        public DateTime TeslimatTarihi { get; set; }
+
+        public string BedenAdi { get; set; }
+
+        public string MusteriAdi { get; set; }
+        public string UrunAdi { get; set; }
+
+        public decimal SiparisToplami { get; set; }
+        public decimal SiparisTutari { get; set; }
+    }
+
+
 }

@@ -49,6 +49,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             DevExpress.Utils.ToolTipTitleItem toolTipTitleItem6 = new DevExpress.Utils.ToolTipTitleItem();
             DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem1 = new DevExpress.Utils.ToolTipSeparatorItem();
             DevExpress.Utils.ToolTipItem toolTipItem6 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip7 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem7 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipSeparatorItem toolTipSeparatorItem2 = new DevExpress.Utils.ToolTipSeparatorItem();
+            DevExpress.Utils.ToolTipItem toolTipItem7 = new DevExpress.Utils.ToolTipItem();
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btnyeni = new DevExpress.XtraBars.BarButtonItem();
             this.btnKaydet = new DevExpress.XtraBars.BarButtonItem();
@@ -66,6 +70,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnResimSil = new DevExpress.XtraBars.BarButtonItem();
             this.btnTaksitOlustur = new DevExpress.XtraBars.BarButtonItem();
             this.btnSifreSifirla = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGiris = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
@@ -98,9 +103,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnResimEkle,
             this.btnResimSil,
             this.btnTaksitOlustur,
-            this.btnSifreSifirla});
+            this.btnSifreSifirla,
+            this.btnGiris});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 18;
+            this.ribbonControl.MaxItemId = 19;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -302,6 +308,23 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnSifreSifirla.SuperTip = superToolTip6;
             this.btnSifreSifirla.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
+            // btnGiris
+            // 
+            this.btnGiris.Caption = "Giriş";
+            this.btnGiris.Id = 18;
+            this.btnGiris.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.apply_16x16;
+            this.btnGiris.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.apply_32x32;
+            this.btnGiris.Name = "btnGiris";
+            toolTipTitleItem7.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.comment_16x16;
+            toolTipTitleItem7.Text = "(F2)\r\nGiriş";
+            toolTipItem7.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.suggestion_16x16;
+            toolTipItem7.Text = "Çalışılacak Şube ve Dönem Seçilerek Programa Giriş Yapılır.";
+            superToolTip7.Items.Add(toolTipTitleItem7);
+            superToolTip7.Items.Add(toolTipSeparatorItem2);
+            superToolTip7.Items.Add(toolTipItem7);
+            this.btnGiris.SuperTip = superToolTip7;
+            this.btnGiris.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -311,6 +334,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             // 
             // ribbonPageGroup1
             // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnGiris);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnyeni);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnKaydet);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnFarkliKaydet);
@@ -390,5 +414,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected internal DevExpress.XtraBars.BarButtonItem btnUygula;
         protected internal DevExpress.XtraBars.BarButtonItem btnFarkliKaydet;
         protected internal DevExpress.XtraBars.BarButtonItem btnSifreSifirla;
+        protected internal DevExpress.XtraBars.BarButtonItem btnGiris;
     }
 }

@@ -25,11 +25,11 @@ namespace OzdilYazilimOgrenciTakip.Dal.Base
             }
             catch (DbUpdateException ex)
             {
-                var sqlEx =(SqlException )ex.InnerException?.InnerException;
-                if(sqlEx==null)
+                var sqlEx = (SqlException)ex.InnerException?.InnerException;
+                if (sqlEx == null)
                 {
                     Messages.HataMesaji(ex.Message);
-                    return false;
+                      return false;
                 }
 
                 switch (sqlEx.Number)

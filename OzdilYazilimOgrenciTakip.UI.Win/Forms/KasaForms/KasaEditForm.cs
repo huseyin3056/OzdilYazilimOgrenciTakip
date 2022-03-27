@@ -41,10 +41,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms
 
             txtKod.Text = entity.Kod;
             txtKasaAdi.Text = entity.KasaAdi;
+
             txtOzelKod1.Id = entity.OzelKod1Id;
             txtOzelKod1.Text = entity.OzelKod1Adi;
             txtOzelKod2.Id = entity.OzelKod2Id;
-            txtOzelKod2.Text = entity.OzelKod2Adi;     
+            txtOzelKod2.Text = entity.OzelKod2Adi;  
+            
             txtAciklama.Text = entity.Aciklama;
             tglDurum.IsOn = entity.Durum;
 
@@ -57,8 +59,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms
                 Id = Id,
                 Kod = txtKod.Text,
                 KasaAdi = txtKasaAdi.Text,
+
                 OzelKod1Id = txtOzelKod1.Id,
                 OzelKod2Id = txtOzelKod2.Id,
+
                 SubeId=AnaForm.SubeId,
                 DonemId=AnaForm.DonemId,
                 Aciklama = txtAciklama.Text,

@@ -35,6 +35,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.EvrakForms
             txtEvrakAdi.Text = entity.EvrakAdi;
             txtAciklama.Text = entity.Aciklama;
             tglDurum.IsOn = entity.Durum;
+
+            txtEvrakCinsi.Text = entity.EvrakCinsi;
         }
         protected override void GuncelNesneOlustur()
         {
@@ -46,7 +48,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.EvrakForms
                 SubeId=AnaForm.SubeId,
                 DonemId=AnaForm.DonemId,
                 Aciklama = txtAciklama.Text,
-                Durum = tglDurum.IsOn
+                Durum = tglDurum.IsOn,
+
+                EvrakCinsi=txtEvrakCinsi.Text
             };
 
             ButtonEnabledDurumu();

@@ -1,6 +1,6 @@
 ﻿using DevExpress.Utils.Extensions;
 using DevExpress.XtraEditors;
-
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Functions;
 using OzdilYazilimOgrenciTakip.Data.Contexts;
@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Reflection;
 using System.Windows.Forms;
+using GeneralFunctions = OzdilYazilimOgrenciTakip.UI.Win.Functions.GeneralFunctions;
 
 namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
 {
@@ -91,7 +92,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Forms.GenelForms
                 txtKullaniciAdi.Focus();
             else
                 btnGiris.Focus();
-
+            
+           
         }
 
         private void Giris()

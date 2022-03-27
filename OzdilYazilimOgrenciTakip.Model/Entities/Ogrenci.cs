@@ -67,14 +67,20 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [Column(TypeName = "date")]
         public DateTime? KimlikVerilisTarihi { get; set; }
 
+
+        [Column(TypeName = "image")]
+        public byte[] Resim { get; set; }
+
+        public string Hobisi { get; set; }
+
+        public long? BedenId { get; set; }
+
         public long? OzelKod1Id { get; set; }
         public long? OzelKod2Id { get; set; }
         public long? OzelKod3Id { get; set; }
         public long? OzelKod4Id { get; set; }
         public long? OzelKod5Id { get; set; }
 
-        [Column(TypeName ="image")]
-        public byte[] Resim { get; set; }
 
         public Il KimlikIl { get; set; }
         public Ilce KimlikIlce { get; set; }
@@ -84,10 +90,12 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public OzelKod OzelKod3 { get; set; }
         public OzelKod OzelKod4 { get; set; }
         public OzelKod OzelKod5 { get; set; }
-      
+
+    
 
 
 
-      
+
+
     }
 }

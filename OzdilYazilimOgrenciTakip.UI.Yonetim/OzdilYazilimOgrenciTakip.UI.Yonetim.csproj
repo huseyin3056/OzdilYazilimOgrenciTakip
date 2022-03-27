@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OzdilYazilimOgrenciTakip.UI.Yonetim</RootNamespace>
-    <AssemblyName>OzdilYazilimOgrenciTakip.UI.Yonetim</AssemblyName>
+    <AssemblyName>Öğrenci Takip Yönetim Modülü</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>
@@ -33,6 +33,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8_maintenance_1.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
@@ -275,6 +278,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\FreeVector-School-Girl-Vector3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icons8_classroom_1.ico" />
+    <Content Include="icons8_maintenance_1.ico" />
+    <None Include="Resources\FreeVector-School-Girl-Vector5.png" />
+    <None Include="Resources\FreeVector-School-Girl-Vector4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

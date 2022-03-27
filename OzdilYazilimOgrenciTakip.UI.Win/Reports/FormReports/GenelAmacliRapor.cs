@@ -25,6 +25,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports
             DataLayoutControl = myDataLayoutControl;
             Tablo = tablo;
             Navigator = longNavigator.Navigator;
+
             Subeler = txtSubeler;
             KayitSekilleri = txtKayitSekli;
             KayitDurumlari = txtKayitDurumu;
@@ -50,7 +51,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Reports.FormReports
             using (var bll = new GenelAmacliRaporBll())
             {
                 tablo.GridControl.DataSource = bll.List(x =>
-                  subeler.Contains(x.SubeId) &&
+                   subeler.Contains(x.SubeId) &&
                   kayitSekli.Contains(x.KayitSekli) &&
                   kayitDurumu.Contains(x.KayitDurumu) &&
                   iptalDurumu.Contains(x.Durum ? IptalDurumu.DevamEdiyor : IptalDurumu.IptalEdildi) && x.DonemId == AnaForm.DonemId);

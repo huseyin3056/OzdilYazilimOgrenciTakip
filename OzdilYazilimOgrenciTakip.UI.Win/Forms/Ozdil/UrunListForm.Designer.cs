@@ -36,6 +36,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
             this.colId = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colKod = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colUrunAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.colKategoriId = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.colKategoriAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -53,7 +55,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(723, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // btnGonder
@@ -78,10 +79,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
             // longNavigator
             // 
             this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.longNavigator.Location = new System.Drawing.Point(0, 381);
+            this.longNavigator.Location = new System.Drawing.Point(0, 374);
             this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(723, 24);
-            this.longNavigator.TabIndex = 2;
+            this.longNavigator.Size = new System.Drawing.Size(1025, 24);
+            this.longNavigator.TabIndex = 3;
             // 
             // grid
             // 
@@ -90,8 +91,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
             this.grid.MainView = this.tablo;
             this.grid.MenuManager = this.ribbonControl;
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(723, 272);
-            this.grid.TabIndex = 3;
+            this.grid.Size = new System.Drawing.Size(1025, 265);
+            this.grid.TabIndex = 4;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
             // 
@@ -111,6 +112,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
             this.colId,
             this.colKod,
             this.colUrunAdi,
+            this.colKategoriId,
+            this.colKategoriAdi,
             this.colAciklama});
             this.tablo.GridControl = this.grid;
             this.tablo.Name = "tablo";
@@ -156,7 +159,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
             this.colKod.StatusBarKisaYolAciklama = null;
             this.colKod.Visible = true;
             this.colKod.VisibleIndex = 0;
-            this.colKod.Width = 97;
+            this.colKod.Width = 120;
             // 
             // colUrunAdi
             // 
@@ -169,7 +172,31 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
             this.colUrunAdi.StatusBarKisaYolAciklama = null;
             this.colUrunAdi.Visible = true;
             this.colUrunAdi.VisibleIndex = 1;
-            this.colUrunAdi.Width = 261;
+            this.colUrunAdi.Width = 241;
+            // 
+            // colKategoriId
+            // 
+            this.colKategoriId.Caption = "KategoriId";
+            this.colKategoriId.FieldName = "KategoriId";
+            this.colKategoriId.Name = "colKategoriId";
+            this.colKategoriId.OptionsColumn.AllowEdit = false;
+            this.colKategoriId.OptionsColumn.ShowInCustomizationForm = false;
+            this.colKategoriId.StatusBarAciklama = null;
+            this.colKategoriId.StatusBarKisaYol = null;
+            this.colKategoriId.StatusBarKisaYolAciklama = null;
+            // 
+            // colKategoriAdi
+            // 
+            this.colKategoriAdi.Caption = "Kategori Adı";
+            this.colKategoriAdi.FieldName = "KategoriAdi";
+            this.colKategoriAdi.Name = "colKategoriAdi";
+            this.colKategoriAdi.OptionsColumn.AllowEdit = false;
+            this.colKategoriAdi.StatusBarAciklama = null;
+            this.colKategoriAdi.StatusBarKisaYol = null;
+            this.colKategoriAdi.StatusBarKisaYolAciklama = null;
+            this.colKategoriAdi.Visible = true;
+            this.colKategoriAdi.VisibleIndex = 2;
+            this.colKategoriAdi.Width = 202;
             // 
             // colAciklama
             // 
@@ -181,18 +208,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
             this.colAciklama.StatusBarKisaYol = null;
             this.colAciklama.StatusBarKisaYolAciklama = null;
             this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 2;
-            this.colAciklama.Width = 289;
+            this.colAciklama.VisibleIndex = 3;
+            this.colAciklama.Width = 265;
             // 
             // UrunListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(723, 429);
+            this.ClientSize = new System.Drawing.Size(1025, 422);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
-            this.MinimumSize = new System.Drawing.Size(725, 430);
             this.Name = "UrunListForm";
             this.Text = "Ürün Kartları";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
@@ -215,5 +241,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
         private UserControls.Grid.MyGridColumn colKod;
         private UserControls.Grid.MyGridColumn colUrunAdi;
         private UserControls.Grid.MyGridColumn colAciklama;
+        private UserControls.Grid.MyGridColumn colKategoriAdi;
+        private UserControls.Grid.MyGridColumn colKategoriId;
     }
 }

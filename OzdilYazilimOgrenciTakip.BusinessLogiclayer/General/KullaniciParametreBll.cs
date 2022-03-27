@@ -28,7 +28,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 DefaultAvukatHesapId=x.DefaultAvukatHesapId,
                 DefaultAvukatHesapAdi=x.DefaultAvukatHesap.AdiSoyadi,
                 DefaultBankaHesapId=x.DefaultBankaHesapId,
-                DefaultBankaHesapAdi=x.DefaultBankaHesap.BankaAdi,
+                DefaultBankaHesapAdi=x.DefaultBankaHesap.HesapAdi,
                 DefaultKasaHesapId=x.DefaultKasaHesapId,
                 DefaultKasaHesapAdi=x.DefaultKasaHesap.KasaAdi,
                 TableViewCaptionForeColor=x.TableViewCaptionForeColor,

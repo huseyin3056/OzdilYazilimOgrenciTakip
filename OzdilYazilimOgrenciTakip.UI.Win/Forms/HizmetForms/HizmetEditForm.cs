@@ -40,8 +40,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.HizmetForms
             var entity = (HizmetS)OldEntity;
             txtKod.Text = entity.Kod;
             txtHizmetAdi.Text = entity.HizmetAdi;
+
             txtHizmetTuru.Id = entity.HizmetTuruId;
             txtHizmetTuru.Text = entity.HizmetTuruAdi;
+
             txtBaslamaTarihi.DateTime = entity.BaslamaTarihi;
             txtBitisTarihi.DateTime = entity.BitisTarihi;
             txtUcret.Value = entity.Ucret;

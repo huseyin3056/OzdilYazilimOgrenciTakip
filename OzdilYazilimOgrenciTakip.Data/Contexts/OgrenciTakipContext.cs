@@ -84,7 +84,7 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<MakbuzHareketleri> MakbuzHareketleri { get; set; }
         public DbSet<Rapor> Rapor { get; set; }
         public DbSet<Fatura> Fatura { get; set; }
-        public DbSet<Urun> Urun { get; set; }
+
         public DbSet<GecikmeAciklamalari> GecikmeAciklamalari { get; set; }
         public DbSet<DonemParametre> DonemParametre { get; set; }
         public DbSet<KullaniciParametre> KullaniciParametre { get; set; }
@@ -93,9 +93,27 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<Rol> Rol { get; set; }
         public DbSet<RolYetkileri> RolYetkileri { get; set; }
         public DbSet<Kullanici> Kullanici { get; set; }
+        public DbSet<KullaniciBirimYetkileri> KullaniciBirimYetkileri { get; set; }
 
 
+        //
+        public DbSet<Kategori> Kategori { get; set; }
+        public DbSet<Urun> Urun { get; set; }
+        public DbSet<MalzemeTuru> MalzemeTuru { get; set; }
+        public DbSet<Bolum> Bolum { get; set; }
+        public DbSet<Islem> Islem { get; set; }
+        public DbSet<Makine> Makine { get; set; }
+        public DbSet<Personel> Personel { get; set; }
+        public DbSet<Beden> Beden { get; set; }
+        public DbSet<Renk> Renk { get; set; }
+        public DbSet<UrunBilgileri> UrunBilgileri { get; set; }
+        public DbSet<SiparisBilgileri> SiparisBilgileri { get; set; }
+        public DbSet<Siparis> Siparis { get; set; }
+        public DbSet<RenkBedenSiparisBilgileri> RenkBedenSiparisBilgileri { get; set; }
+        public DbSet<Musteri> Musteri { get; set; }
+        public DbSet<ZamanEtut> ZamanEtut { get; set; }
 
+        public DbSet<ZamanEtutBilgileri> ZamanEtutBilgileri { get; set; }
 
 
     }

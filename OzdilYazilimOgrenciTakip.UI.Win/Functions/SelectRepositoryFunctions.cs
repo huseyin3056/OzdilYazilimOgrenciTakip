@@ -6,12 +6,14 @@ using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Common.Functions;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
+using OzdilYazilimOgrenciTakip.Model.Entities.Ozdil;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaSubeForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.IptalNedeniForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.OkulForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.YakinlikForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using System;
@@ -161,6 +163,36 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
                         {
                             _tablo.SetFocusedRowCellValue(_idColumn, entity.Id);
                             _tablo.SetFocusedRowCellValue(_nameColumn, entity.BankaAdi);
+                            _navigator.Buttons.DoClick(_navigator.Buttons.EndEdit);
+                        }
+                    }
+                    break;
+
+                case "repositoryPersonel":
+                    {
+                        if (!_nameColumn.OptionsColumn.AllowEdit) return;
+
+                        var id = _tablo.GetRowCellId(_idColumn);
+                        var entity = (PersonelL)ShowListForms<PersonelListForm>.ShowDialogListForm(KartTuru.Personel, id);
+                        if (entity != null)
+                        {
+                            _tablo.SetFocusedRowCellValue(_idColumn, entity.Id);
+                            _tablo.SetFocusedRowCellValue(_nameColumn, entity.Adi);
+                            _navigator.Buttons.DoClick(_navigator.Buttons.EndEdit);
+                        }
+                    }
+                    break;
+
+                case "repositoryRenk":
+                    {
+                        if (!_nameColumn.OptionsColumn.AllowEdit) return;
+
+                        var id = _tablo.GetRowCellId(_idColumn);
+                        var entity = (Renk)ShowListForms<RenkListForm>.ShowDialogListForm(KartTuru.Renk, id);
+                        if (entity != null)
+                        {
+                            _tablo.SetFocusedRowCellValue(_idColumn, entity.Id);
+                            _tablo.SetFocusedRowCellValue(_nameColumn, entity.RenkAdi);
                             _navigator.Buttons.DoClick(_navigator.Buttons.EndEdit);
                         }
                     }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace OzdilYazilimOgrenciTakip.Common.Enums
 {
@@ -118,16 +113,16 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         Tahakkuk = 34,
 
         [Description("Makbuz Kartı")]
-        Makbuz =35,
+        Makbuz = 35,
 
         [Description("Belge Seçim Kartı")]
-        BelgeSecim=36,
+        BelgeSecim = 36,
 
         [Description("Belge Hareketleri Kartı")]
         BelgeHareketleri = 37,
 
         [Description("Rapor Kartı")]
-        Rapor =38,
+        Rapor = 38,
 
         [Description("Rapor Tasarım")]
         RaporTasarim = 39,
@@ -142,7 +137,7 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         MebKayitSozlesmesiRaporu = 42,
 
         [Description("İndirim Dilekçesi Raporu")]
-        IndirimDilekcesiRaporu =43,
+        IndirimDilekcesiRaporu = 43,
 
         [Description("Kayıt Sözleşmesi Raporu")]
         KayitSozlesmesiRaporu = 44,
@@ -151,13 +146,13 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         KrediKartliOdemeTalimatiRaporu = 45,
 
         [Description("Ödeme Senedi  Raporu")]
-        OdemeSenediRaporu=46,
+        OdemeSenediRaporu = 46,
 
         [Description("Kullanımcı Tanımlı Rapor")]
-        KullaniciTanimliRapor=47,
+        KullaniciTanimliRapor = 47,
 
         [Description("Tahsilat Makbuzu Raporu")]
-        TahsilatMakbuzuRaporu=48,
+        TahsilatMakbuzuRaporu = 48,
 
         [Description("Teslimat Makbuzu Raporu")]
         TeslimatMakbuzuRaporu = 49,
@@ -169,7 +164,7 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         GenelMakbuzRaporu = 51,
 
         [Description("Şube Kartı")]
-        Sube=52,
+        Sube = 52,
 
         [Description("Fatura Kartı")]
         Fatura = 53,
@@ -202,24 +197,23 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         IndirimDagilimRaporu = 62,
 
         [Description("Mesleklere Göre Kayıt Raporu")]
-        MesleklereGoreKayitRaporu =63,
+        MesleklereGoreKayitRaporu = 63,
 
         [Description("Aylık Kayıt Raporu")]
-        AylikKayitRaporu =64,
+        AylikKayitRaporu = 64,
 
         [Description("Gelir Dağılım Raporu")]
-        GelirDagilimRaporu =65,
+        GelirDagilimRaporu = 65,
 
         [Description("Ücret Ortalamaları Raporu")]
         UcretOrtalamalariRaporu = 66,
 
 
         [Description("Ödeme Belgeleri Raporu")]
-        OdemeBelgeleriRaporu =67,
+        OdemeBelgeleriRaporu = 67,
 
 
-        [Description("Ürün Tanımı Kartı")]
-        UrunTanimi =68,
+
 
 
         [Description("Tahsilat Raporu")]
@@ -230,26 +224,85 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
 
 
         [Description("Açıklama Kartı")]
-        Aciklama =71,
+        Aciklama = 71,
 
 
         [Description("Kullanıcı Parametre Kartı")]
-        KullaniciParametre =72,
+        KullaniciParametre = 72,
 
         [Description("Kurum Kartı")]
-        Kurum =73,
+        Kurum = 73,
 
         [Description("Dönem Kartı")]
         Donem = 74,
 
         [Description("Rol Kartı")]
-        Rol =75,
+        Rol = 75,
 
         [Description("Yetki Kartı")]
-         YetkiKarti= 76,
+        YetkiKarti = 76,
 
         [Description("Kullanıcı Kartı")]
-        Kullanici = 77
+        Kullanici = 77,
+
+
+        [Description("Ürün Tanımı Kartı")]
+        UrunTanimi = 68,
+
+
+
+        // Özdil
+        [Description("Kategori  Kartı")]
+        Kategori = 78,
+
+        [Description("Ürün  Kartı")]
+        Urun = 79,
+
+        [Description("Malzeme Türü Kartı")]
+        MalzemeTuru =80,
+
+        [Description("Bölüm Kartı")]
+        Bolum= 81,
+
+        [Description("İşlem Kartı")]
+        Islem = 82,
+
+        [Description("Makine Kartı")]
+        Makine =83,
+
+
+        [Description("Personel Kartı")]
+        Personel =84,
+
+        [Description("Beden Kartı")]
+        Beden =85,
+
+        [Description("Renk Kartı")]
+        Renk =86,
+
+        [Description("Sipariş Kartı")]
+        Siparis = 87,
+
+
+        [Description("Renk Beden Sipariş Bilgileri Kartı")]
+        RenkBedenSiparisBilgileri = 88,
+
+        [Description("Müşteri Kartı")]
+        Musteri = 89,
+
+        [Description("Genel Sipariş Raporu")]
+        GenelSiparisRaporu = 90,
+
+
+        [Description("Zaman Etüt Kartı")]
+        ZamanEtut =91,
+
+        [Description("Genel Form Sipariş Raporu")]
+        GenelFormSiparisRaporu = 92
+
+
+
+
 
 
 

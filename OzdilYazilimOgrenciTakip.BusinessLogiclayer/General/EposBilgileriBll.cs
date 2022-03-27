@@ -46,7 +46,6 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
             
         }
 
-
         public override bool Insert(IList<BaseHareketEntity> entities)
         {
             foreach (EposBilgileriL entity in entities)
@@ -77,9 +76,6 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
 
             return base.Update(entities);
         }
-
-
-
 
 
     }

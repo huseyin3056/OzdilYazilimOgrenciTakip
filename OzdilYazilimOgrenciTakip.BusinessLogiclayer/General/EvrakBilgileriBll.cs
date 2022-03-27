@@ -21,7 +21,8 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 TahakkukId = x.TahakkukId,
                 EvrakId = x.EvrakId,
                 Kod =x.Evrak.Kod,
-                EvrakAdi=x.Evrak.EvrakAdi
+                EvrakAdi=x.Evrak.EvrakAdi,
+                EvrakCinsi=x.Evrak.EvrakCinsi
 
 
             }).ToList();

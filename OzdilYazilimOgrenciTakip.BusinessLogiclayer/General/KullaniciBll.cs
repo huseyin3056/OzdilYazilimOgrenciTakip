@@ -19,6 +19,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
 
         public KullaniciBll(Control ctrl) : base(ctrl, KartTuru.Kullanici) { }
 
+
         public override BaseEntity Single(Expression<Func<Kullanici, bool>> filter)
         {
             return BaseSingle(filter, x => new KullaniciS
@@ -31,8 +32,28 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 RolId = x.RolId,
                 RolAdi = x.Rol.RolAdi,
                 Aciklama = x.Aciklama,
-                GizliKelime = x.GizliKelime,
+             
+                Durum = x.Durum
+
+            });
+
+        }
+
+        public BaseEntity SingleDetail(Expression<Func<Kullanici, bool>> filter)
+        {
+            return BaseSingle(filter, x => new KullaniciS
+            {
+                Id = x.Id,
+                Kod = x.Kod,
+                Adi = x.Adi,
+                SoyAdi = x.SoyAdi,
+                Email = x.Email,
+                RolId = x.RolId,
+                RolAdi = x.Rol.RolAdi,
+                Aciklama = x.Aciklama,
                 Sifre = x.Sifre,
+                GizliKelime = x.GizliKelime,
+
                 Durum = x.Durum
 
             });
@@ -53,6 +74,8 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 Aciklama = x.Aciklama
             }).OrderBy(x => x.Kod).ToList();
         }
+
+      
     }
 }
 

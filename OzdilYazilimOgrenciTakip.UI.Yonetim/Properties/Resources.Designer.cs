@@ -19,7 +19,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -196,6 +196,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Yonetim.Properties {
         internal static System.Drawing.Bitmap FreeVector_School_Girl_Vector3 {
             get {
                 object obj = ResourceManager.GetObject("FreeVector-School-Girl-Vector3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FreeVector_School_Girl_Vector4 {
+            get {
+                object obj = ResourceManager.GetObject("FreeVector-School-Girl-Vector4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FreeVector_School_Girl_Vector5 {
+            get {
+                object obj = ResourceManager.GetObject("FreeVector-School-Girl-Vector5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

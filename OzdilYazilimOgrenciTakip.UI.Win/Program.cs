@@ -15,6 +15,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win
         [STAThread]
         static void Main()
         {
+            Functions.GeneralFunctions.EncryptConfigFile(AppDomain.CurrentDomain.SetupInformation.ApplicationName,"connectionStrings","appSettings");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -22,7 +24,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win
 
             UserLookAndFeel.Default.SetSkinStyle(ConfigurationManager.AppSettings["Skin"], ConfigurationManager.AppSettings["Palette"]);
 
-            Application.Run(new AnaForm());
+            Application.Run(new GirisForm());
         }
     }
 }

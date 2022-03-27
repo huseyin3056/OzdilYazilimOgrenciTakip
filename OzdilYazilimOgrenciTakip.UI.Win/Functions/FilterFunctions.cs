@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using OzdilYazilimOgrenciTakip.Model.Entities.Base;
+using System;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 {
-   public class FilterFunctions
+    public class FilterFunctions
     {
         public static Expression<Func<T,bool>> Filter<T>(bool aktifKartlariGoster) where T:BaseEntityDurum
         {

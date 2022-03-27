@@ -1,6 +1,7 @@
 ﻿using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Attributes;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
+using OzdilYazilimOgrenciTakip.Model.Entities.Ozdil;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -27,6 +28,9 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public KayitSekli KayitSekli { get; set; } = KayitSekli.YeniKayit;
         public KayitDurumu KayitDurumu { get; set; } = KayitDurumu.KesinKayit;
 
+
+       
+
         [ ZorunluAlan("Sınıf Adı", "txtSinif")]
         public long SinifId { get; set; }
 
@@ -45,6 +49,10 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public long? OzelKod3Id { get; set; }
         public long? OzelKod4Id { get; set; }
         public long? OzelKod5Id { get; set; }
+
+
+        public long? BedenId { get; set; }
+        public Beden Beden { get; set; }
 
         public long SubeId { get; set; }
         public long DonemId { get; set; }

@@ -17,6 +17,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
 
         public OkulBll(Control ctrl) : base(ctrl, Common.Enums.KartTuru.Okul) { }
 
+
         public override BaseEntity Single(Expression<Func<Okul, bool>> filter)
         {
             return BaseSingle(filter, x => new OkulS

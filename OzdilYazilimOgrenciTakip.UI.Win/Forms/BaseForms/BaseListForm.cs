@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using OzdilYazilimOgrenciTakip.Common.Message;
 using System.Drawing;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid;
+using OzdilYazilimOgrenciTakip.Model.Dto;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 {
@@ -86,8 +87,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
                 SelectedEntities = RowSelect.GetSelectedRows();
 
 
-                DialogResult = DialogResult.OK; // Ben Ekledim
-                Close(); // Ben Ekledim
+                DialogResult = DialogResult.OK; 
+                Close(); 
 
 
             }
@@ -104,6 +105,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         private void FiltreSec()
         {
+            if (!KartTuru.Filtre.YetkiKontrolu(YetkiTuru.Gorebilir)) return;
+
             var entity = (Filtre)ShowListForms<FiltreListForm>.ShowDialogListForm(KartTuru.Filtre, _filtreId, BaseKartTuru, Tablo.GridControl);
             if (entity == null) return;
             _filtreId = entity.Id;
@@ -224,6 +227,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
         private void Tablo_FilterEditorCreated(object sender, DevExpress.XtraGrid.Views.Base.FilterControlEventArgs e)
         {
+            if (!KartTuru.Filtre.YetkiKontrolu(YetkiTuru.Degistirebilir)) return;
             e.ShowFilterEditor = false;
             ShowEditForms<FiltreEditForm>.ShowDialogEditForm(KartTuru.Filtre, _filtreId, BaseKartTuru, Tablo.GridControl);
         }
@@ -325,6 +329,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             Listele();
             Cursor.Current = DefaultCursor;
 
+
             Tablo.Appearance.ViewCaption.ForeColor = Color.FromArgb(AnaForm.KullaniciParametreleri.TableViewCaptionForeColor);
             Tablo.Appearance.HeaderPanel.ForeColor = Color.FromArgb(AnaForm.KullaniciParametreleri.TableColumnHeaderForeColor);
             if (Tablo is MyBandedGridView bandedGrid)
@@ -379,7 +384,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
             else if (e.Item == btnYeni)
             {
-                //Yetki Kontrolü
+                if (!BaseKartTuru.YetkiKontrolu(YetkiTuru.Ekleyebilir)) return;
                 ShowEditForm(-1);
             }
 
@@ -390,7 +395,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
 
             else if (e.Item == btnSil)
             {
-                // Yetki Kontrolü
+                if (!BaseKartTuru.YetkiKontrolu(YetkiTuru.Silebilir)) return;
                 EntityDelete();
             }
 
