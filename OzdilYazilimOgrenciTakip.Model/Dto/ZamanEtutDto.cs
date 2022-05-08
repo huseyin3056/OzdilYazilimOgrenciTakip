@@ -1,6 +1,8 @@
-﻿using OzdilYazilimOgrenciTakip.Model.Entities.Base;
+﻿using DevExpress.DataAccess.ObjectBinding;
+using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using OzdilYazilimOgrenciTakip.Model.Entities.Ozdil;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace OzdilYazilimOgrenciTakip.Model.Dto
@@ -46,6 +48,25 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
 
         public string Aciklama { get; set; }
 
+
+    }
+
+
+    [HighlightedClass]
+    public class GenelZamanEtutRaporuR // Doğru bir şekilde Dolduruluacak
+    {
+        public DateTime EtutTarihi { get; set; }
+        public long UrunId { get; set; }
+
+        public string BolumAdi { get; set; }
+        public string MakineAdi { get; set; }
+        public string IslemAdi { get; set; }
+        public string UrunAdi { get; set; }
+        public string BedenAdi { get; set; }
+        public string KullaniciAdi { get; set; }
+
+      //  public ZamanEtutBilgileriR ZamanEtutBilgileri { get; set; }
+       
 
     }
 }

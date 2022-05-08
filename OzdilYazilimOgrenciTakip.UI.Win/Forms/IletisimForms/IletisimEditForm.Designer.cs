@@ -150,6 +150,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.layoutControlItem46 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKartNo.Properties)).BeginInit();
@@ -330,6 +331,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.txtKartNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtKartNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtKartNo.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtKartNo.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtKartNo.Properties.Mask.EditMask = "\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?";
+            this.txtKartNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtKartNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtKartNo.Properties.MaskSettings.Set("mask", "\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?-\\d?\\d?\\d?\\d?");
             this.txtKartNo.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -441,6 +445,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtKimlikVerilisTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtKimlikVerilisTarihi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.txtKimlikVerilisTarihi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtKimlikVerilisTarihi.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtKimlikVerilisTarihi.Size = new System.Drawing.Size(99, 20);
@@ -648,6 +653,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDogumTarihi.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtDogumTarihi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTimeAdvancingCaret;
             this.txtDogumTarihi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.DateTimeMaskManager));
             this.txtDogumTarihi.Properties.MaskSettings.Set("useAdvancingCaret", true);
             this.txtDogumTarihi.Size = new System.Drawing.Size(118, 20);
@@ -871,6 +877,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.txtIbanNo.Name = "txtIbanNo";
             this.txtIbanNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtIbanNo.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtIbanNo.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtIbanNo.Properties.Mask.EditMask = "TR\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?";
+            this.txtIbanNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtIbanNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtIbanNo.Properties.MaskSettings.Set("mask", "TR\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?\\d?\\d? \\d?\\d?");
             this.txtIbanNo.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -889,6 +898,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtEmail.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtEmail.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Strong;
+            this.txtEmail.Properties.Mask.EditMask = "((([0-9a-zA-Z_%-])+[.])+|([0-9a-zA-Z_%-])+)+@((([0-9a-zA-Z_-])+[.])+|([0-9a-zA-Z_" +
+    "-])+)+";
+            this.txtEmail.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtEmail.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
             this.txtEmail.Properties.MaskSettings.Set("allowBlankInput", true);
             this.txtEmail.Properties.MaskSettings.Set("mask", "((([0-9a-zA-Z_%-])+[.])+|([0-9a-zA-Z_%-])+)+@((([0-9a-zA-Z_-])+[.])+|([0-9a-zA-Z_" +
@@ -925,6 +938,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.txtCepTel2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtCepTel2.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtCepTel2.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtCepTel2.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtCepTel2.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtCepTel2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtCepTel2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtCepTel2.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtCepTel2.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -945,6 +961,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.txtCepTel1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtCepTel1.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtCepTel1.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtCepTel1.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtCepTel1.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtCepTel1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtCepTel1.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtCepTel1.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtCepTel1.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -979,6 +998,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.txtIsTel2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtIsTel2.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtIsTel2.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtIsTel2.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtIsTel2.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtIsTel2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtIsTel2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtIsTel2.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtIsTel2.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -1013,6 +1035,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.txtIsTel1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtIsTel1.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtIsTel1.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtIsTel1.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtIsTel1.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtIsTel1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtIsTel1.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtIsTel1.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtIsTel1.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -1033,6 +1058,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.txtEvTel.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtEvTel.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtEvTel.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtEvTel.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtEvTel.Properties.Mask.EditMask = "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ";
+            this.txtEvTel.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtEvTel.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtEvTel.Properties.MaskSettings.Set("mask", "(\\d?\\d?\\d?) \\d?\\d?\\d? \\d?\\d? \\d?\\d? ");
             this.txtEvTel.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -1067,6 +1095,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.txtTCKimlikNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.txtTCKimlikNo.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
             this.txtTCKimlikNo.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtTCKimlikNo.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtTCKimlikNo.Properties.Mask.EditMask = "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d? ";
+            this.txtTCKimlikNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.txtTCKimlikNo.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.txtTCKimlikNo.Properties.MaskSettings.Set("mask", "\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d?\\d? ");
             this.txtTCKimlikNo.Properties.MaskSettings.Set("isAutoComplete", false);
@@ -1472,7 +1503,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.layoutControlItem19.OptionsTableLayoutItem.RowIndex = 14;
             this.layoutControlItem19.OptionsTableLayoutItem.RowSpan = 2;
             this.layoutControlItem19.Size = new System.Drawing.Size(335, 48);
-            this.layoutControlItem19.Text = "İŞ Adresi";
+            this.layoutControlItem19.Text = "İş Adresi";
             this.layoutControlItem19.TextSize = new System.Drawing.Size(88, 13);
             // 
             // layoutControlItem20
@@ -1872,6 +1903,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.myDataLayoutControl, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtKartNo.Properties)).EndInit();

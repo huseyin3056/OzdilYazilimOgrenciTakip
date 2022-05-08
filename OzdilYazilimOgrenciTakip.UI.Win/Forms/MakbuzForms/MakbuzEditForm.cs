@@ -45,13 +45,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
 
         public override void Yukle()
         {
-            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new MakbuzS() : ((MakbuzBll)Bll).Single(FilterFunctions.Filter<Makbuz>(Id));
+            OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new MakbuzS() : ((MakbuzBll)Bll).Single(FilterFunctions.Filter<Makbuz>(Id));
 
             AlanIslemleri();
             NesneyiKontrollereBagla();
             TabloYukle();
             MakbuzTuruEnabled();
-            if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
+            if (BaseIslemTuru != IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtMakbuzNo.Text = ((MakbuzBll)Bll).YeniKodVer(x => x.DonemId == AnaForm.DonemId && x.SubeId == AnaForm.SubeId);
             txtTarih.DateTime = DateTime.Now.Date;
@@ -204,14 +204,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             {
                 case MakbuzTuru.BlokeyeAlma:
                 case MakbuzTuru.BlokeCozumu:
-                    txtHesapTuru.Properties.Items.AddRange(Enum.GetValues(typeof(MakbuzHesapTuru)).Cast<MakbuzHesapTuru>()
+                    txtHesapTuru.Properties.Items.AddRange(Enum.GetValues(typeof(MakbuzHesapTuru))
+                        .Cast<MakbuzHesapTuru>()
                         .Where(x => x == MakbuzHesapTuru.Epos || x == MakbuzHesapTuru.Ots || x == MakbuzHesapTuru.Pos)
                         .Select(x => x.ToName()).ToList());
                     break;
 
                 case MakbuzTuru.PortfoyeGeriIade:
                 case MakbuzTuru.PortfoyeKarsiliksizIade:
-                    txtHesapTuru.Properties.Items.AddRange(Enum.GetValues(typeof(MakbuzHesapTuru)).Cast<MakbuzHesapTuru>()
+                    txtHesapTuru.Properties.Items.AddRange(Enum.GetValues(typeof(MakbuzHesapTuru))
+                        .Cast<MakbuzHesapTuru>()
                         .Where(x => x == MakbuzHesapTuru.Avukat || x == MakbuzHesapTuru.Banka || x == MakbuzHesapTuru.Cari)
                         .Select(x => x.ToName()).ToList());
                     break;

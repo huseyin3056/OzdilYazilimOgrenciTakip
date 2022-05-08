@@ -1,15 +1,21 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using OzdilYazilimOgrenciTakip.BusinessLogiclayer.Functions;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
+using OzdilYazilimOgrenciTakip.Model.Entities.Base.Interfaces;
 using OzdilYazilimOgrenciTakip.Model.Entities.Ozdil;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.GenelForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Show;
 using OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls;
+using OzdilYazilimOgrenciTakip.UI.Win.UserControls.UserControl.Ozdil;
 using System;
+using System.Linq;
+using GeneralFunctions = OzdilYazilimOgrenciTakip.UI.Win.Functions.GeneralFunctions;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
 {
@@ -80,11 +86,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
                 Kod = txtKod.Text,
                 EtutTarihi = txtEtutTarihi.DateTime.Date,
 
-                BedenId = Convert.ToInt64(txtBeden.Id),
-                UrunId = Convert.ToInt64(txtUrun.Id),
-                BolumId = Convert.ToInt64(txtBolum.Id),
-                IslemId = Convert.ToInt64(txtIslem.Id),
-                MakineId = Convert.ToInt64(txtMakine.Id),
+                BedenId = System.Convert.ToInt64(txtBeden.Id),
+                UrunId = System.Convert.ToInt64(txtUrun.Id),
+                BolumId = System.Convert.ToInt64(txtBolum.Id),
+                IslemId = System.Convert.ToInt64(txtIslem.Id),
+                MakineId = System.Convert.ToInt64(txtMakine.Id),
 
                 KullaniciId=AnaForm.KullaniciId,
 
@@ -172,15 +178,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.Ozdil
 
         }
 
-        //protected override void Yazdir()
-        //{
+        protected override void Yazdir()
+        {
 
-        //    var ZamanEtutBilgileri = ((ZamanEtutBll)Bll).SingleDetail(x => x.Id == Id);
-        //    var renkBedenZamanEtutBilgileri = renkBedenZamanEtutBilgileriTable.Tablo.DataController.ListSource.Cast<IBaseEntity>().EntityListConvert<RenkBedenZamanEtutBilgileriR>();
-        //    // renkBedenZamanEtutBilgileri.Where(x=>x.XS)
-
-        //    ShowListForms<RaporSecim>.ShowDialogListForm(KartTuru.Rapor, true, RaporBolumTuru.ZamanEtutRaporlari, ZamanEtutBilgileri, renkBedenZamanEtutBilgileri);
-        //}
+            var ZamanEtutBilgileri = ((ZamanEtutBll)Bll).SingleDetail(x => x.Id == Id);
+            var renkBedenZamanEtutBilgileri = zamanEtutBilgileriTable.Tablo.DataController.ListSource.Cast<IBaseEntity>().EntityListConvert<GenelZamanEtutRaporuR>();
+          
+            ShowListForms<RaporSecim>.ShowDialogListForm(KartTuru.Rapor, true, RaporBolumTuru.ZamanEtutRaporlari, ZamanEtutBilgileri, renkBedenZamanEtutBilgileri);
+        }
 
 
     }

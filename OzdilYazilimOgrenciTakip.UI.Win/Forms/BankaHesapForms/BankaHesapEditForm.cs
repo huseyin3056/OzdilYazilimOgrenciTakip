@@ -20,17 +20,17 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms
             DataLayoutControl = myDataLayoutControl;
             Bll = new BankaHesapBll(myDataLayoutControl);
             txtHesapTuru.Properties.Items.AddRange(EnumFunctions.GetEnumDescriptionList<BankaHesapTuru>());
-            BaseKartTuru = Common.Enums.KartTuru.BankaHesap;
+            BaseKartTuru = KartTuru.BankaHesap;
             EventsLoad();
         }
 
 
         public override void Yukle()
         {
-            OldEntity = BaseIslemTuru == Common.Enums.IslemTuru.EntityInsert ? new BankaHesapS() : ((BankaHesapBll)Bll).Single(FilterFunctions.Filter<BankaHesap>(Id));
+            OldEntity = BaseIslemTuru == IslemTuru.EntityInsert ? new BankaHesapS() : ((BankaHesapBll)Bll).Single(FilterFunctions.Filter<BankaHesap>(Id));
             NesneyiKontrollereBagla();
 
-            if (BaseIslemTuru != Common.Enums.IslemTuru.EntityInsert) return;
+            if (BaseIslemTuru != IslemTuru.EntityInsert) return;
             Id = BaseIslemTuru.IdOlustur(OldEntity);
             txtKod.Text = ((BankaHesapBll)Bll).YeniKodVer(x => x.SubeId == AnaForm.SubeId);
             txtHesapAdi.Focus();
@@ -44,23 +44,31 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms
 
             txtKod.Text = entity.Kod;
             txtHesapAdi.Text = entity.HesapAdi;
+            txtAciklama.Text = entity.Aciklama;
+            tglDurum.IsOn = entity.Durum;
+
             txtHesapTuru.SelectedItem = entity.HesapTuru.ToName();
+
             txtBanka.Id = entity.BankaId;
             txtBanka.Text = entity.BankaAdi;
+
             txtBankaSube.Id = entity.BankaSubeId;
             txtBankaSube.Text = entity.BankaSubeAdi;
+
             txtBlokeGunSayisi.Value = entity.BlokeGunSayisi;
             txtIsYeriNo.Text = entity.IsYeriNo;
             txtTerminalNo.Text = entity.TerminalNo;
             txtHesapAcilisTarihi.DateTime = entity.HesapAcilisTarihi;
             txtHesapNo.Text = entity.HesapNo;
             txtIbanNo.Text = entity.IbanNo;
+
             txtOzelKod1.Id = entity.OzelKod1Id;
             txtOzelKod1.Text = entity.OzelKod1Adi;
+
             txtOzelKod2.Id = entity.OzelKod2Id;
             txtOzelKod2.Text = entity.OzelKod2Adi;
-            txtAciklama.Text = entity.Aciklama;
-            tglDurum.IsOn = entity.Durum;
+
+        
 
         }
 
@@ -118,10 +126,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms
                     sec.Sec(txtBankaSube, txtBanka);
 
                 else if (sender == txtOzelKod1)
-                    sec.Sec(txtOzelKod1, Common.Enums.KartTuru.BankaHesap);
+                    sec.Sec(txtOzelKod1, KartTuru.BankaHesap);
 
                 else if (sender == txtOzelKod2)
-                    sec.Sec(txtOzelKod2, Common.Enums.KartTuru.BankaHesap);
+                    sec.Sec(txtOzelKod2, KartTuru.BankaHesap);
 
 
             }

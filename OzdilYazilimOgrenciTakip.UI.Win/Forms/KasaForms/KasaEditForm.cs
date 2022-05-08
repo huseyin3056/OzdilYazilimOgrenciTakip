@@ -44,6 +44,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.KasaForms
 
             txtOzelKod1.Id = entity.OzelKod1Id;
             txtOzelKod1.Text = entity.OzelKod1Adi;
+
             txtOzelKod2.Id = entity.OzelKod2Id;
             txtOzelKod2.Text = entity.OzelKod2Adi;  
             

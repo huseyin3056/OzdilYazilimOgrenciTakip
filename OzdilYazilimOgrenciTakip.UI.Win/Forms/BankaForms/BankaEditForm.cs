@@ -42,10 +42,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms
 
             txtKod.Text = entity.Kod;
             txtBankaAdi.Text = entity.BankaAdi;
+
             txtOzelKod1.Id = entity.OzelKod1Id;
             txtOzelKod1.Text = entity.OzelKod1Adi;
+
             txtOzelKod2.Id = entity.OzelKod2Id;
             txtOzelKod2.Text = entity.OzelKod2Adi;
+
             txtAciklama.Text = entity.Aciklama;
             tglDurum.IsOn = entity.Durum;
 
@@ -58,8 +61,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms
                 Id = Id,
                 Kod = txtKod.Text,
                 BankaAdi = txtBankaAdi.Text,
+
                 OzelKod1Id = txtOzelKod1.Id,
-                OzelKod2Id = txtOzelKod2.Id,             
+                OzelKod2Id = txtOzelKod2.Id,   
+                
                 Aciklama = txtAciklama.Text,
                 Durum = tglDurum.IsOn
 

@@ -196,6 +196,18 @@
     <Compile Include="Forms\CariForms\CariListForm.Designer.cs">
       <DependentUpon>CariListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DepoForms\DepoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DepoForms\DepoEditForm.Designer.cs">
+      <DependentUpon>DepoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DepoForms\DepoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DepoForms\DepoListForm.Designer.cs">
+      <DependentUpon>DepoListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DonemForms\DonemEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -681,6 +693,12 @@
     </Compile>
     <Compile Include="Reports\FormReports\Ozdil\GenelSiparisRaporu.Designer.cs">
       <DependentUpon>GenelSiparisRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Ozdil\ZamanEtutRaporu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Ozdil\ZamanEtutRaporu.Designer.cs">
+      <DependentUpon>ZamanEtutRaporu.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UserControl\Ozdil\UserControl1.cs">
       <SubType>UserControl</SubType>
@@ -1408,6 +1426,12 @@
     <EmbeddedResource Include="Forms\CariForms\CariListForm.resx">
       <DependentUpon>CariListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DepoForms\DepoEditForm.resx">
+      <DependentUpon>DepoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DepoForms\DepoListForm.resx">
+      <DependentUpon>DepoListForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DonemForms\DonemEditForm.resx">
       <DependentUpon>DonemEditForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -1650,6 +1674,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\FormReports\Ozdil\GenelSiparisRaporu.resx">
       <DependentUpon>GenelSiparisRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Ozdil\ZamanEtutRaporu.resx">
+      <DependentUpon>ZamanEtutRaporu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UserControl\Ozdil\ZamanEtutBilgileriTable.resx">
       <DependentUpon>ZamanEtutBilgileriTable.cs</DependentUpon>
@@ -2931,6 +2958,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buy_32x321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\docking_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\merge_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\merge_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

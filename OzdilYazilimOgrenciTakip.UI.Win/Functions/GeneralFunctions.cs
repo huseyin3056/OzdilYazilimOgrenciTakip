@@ -40,18 +40,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 {
     public static class GeneralFunctions
     {
-        public static long GetRowId(this GridView tablo)
+        public static long GetRowId(this GridView tablo) //Returns the specified column’s edit value within the focused row.
         {
             if (tablo.FocusedRowHandle > -1)
-                return (long)tablo.GetFocusedRowCellValue("Id");
+                return (long)tablo.GetFocusedRowCellValue("Id"); // ID sutununun focuslanan satırının değerini döndürür.
             Messages.KartSecmemeUyariMesaji();
             return -1;
 
         }
 
-        public static long GetRowCellId(this GridView tablo, GridColumn idColumn)
+        public static long GetRowCellId(this GridView tablo, GridColumn idColumn) //Returns the specified cell’s value in the current View.
         {
-            var value = tablo.GetRowCellValue(tablo.FocusedRowHandle, idColumn);
+            var value = tablo.GetRowCellValue(tablo.FocusedRowHandle, idColumn);//  idColumn sutununun focuslanan satırının değerini döndürür.
             return (long?)value ?? -1;
 
         }
@@ -70,7 +70,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Functions
 
         public static T GetRow<T>(this GridView tablo, int rowHandle)
         {
-            if (tablo.FocusedRowHandle > -1) return (T)tablo.GetRow(rowHandle);
+            if (tablo.FocusedRowHandle > -1) 
+                return (T)tablo.GetRow(rowHandle);
 
             Messages.KartSecmemeUyariMesaji();
 

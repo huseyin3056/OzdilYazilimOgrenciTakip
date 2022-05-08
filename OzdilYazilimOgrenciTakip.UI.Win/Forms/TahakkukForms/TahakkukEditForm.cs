@@ -161,7 +161,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.TahakkukForms
                 geriOdemeBilgileriTable.Yukle();
             }
 
-
+            //Alttaki tablolar
 
             if (TableValueChanged(hizmetBilgileriTable))
             {

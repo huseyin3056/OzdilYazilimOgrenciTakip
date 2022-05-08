@@ -137,6 +137,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnZamanEtut = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnGenelFormSiparisRaporu = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDepoKartlari = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -283,9 +284,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnGorev,
             this.btnZamanEtut,
             this.barButtonItem1,
-            this.btnGenelFormSiparisRaporu});
+            this.btnGenelFormSiparisRaporu,
+            this.btnDepoKartlari});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 102;
+            this.ribbonControl1.MaxItemId = 103;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -1044,6 +1046,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.btnGenelFormSiparisRaporu.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.buy_32x321;
             this.btnGenelFormSiparisRaporu.Name = "btnGenelFormSiparisRaporu";
             // 
+            // btnDepoKartlari
+            // 
+            this.btnDepoKartlari.Caption = "Depo";
+            this.btnDepoKartlari.Id = 102;
+            this.btnDepoKartlari.ImageOptions.Image = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.merge_16x16;
+            this.btnDepoKartlari.ImageOptions.LargeImage = global::OzdilYazilimOgrenciTakip.UI.Win.Properties.Resources.merge_32x32;
+            this.btnDepoKartlari.Name = "btnDepoKartlari";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1358,6 +1368,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             this.ribbonPageGroup36.ItemLinks.Add(this.btnRenk);
             this.ribbonPageGroup36.ItemLinks.Add(this.btnBeden);
             this.ribbonPageGroup36.ItemLinks.Add(this.btnGorev);
+            this.ribbonPageGroup36.ItemLinks.Add(this.btnDepoKartlari);
             this.ribbonPageGroup36.Name = "ribbonPageGroup36";
             this.ribbonPageGroup36.Text = "Üretim";
             // 
@@ -1605,5 +1616,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnGenelFormSiparisRaporu;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup39;
+        private DevExpress.XtraBars.BarButtonItem btnDepoKartlari;
     }
 }

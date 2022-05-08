@@ -38,8 +38,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.SinifForms
             var entity = (SinifS)OldEntity;
             txtKod.Text = entity.Kod;
             txtSinifAdi.Text = entity.SinifAdi;
+
             txtGrup.Id = entity.GrupId;
             txtGrup.Text = entity.GrupAdi;
+
             txtHedefOgrenciSayisi.Value = entity.HedefOgrenciSayisi;
             txtHedefCiro.Value = entity.HedefCiro;
             txtAciklama.Text = entity.Aciklama;

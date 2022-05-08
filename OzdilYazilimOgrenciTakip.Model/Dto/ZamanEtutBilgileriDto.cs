@@ -14,4 +14,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public bool Update { get; set; }
         public bool Delete { get; set; }
     }
+
+   
+
 }

@@ -1,6 +1,7 @@
 ﻿using OzdilYazilimOgrenciTakip.Model.Attributes;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -48,7 +49,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities.Ozdil
 
 
 
-        //  public ICollection<RenkBedenSiparisBilgileri> RenkbedenSiparisBilgileri { get; set; }
+          public ICollection<ZamanEtutBilgileri> ZamanEtutBilgileri { get; set; }
 
 
     }

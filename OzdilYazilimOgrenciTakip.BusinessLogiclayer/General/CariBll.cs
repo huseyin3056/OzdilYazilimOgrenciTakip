@@ -41,7 +41,8 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 OzelKod2Id = x.OzelKod2Id,
                 OzelKod2Adi = x.OzelKod2.OzelKodAdi,              
                 Aciklama = x.Aciklama,
-                Durum = x.Durum
+                Durum = x.Durum,
+                CariTuru=x.CariTuru
 
             });
 
@@ -68,6 +69,7 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 OzelKod1Adi = x.OzelKod1.OzelKodAdi,            
                 OzelKod2Adi = x.OzelKod2.OzelKodAdi,
                 Aciklama = x.Aciklama,
+                CariTuru=x.CariTuru
              
             }).OrderBy(x => x.Kod).ToList();
         }

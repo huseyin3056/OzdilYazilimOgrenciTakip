@@ -1,10 +1,7 @@
 ﻿using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
 using OzdilYazilimOgrenciTakip.Common.Enums;
-using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
-using OzdilYazilimOgrenciTakip.UI.Win.Functions;
 using OzdilYazilimOgrenciTakip.UI.Win.Show;
-using System.Linq;
 
 namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
 {
@@ -32,7 +29,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
         protected override void DegiskenleriDoldur()
         {
             Tablo = tablo;
-            BaseKartTuru = Common.Enums.KartTuru.Rapor;
+            BaseKartTuru = KartTuru.Rapor;
             FormShow = new ShowEditForms<RaporEditForm>();
             Navigator = longNavigator.Navigator;
 
@@ -47,7 +44,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
 
         protected override void ShowEditForm(long id)
         {
-            var result = ShowEditForms<RaporEditForm>.ShowDialogEditForm(Common.Enums.KartTuru.Rapor, id,_raporTuru,_raporBolumTuru,_dosya  );
+            var result = ShowEditForms<RaporEditForm>.ShowDialogEditForm(KartTuru.Rapor, id,_raporTuru,_raporBolumTuru,_dosya  );
 
             ShowEditFormDefault(result);
 

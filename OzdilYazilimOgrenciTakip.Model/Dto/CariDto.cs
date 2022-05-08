@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 
@@ -30,6 +31,8 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string OzelKod1Adi { get; set; }
         public string OzelKod2Adi { get; set; }
         public string Aciklama { get; set; }
+
+        public CariTuru CariTuru{ get; set; }
 
     }
 }

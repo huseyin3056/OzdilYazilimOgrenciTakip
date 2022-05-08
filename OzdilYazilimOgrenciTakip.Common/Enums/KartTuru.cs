@@ -212,9 +212,8 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         [Description("Ödeme Belgeleri Raporu")]
         OdemeBelgeleriRaporu = 67,
 
-
-
-
+        [Description("Ürün Tanımı Kartı")]
+        UrunTanimi = 68,
 
         [Description("Tahsilat Raporu")]
         TahsilatRaporu = 69,
@@ -246,10 +245,7 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         Kullanici = 77,
 
 
-        [Description("Ürün Tanımı Kartı")]
-        UrunTanimi = 68,
-
-
+     
 
         // Özdil
         [Description("Kategori  Kartı")]
@@ -298,7 +294,13 @@ namespace OzdilYazilimOgrenciTakip.Common.Enums
         ZamanEtut =91,
 
         [Description("Genel Form Sipariş Raporu")]
-        GenelFormSiparisRaporu = 92
+        GenelFormSiparisRaporu = 92,
+
+        [Description("Depo Kartı")]
+        Depo = 93,
+
+        [Description("Genel Zaman Etütü Raporu")]
+        GenelZamanEtutuRaporu = 94,
 
 
 

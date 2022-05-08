@@ -55,9 +55,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string MusteriSiparisNo { get; set; }
         public SiparisTuru SiparisTuru { get; set; }
         public Kur Kur { get; set; } = Kur.TL;
-
         public DateTime SiparisTarihi { get; set; }
-
         public DateTime TeslimatTarihi { get; set; }
         public string BedenAdi { get; set; }
 
@@ -67,8 +65,6 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
         public string Aciklama { get; set; }
 
         public byte[] Resim { get; set; }
-
-
 
         public RenkBedenSiparisBilgileriR RenkBedenSiparisBilgileri { get; set; }
     }

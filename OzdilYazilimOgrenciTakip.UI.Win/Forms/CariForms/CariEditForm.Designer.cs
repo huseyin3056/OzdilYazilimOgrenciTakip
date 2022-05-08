@@ -82,7 +82,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtCariTuru = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.MyComboBoxEdit();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).BeginInit();
             this.myDataLayoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
@@ -120,6 +123,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCariTuru.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -138,6 +143,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             // 
             // myDataLayoutControl
             // 
+            this.myDataLayoutControl.Controls.Add(this.txtCariTuru);
             this.myDataLayoutControl.Controls.Add(this.txtEmail);
             this.myDataLayoutControl.Controls.Add(this.txtTcKimlikNo);
             this.myDataLayoutControl.Controls.Add(this.tglDurum);
@@ -504,7 +510,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.layoutControlItem15,
             this.layoutControlItem14,
             this.layoutControlItem3,
-            this.layoutControlItem10});
+            this.layoutControlItem10,
+            this.layoutControlItem18});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
@@ -777,6 +784,37 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.layoutControlItem10.Text = "Email";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(59, 13);
             // 
+            // txtCariTuru
+            // 
+            this.txtCariTuru.EnterMoveNextControl = true;
+            this.txtCariTuru.Location = new System.Drawing.Point(367, 132);
+            this.txtCariTuru.MenuManager = this.ribbonControl;
+            this.txtCariTuru.Name = "txtCariTuru";
+            this.txtCariTuru.Properties.AppearanceFocused.BackColor = System.Drawing.Color.LightCyan;
+            this.txtCariTuru.Properties.AppearanceFocused.Options.UseBackColor = true;
+            this.txtCariTuru.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtCariTuru.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.txtCariTuru.Size = new System.Drawing.Size(115, 20);
+            this.txtCariTuru.StatusBarAciklama = null;
+            this.txtCariTuru.StatusBarKisaYol = null;
+            this.txtCariTuru.StatusBarKisaYolAciklama = null;
+            this.txtCariTuru.StyleController = this.myDataLayoutControl;
+            this.txtCariTuru.TabIndex = 17;
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.AppearanceItemCaption.ForeColor = System.Drawing.Color.Maroon;
+            this.layoutControlItem18.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem18.Control = this.txtCariTuru;
+            this.layoutControlItem18.Location = new System.Drawing.Point(284, 120);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.OptionsTableLayoutItem.ColumnIndex = 2;
+            this.layoutControlItem18.OptionsTableLayoutItem.RowIndex = 5;
+            this.layoutControlItem18.Size = new System.Drawing.Size(190, 24);
+            this.layoutControlItem18.Text = "Cari Türü";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(59, 13);
+            // 
             // CariEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -789,6 +827,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.myDataLayoutControl, 0);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resimMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myDataLayoutControl)).EndInit();
             this.myDataLayoutControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
@@ -826,6 +865,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCariTuru.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -869,5 +910,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private UserControls.Controls.MyEmailTextEdit txtEmail;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private UserControls.Controls.MyComboBoxEdit txtCariTuru;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
     }
 }

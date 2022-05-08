@@ -1,5 +1,7 @@
 ﻿using DevExpress.XtraEditors;
 using OzdilYazilimOgrenciTakip.BusinessLogiclayer.General;
+using OzdilYazilimOgrenciTakip.Common.Enums;
+using OzdilYazilimOgrenciTakip.Common.Functions;
 using OzdilYazilimOgrenciTakip.Model.Dto;
 using OzdilYazilimOgrenciTakip.Model.Entities;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms;
@@ -15,6 +17,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
 
             DataLayoutControl = myDataLayoutControl;
             Bll = new CariBll(myDataLayoutControl);
+            txtCariTuru.Properties.Items.AddRange(EnumFunctions.GetEnumDescriptionList<CariTuru>());
             BaseKartTuru = Common.Enums.KartTuru.Cari;
             EventsLoad();
         }
@@ -55,6 +58,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
             txtOzelKod2.Text = entity.OzelKod2Adi;
             txtAciklama.Text = entity.Aciklama;
             tglDurum.IsOn = entity.Durum;
+            txtCariTuru.SelectedItem = entity.CariTuru.ToName();
+
+          
 
         }
 
@@ -79,7 +85,9 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms
                 OzelKod1Id = txtOzelKod1.Id,
                 OzelKod2Id = txtOzelKod2.Id,
                 Aciklama = txtAciklama.Text,
-                Durum = tglDurum.IsOn
+                Durum = tglDurum.IsOn,
+                CariTuru=txtCariTuru.Text.GetEnum<CariTuru>()
+
 
             };
 

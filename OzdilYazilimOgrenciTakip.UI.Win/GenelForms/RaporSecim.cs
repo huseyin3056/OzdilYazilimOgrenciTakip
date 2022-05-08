@@ -37,7 +37,10 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         private readonly RaporBolumTuru _raporBolumTuru;
 
         private readonly GenelSiparisRaporuR _siparisBilgileri;
+        private readonly GenelZamanEtutRaporuR _zamanEtutBilgileri;
+
         private readonly IEnumerable<RenkBedenSiparisBilgileriR> _renkBedenSiparisBilgileri;
+      //  private readonly IEnumerable<ZamanEtutBilgileriR> _renkBedenZamanEtutBilgileri;
 
         public RaporSecim(params object[] prm)
         {
@@ -45,11 +48,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
             Bll = new RaporBll();
 
-            ShowItems = new DevExpress.XtraBars.BarItem[] { btnYeniRapor, btnBaskiOnizleme };
-            HideItems = new DevExpress.XtraBars.BarItem[] { btnYeni, btnSec, btnFiltrele, btnKolonlar, barFiltrele, barFiltreleAciklama, barKolonlar, barKolonlarAciklama };
+            ShowItems = new BarItem[] { btnYeniRapor, btnBaskiOnizleme };
+            HideItems = new BarItem[] { btnYeni, btnSec, btnFiltrele, btnKolonlar, barFiltrele, barFiltreleAciklama, barKolonlar, barKolonlarAciklama };
 
-            btnDuzelt.CreateDropDownMenu(new DevExpress.XtraBars.BarItem[] { btnTasarimDegistir });
-            btnYazdir.CreateDropDownMenu(new DevExpress.XtraBars.BarItem[] { btnTabloYazdir });
+            btnDuzelt.CreateDropDownMenu(new BarItem[] { btnTasarimDegistir });
+            btnYazdir.CreateDropDownMenu(new BarItem[] { btnTabloYazdir });
 
             txtYaziciAdi.Properties.Items.AddRange(GeneralFunctions.YazicilariListele());
             txtYaziciAdi.EditValue = GeneralFunctions.DefaultYazici();
@@ -84,7 +87,15 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             else if (_raporBolumTuru == RaporBolumTuru.SiparisRaporlari)
             {
                 _siparisBilgileri = (GenelSiparisRaporuR)prm[1];
-                 _renkBedenSiparisBilgileri= (IEnumerable<RenkBedenSiparisBilgileriR>)prm[2];
+                _renkBedenSiparisBilgileri = (IEnumerable<RenkBedenSiparisBilgileriR>)prm[2];
+            }
+
+            else if (_raporBolumTuru == RaporBolumTuru.ZamanEtutRaporlari)
+            {
+                _zamanEtutBilgileri = (GenelZamanEtutRaporuR)prm[1];
+              //  _renkBedenZamanEtutBilgileri = (IEnumerable<ZamanEtutBilgileriR>)prm[2];
+
+
             }
 
         }
@@ -92,7 +103,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
         protected override void DegiskenleriDoldur()
         {
             Tablo = tablo;
-            BaseKartTuru = Common.Enums.KartTuru.Rapor;
+            BaseKartTuru = KartTuru.Rapor;
             FormShow = new ShowEditForms<RaporEditForm>();
             Navigator = smallNavigator.Navigator;
 
@@ -104,8 +115,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                 {
                     case RaporBolumTuru.MakbuzRaporlari:
                         {
-                            var showItems = new BarItem[] { btnGenelMakbuz, btnTahsilatMakbuzu, btnTeslimatMakbuzu, btnGeriIadeMakbuzu };
-                            ShowItems = ShowItems.Concat(showItems).ToArray();
+                            var showItems1 = new BarItem[] { btnGenelMakbuz, btnTahsilatMakbuzu, btnTeslimatMakbuzu, btnGeriIadeMakbuzu };
+                            ShowItems = ShowItems.Concat(showItems1).ToArray();
                         }
                         break;
 
@@ -113,38 +124,46 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                     case RaporBolumTuru.FaturaDonemRaporlari:
                         {
 
-                            var showItems = new BarItem[] { btnFatura, btnDonemIcmalRaporu };
-                            ShowItems = ShowItems.Concat(showItems).ToArray();
+                            var showItems2 = new BarItem[] { btnFatura, btnDonemIcmalRaporu };
+                            ShowItems = ShowItems.Concat(showItems2).ToArray();
                             break;
                         }
 
                     case RaporBolumTuru.FaturaGenelRaporlar:
                         {
-                            var showItems = new BarItem[] { btnOgrenciIcmalRaporu };
-                            ShowItems = ShowItems.Concat(showItems).ToArray();
+                            var showItems3 = new BarItem[] { btnOgrenciIcmalRaporu };
+                            ShowItems = ShowItems.Concat(showItems3).ToArray();
                             break;
                         }
 
                     case RaporBolumTuru.SiparisRaporlari:
                         {
-                            var showItems = new BarItem[] { btnOzdil };
-                            ShowItems = ShowItems.Concat(showItems).ToArray();
+                            var showItems4 = new BarItem[] { btnOzdil };
+                            ShowItems = ShowItems.Concat(showItems4).ToArray();
 
-                            var hide = new BarItem[] { btnOnTanimliRaporlar };
-                            HideItems = HideItems.Concat(hide).ToArray();
+                            var hide4 = new BarItem[] { btnOnTanimliRaporlar };
+                            HideItems = HideItems.Concat(hide4).ToArray();
 
                             break;
                         }
 
+                    case RaporBolumTuru.ZamanEtutRaporlari:
+                        var showItems = new BarItem[] { btnOzdil };
+                        ShowItems = ShowItems.Concat(showItems).ToArray();
 
-                }
+                        var hide = new BarItem[] { btnOnTanimliRaporlar };
+                        HideItems = HideItems.Concat(hide).ToArray();
+                        break;
 
-                var hideItems = new BarItem[] {
+
+                        var hideItems = new BarItem[] {
                     btnBosRapor,btnOgrenciKarti,btnBankaOdemePlani,btnIndirimTalepDilekcesi,btnMEBKayitSozlesmesi,btnKayitSozlesmesi,
                     btnKrediKartliOdemeTalimati,btnOdemeSenedi
                 };
 
-                HideItems = HideItems.Concat(hideItems).ToArray();
+
+                        HideItems = HideItems.Concat(hideItems).ToArray();
+                }
             }
 
 
@@ -360,9 +379,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
                     rpr.Siparis_Bilgileri.DataSource = _siparisBilgileri;
                     rpr.Renk_Beden_Siparis_Bilgileri.DataSource = _renkBedenSiparisBilgileri;
                     rpr.xrLabelMusteriSiparisNo.Text = _siparisBilgileri.MusteriSiparisNo;
-                     //   .Where(x => x.XS > 0 || x.S > 0 || x.M > 0 || x.L > 0 || x.XL > 0 || x.XXL > 0 || x.XXXL > 0 || x._26 > 0 || x._28 > 0 || x._30 > 0);
-
+                    //   .Where(x => x.XS > 0 || x.S > 0 || x.M > 0 || x.L > 0 || x.XL > 0 || x.XXL > 0 || x.XXXL > 0 || x._26 > 0 || x._28 > 0 || x._30 > 0);
                     break;
+
+                //case ZamanEtutRaporu rpr:
+
+                //    rpr.RenkBeden_Zaman_Etut_Bilgileri.DataSource = _renkBedenZamanEtutBilgileri;
+
+                //    break;
 
             }
         }
@@ -471,6 +495,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
 
             else if (e.Item == btnSiparisGenelRaporu)
                 RaporOlustur(KartTuru.GenelSiparisRaporu, RaporBolumTuru.SiparisRaporlari, new GenelSiparisRaporu());
+
+            else if (e.Item == btnGenelZamanEtutRaporu)
+                RaporOlustur(KartTuru.GenelZamanEtutuRaporu, RaporBolumTuru.ZamanEtutRaporlari, new ZamanEtutRaporu());
+
+
+
 
         }
     }

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
 {
-    public  class ZamanEtutBll : BaseGenelBll<ZamanEtut>, IBaseCommonBll, IBaseGenelBll
+    public class ZamanEtutBll : BaseGenelBll<ZamanEtut>, IBaseCommonBll, IBaseGenelBll
     {
         public ZamanEtutBll() : base(KartTuru.ZamanEtut) { }
 
@@ -31,20 +31,20 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 BedenId = x.BedenId,
                 BedenAdi = x.Beden.BedenAdi,
 
-                BolumId=x.BolumId,
-                BolumAdi=x.Bolum.BolumAdi,
+                BolumId = x.BolumId,
+                BolumAdi = x.Bolum.BolumAdi,
 
-                IslemId=x.IslemId,
-                IslemAdi=x.Islem.Adi,
+                IslemId = x.IslemId,
+                IslemAdi = x.Islem.Adi,
 
-                MakineId=x.MakineId,
-                MakineAdi=x.Makine.MakineAdi,
+                MakineId = x.MakineId,
+                MakineAdi = x.Makine.MakineAdi,
 
-                UrunId=x.UrunId,
-                UrunAdi=x.Urun.UrunAdi,
+                UrunId = x.UrunId,
+                UrunAdi = x.Urun.UrunAdi,
 
-                KullaniciId=x.KullaniciId,
-                KullaniciAdi=x.Kullanici.Adi,
+                KullaniciId = x.KullaniciId,
+                KullaniciAdi = x.Kullanici.Adi,
 
                 Aciklama = x.Aciklama,
 
@@ -65,14 +65,14 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 BedenId = x.BedenId,
                 BedenAdi = x.Beden.BedenAdi,
 
-                BolumId=x.BolumId,
-                BolumAdi=x.Bolum.BolumAdi,
+                BolumId = x.BolumId,
+                BolumAdi = x.Bolum.BolumAdi,
 
-                IslemId=x.IslemId,
-                IslemAdi=x.Islem.Adi,
+                IslemId = x.IslemId,
+                IslemAdi = x.Islem.Adi,
 
-                MakineId=x.MakineId,
-                MakineAdi=x.Makine.MakineAdi,
+                MakineId = x.MakineId,
+                MakineAdi = x.Makine.MakineAdi,
 
                 UrunId = x.UrunId,
                 UrunAdi = x.Urun.UrunAdi,
@@ -81,13 +81,46 @@ namespace OzdilYazilimOgrenciTakip.BusinessLogiclayer.General
                 KullaniciAdi = x.Kullanici.Adi,
 
                 Aciklama = x.Aciklama,
-              
+
 
 
 
             }).OrderBy(x => x.Kod).ToList();
         }
 
-      
+
+
+        public GenelZamanEtutRaporuR SingleDetail(Expression<Func<ZamanEtut, bool>> filter)
+        {
+            var sonuc = BaseSingle(filter, x => new GenelZamanEtutRaporuR
+            {
+                BedenAdi = x.Beden.BedenAdi,
+                BolumAdi = x.Bolum.BolumAdi,
+                IslemAdi = x.Islem.Adi,
+                KullaniciAdi = x.Kullanici.Adi,
+                MakineAdi = x.Makine.MakineAdi,
+                UrunAdi = x.Urun.UrunAdi,
+
+                EtutTarihi = x.EtutTarihi,
+                UrunId = x.UrunId,
+
+                //ZamanEtutBilgileri = x.ZamanEtutBilgileri.Where(y => y.ZamanEtutId == x.Id).Select(y => new ZamanEtutBilgileriR
+                //{
+                //    Id = y.Id,
+                //    ZamanEtutId = y.ZamanEtutId,
+                //    Zaman1 = y.Zaman1,
+                //    Zaman2 = y.Zaman2,
+                //    Zaman3 = y.Zaman3,
+                //    OrtalamaZaman = y.OrtalamaZaman
+
+
+
+                //}).FirstOrDefault()
+
+            });
+
+            return sonuc;
+
+        }
     }
 }

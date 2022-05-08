@@ -653,6 +653,16 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap docking_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("docking_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap doctor_16x16 {
             get {
                 object obj = ResourceManager.GetObject("doctor_16x16", resourceCulture);
@@ -2526,6 +2536,26 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Properties {
         internal static System.Drawing.Bitmap Logo3 {
             get {
                 object obj = ResourceManager.GetObject("Logo3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap merge_16x16 {
+            get {
+                object obj = ResourceManager.GetObject("merge_16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap merge_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("merge_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

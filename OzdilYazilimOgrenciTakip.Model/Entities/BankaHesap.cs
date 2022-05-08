@@ -19,14 +19,6 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
 
         public BankaHesapTuru HesapTuru { get; set; } = BankaHesapTuru.VadesizMevduatHesabi;
 
-
-        [ZorunluAlan("Banka Adı", "txtBanka")]
-        public long BankaId { get; set; }
-
-        [ZorunluAlan("Banka Şube Adı", "txtBankaSube")]
-        public long BankaSubeId { get; set; }
-
-
         [Column(TypeName ="date")]
         public DateTime HesapAcilisTarihi { get; set; } = DateTime.Now.Date;
 
@@ -47,6 +39,9 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [StringLength(30)]
         public string TerminalNo { get; set; }
 
+        [StringLength(500)]
+        public string Aciklama { get; set; }
+
         public long? OzelKod1Id { get; set; }
         public long? OzelKod2Id { get; set; }
 
@@ -54,16 +49,21 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         public OzelKod OzelKod2 { get; set; }
 
 
+        [ZorunluAlan("Banka Adı", "txtBanka")]
+        public long BankaId { get; set; }
         public Banka Banka { get; set; }
+
+        [ZorunluAlan("Banka Şube Adı", "txtBankaSube")]
+        public long BankaSubeId { get; set; }
         public BankaSube BankaSube { get; set; }
+          
         public Sube Sube { get; set; }
         public long SubeId { get; set; }
 
        
 
 
-        [StringLength(500)]
-        public string Aciklama { get; set; }
+     
 
 
     }

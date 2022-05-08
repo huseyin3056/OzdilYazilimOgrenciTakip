@@ -161,6 +161,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.SagMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barSubItem8 = new DevExpress.XtraBars.BarSubItem();
+            this.btnGenelZamanEtutRaporu = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SagMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -268,9 +270,11 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.barParametreler,
             this.barParametrelerAciklama,
             this.btnOzdil,
-            this.btnSiparisGenelRaporu});
+            this.btnSiparisGenelRaporu,
+            this.barSubItem8,
+            this.btnGenelZamanEtutRaporu});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 101;
+            this.ribbonControl.MaxItemId = 103;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -961,7 +965,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.btnYeniRapor.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnBosRapor),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnOnTanimliRaporlar),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnOzdil)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnOzdil),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSubItem8)});
             this.btnYeniRapor.Name = "btnYeniRapor";
             this.btnYeniRapor.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
@@ -1260,6 +1265,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl;
             // 
+            // barSubItem8
+            // 
+            this.barSubItem8.Caption = "Zaman Etüt Raporları";
+            this.barSubItem8.Id = 101;
+            this.barSubItem8.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnGenelZamanEtutRaporu)});
+            this.barSubItem8.Name = "barSubItem8";
+            // 
+            // btnGenelZamanEtutRaporu
+            // 
+            this.btnGenelZamanEtutRaporu.Caption = "Zaman Etüt Raporu Genel";
+            this.btnGenelZamanEtutRaporu.Id = 102;
+            this.btnGenelZamanEtutRaporu.Name = "btnGenelZamanEtutRaporu";
+            // 
             // BaseListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1384,5 +1403,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.BaseForms
         protected internal DevExpress.XtraBars.BarStaticItem barParametrelerAciklama;
         protected internal DevExpress.XtraBars.BarSubItem btnOzdil;
         protected internal DevExpress.XtraBars.BarButtonItem btnSiparisGenelRaporu;
+        private DevExpress.XtraBars.BarSubItem barSubItem8;
+        protected internal DevExpress.XtraBars.BarButtonItem btnGenelZamanEtutRaporu;
     }
 }

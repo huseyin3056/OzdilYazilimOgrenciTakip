@@ -12,6 +12,7 @@ using OzdilYazilimOgrenciTakip.UI.Win.Forms.AvukatForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.BankaHesapForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.CariForms;
+using OzdilYazilimOgrenciTakip.UI.Win.Forms.DepoForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.EvrakForms;
 using OzdilYazilimOgrenciTakip.UI.Win.Forms.FaturaForms;
 
@@ -538,6 +539,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.GenelForms
             {
 
                 ShowEditReports<GenelSiparisRaporu>.ShowEditReport(KartTuru.GenelFormSiparisRaporu);
+            }
+
+            else if (e.Item == btnDepoKartlari)
+            {
+
+                ShowListForms<DepoListForm>.ShowListForm(KartTuru.Depo);
             }
 
 

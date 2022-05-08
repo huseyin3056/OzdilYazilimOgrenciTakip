@@ -54,23 +54,30 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             txtKartNo.Text = entity.KartNo;
 
             txtEvAdres.Text = entity.EvAdres;
+
             txtEvAdresIl.Id = entity.EvAdresIlId;
             txtEvAdresIl.Text = entity.EvAdresIlAdi;
+
             txtEvAdresIlce.Id = entity.EvAdresIlceId;
             txtEvAdresIlce.Text = entity.EvAdresIlceAdi;
 
             txtIsAdres.Text = entity.IsAdres;
+
             txtIsAdresIl.Id = entity.IsAdresIlId;
             txtIsAdresIl.Text = entity.IsAdresIlAdi;
+
             txtIsAdresIlce.Id = entity.IsAdresIlceId;
             txtIsAdresIlce.Text = entity.IsAdresIlceAdi;
 
             txtMeslek.Id = entity.MeslekId;
             txtMeslek.Text = entity.MeslekAdi;
+
             txtIsyeri.Id = entity.IsyeriId;
             txtIsyeri.Text = entity.IsYeriAdi;
+
             txtGorev.Id = entity.GorevId;
             txtGorev.Text = entity.GorevAdi;
+
             txtBabaAdi.Text = entity.BabaAdi;
             txtAnaAdi.Text = entity.AnaAdi;
             txtDogumYeri.Text = entity.DogumYeri;
@@ -160,17 +167,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
             if (!(sender is ButtonEdit)) return;
 
             using (var sec = new SelectFunctions())
+
                 if (sender == txtEvAdresIl)
                     sec.Sec(txtEvAdresIl);
 
                 else if (sender == txtEvAdresIlce)
                     sec.Sec(txtEvAdresIlce, txtEvAdresIl);
 
+
                 else if (sender == txtIsAdresIl)
                     sec.Sec(txtIsAdresIl);
 
                 else if (sender == txtIsAdresIlce)
                     sec.Sec(txtIsAdresIlce, txtIsAdresIl);
+
 
                 else if (sender == txtMeslek)
                     sec.Sec(txtMeslek);
@@ -181,11 +191,13 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.IletisimForms
                 else if (sender == txtGorev)
                     sec.Sec(txtGorev);
 
+
                 else if (sender == txtKimlikIl)
                     sec.Sec(txtKimlikIl);
 
                 else if (sender == txtKimlikIlce)
                     sec.Sec(txtKimlikIlce, txtKimlikIl);
+
 
                 else if (sender == txtOzelKod1)
                     sec.Sec(txtOzelKod1, KartTuru.Iletisim);

@@ -7,6 +7,7 @@
         FaturaDonemRaporlari=3,
         FaturaGenelRaporlar=4,
         MakbuzRaporlari=5,
-        SiparisRaporlari=6
+        SiparisRaporlari=6,
+        ZamanEtutRaporlari=7
     }
 }

@@ -16,8 +16,8 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.MakbuzForms
             InitializeComponent();
 
             Bll = new MakbuzBll();
-            ShowItems = new DevExpress.XtraBars.BarItem[] { btnYeniMakbuz };
-            HideItems = new DevExpress.XtraBars.BarItem[] { btnYeni, btnSil, barDelete, barDeleteAciklama, btnAktifPasifKartlar };
+            ShowItems = new BarItem[] { btnYeniMakbuz };
+            HideItems = new BarItem[] { btnYeni, btnSil, barDelete, barDeleteAciklama, btnAktifPasifKartlar };
 
             barInsertAciklama.Caption = "Yeni Makbuz";
 

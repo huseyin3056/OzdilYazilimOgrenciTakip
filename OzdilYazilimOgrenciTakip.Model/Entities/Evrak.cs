@@ -17,16 +17,15 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
 
         [StringLength(500)]
         public string Aciklama { get; set; }
+        public string EvrakCinsi { get; set; }
 
-        // Relation Id
+        // Relation 
         public long SubeId { get; set; }
-        public long DonemId { get; set; }
-
-        // Navigation Property
         public Sube Sube { get; set; }
+        public long DonemId { get; set; }
         public Donem Donem { get; set; }
 
-        public string EvrakCinsi { get; set; }
+      
 
     }
 }

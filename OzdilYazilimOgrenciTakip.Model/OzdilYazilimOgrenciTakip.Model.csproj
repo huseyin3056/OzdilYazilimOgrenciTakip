@@ -158,6 +158,7 @@
     <Compile Include="Entities\Okul.cs" />
     <Compile Include="Entities\Ozdil\Beden.cs" />
     <Compile Include="Entities\Ozdil\Bolum.cs" />
+    <Compile Include="Entities\Ozdil\Depo.cs" />
     <Compile Include="Entities\Ozdil\Musteri.cs" />
     <Compile Include="Entities\Ozdil\Siparis.cs" />
     <Compile Include="Entities\Ozdil\Islem.cs" />

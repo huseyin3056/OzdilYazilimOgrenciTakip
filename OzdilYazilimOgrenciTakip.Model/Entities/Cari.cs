@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using OzdilYazilimOgrenciTakip.Common.Enums;
 using OzdilYazilimOgrenciTakip.Model.Attributes;
 using OzdilYazilimOgrenciTakip.Model.Entities.Base;
 
@@ -52,6 +53,7 @@ namespace OzdilYazilimOgrenciTakip.Model.Entities
         [StringLength(300)]
         public string Adres { get; set; }
 
+        public CariTuru CariTuru { get; set; } = CariTuru.Musteri;
 
         public long? OzelKod1Id { get; set; }
         public long? OzelKod2Id { get; set; }

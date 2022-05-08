@@ -112,8 +112,8 @@ namespace OzdilYazilimOgrenciTakip.Data.Contexts
         public DbSet<RenkBedenSiparisBilgileri> RenkBedenSiparisBilgileri { get; set; }
         public DbSet<Musteri> Musteri { get; set; }
         public DbSet<ZamanEtut> ZamanEtut { get; set; }
-
         public DbSet<ZamanEtutBilgileri> ZamanEtutBilgileri { get; set; }
+        public DbSet<Depo> Depo { get; set; }
 
 
     }

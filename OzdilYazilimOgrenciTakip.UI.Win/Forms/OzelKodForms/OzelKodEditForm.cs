@@ -23,7 +23,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.OzelKodForms
 
             DataLayoutControl = myDataLayoutControl;
             Bll = new OzelKodBll(DataLayoutControl);
-            BaseKartTuru = Common.Enums.KartTuru.OzelKod;
+            BaseKartTuru = KartTuru.OzelKod;
             EventsLoad();
 
 

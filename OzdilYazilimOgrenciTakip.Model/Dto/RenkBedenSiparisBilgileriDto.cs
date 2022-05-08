@@ -57,4 +57,6 @@ namespace OzdilYazilimOgrenciTakip.Model.Dto
 
         public long? Toplam { get; set; }
     }
+
+
 }

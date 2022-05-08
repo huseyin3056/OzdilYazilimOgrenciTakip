@@ -121,6 +121,9 @@
   <data name="icons8_parenting_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_parenting_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="switchtimescalesto_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\switchtimescalesto_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_discount_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_discount_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,14 +151,8 @@
   <data name="icons8_duration_finance_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_duration_finance_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="emptytablerowseparator_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\emptytablerowseparator_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_receive_euro_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_receive_euro_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="addfile_32x329" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile_32x329.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_employee_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_employee_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addfile_16x167" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addfile_16x167.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -168,9 +165,6 @@
   </data>
   <data name="exporttopdf_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exporttopdf_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="technology_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\technology_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_google_classroom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_google_classroom.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,9 +187,6 @@
   <data name="icons8_student_male_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_student_male_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addfile_32x328" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile_32x328.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="design_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\design_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,9 +199,6 @@
   <data name="addfooter_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addfooter_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addfile_32x324" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile_32x324.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="removeitem_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\removeitem_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -220,9 +208,6 @@
   <data name="icons8_transaction_list_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_transaction_list_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="preview_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\preview_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_stack_of_money" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_stack_of_money.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -231,6 +216,9 @@
   </data>
   <data name="icons8_city_buildings_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_city_buildings_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="properties_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\properties_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_class_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_class_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -250,11 +238,11 @@
   <data name="addfile_16x1610" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addfile_16x1612.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_slice_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_slice_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="employeethank_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\employeethank_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_food_service" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_food_service.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_filing_cabinet_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_filing_cabinet_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -295,6 +283,9 @@
   <data name="icons8_discount" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_discount.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="refresh_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_get_cash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_get_cash.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -322,6 +313,9 @@
   <data name="Logo21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo21.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_food_service_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_food_service_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_factory_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_factory_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -337,17 +331,26 @@
   <data name="card_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\card_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="addfile_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile_32x322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="today_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\today_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_food_service_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_food_service_3.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="employeewelcome_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\employeewelcome_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buy_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buy_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_stack_of_coins_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_stack_of_coins_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_read_online" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_read_online.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_user_menu_male_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_user_menu_male_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_folder1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_folder1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -364,17 +367,14 @@
   <data name="icons8_account_16px2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_account_16px2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_get_cash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_get_cash1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="buy_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buy_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exporttodocx_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exporttodocx_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="group_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\group_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_receive_cash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_receive_cash1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_key" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_key.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -403,8 +403,8 @@
   <data name="icons8_trolleybus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_trolleybus.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_folder.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exporttopdf_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\exporttopdf_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Cyber_Monday" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Cyber_Monday.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -412,17 +412,17 @@
   <data name="buy_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buy_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_maintenance.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_paycheque" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_paycheque.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addfile_32x325" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile_32x325.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_Shuttle_bus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_Shuttle_bus.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_student_male_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_student_male_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_discount_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_discount_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_food_service_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_food_service_3.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_google_classroom_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_google_classroom_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -436,8 +436,17 @@
   <data name="switchtimescalesto_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\switchtimescalesto_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_chart_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_chart_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_receive_euro" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_receive_euro.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_cheap_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_cheap_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_judge_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_judge_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_filing_cabinet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_filing_cabinet.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="deletelist_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\deletelist_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -448,8 +457,8 @@
   <data name="publicfix_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\publicfix_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_judge_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_judge_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="watermark_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\watermark_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_manufacturing_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_manufacturing_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -463,8 +472,8 @@
   <data name="icons8_presentation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_presentation.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_school_building" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_school_building.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Cheque" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Cheque.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_presentation_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_presentation_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -490,11 +499,8 @@
   <data name="icons8_office_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_office_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="next_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\next_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="watermark_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\watermark_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_calculator_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_calculator_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="previous_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\previous_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -538,9 +544,6 @@
   <data name="task_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\task_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buy_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buy_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_account_16px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_account_16px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -577,8 +580,11 @@
   <data name="icons8_student_male_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_student_male_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_books" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_books.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="merge_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\merge_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_online_support_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_online_support_11.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_treatment" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_treatment.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -586,14 +592,17 @@
   <data name="customeremployees_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customeremployees_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_password.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_school_director1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_school_director1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="emptytablerowseparator_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\emptytablerowseparator_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_get_cash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_get_cash1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="insertrangefilter_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\insertrangefilter_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -604,14 +613,17 @@
   <data name="addfile_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addfile_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addfile_16x164" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile_16x164.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_receive_cash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_receive_cash.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_neighbour_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_neighbour_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="factory-machine (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\factory-machine (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_classroom_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_classroom_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_museum.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refresh_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refresh_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -631,14 +643,14 @@
   <data name="gettingstarted_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gettingstarted_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="export_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\export_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icons8_manufacturing1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_manufacturing1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CompanyLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CompanyLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="emptytablerowseparator_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emptytablerowseparator_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="factory-machine (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\factory-machine (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_office" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_office.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -652,8 +664,8 @@
   <data name="factory-machine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\factory-machine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Shuttle_bus_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Shuttle_bus_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_clothes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_clothes1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customer_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customer_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -667,20 +679,20 @@
   <data name="palette_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\palette_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_filing_cabinet" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_filing_cabinet.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="technology_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\technology_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="card_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\card_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gaugestylethreeforthcircular_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gaugestylethreeforthcircular_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="save_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\save_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="resetchanges_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\resetchanges_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gaugestylethreeforthcircular_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gaugestylethreeforthcircular_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_classroom_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_classroom_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="weekend_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\weekend_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -694,8 +706,8 @@
   <data name="people_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\people_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_employee_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_employee_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="print_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\print_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo22" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo22.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -706,8 +718,8 @@
   <data name="icons8_cash_in_hand_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_cash_in_hand_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_online_support_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_online_support_11.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addfile_32x324" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile_32x324.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_investment_portfolio_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_investment_portfolio_3.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -718,17 +730,23 @@
   <data name="comment_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\comment_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_receive_euro_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_receive_euro_11.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CompanyLogo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CompanyLogo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alignhorizontalbottom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alignhorizontalbottom.svg;DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="addfile_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_bank_building" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_bank_building.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="employeeexcellence_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\employeeexcellence_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_report_card_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_report_card_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="contact_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contact_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -757,14 +775,17 @@
   <data name="suggestion_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\suggestion_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_receive_euro_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_receive_euro_11.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_support_16px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_support_16px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addfile_32x322" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile_32x322.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_paycheque" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_paycheque.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="next_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\next_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="assigntome_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\assigntome_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_clothes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_clothes.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -781,8 +802,8 @@
   <data name="reset_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reset_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_password.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_maintenance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_maintenance.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_school_building_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_school_building_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -802,14 +823,11 @@
   <data name="article_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\article_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_cheap_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_cheap_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addfile_32x326" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile_32x326.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_maintenance_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_maintenance_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_phone_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_phone_3.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addfile_16x168" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addfile_16x168.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -817,8 +835,8 @@
   <data name="edit_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_receive_cash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_receive_cash.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addfile_16x164" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile_16x164.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="export_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\export_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -835,20 +853,17 @@
   <data name="saveall_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\saveall_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_paper1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_paper1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="emptytablerowseparator_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emptytablerowseparator_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_user_menu_male_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_user_menu_male_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addfile_32x329" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile_32x329.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="print_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\print_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="docking_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\docking_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="refresh_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8_receive_euro" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_receive_euro.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="contact_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\contact_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="exporttodocx_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exporttodocx_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -862,8 +877,8 @@
   <data name="animatedna_k9iwodor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\animatedna_k9iwodor.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="factory-machine (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\factory-machine (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_slice_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_slice_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="next_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\next_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -877,11 +892,11 @@
   <data name="icons8_manufacturing" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_manufacturing.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_report_card_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_report_card_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addfile_32x328" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile_32x328.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="group_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\group_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="addfile_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addfile_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_autumn_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_autumn_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -889,11 +904,11 @@
   <data name="customers_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customers_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addfile_32x325" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile_32x325.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_receive_euro_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_receive_euro_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_food_service" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_food_service.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_Shuttle_bus_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_Shuttle_bus_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="team_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\team_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -922,8 +937,8 @@
   <data name="icons8_phone_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_phone_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_Cheque" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_Cheque.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="printpreview_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printpreview_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_rich_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_rich_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -931,26 +946,26 @@
   <data name="icons8_food_service_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_food_service_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="printpreview_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\printpreview_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="preview_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\preview_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_clothes_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_clothes_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_discount_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_discount_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="next_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_neighbour_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_neighbour_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_paper1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_paper1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_clothes1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_clothes1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_school_building" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_school_building.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_google_translate_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_google_translate_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="switchtimescalesto_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\switchtimescalesto_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="export_16x161" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\export_16x161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_cash_in_hand_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_cash_in_hand_2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -967,9 +982,6 @@
   <data name="icons8_bell_curve_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_bell_curve_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_calculator_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_calculator_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="apply_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apply_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -982,23 +994,23 @@
   <data name="CompanyLogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CompanyLogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addfile_32x326" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile_32x326.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_phone_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_phone_3.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_food_service_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_food_service_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="group_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\group_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="properties_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\properties_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_books" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_books.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_invoice_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_invoice_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_museum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8_museum.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="resetchanges_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resetchanges_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="assigntome_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\assigntome_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_receive_cash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_receive_cash1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8_bill_16px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_bill_16px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1009,20 +1021,17 @@
   <data name="documentmap_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\documentmap_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="exporttopdf_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\exporttopdf_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_chart_16px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_chart_16px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addfile_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="employeewelcome_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\employeewelcome_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="next_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\next_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addfile_16x169" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addfile_16x169.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contact_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\contact_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_folder.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="resetchanges_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\resetchanges_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1030,10 +1039,10 @@
   <data name="icons8_calculator_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_calculator_1.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addfile_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\addfile_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_student_male_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8_student_male_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="buy_32x321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\buy_32x321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="merge_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\merge_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

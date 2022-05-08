@@ -1,7 +1,7 @@
 ﻿
-namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
+namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.DepoForms
 {
-    partial class RaporListForm
+    partial class DepoListForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,14 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RaporListForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DepoListForm));
             this.longNavigator = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Controls.Navigators.LongNavigator();
             this.grid = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridControl();
             this.tablo = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridView();
             this.colId = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colKod = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.colRaporAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
+            this.colDepoAdi = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
             this.colAciklama = new OzdilYazilimOgrenciTakip.UI.Win.UserControls.Grid.MyGridColumn();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tablo)).BeginInit();
@@ -46,9 +45,6 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
             // ribbonControl
             // 
             this.ribbonControl.ExpandCollapseItem.Id = 0;
-            this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1});
-            this.ribbonControl.MaxItemId = 102;
             // 
             // 
             // 
@@ -57,7 +53,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
             this.ribbonControl.SearchEditItem.EditWidth = 150;
             this.ribbonControl.SearchEditItem.Id = -5000;
             this.ribbonControl.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.ribbonControl.Size = new System.Drawing.Size(807, 109);
+            this.ribbonControl.Size = new System.Drawing.Size(784, 109);
             this.ribbonControl.Toolbar.ShowCustomizeItem = false;
             // 
             // btnGonder
@@ -79,17 +75,12 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
             // 
             this.btnOnTanimliRaporlar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnOnTanimliRaporlar.ImageOptions.Image")));
             // 
-            // btnOzdil
-            // 
-            this.btnOzdil.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
-            // 
             // longNavigator
             // 
             this.longNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.longNavigator.Location = new System.Drawing.Point(0, 351);
+            this.longNavigator.Location = new System.Drawing.Point(0, 385);
             this.longNavigator.Name = "longNavigator";
-            this.longNavigator.Size = new System.Drawing.Size(807, 24);
+            this.longNavigator.Size = new System.Drawing.Size(784, 24);
             this.longNavigator.TabIndex = 2;
             // 
             // grid
@@ -99,7 +90,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
             this.grid.MainView = this.tablo;
             this.grid.MenuManager = this.ribbonControl;
             this.grid.Name = "grid";
-            this.grid.Size = new System.Drawing.Size(807, 242);
+            this.grid.Size = new System.Drawing.Size(784, 276);
             this.grid.TabIndex = 3;
             this.grid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tablo});
@@ -119,7 +110,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
             this.tablo.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colKod,
-            this.colRaporAdi,
+            this.colDepoAdi,
             this.colAciklama});
             this.tablo.GridControl = this.grid;
             this.tablo.Name = "tablo";
@@ -139,7 +130,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
             this.tablo.StatusBarAciklama = null;
             this.tablo.StatusBarKisaYol = null;
             this.tablo.StatusBarKisaYolAciklama = null;
-            this.tablo.ViewCaption = "Rapor Kartları";
+            this.tablo.ViewCaption = "Depo Kartları";
             // 
             // colId
             // 
@@ -165,20 +156,20 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
             this.colKod.StatusBarKisaYolAciklama = null;
             this.colKod.Visible = true;
             this.colKod.VisibleIndex = 0;
-            this.colKod.Width = 129;
+            this.colKod.Width = 138;
             // 
-            // colRaporAdi
+            // colDepoAdi
             // 
-            this.colRaporAdi.Caption = "Rapor Adı";
-            this.colRaporAdi.FieldName = "RaporAdi";
-            this.colRaporAdi.Name = "colRaporAdi";
-            this.colRaporAdi.OptionsColumn.AllowEdit = false;
-            this.colRaporAdi.StatusBarAciklama = null;
-            this.colRaporAdi.StatusBarKisaYol = null;
-            this.colRaporAdi.StatusBarKisaYolAciklama = null;
-            this.colRaporAdi.Visible = true;
-            this.colRaporAdi.VisibleIndex = 1;
-            this.colRaporAdi.Width = 196;
+            this.colDepoAdi.Caption = "Depo Adı";
+            this.colDepoAdi.FieldName = "DepoAdi";
+            this.colDepoAdi.Name = "colDepoAdi";
+            this.colDepoAdi.OptionsColumn.AllowEdit = false;
+            this.colDepoAdi.StatusBarAciklama = null;
+            this.colDepoAdi.StatusBarKisaYol = null;
+            this.colDepoAdi.StatusBarKisaYolAciklama = null;
+            this.colDepoAdi.Visible = true;
+            this.colDepoAdi.VisibleIndex = 1;
+            this.colDepoAdi.Width = 227;
             // 
             // colAciklama
             // 
@@ -191,23 +182,18 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
             this.colAciklama.StatusBarKisaYolAciklama = null;
             this.colAciklama.Visible = true;
             this.colAciklama.VisibleIndex = 2;
-            this.colAciklama.Width = 235;
+            this.colAciklama.Width = 327;
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Id = 101;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // RaporListForm
+            // DepoListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 399);
+            this.ClientSize = new System.Drawing.Size(784, 433);
             this.Controls.Add(this.grid);
             this.Controls.Add(this.longNavigator);
             this.IconOptions.ShowIcon = false;
-            this.Name = "RaporListForm";
-            this.Text = "Rapor Kartları";
+            this.Name = "DepoListForm";
+            this.Text = "Depo Kartları";
             this.Controls.SetChildIndex(this.ribbonControl, 0);
             this.Controls.SetChildIndex(this.longNavigator, 0);
             this.Controls.SetChildIndex(this.grid, 0);
@@ -226,8 +212,7 @@ namespace OzdilYazilimOgrenciTakip.UI.Win.Forms.RaporForms
         private UserControls.Grid.MyGridView tablo;
         private UserControls.Grid.MyGridColumn colId;
         private UserControls.Grid.MyGridColumn colKod;
-        private UserControls.Grid.MyGridColumn colRaporAdi;
+        private UserControls.Grid.MyGridColumn colDepoAdi;
         private UserControls.Grid.MyGridColumn colAciklama;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
